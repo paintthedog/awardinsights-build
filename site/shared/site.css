@@ -8,7 +8,14 @@
 .sitebar nav a{font:500 13px/1 "Readex Pro",system-ui,sans-serif;color:var(--muted);text-decoration:none;padding:8px 11px;border-radius:5px;white-space:nowrap}
 .sitebar nav a:hover,.sitebar nav a:focus-visible{color:var(--ink);background:var(--line-soft,var(--line))}
 .sitebar nav a[aria-current="page"]{color:var(--accent-ink,var(--accent));background:var(--accent-soft,transparent)}
-@media(max-width:620px){.sitebar nav{margin-left:-11px}}
+/* light/dark switch: shows the moon while light is in effect, the sun while dark is */
+.sitebar .theme{display:grid;place-items:center;width:34px;height:34px;padding:0;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--muted);cursor:pointer}
+.sitebar .theme:hover,.sitebar .theme:focus-visible{color:var(--ink);border-color:var(--accent);outline:none}
+.sitebar .theme svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sitebar .i-sun{display:none}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .sitebar .i-sun{display:block}:root:not([data-theme="light"]) .sitebar .i-moon{display:none}}
+:root[data-theme="dark"] .sitebar .i-sun{display:block}:root[data-theme="dark"] .sitebar .i-moon{display:none}
+@media(max-width:620px){.sitebar .theme{order:1;margin-left:auto}.sitebar nav{order:2;flex-basis:100%;margin-left:-11px}}
 
 /* search hits from other tools, and the note shown when this tool doesn't cover the chosen institution */
 .results .ai-sep{padding:8px 12px 4px;font:600 10.5px/1.2 "Readex Pro",system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);border-top:1px solid var(--line)}

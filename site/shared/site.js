@@ -12,6 +12,7 @@ const TOOLS = [
 ];
 const PEERS = ["hold", "up", "x"];            // Federal and NSF share these peer settings
 const SHARE_PEERS = new Set(["federal", "nsf"]);
+const INST = (document.currentScript && document.currentScript.dataset.inst) || "/shared/inst.json";
 const bar = document.querySelector(".sitebar"); if (!bar) return;
 const here = bar.dataset.tool, T = TOOLS.find(t => t.id === here);
 const $ = id => document.getElementById(id);
@@ -123,9 +124,22 @@ function home() {
   document.addEventListener("click", e => { if (!e.target.closest(".search")) res.hidden = true; });
 }
 
+/* light/dark: follows the system until someone switches; a choice that matches the system is forgotten */
+const dark = matchMedia("(prefers-color-scheme: dark)"), root = document.documentElement;
+const mode = () => root.dataset.theme || (dark.matches ? "dark" : "light");
+function label() { const b = bar.querySelector(".theme"); if (b) { const t = mode() === "dark" ? "Switch to light mode" : "Switch to dark mode"; b.setAttribute("aria-label", t); b.title = t; } }
+const sw = bar.querySelector(".theme");
+if (sw) sw.addEventListener("click", () => {
+  const next = mode() === "dark" ? "light" : "dark", sys = dark.matches ? "dark" : "light";
+  if (next === sys) delete root.dataset.theme; else root.dataset.theme = next;
+  try { next === sys ? localStorage.removeItem("ai.theme") : localStorage.setItem("ai.theme", next); } catch (e) {}
+  label();
+});
+dark.addEventListener("change", label); label();
+
 try { readUrl(location.href); } catch (e) {}
 links();
-fetch("/shared/inst.json").then(r => r.json()).then(d => {
+fetch(INST).then(r => r.json()).then(d => {
   IDX = d; IDX.i.forEach(r => { byU.set(r[0], r); if (r[4]) Object.values(r[4]).forEach(id => { same[id] = r[0]; }); });
   Object.entries(IDX.pk).forEach(([k, units]) => { pkRev[k] = units[0]; units.forEach(u => { pkFwd[u] = k; }); });
   if (cur && (pkRev[cur] || same[cur])) { cur = pkRev[cur] || same[cur]; links(); }

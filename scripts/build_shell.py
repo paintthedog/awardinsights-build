@@ -9,7 +9,7 @@ Runs last, on the finished pages in build/site; the tool templates themselves ar
 - federal/index.html gets the site bar in place; index.html is replaced by the new landing page (site/landing.html)
 - /shared/: site.js, site.css, redirect.js, and inst.json (every institution in any tool, with which tools cover it)
 """
-import argparse, json, pathlib, shutil, sys
+import argparse, hashlib, json, pathlib, shutil, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "site"
@@ -25,7 +25,13 @@ HOME_LINKS = ['<a class="tag" href="index.html" style="text-decoration:none">Awa
 # Federal ids for organizations Portfolio lists under another id (checked by hand, 20 Oct 2026)
 FED_SAME = {"I-UNIVERSITY-OF-MARYLAND-CENTER-FOR-ENVIRO": "I-UMCES", "I-WOODS-HOLE-OCEANOGRAPHIC-INSTITUTION": "I-WHOI",
             "I-VAN-ANDEL-RESEARCH-INSTITUTE": "I-VAI", "X-MILLS-COLLEGE": "118888"}
-HEAD = '<link rel="stylesheet" href="/shared/site.css">\n<script src="/shared/site.js" defer></script>\n</head>'
+V = {}   # content fingerprints, so a new build is never served from a stale browser cache
+def url(name): return f"/shared/{name}?v={V[name]}"
+def head():
+    return (f'<script src="{url("theme.js")}"></script>\n<link rel="stylesheet" href="{url("site.css")}">\n'
+            f'<script src="{url("site.js")}" data-inst="{url("inst.json")}" defer></script>\n</head>')
+SUN = '<svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
+MOON = '<svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>'
 CSP = ("default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
        "font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; "
        "base-uri 'none'; form-action 'none'")
@@ -35,7 +41,8 @@ def sitebar(tool):
     tabs = "".join(f'<a href="/{t}/" data-t="{t}"{here if t == tool else ""} title="{full}">{short}</a>'
                    for t, short, full in TOOLS)
     return (f'<header class="sitebar" data-tool="{tool}"><a class="home" href="/">Award Insights</a>'
-            f'<nav aria-label="Tools">{tabs}</nav></header>')
+            f'<nav aria-label="Tools">{tabs}</nav>'
+            f'<button class="theme" type="button" aria-label="Switch light or dark mode" title="Switch light or dark mode">{SUN}{MOON}</button></header>')
 
 def index(site):
     """Every institution any tool covers: [id, name, state, tools bitmask, {tool: its own id} when that differs].
@@ -75,19 +82,20 @@ def inject(html, tool, name):
     if html.count('<div class="masthead">') != 1: sys.exit(f"{name}: expected one masthead")
     if "</head>" not in html: sys.exit(f"{name}: no </head>")   # Designations has a second one inside its print template; the first is the page's
     for h in HOME_LINKS: html = html.replace(h, "")
-    return html.replace('<div class="masthead">', sitebar(tool) + '\n  <div class="masthead">', 1).replace("</head>", HEAD, 1)
+    return html.replace('<div class="masthead">', sitebar(tool) + '\n  <div class="masthead">', 1).replace("</head>", head(), 1)
 
 def stub(tool):
     full = dict((t, f) for t, _, f in TOOLS)[tool]
     return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{full}</title>'
-            f'<link rel="canonical" href="/{tool}/"><script src="/shared/redirect.js"></script>'
+            f'<link rel="canonical" href="/{tool}/"><script src="{url("redirect.js")}"></script>'
             f'<meta http-equiv="refresh" content="0;url=/{tool}/"></head>'
             f'<body><p>{full} has moved to <a href="/{tool}/">/{tool}/</a>.</p></body></html>\n')
 
 def build(site):
     sh = site / "shared"; sh.mkdir(parents=True, exist_ok=True)
-    for f in ("site.js", "site.css", "redirect.js"): shutil.copy(SRC / "shared" / f, sh / f)
+    for f in ("site.js", "site.css", "redirect.js", "theme.js"): shutil.copy(SRC / "shared" / f, sh / f)
     (sh / "inst.json").write_text(json.dumps(index(site), separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
+    for f in sh.iterdir(): V[f.name] = hashlib.sha1(f.read_bytes()).hexdigest()[:10]
     for tool, old in OLD.items():
         html = (site / old).read_text(encoding="utf-8")
         (site / tool).mkdir(exist_ok=True)
@@ -97,7 +105,7 @@ def build(site):
     f.write_text(inject(f.read_text(encoding="utf-8"), "federal", "federal/index.html"), encoding="utf-8")
     land = (SRC / "landing.html").read_text(encoding="utf-8").replace("__SITEBAR__", sitebar("home"))
     land = land.replace('<meta charset="utf-8">', f'<meta charset="utf-8">\n<meta http-equiv="Content-Security-Policy" content="{CSP}">\n<!-- {COPY} -->', 1)
-    (site / "index.html").write_text(land.replace("</head>", HEAD, 1), encoding="utf-8")
+    (site / "index.html").write_text(land.replace("</head>", head(), 1), encoding="utf-8")
     print("  site bar on 5 pages; redirects:", ", ".join(OLD.values()))
 
 if __name__ == "__main__":

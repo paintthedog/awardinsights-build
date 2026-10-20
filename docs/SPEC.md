@@ -22,6 +22,8 @@ The old addresses `/nsf.html`, `/designations.html`, `/portfolio.html` are redir
 - Search: each tool keeps its own "Find an institution" box; `site.js` adds hits from the other tools under "Not in <tool>".
 - Selection carries between tools in the URL only (`#u=<id>`; nothing stored). Federal ↔ NSF also carry peers (`hold`, `up`, `x`; same format). Portfolio and Designations get `#u=` written for them when an institution is picked.
 - When a tool doesn't cover the chosen institution it says so in one line ("X isn't in <tool>, which covers …") with links to the tools that do; the selection is kept.
+- Light/dark switch (sun/moon, top right of the site bar): follows the system until someone switches; the choice is kept in that browser only (`localStorage` `ai.theme`, applied by `/shared/theme.js` in `<head>` so there's no flash); switching back to match the system forgets it. Charts take colors from CSS tokens, so they switch too.
+- Shared files are linked with a content fingerprint (`site.js?v=…`) so a new build is never served from a stale browser cache.
 - `inst.json` row: `[id, name, state, tools bitmask, {tool: its own id}]`. Federal keys system offices as `S-<UNITID>` where Portfolio uses the UNITID; these are linked automatically unless Federal also has the bare UNITID. Four institutes are linked by hand (`FED_SAME` in `build_shell.py`). Portfolio's six combined HERD units are carried as their main campus (first of `units`).
 
 Owner preferences: no personal name on the public site; footer reads "© 2026 Award Insights. All rights reserved." No LLC for now.
@@ -52,7 +54,7 @@ Owner preferences: no personal name on the public site; footer reads "© 2026 Aw
 Describe the data, never judge the institution: "Programs held by peers, not by X — a place to look, not a requirement"; "below/above", not "short/cushion"; no red/green verdict coloring. Peer comparisons are stated as medians.
 
 ## Design system
-Young Serif for headings and headline numbers; Readex Pro for everything else (figures tabular). Ground #f1efe8, paper #fff, accent teal #0f6f7c, "this institution" orange #e2611f (`--you`; text uses #c2501a for contrast). Light and dark themes via tokens. Agencies and sub-agencies display by acronym with the full name on hover (`AGFULL`, `SUBNAME`/`SUBAB` in body.html); program rows under CDC/HRSA/SAMHSA/CMS show the Assistance Listing number with the title on hover.
+Young Serif for headings and headline numbers; Readex Pro for everything else (figures tabular). Ground #f1efe8, paper #fff, accent teal #0f6f7c, "this institution" orange #e2611f (`--you`; text uses #c2501a for contrast). Light and dark themes via tokens; every page honors `data-theme` on `<html>`. Agencies and sub-agencies display by acronym with the full name on hover (`AGFULL`, `SUBNAME`/`SUBAB` in body.html); program rows under CDC/HRSA/SAMHSA/CMS show the Assistance Listing number with the title on hover.
 
 Institution page order: header + KPIs → At a glance (briefing tiles: big number, one line, peer bar) → peer controls → Latest → Obligations by year → Scheduled to end → By agency and sub-agency → Programs (held by peers not here / held here by few peers / above the peer median / all held / earmarks) → Awards link. Every card can be minimized by clicking its title (remembered per browser).
 
