@@ -31,6 +31,9 @@ KEEP = [
     "subawardee_uei", "subawardee_name", "subawardee_dba_name", "subawardee_parent_uei", "subawardee_parent_name",
     "subawardee_country_code", "subawardee_state_code", "subawardee_city_name", "subawardee_business_types",
     "usaspending_permalink", "subaward_last_modified_date",
+    # FSRS moved into SAM.gov; current files name the report fields subaward_sam_report_*
+    "subaward_sam_report_id", "subaward_sam_report_year", "subaward_sam_report_month",
+    "subaward_sam_report_last_modified_date",
 ]
 IHE = ("HIGHER EDUCATION", "UNIVERSITY", "COLLEGE")
 wrote_cols = False

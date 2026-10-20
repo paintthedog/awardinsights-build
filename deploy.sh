@@ -11,9 +11,10 @@
 #                        put the trimmed *.csv.gz files in inputs/trimmed/, then ./deploy.sh
 #
 # Publishing: everything the site serves is built here: the landing page, NSF Award Insights, Research
-# Activity Designations and Research Portfolio Trends (legacy/build_legacy.py), and Federal Award Insights
-# under /federal/. The result is force-pushed as ONE fresh commit to the public repo's gh-pages branch, so
-# data never accumulates in git history. Nothing is edited by hand in the public repo.
+# Activity Designations and Research Portfolio Trends (legacy/build_legacy.py), and Federal Award Insights,
+# then scripts/build_shell.py puts them under one site bar at /federal/ /nsf/ /designations/ /portfolio/.
+# The result is force-pushed as ONE fresh commit to the public repo's gh-pages branch, so data never
+# accumulates in git history. Nothing is edited by hand in the public repo.
 # One-time GitHub setting: Settings → Pages → Build and deployment → Deploy from branch → gh-pages / (root).
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -43,6 +44,9 @@ FAI_INPUTS=inputs FAI_SITE="build/site/$SUBDIR" python3 -I scripts/verify_ic.py 
 echo "→ building page"
 python3 scripts/build_page.py --head page/head.html --body page/body.html --public "build/site/$SUBDIR" \
   --terser node_modules/.bin/terser
+
+echo "→ combining into one site (site bar, clean URLs, redirects)"
+python3 -I scripts/build_shell.py --site build/site
 
 if [[ $DRY -eq 1 ]]; then echo "Dry run: built into build/site/. Preview with: (cd build/site && python3 -m http.server)"; exit 0; fi
 

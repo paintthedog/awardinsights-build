@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Award Insights</title>
+<meta name="description" content="Where federal research money goes to U.S. colleges and universities, alongside the peers you choose.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Readex+Pro:wght@300;400;500;600;700&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --ground:#f1efe8;--paper:#fff;--ink:#191917;--muted:#63625c;--faint:#8f8d85;
+  --line:#e3ded3;--line-soft:#eeeae0;
+  --accent:#0f6f7c;--accent-ink:#0b5560;--accent-soft:#dcecec;
+  --shadow:0 1px 2px rgba(20,20,18,.05),0 10px 30px -14px rgba(20,20,18,.22);
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --ground:#0d0f10;--paper:#17191b;--ink:#e9e9e3;--muted:#9a9a91;--faint:#6a6a63;
+  --line:#292b2d;--line-soft:#202224;
+  --accent:#4bb4c1;--accent-ink:#7fd0da;--accent-soft:#15302f;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 12px 32px -16px rgba(0,0,0,.65);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0d0f10;--paper:#17191b;--ink:#e9e9e3;--muted:#9a9a91;--faint:#6a6a63;
+  --line:#292b2d;--line-soft:#202224;
+  --accent:#4bb4c1;--accent-ink:#7fd0da;--accent-soft:#15302f;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 12px 32px -16px rgba(0,0,0,.65);
+}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Readex Pro",system-ui,sans-serif;line-height:1.45;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:26px 20px 48px}
+h1{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:clamp(30px,5vw,40px);letter-spacing:-.01em;margin:28px 0 8px}
+.lede{color:var(--muted);font-size:15px;max-width:58ch;margin:0 0 26px}
+.search{position:relative;margin-bottom:34px}
+.search label{display:block;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.search input{width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:12px 14px}
+.search input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.results{position:absolute;z-index:30;left:0;right:0;top:100%;margin-top:4px;background:var(--paper);border:1px solid var(--line);border-radius:5px;box-shadow:var(--shadow);max-height:340px;overflow:auto}
+.results button{display:flex;width:100%;text-align:left;gap:10px;align-items:baseline;background:none;border:0;border-bottom:1px solid var(--line-soft);padding:10px 14px;color:var(--ink);font-family:inherit;font-size:14px;cursor:pointer}
+.results button:last-child{border-bottom:0}
+.results button:hover,.results button:focus{background:var(--accent-soft);outline:none}
+.results .rn{font-family:"Young Serif",Georgia,serif;font-weight:400}
+.results .rs{margin-left:auto;color:var(--faint);font-size:12px;white-space:nowrap}
+.tools{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.tools li{border-bottom:1px solid var(--line)}
+.tools a{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:16px 2px;color:var(--ink);text-decoration:none}
+.tools .tn{font-family:"Young Serif",Georgia,serif;font-size:clamp(19px,3vw,22px)}
+.tools .td{grid-column:1;color:var(--muted);font-size:13.5px}
+.tools .ar{grid-row:1/3;grid-column:2;align-self:center;color:var(--faint);transition:transform .15s,color .15s}
+.tools a:hover .tn,.tools a:focus-visible .tn{color:var(--accent)}
+.tools a:hover .ar,.tools a:focus-visible .ar{color:var(--accent);transform:translateX(4px)}
+.tools a:focus-visible{outline:none}
+footer{margin-top:40px;color:var(--faint);font-size:12px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+__SITEBAR__
+  <h1>Award Insights</h1>
+  <p class="lede">Where federal research money goes to U.S. colleges and universities, alongside the peers you choose.</p>
+  <div class="search">
+    <label for="q">Find an institution</label>
+    <input id="q" type="text" autocomplete="off" placeholder="Type an institution name…" aria-label="Search for an institution">
+    <div id="results" class="results" hidden></div>
+  </div>
+  <ul class="tools">
+    <li><a href="/federal/"><span class="tn">Federal Award Insights</span><span class="td">Competitive grants, cooperative agreements and contracts from 21 federal agencies, FY2022–26, by agency and program.</span><span class="ar">→</span></a></li>
+    <li><a href="/nsf/"><span class="tn">NSF Award Insights</span><span class="td">NSF awards, FY2022–26, by year, division and program.</span><span class="ar">→</span></a></li>
+    <li><a href="/designations/"><span class="tn">Research Activity Designations</span><span class="td">Where an institution stands against the 2025 Carnegie R1, R2 and Research College thresholds.</span><span class="ar">→</span></a></li>
+    <li><a href="/portfolio/"><span class="tn">Research Portfolio Trends</span><span class="td">How R&amp;D across federal agencies and fields of science has shifted, FY2020–24.</span><span class="ar">→</span></a></li>
+  </ul>
+  <footer>© 2026 Award Insights. All rights reserved.</footer>
+</div>
+</body>
+</html>

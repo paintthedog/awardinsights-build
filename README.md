@@ -1,6 +1,6 @@
 # awardinsights-build (private)
 
-Source for awardinsights.org: the landing page, NSF Award Insights, Research Activity Designations, Research Portfolio Trends and Federal Award Insights. Start with `docs/SPEC.md`. Keep this repository **private**: it holds the crosswalk, the build and the review trail.
+Source for awardinsights.org: the landing page, Federal Award Insights, NSF Award Insights, Research Activity Designations and Research Portfolio Trends, served as one site at `/federal/ /nsf/ /designations/ /portfolio/`. Start with `docs/SPEC.md`. Keep this repository **private**: it holds the crosswalk, the build and the review trail.
 Only the built site is published (see `deploy.sh`).
 
 | Path | What |
@@ -10,6 +10,7 @@ Only the built site is published (see `deploy.sh`).
 | `scripts/build_fai.py` | trimmed files → site data (`--awards inst` writes one award file per institution) |
 | `scripts/verify.py` | recomputes three institutions from the raw files; non-zero exit stops a deploy |
 | `scripts/build_page.py` | assembles the page: minified `app.js`, Content-Security-Policy, copyright notices, robots.txt |
+| `scripts/build_shell.py`, `site/` | one site: site bar, landing page, clean URLs + redirects, cross-tool search (`site/shared/site.js`) |
 | `page/head.html`, `page/body.html` | Federal page source |
 | `legacy/build_legacy.py` | builds the landing page and the three original tools (templates in `legacy/templates/`) |
 | `legacy/archive/` | the original one-off build scripts, kept for reference (they expect raw HERD files not in this repo) |

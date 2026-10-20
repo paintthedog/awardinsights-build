@@ -1,18 +1,28 @@
 # Award Insights — working spec
 
 Living spec for awardinsights.org. Read this before changing anything; update it when a decision changes.
-Last updated 2026-10-20.
+Last updated 2026-10-20 (one site).
 
 ## What the site is
-A free, public, static site (GitHub Pages, custom domain awardinsights.org) showing where federal research money goes to U.S. higher-education institutions, alongside peer groups the user chooses. Four tools, being combined into one site:
+A free, public, static site (GitHub Pages, custom domain awardinsights.org) showing where federal research money goes to U.S. higher-education institutions, alongside peer groups the user chooses. Four tools in one site, tabs in this order:
 
-| Tool | Path (now) | Source | Data |
+| Tool | Path | Source | Data |
 |---|---|---|---|
-| Landing page | `/index.html` | `legacy/landing/index.html` | — |
-| NSF Award Insights | `/nsf.html` | `legacy/templates/tpl.html` | `inputs/nsf/{universe3,awards4,proginfo,coverage}.json` |
-| Research Activity Designations | `/designations.html` | `legacy/templates/dash_tpl.html` | `inputs/nsf/{rad5,climbers3}.json` |
-| Research Portfolio Trends | `/portfolio.html` | `legacy/templates/prof_tpl.html` | `inputs/nsf/profile4.json` |
+| Landing page | `/` | `site/landing.html` | `/shared/inst.json` |
 | Federal Award Insights | `/federal/` | `page/head.html`, `page/body.html`, `scripts/build_fai.py` | USAspending trimmed files (`inputs/trimmed/`, not in git) |
+| NSF Award Insights | `/nsf/` | `legacy/templates/tpl.html` | `inputs/nsf/{universe3,awards4,proginfo,coverage}.json` |
+| Research Activity Designations | `/designations/` | `legacy/templates/dash_tpl.html` | `inputs/nsf/{rad5,climbers3}.json` |
+| Research Portfolio Trends | `/portfolio/` | `legacy/templates/prof_tpl.html` | `inputs/nsf/profile4.json` |
+
+The old addresses `/nsf.html`, `/designations.html`, `/portfolio.html` are redirect pages that keep the `#…` part, so shared links still open the same view. `legacy/landing/index.html` is the old landing page, kept only for the byte-for-byte check.
+
+### One site (decided 2026-10-20)
+- `scripts/build_shell.py` runs last on the built pages; the tool templates are not edited. It adds the site bar (wordmark → `/`, tabs Federal · NSF · Designations · Portfolio), moves each tool to its clean URL, writes the redirects and `/shared/` (`site.js`, `site.css`, `redirect.js`, `inst.json`). Sources in `site/`.
+- Home page: short landing with one search across all tools and a line on each tool; choosing an institution opens the first tool that covers it (Federal for almost all).
+- Search: each tool keeps its own "Find an institution" box; `site.js` adds hits from the other tools under "Not in <tool>".
+- Selection carries between tools in the URL only (`#u=<id>`; nothing stored). Federal ↔ NSF also carry peers (`hold`, `up`, `x`; same format). Portfolio and Designations get `#u=` written for them when an institution is picked.
+- When a tool doesn't cover the chosen institution it says so in one line ("X isn't in <tool>, which covers …") with links to the tools that do; the selection is kept.
+- `inst.json` row: `[id, name, state, tools bitmask, {tool: its own id}]`. Federal keys system offices as `S-<UNITID>` where Portfolio uses the UNITID; these are linked automatically unless Federal also has the bare UNITID. Four institutes are linked by hand (`FED_SAME` in `build_shell.py`). Portfolio's six combined HERD units are carried as their main campus (first of `units`).
 
 Owner preferences: no personal name on the public site; footer reads "© 2026 Award Insights. All rights reserved." No LLC for now.
 
@@ -20,7 +30,7 @@ Owner preferences: no personal name on the public site; footer reads "© 2026 Aw
 - `paintthedog/awardinsights-build` (private): all source. The single source of truth.
 - `paintthedog/awardinsights` (public): output only. `deploy.sh` force-pushes one fresh commit to its `gh-pages` branch. Never edit it by hand.
 - **Pending switch:** the live site is still served from `main` of the public repo (the old hand-uploaded pages). After the first `./deploy.sh`, set GitHub → Settings → Pages → Deploy from branch → `gh-pages` / root.
-- `./deploy.sh --dry-run` builds everything into `build/site/` and runs all checks. `COMPARE_LIVE=<checkout of public repo>` also checks the four original pages byte for byte against live.
+- `./deploy.sh --dry-run` builds everything into `build/site/` and runs all checks. `COMPARE_LIVE=<checkout of the public repo's main branch>` checks the original pages, as `build_legacy.py` writes them (before the site bar), byte for byte against the old live pages: proof the tools' content didn't change by accident. Retire it when piece 3 (protection) intentionally changes the templates.
 - Checks that stop a deploy: `scripts/verify.py` (Penn State 214777, Howard 131520, NC A&T 199102, New Mexico 187985 totals recomputed from raw files with the zero floor), `verify_cliff.py 214777`, `verify_ic.py 198419 "ALLERGY|NIAID"`.
 - Work rule: one place edits at a time. Start a session by pulling; end it by pushing.
 
@@ -47,12 +57,12 @@ Young Serif for headings and headline numbers; Readex Pro for everything else (f
 Institution page order: header + KPIs → At a glance (briefing tiles: big number, one line, peer bar) → peer controls → Latest → Obligations by year → Scheduled to end → By agency and sub-agency → Programs (held by peers not here / held here by few peers / above the peer median / all held / earmarks) → Awards link. Every card can be minimized by clicking its title (remembered per browser).
 
 ## Protection
-Data in separate files under `/federal/data/` (robots-disallowed), minified `app.js`, CSP `script-src 'self'`, build-time and browser-side text sanitizing, copyright string in page, script and every data file. The three original tools are still single-file pages with inline data (to be brought in line).
+Data in separate files under `/federal/data/` (robots-disallowed), minified `app.js`, CSP `script-src 'self'`, build-time and browser-side text sanitizing, copyright string in page, script and every data file. The landing page has the same CSP. The three original tools are still single-file pages with inline data and inline script, so they can't take the CSP yet (to be brought in line).
 
 ## Open items
-1. **Combine the four tools** (agreed): shared masthead/tab bar and institution search; chosen institution and peers carry between tools; clean URLs `/federal/ /nsf/ /designations/ /portfolio/` with redirects from the old `.html` paths; then apply Federal's protection to the other three.
-2. **Subawards:** pull running on the Mac (`scripts/usaspending_subaward_pull.py` — live API rejects empty `prime_award_types`, so it falls back to `["IDV_E"]`). Then trim, then build "received as subrecipient" and "passed through" lines, deduplicating amended reports. Recent years look thin (lag; likely FSRS→SAM.gov reporting change) — size it before showing FY2025–26 subaward trends.
+1. **Combine the four tools:** site bar, clean URLs, redirects, shared search and carried selection are done (see "One site"). Still to do: carry Portfolio's own peer choice; apply Federal's protection to the other three (data in separate files, minified script, CSP, copyright).
+2. **Subawards:** pull running on the Mac (`scripts/usaspending_subaward_pull.py` — live API rejects empty `prime_award_types`, so it falls back to `["IDV_E"]`). Trim with `scripts/usaspending_subaward_trim.py`; current files name the report fields `subaward_sam_report_*` (FSRS moved into SAM.gov), now kept. Sizing on 20 Oct (all big agencies in, Education and 13 small ones still pulling): each file holds exactly its fiscal year by subaward action date; no report id repeats. Received / passed through: FY22 $12.1B/$14.2B, FY23 $10.4B/$11.1B, FY24 $11.4B/$11.0B, FY25 $10.9B/$12.2B, FY26 $7.8B/$8.6B (repeated amounts counted once). FY2025 is not thin; FY2026 is ~30% low, mostly reporting lag (19–25% of older years' rows were reported more than a year after the action). Proposed: show FY2022–25, mark FY2026 as still being reported. Open: ~7.9k subawards repeat the same amount across rows ($5.9B if all counted) — check on usaspending.gov whether `subaward_amount` is per action or cumulative before choosing the dedupe rule; look at USDA FY2025 pass-through ($2.9B vs $0.7–1.3B other years) before it shows on a page.
 3. Build order agreed earlier: programs going quiet that the institution holds + realism checks on peer-held programs; share over time by agency; contract gap list (defense sub-agencies peers contract with).
 4. NSF tool: `awards4.json` should be rebuilt from `inputs/nsf-raw/nsf_raw_rows.json` with crosswalk v2 (NC A&T, Missouri State, Nebraska and ~20 others mis-assigned under v1). Upstream HERD builds (`legacy/archive/`) need raw HERD files not in this repo.
-5. Owner tasks: fix the 13 flagged crosswalk entries; methods page; two-factor on GitHub and registrar; domain privacy; verify the domain in GitHub Pages.
+5. Owner tasks: fix the 13 flagged crosswalk entries; Federal lists CUNY System Office and Tennessee Board of Regents twice each (as `190035`/`S-190035` and `409379`/`S-409379`) — likely crosswalk duplicates, check before launch; methods page; two-factor on GitHub and registrar; domain privacy; verify the domain in GitHub Pages.
 6. Considered, not done: log/rescaled bars in the agency card; short hand-written titles for CDC/HRSA program rows; tap-to-see agency legend on phones; moving "Rank among peers" next to the peer controls.

@@ -1,0 +1,21 @@
+/*! © 2026 Award Insights · awardinsights.org · All rights reserved. */
+/* Site bar shared by every page. Uses each page's own tokens (--ink, --muted, --faint, --line, --accent, --paper). */
+.sitebar{display:flex;align-items:center;gap:6px 22px;flex-wrap:wrap;margin:-8px 0 22px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.sitebar .home{font-family:"Young Serif",Georgia,serif;font-size:17px;color:var(--ink);text-decoration:none;white-space:nowrap}
+.sitebar .home:hover,.sitebar .home:focus-visible{color:var(--accent)}
+.sitebar nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-left:auto;max-width:100%}
+.sitebar nav::-webkit-scrollbar{display:none}
+.sitebar nav a{font:500 13px/1 "Readex Pro",system-ui,sans-serif;color:var(--muted);text-decoration:none;padding:8px 11px;border-radius:5px;white-space:nowrap}
+.sitebar nav a:hover,.sitebar nav a:focus-visible{color:var(--ink);background:var(--line-soft,var(--line))}
+.sitebar nav a[aria-current="page"]{color:var(--accent-ink,var(--accent));background:var(--accent-soft,transparent)}
+@media(max-width:620px){.sitebar nav{margin-left:-11px}}
+
+/* search hits from other tools, and the note shown when this tool doesn't cover the chosen institution */
+.results .ai-sep{padding:8px 12px 4px;font:600 10.5px/1.2 "Readex Pro",system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);border-top:1px solid var(--line)}
+.results button.ai-other .rs{color:var(--faint)}
+.ai-note{margin:0 0 22px;padding:14px 16px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;background:var(--paper);font:400 14px/1.5 "Readex Pro",system-ui,sans-serif;color:var(--ink)}
+.ai-note b{font-weight:600}
+.ai-note .why{color:var(--muted)}
+.ai-note .go{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.ai-note .go a{font-size:13px;color:var(--accent-ink,var(--accent));text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.ai-note .go a:hover,.ai-note .go a:focus-visible{border-color:var(--accent)}
