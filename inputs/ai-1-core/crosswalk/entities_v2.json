@@ -1,0 +1,5886 @@
+{
+ "X-215479": {
+  "type": "other",
+  "name": "Joseph F McCloskey School of Nursing",
+  "city": "Pottsville",
+  "state": "PA",
+  "unitid": "215479",
+  "ueis": [
+   "711953900000"
+  ]
+ },
+ "X-167297": {
+  "type": "other",
+  "name": "North Bennet Street School",
+  "city": "Boston",
+  "state": "MA",
+  "unitid": "167297",
+  "ueis": [
+   "717202880000"
+  ]
+ },
+ "X-137856": {
+  "type": "other",
+  "name": "Big Bend Technical College",
+  "city": "Perry",
+  "state": "FL",
+  "unitid": "137856",
+  "ueis": [
+   "C12SFNEBVJR8"
+  ]
+ },
+ "X-368647": {
+  "type": "other",
+  "name": "Mineral County Vocational Technical Center",
+  "city": "Keyser",
+  "state": "WV",
+  "unitid": "368647",
+  "ueis": [
+   "C435GTG9HBU7"
+  ]
+ },
+ "X-483823": {
+  "type": "other",
+  "name": "Philadelphia Technician Training",
+  "city": "Philadelphia",
+  "state": "PA",
+  "unitid": "483823",
+  "ueis": [
+   "C52AA66ELBG7"
+  ]
+ },
+ "X-220640": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Livingston",
+  "city": "Livingston",
+  "state": "TN",
+  "unitid": "220640",
+  "ueis": [
+   "C7DKEX2T54H3"
+  ]
+ },
+ "X-375966": {
+  "type": "other",
+  "name": "Eastern Center for Arts and Technology",
+  "city": "Willow Grove",
+  "state": "PA",
+  "unitid": "375966",
+  "ueis": [
+   "C7LUJ1U8MY35"
+  ]
+ },
+ "X-412535": {
+  "type": "other",
+  "name": "Shawsheen Valley School of Practical Nursing",
+  "city": "Billerica",
+  "state": "MA",
+  "unitid": "412535",
+  "ueis": [
+   "C9RLNLFMLKC5"
+  ]
+ },
+ "X-238096": {
+  "type": "other",
+  "name": "Wood County Technical Center-Practical Nursing",
+  "city": "Parkersburg",
+  "state": "WV",
+  "unitid": "238096",
+  "ueis": [
+   "CCEMKBK6RLD6"
+  ]
+ },
+ "X-204893": {
+  "type": "other",
+  "name": "Trinity Health System School of Nursing",
+  "city": "Steubenville",
+  "state": "OH",
+  "unitid": "204893",
+  "ueis": [
+   "CEBMLPBZK6K1"
+  ]
+ },
+ "X-237561": {
+  "type": "other",
+  "name": "Monongalia County Technical Education Center",
+  "city": "Morgantown",
+  "state": "WV",
+  "unitid": "237561",
+  "ueis": [
+   "CFMKUD97JUZ5"
+  ]
+ },
+ "X-138284": {
+  "type": "other",
+  "name": "Florida Panhandle Technical College",
+  "city": "Chipley",
+  "state": "FL",
+  "unitid": "138284",
+  "ueis": [
+   "CHS5RWTYAY84"
+  ]
+ },
+ "X-261773": {
+  "type": "other",
+  "name": "Pike-Lincoln Technical Center",
+  "city": "Eolia",
+  "state": "MO",
+  "unitid": "261773",
+  "ueis": [
+   "CJ8TMJL6JZ95"
+  ]
+ },
+ "X-407498": {
+  "type": "other",
+  "name": "Maplewood Area Joint Vocational School",
+  "city": "Ravenna",
+  "state": "OH",
+  "unitid": "407498",
+  "ueis": [
+   "CJFHEURLL3L5"
+  ]
+ },
+ "X-213163": {
+  "type": "other",
+  "name": "UPMC Jameson School of Nursing",
+  "city": "New Castle",
+  "state": "PA",
+  "unitid": "213163",
+  "ueis": [
+   "CJZWD9B766M4"
+  ]
+ },
+ "S-231156": {
+  "type": "system",
+  "name": "Vermont State Colleges-Office of the Chancellor",
+  "city": "Montpelier",
+  "state": "VT",
+  "unitid": "231156",
+  "ueis": [
+   "CQPBN6445V11"
+  ]
+ },
+ "X-480727": {
+  "type": "other",
+  "name": "School of Missionary Aviation Technology",
+  "city": "Ionia",
+  "state": "MI",
+  "unitid": "480727",
+  "ueis": [
+   "CXJKLSQKK7F3"
+  ]
+ },
+ "X-220127": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Elizabethton",
+  "city": "Elizabethton",
+  "state": "TN",
+  "unitid": "220127",
+  "ueis": [
+   "D43MB7JNLBJ1"
+  ]
+ },
+ "X-418278": {
+  "type": "other",
+  "name": "Vantage Career Center",
+  "city": "Van Wert",
+  "state": "OH",
+  "unitid": "418278",
+  "ueis": [
+   "D47MDVJZKMF5"
+  ]
+ },
+ "X-231688": {
+  "type": "other",
+  "name": "Central School of Practical Nursing",
+  "city": "Norfolk",
+  "state": "VA",
+  "unitid": "231688",
+  "ueis": [
+   "D4LUVFM6GH98"
+  ]
+ },
+ "X-491659": {
+  "type": "other",
+  "name": "ICOHS College",
+  "city": "San Diego",
+  "state": "CA",
+  "unitid": "491659",
+  "ueis": [
+   "D66CU59MAAN1"
+  ]
+ },
+ "X-420981": {
+  "type": "other",
+  "name": "Manhattan School of Computer Technology",
+  "city": "Brooklyn",
+  "state": "NY",
+  "unitid": "420981",
+  "ueis": [
+   "D7KGYP3G1WT8"
+  ]
+ },
+ "X-248624": {
+  "type": "other",
+  "name": "Fayette County Career & Technical Institute Practical Nursing Program",
+  "city": "Uniontown",
+  "state": "PA",
+  "unitid": "248624",
+  "ueis": [
+   "DAM9AFXG7KD5"
+  ]
+ },
+ "X-418357": {
+  "type": "other",
+  "name": "Wes Watkins Technology Center",
+  "city": "Wetumka",
+  "state": "OK",
+  "unitid": "418357",
+  "ueis": [
+   "DAPGTZ8GKAC3"
+  ]
+ },
+ "X-135276": {
+  "type": "other",
+  "name": "Lively Technical College",
+  "city": "Tallahassee",
+  "state": "FL",
+  "unitid": "135276",
+  "ueis": [
+   "DB4BLG1YSUU1"
+  ]
+ },
+ "X-245999": {
+  "type": "other",
+  "name": "Francis Tuttle Technology Center",
+  "city": "Oklahoma City",
+  "state": "OK",
+  "unitid": "245999",
+  "ueis": [
+   "DCXFY2C2HVN6"
+  ]
+ },
+ "X-132675": {
+  "type": "other",
+  "name": "North Florida Technical College",
+  "city": "Starke",
+  "state": "FL",
+  "unitid": "132675",
+  "ueis": [
+   "DD2NB92Y9GH2"
+  ]
+ },
+ "S-120023": {
+  "type": "system",
+  "name": "North Orange County Community College District",
+  "city": "Anaheim",
+  "state": "CA",
+  "unitid": "120023",
+  "ueis": [
+   "DD2XCL6J19J8"
+  ]
+ },
+ "X-496803": {
+  "type": "other",
+  "name": "NewU University",
+  "city": "Washington",
+  "state": "DC",
+  "unitid": "496803",
+  "ueis": [
+   "DDEMNQJUXHD3"
+  ]
+ },
+ "X-183983": {
+  "type": "other",
+  "name": "Adult and Continuing Education-BCTS",
+  "city": "Hackensack",
+  "state": "NJ",
+  "unitid": "183983",
+  "ueis": [
+   "DDN4KVLM44P3"
+  ]
+ },
+ "S-454218": {
+  "type": "system",
+  "name": "Chamberlain University-Administrative Office",
+  "city": "Chicago",
+  "state": "IL",
+  "unitid": "454218",
+  "ueis": [
+   "DEB5DLG1LT65"
+  ]
+ },
+ "X-493585": {
+  "type": "other",
+  "name": "Health and Technology Training Institute",
+  "city": "Philadelphia",
+  "state": "PA",
+  "unitid": "493585",
+  "ueis": [
+   "DFEAKFXMPZH3"
+  ]
+ },
+ "X-215594": {
+  "type": "other",
+  "name": "Reading Hospital School of Health Sciences",
+  "city": "Reading",
+  "state": "PA",
+  "unitid": "215594",
+  "ueis": [
+   "DJANMH9X9NA7"
+  ]
+ },
+ "X-365213": {
+  "type": "other",
+  "name": "Autry Technology Center",
+  "city": "Enid",
+  "state": "OK",
+  "unitid": "365213",
+  "ueis": [
+   "DKBWK2HHDP88"
+  ]
+ },
+ "X-417910": {
+  "type": "other",
+  "name": "Veeb Nassau County School of Practical Nursing",
+  "city": "Hicksville",
+  "state": "NY",
+  "unitid": "417910",
+  "ueis": [
+   "DMJQEF9VK8E7"
+  ]
+ },
+ "X-365198": {
+  "type": "other",
+  "name": "Southern Oklahoma Technology Center",
+  "city": "Ardmore",
+  "state": "OK",
+  "unitid": "365198",
+  "ueis": [
+   "DMKLFCTK7JF5"
+  ]
+ },
+ "X-404718": {
+  "type": "other",
+  "name": "Brillare Beauty Institute",
+  "city": "Cleveland",
+  "state": "TN",
+  "unitid": "404718",
+  "ueis": [
+   "DS6MNKRK1FF1"
+  ]
+ },
+ "X-490090": {
+  "type": "other",
+  "name": "Gadsden Technical College",
+  "city": "Quincy",
+  "state": "FL",
+  "unitid": "490090",
+  "ueis": [
+   "DTQ9K7799877"
+  ]
+ },
+ "X-201803": {
+  "type": "other",
+  "name": "Choffin Career  and Technical Center",
+  "city": "Youngstown",
+  "state": "OH",
+  "unitid": "201803",
+  "ueis": [
+   "DUPXNKL4HSL7"
+  ]
+ },
+ "X-475723": {
+  "type": "other",
+  "name": "Tooele Technical College",
+  "city": "Tooele",
+  "state": "UT",
+  "unitid": "475723",
+  "ueis": [
+   "DZAPW6FHFTW3"
+  ]
+ },
+ "X-201496": {
+  "type": "other",
+  "name": "Butler Technology and Career Development Schools",
+  "city": "Monroe",
+  "state": "OH",
+  "unitid": "201496",
+  "ueis": [
+   "DZSGNGJ49MZ5"
+  ]
+ },
+ "X-430908": {
+  "type": "other",
+  "name": "Clearfield County Career and Technology Center",
+  "city": "Clearfield",
+  "state": "PA",
+  "unitid": "430908",
+  "ueis": [
+   "Dg4EJBS533C5"
+  ]
+ },
+ "X-417655": {
+  "type": "other",
+  "name": "Warrensburg Area Career Center",
+  "city": "Warrensburg",
+  "state": "MO",
+  "unitid": "417655",
+  "ueis": [
+   "E1LKSANL1ML7"
+  ]
+ },
+ "X-233480": {
+  "type": "other",
+  "name": "Bon Secours St Mary's Hospital School of Medical Imaging",
+  "city": "Richmond",
+  "state": "VA",
+  "unitid": "233480",
+  "ueis": [
+   "E2LMNWDHU561"
+  ]
+ },
+ "S-222497": {
+  "type": "system",
+  "name": "Alamo Community College District Central Office",
+  "city": "San Antonio",
+  "state": "TX",
+  "unitid": "222497",
+  "ueis": [
+   "E4SNX6XX5RV7"
+  ]
+ },
+ "X-457943": {
+  "type": "other",
+  "name": "Somerset County Technology Center",
+  "city": "Somerset",
+  "state": "PA",
+  "unitid": "457943",
+  "ueis": [
+   "E6MHM7LNJZH4"
+  ]
+ },
+ "X-154022": {
+  "type": "other",
+  "name": "The University of Arizona Global Campus",
+  "city": "Chandler",
+  "state": "AZ",
+  "unitid": "154022",
+  "ueis": [
+   "E7CWEYGA1LQ5"
+  ]
+ },
+ "X-392354": {
+  "type": "other",
+  "name": "School of Professional Horticulture, New York Botanical Garden",
+  "city": "Bronx",
+  "state": "NY",
+  "unitid": "392354",
+  "ueis": [
+   "E7S2Q4L89F44"
+  ]
+ },
+ "X-418427": {
+  "type": "other",
+  "name": "Chester County Intermediate Unit",
+  "city": "Downingtown",
+  "state": "PA",
+  "unitid": "418427",
+  "ueis": [
+   "E8HJLHRUGYT8"
+  ]
+ },
+ "X-220251": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Harriman",
+  "city": "Harriman",
+  "state": "TN",
+  "unitid": "220251",
+  "ueis": [
+   "EG9EL1B3ZDB9"
+  ]
+ },
+ "X-165608": {
+  "type": "other",
+  "name": "Diman Regional Technical Institute",
+  "city": "Fall River",
+  "state": "MA",
+  "unitid": "165608",
+  "ueis": [
+   "EK6PF5H6ZAV5"
+  ]
+ },
+ "X-205090": {
+  "type": "other",
+  "name": "Firelands Regional Medical Center School of Nursing",
+  "city": "Sandusky",
+  "state": "OH",
+  "unitid": "205090",
+  "ueis": [
+   "ELNNXPJJ9LF3"
+  ]
+ },
+ "S-242060": {
+  "type": "system",
+  "name": "Sistema Universitario Ana G. Mendez",
+  "city": "Rio Piedras",
+  "state": "PR",
+  "unitid": "242060",
+  "ueis": [
+   "EM5GRM3KM1N6"
+  ]
+ },
+ "X-221333": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Pulaski",
+  "city": "Pulaski",
+  "state": "TN",
+  "unitid": "221333",
+  "ueis": [
+   "EMLME5AV4DD9"
+  ]
+ },
+ "X-434362": {
+  "type": "other",
+  "name": "Northwest HVAC/R Training Center",
+  "city": "Spokane",
+  "state": "WA",
+  "unitid": "434362",
+  "ueis": [
+   "EQF5U5Y9G4N9"
+  ]
+ },
+ "X-418612": {
+  "type": "other",
+  "name": "Hazleton Area Career Center",
+  "city": "Hazle TWP.",
+  "state": "PA",
+  "unitid": "418612",
+  "ueis": [
+   "ERLGYNN27SZ5"
+  ]
+ },
+ "X-375683": {
+  "type": "other",
+  "name": "Gordon Cooper Technology Center",
+  "city": "Shawnee",
+  "state": "OK",
+  "unitid": "375683",
+  "ueis": [
+   "ES4FJW4ASNN8"
+  ]
+ },
+ "X-417646": {
+  "type": "other",
+  "name": "Saline County Career Center",
+  "city": "Marshall",
+  "state": "MO",
+  "unitid": "417646",
+  "ueis": [
+   "EUNLEBQL7X19"
+  ]
+ },
+ "X-213622": {
+  "type": "other",
+  "name": "UPMC St. Margaret School of Nursing",
+  "city": "Pittsburgh",
+  "state": "PA",
+  "unitid": "213622",
+  "ueis": [
+   "EX3SFRMLEUL6"
+  ]
+ },
+ "X-389745": {
+  "type": "other",
+  "name": "Mercaz Hatorah of Belle Harbor",
+  "city": "Belle Harbor",
+  "state": "NY",
+  "unitid": "389745",
+  "ueis": [
+   "EXLRS9JEBC67"
+  ]
+ },
+ "X-379621": {
+  "type": "other",
+  "name": "Madison Oneida BOCES-Practical Nursing Program",
+  "city": "Verona",
+  "state": "NY",
+  "unitid": "379621",
+  "ueis": [
+   "F2NYCNBK2GJ1"
+  ]
+ },
+ "X-411754": {
+  "type": "other",
+  "name": "Cleveland Clinic School of Health Professions Radiologic Technology Program",
+  "city": "Beachwood",
+  "state": "OH",
+  "unitid": "411754",
+  "ueis": [
+   "F4QTU4A961N4"
+  ]
+ },
+ "S-182519": {
+  "type": "system",
+  "name": "Nevada System of Higher Education-System Office",
+  "city": "Reno",
+  "state": "NV",
+  "unitid": "182519",
+  "ueis": [
+   "F995DBS4SRN3",
+   "MV1JFXA4S621",
+   "ZBSLB5G5DST4"
+  ]
+ },
+ "S-114831": {
+  "type": "system",
+  "name": "Foothill-De Anza Community College District",
+  "city": "Los Altos Hills",
+  "state": "CA",
+  "unitid": "114831",
+  "ueis": [
+   "F9AQH2LNQ6B3"
+  ]
+ },
+ "S-485467": {
+  "type": "system",
+  "name": "Carrington College-Administrative Office",
+  "city": "Sacramento",
+  "state": "CA",
+  "unitid": "485467",
+  "ueis": [
+   "F9KFNU9NB4R8"
+  ]
+ },
+ "X-488934": {
+  "type": "other",
+  "name": "Tulsa Technology Center",
+  "city": "Tulsa",
+  "state": "OK",
+  "unitid": "488934",
+  "ueis": [
+   "FBBDFXN4C9J3"
+  ]
+ },
+ "X-196440": {
+  "type": "other",
+  "name": "Talmudical Institute of Upstate New York",
+  "city": "Rochester",
+  "state": "NY",
+  "unitid": "196440",
+  "ueis": [
+   "FC4KK7JRDGP5"
+  ]
+ },
+ "X-375373": {
+  "type": "other",
+  "name": "Knox County Career Center",
+  "city": "Mount Vernon",
+  "state": "OH",
+  "unitid": "375373",
+  "ueis": [
+   "FGY2TV666BC9"
+  ]
+ },
+ "X-191940": {
+  "type": "other",
+  "name": "Isabella Graham Hart School of Practical Nursing",
+  "city": "Rochester",
+  "state": "NY",
+  "unitid": "191940",
+  "ueis": [
+   "FJWLMDEML1Y1"
+  ]
+ },
+ "X-221281": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Henry/Carroll",
+  "city": "Paris",
+  "state": "TN",
+  "unitid": "221281",
+  "ueis": [
+   "FMAAKH5KGJS1"
+  ]
+ },
+ "X-417628": {
+  "type": "other",
+  "name": "Kirksville Area Technical Center",
+  "city": "Kirksville",
+  "state": "MO",
+  "unitid": "417628",
+  "ueis": [
+   "FN18HA7MVHX4"
+  ]
+ },
+ "X-431558": {
+  "type": "other",
+  "name": "Cape Coral Technical College",
+  "city": "Cape Coral",
+  "state": "FL",
+  "unitid": "431558",
+  "ueis": [
+   "FNEXH7MVBH64"
+  ]
+ },
+ "X-145354": {
+  "type": "other",
+  "name": "Graham Hospital School of Nursing",
+  "city": "Canton",
+  "state": "IL",
+  "unitid": "145354",
+  "ueis": [
+   "FNKCU1BCWW96"
+  ]
+ },
+ "X-420468": {
+  "type": "other",
+  "name": "Western Suffolk BOCES",
+  "city": "Northport",
+  "state": "NY",
+  "unitid": "420468",
+  "ueis": [
+   "FPRDRSDZLRF4"
+  ]
+ },
+ "S-149240": {
+  "type": "system",
+  "name": "Southern Illinois University-System Office",
+  "city": "Carbondale",
+  "state": "IL",
+  "unitid": "149240",
+  "ueis": [
+   "FQA2ZWJED224"
+  ]
+ },
+ "X-135522": {
+  "type": "other",
+  "name": "Traviss Technical College",
+  "city": "Lakeland",
+  "state": "FL",
+  "unitid": "135522",
+  "ueis": [
+   "FQCMCB39LZM6"
+  ]
+ },
+ "X-451583": {
+  "type": "other",
+  "name": "Dixie Technical College",
+  "city": "Saint George",
+  "state": "UT",
+  "unitid": "451583",
+  "ueis": [
+   "FQLGTGFJTUJ7"
+  ]
+ },
+ "X-112367": {
+  "type": "other",
+  "name": "Clovis Adult Education",
+  "city": "Clovis",
+  "state": "CA",
+  "unitid": "112367",
+  "ueis": [
+   "FVRJBDDSM7C8"
+  ]
+ },
+ "S-122320": {
+  "type": "system",
+  "name": "San Diego Community College District-District Office",
+  "city": "San Diego",
+  "state": "CA",
+  "unitid": "122320",
+  "ueis": [
+   "FWU8SBRH58K6"
+  ]
+ },
+ "X-201681": {
+  "type": "other",
+  "name": "Central School of Practical Nursing",
+  "city": "Independence",
+  "state": "OH",
+  "unitid": "201681",
+  "ueis": [
+   "FXAJV5LFVXM9"
+  ]
+ },
+ "X-135267": {
+  "type": "other",
+  "name": "Fort Myers Technical College",
+  "city": "Fort Myers",
+  "state": "FL",
+  "unitid": "135267",
+  "ueis": [
+   "FXDXBW2RR5X5"
+  ]
+ },
+ "X-443322": {
+  "type": "other",
+  "name": "Valley Grande Institute for Academic Studies",
+  "city": "Weslaco",
+  "state": "TX",
+  "unitid": "443322",
+  "ueis": [
+   "FYHJYBJJMLZ5"
+  ]
+ },
+ "X-369419": {
+  "type": "other",
+  "name": "Erwin Technical College",
+  "city": "Tampa",
+  "state": "FL",
+  "unitid": "369419",
+  "ueis": [
+   "FZDJN2ZBU6C3"
+  ]
+ },
+ "X-237905": {
+  "type": "other",
+  "name": "West Virginia University Hospital Departments of Rad Tech and Nutrition",
+  "city": "Morgantown",
+  "state": "WV",
+  "unitid": "237905",
+  "ueis": [
+   "G358DGNZGEY6"
+  ]
+ },
+ "X-418515": {
+  "type": "other",
+  "name": "Lenape Technical School Practical Nursing Program",
+  "city": "Ford City",
+  "state": "PA",
+  "unitid": "418515",
+  "ueis": [
+   "G3QPMLJW3MP4"
+  ]
+ },
+ "X-237145": {
+  "type": "other",
+  "name": "B M Spurr School of Practical Nursing",
+  "city": "Glen Dale",
+  "state": "WV",
+  "unitid": "237145",
+  "ueis": [
+   "G45LMGK9U5K5"
+  ]
+ },
+ "X-484233": {
+  "type": "other",
+  "name": "Tri-Community Adult Education",
+  "city": "Covina",
+  "state": "CA",
+  "unitid": "484233",
+  "ueis": [
+   "G47JBM3FLAY9"
+  ]
+ },
+ "X-498623": {
+  "type": "other",
+  "name": "Justice University",
+  "city": "Chandler",
+  "state": "AZ",
+  "unitid": "498623",
+  "ueis": [
+   "G6KDL5MXNBL4"
+  ]
+ },
+ "X-439622": {
+  "type": "other",
+  "name": "Erie 1 BOCES",
+  "city": "West Seneca",
+  "state": "NY",
+  "unitid": "439622",
+  "ueis": [
+   "G8LEYJKNNAF7"
+  ]
+ },
+ "X-221430": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology Crump",
+  "city": "Crump",
+  "state": "TN",
+  "unitid": "221430",
+  "ueis": [
+   "G8M3K7JDLFZ1"
+  ]
+ },
+ "X-486150": {
+  "type": "other",
+  "name": "Treasure Coast Technical College",
+  "city": "Vero Beach",
+  "state": "FL",
+  "unitid": "486150",
+  "ueis": [
+   "GAVNCQQF2H73"
+  ]
+ },
+ "X-237729": {
+  "type": "other",
+  "name": "Academy of Careers and Technology",
+  "city": "Beckley",
+  "state": "WV",
+  "unitid": "237729",
+  "ueis": [
+   "GB7QJAR6UHM3"
+  ]
+ },
+ "X-499875": {
+  "type": "other",
+  "name": "Mosdos Yaakov V'Yisroel",
+  "city": "Lakewood",
+  "state": "NJ",
+  "unitid": "499875",
+  "ueis": [
+   "GF25MGA2MAA6"
+  ]
+ },
+ "X-457873": {
+  "type": "other",
+  "name": "Four County Career Center",
+  "city": "Archbold",
+  "state": "OH",
+  "unitid": "457873",
+  "ueis": [
+   "GF2GABLNYHK8"
+  ]
+ },
+ "X-457350": {
+  "type": "other",
+  "name": "Florida School of Traditional Midwifery",
+  "city": "Gainesville",
+  "state": "FL",
+  "unitid": "457350",
+  "ueis": [
+   "GF7MRNKEYS85"
+  ]
+ },
+ "X-137713": {
+  "type": "other",
+  "name": "Riveroak Technical College",
+  "city": "Live Oak",
+  "state": "FL",
+  "unitid": "137713",
+  "ueis": [
+   "GK7KWESA8AP2"
+  ]
+ },
+ "X-442976": {
+  "type": "other",
+  "name": "Brighton Center's Center for Employment Training",
+  "city": "Newport",
+  "state": "KY",
+  "unitid": "442976",
+  "ueis": [
+   "GMLQZPNJPHK3"
+  ]
+ },
+ "X-496399": {
+  "type": "other",
+  "name": "Agape College of Business and Science",
+  "city": "Fresno",
+  "state": "CA",
+  "unitid": "496399",
+  "ueis": [
+   "GNAUDYZBSKN3"
+  ]
+ },
+ "X-194718": {
+  "type": "other",
+  "name": "Rabbinical Seminary Mkor Chaim",
+  "city": "Lakewood",
+  "state": "NJ",
+  "unitid": "194718",
+  "ueis": [
+   "GND2A7FK4X21"
+  ]
+ },
+ "X-364964": {
+  "type": "other",
+  "name": "Center for Instruction, Technology & Innovation",
+  "city": "Mexico",
+  "state": "NY",
+  "unitid": "364964",
+  "ueis": [
+   "GNJCTTNSBS59"
+  ]
+ },
+ "X-500342": {
+  "type": "other",
+  "name": "EDvance College",
+  "city": "San Francisco",
+  "state": "CA",
+  "unitid": "500342",
+  "ueis": [
+   "GNQAJKQW2QB1"
+  ]
+ },
+ "X-431105": {
+  "type": "other",
+  "name": "Dutchess BOCES-Practical Nursing Program",
+  "city": "Poughkeepsie",
+  "state": "NY",
+  "unitid": "431105",
+  "ueis": [
+   "GNQGKNTDVDS6"
+  ]
+ },
+ "X-137865": {
+  "type": "other",
+  "name": "Tom P. Haney Technical College",
+  "city": "Panama City",
+  "state": "FL",
+  "unitid": "137865",
+  "ueis": [
+   "GQ9GHKTMSBG3"
+  ]
+ },
+ "X-226675": {
+  "type": "other",
+  "name": "Covenant School of Nursing and Allied Health",
+  "city": "Lubbock",
+  "state": "TX",
+  "unitid": "226675",
+  "ueis": [
+   "GRRVQVJZEJU4"
+  ]
+ },
+ "X-418223": {
+  "type": "other",
+  "name": "Northern Career Institute",
+  "city": "Eastlake",
+  "state": "OH",
+  "unitid": "418223",
+  "ueis": [
+   "GT6ZL8LNQH93"
+  ]
+ },
+ "X-494472": {
+  "type": "other",
+  "name": "Evvaylois Academy School of Beauty",
+  "city": "Brenham",
+  "state": "TX",
+  "unitid": "494472",
+  "ueis": [
+   "GV5VCJKYPAF7"
+  ]
+ },
+ "X-202949": {
+  "type": "other",
+  "name": "Great Oaks Career Campuses",
+  "city": "Cincinnati",
+  "state": "OH",
+  "unitid": "202949",
+  "ueis": [
+   "GWBNUA33LJS8"
+  ]
+ },
+ "X-365374": {
+  "type": "other",
+  "name": "Canadian Valley Technology Center",
+  "city": "El Reno",
+  "state": "OK",
+  "unitid": "365374",
+  "ueis": [
+   "GWEEAD251KC1"
+  ]
+ },
+ "S-157854": {
+  "type": "system",
+  "name": "Kentucky Community and Technical College System",
+  "city": "Versailles",
+  "state": "KY",
+  "unitid": "157854",
+  "ueis": [
+   "GWSXAJZALU69"
+  ]
+ },
+ "X-219994": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Dickson",
+  "city": "Dickson",
+  "state": "TN",
+  "unitid": "219994",
+  "ueis": [
+   "GXKMLVDE9EK8"
+  ]
+ },
+ "X-417886": {
+  "type": "other",
+  "name": "Jefferson Lewis BOCES-Practical Nursing Program",
+  "city": "Watertown",
+  "state": "NY",
+  "unitid": "417886",
+  "ueis": [
+   "GXMSLAQSP9L6"
+  ]
+ },
+ "X-137023": {
+  "type": "other",
+  "name": "First Coast Technical College",
+  "city": "Saint Augustine",
+  "state": "FL",
+  "unitid": "137023",
+  "ueis": [
+   "H13LBHBADR31"
+  ]
+ },
+ "X-206905": {
+  "type": "other",
+  "name": "Pontotoc Technology Center",
+  "city": "Ada",
+  "state": "OK",
+  "unitid": "206905",
+  "ueis": [
+   "H1JMLHFN47E1"
+  ]
+ },
+ "X-138488": {
+  "type": "other",
+  "name": "Orange Technical College-East Campus",
+  "city": "Orlando",
+  "state": "FL",
+  "unitid": "138488",
+  "ueis": [
+   "H251LNPSTB15"
+  ]
+ },
+ "X-500634": {
+  "type": "other",
+  "name": "Come and Behold Women's Seminary",
+  "city": "Albuquerque",
+  "state": "NM",
+  "unitid": "500634",
+  "ueis": [
+   "H5Q5KTRVSZN5"
+  ]
+ },
+ "S-160533": {
+  "type": "system",
+  "name": "Southern University-Board and System",
+  "city": "Baton Rouge",
+  "state": "LA",
+  "unitid": "160533",
+  "ueis": []
+ },
+ "X-135179": {
+  "type": "other",
+  "name": "Lake Technical College",
+  "city": "Eustis",
+  "state": "FL",
+  "unitid": "135179",
+  "ueis": [
+   "H7N2W7LLUMV7"
+  ]
+ },
+ "X-202985": {
+  "type": "other",
+  "name": "Hannah E Mullins School of Practical Nursing",
+  "city": "Salem",
+  "state": "OH",
+  "unitid": "202985",
+  "ueis": [
+   "H82BNRUMPL24"
+  ]
+ },
+ "X-383525": {
+  "type": "other",
+  "name": "Erie 2 Chautauqua Cattaraugus BOCES-Practical Nursing Program",
+  "city": "Angola",
+  "state": "NY",
+  "unitid": "383525",
+  "ueis": [
+   "H85FXLMGUFX5"
+  ]
+ },
+ "X-367875": {
+  "type": "other",
+  "name": "H W Brewster Technical College",
+  "city": "Tampa",
+  "state": "FL",
+  "unitid": "367875",
+  "ueis": [
+   "H9JDLNVBCDC9"
+  ]
+ },
+ "X-136303": {
+  "type": "other",
+  "name": "Orange Technical College",
+  "city": "Orlando",
+  "state": "FL",
+  "unitid": "136303",
+  "ueis": [
+   "HADXX5W38854"
+  ]
+ },
+ "S-112817": {
+  "type": "system",
+  "name": "Contra Costa Community College District Office",
+  "city": "Martinez",
+  "state": "CA",
+  "unitid": "112817",
+  "ueis": [
+   "HBK8SBCQJ8X5"
+  ]
+ },
+ "X-365763": {
+  "type": "other",
+  "name": "Morris County Vocational School District",
+  "city": "Denville",
+  "state": "NJ",
+  "unitid": "365763",
+  "ueis": [
+   "HEA7B7LM5LB5"
+  ]
+ },
+ "X-431196": {
+  "type": "other",
+  "name": "Genesee Valley BOCES-Practical Nursing Program",
+  "city": "Batavia",
+  "state": "NY",
+  "unitid": "431196",
+  "ueis": [
+   "HF87RH8QRK47"
+  ]
+ },
+ "X-417868": {
+  "type": "other",
+  "name": "Clinton Essex Warren Washington BOCES",
+  "city": "Plattsburgh",
+  "state": "NY",
+  "unitid": "417868",
+  "ueis": [
+   "HFESQGKTAT33"
+  ]
+ },
+ "S-228732": {
+  "type": "system",
+  "name": "Texas A & M University-System Office",
+  "city": "College Station",
+  "state": "TX",
+  "unitid": "228732",
+  "ueis": [
+   "HH6VX5XDL284| GGFBMCXBJLY1"
+  ]
+ },
+ "X-500829": {
+  "type": "other",
+  "name": "Northpoint College",
+  "city": "Wyoming",
+  "state": "MI",
+  "unitid": "500829",
+  "ueis": [
+   "HHZRGM2F1DQ8"
+  ]
+ },
+ "X-496645": {
+  "type": "other",
+  "name": "Burlington County Institute of Technology-Adult Education",
+  "city": "Westampton",
+  "state": "NJ",
+  "unitid": "496645",
+  "ueis": [
+   "HJDJZN33P321"
+  ]
+ },
+ "X-365240": {
+  "type": "other",
+  "name": "Greene County Career Center",
+  "city": "Xenia",
+  "state": "OH",
+  "unitid": "365240",
+  "ueis": [
+   "HJSTLML8P9H3"
+  ]
+ },
+ "X-418588": {
+  "type": "other",
+  "name": "Northern Tier Career Center",
+  "city": "Towanda",
+  "state": "PA",
+  "unitid": "418588",
+  "ueis": [
+   "HK43LJ1H6TP5"
+  ]
+ },
+ "X-418001": {
+  "type": "other",
+  "name": "Wayne Finger Lakes BOCES-Practical Nursing Program",
+  "city": "Newark",
+  "state": "NY",
+  "unitid": "418001",
+  "ueis": [
+   "HKTYFXTAQRW8"
+  ]
+ },
+ "X-495110": {
+  "type": "other",
+  "name": "Marine Trades Institute",
+  "city": "Cedarville",
+  "state": "MI",
+  "unitid": "495110",
+  "ueis": [
+   "HLB3KY31VMS6"
+  ]
+ },
+ "X-383330": {
+  "type": "other",
+  "name": "Sandusky Career Center",
+  "city": "Sandusky",
+  "state": "OH",
+  "unitid": "383330",
+  "ueis": [
+   "HLZMDB2M7E83"
+  ]
+ },
+ "X-500722": {
+  "type": "other",
+  "name": "Ideal Institute of Technology",
+  "city": "Pleasantville",
+  "state": "NJ",
+  "unitid": "500722",
+  "ueis": [
+   "HNE3NMWMN694"
+  ]
+ },
+ "X-499538": {
+  "type": "other",
+  "name": "Puerto Rico Advance Institute",
+  "city": "Bayamon",
+  "state": "PR",
+  "unitid": "499538",
+  "ueis": [
+   "HNLRH73CAD66"
+  ]
+ },
+ "X-262466": {
+  "type": "other",
+  "name": "Dr. Ida Rolf Institute",
+  "city": "Boulder",
+  "state": "CO",
+  "unitid": "262466",
+  "ueis": [
+   "HTK5VWWF7CV3"
+  ]
+ },
+ "X-490489": {
+  "type": "other",
+  "name": "Metro Detroit Barber College",
+  "city": "Detroit",
+  "state": "MI",
+  "unitid": "490489",
+  "ueis": [
+   "HWEDGBCUCVL5"
+  ]
+ },
+ "X-500740": {
+  "type": "other",
+  "name": "Congregation YMH",
+  "city": "Brooklyn",
+  "state": "NY",
+  "unitid": "500740",
+  "ueis": [
+   "HWM3ZBQHJ864"
+  ]
+ },
+ "S-125019": {
+  "type": "system",
+  "name": "Ventura County Community College System Office",
+  "city": "Camarillo",
+  "state": "CA",
+  "unitid": "125019",
+  "ueis": [
+   "J2LAM4VALLG4"
+  ]
+ },
+ "X-486202": {
+  "type": "other",
+  "name": "Mingo Extended Learning Center",
+  "city": "Delbarton",
+  "state": "WV",
+  "unitid": "486202",
+  "ueis": [
+   "J4G2Q7Y8SFM6"
+  ]
+ },
+ "X-449357": {
+  "type": "other",
+  "name": "Beaumont Adult School",
+  "city": "Beaumont",
+  "state": "CA",
+  "unitid": "449357",
+  "ueis": [
+   "J5Q3AK6F1WN3"
+  ]
+ },
+ "X-167871": {
+  "type": "other",
+  "name": "Southeastern Technical Institute",
+  "city": "South Easton",
+  "state": "MA",
+  "unitid": "167871",
+  "ueis": [
+   "J6G1LRK2UCG3"
+  ]
+ },
+ "X-475705": {
+  "type": "other",
+  "name": "Annenberg School of Nursing",
+  "city": "Reseda",
+  "state": "CA",
+  "unitid": "475705",
+  "ueis": [
+   "J6KUCHXVCQC1"
+  ]
+ },
+ "X-177931": {
+  "type": "other",
+  "name": "Lex La-Ray Technical Center",
+  "city": "Lexington",
+  "state": "MO",
+  "unitid": "177931",
+  "ueis": [
+   "J7MNM44CLHH3"
+  ]
+ },
+ "X-498906": {
+  "type": "other",
+  "name": "Yeshivas Sanz Klauzenburg",
+  "city": "Brooklyn",
+  "state": "NY",
+  "unitid": "498906",
+  "ueis": [
+   "J8ZQSVB5FNG8"
+  ]
+ },
+ "X-102711": {
+  "type": "other",
+  "name": "Alaska Vocational Technical Center",
+  "city": "Seward",
+  "state": "AK",
+  "unitid": "102711",
+  "ueis": [
+   "JAGMZ8UFLZR7|MTBJSJRGJTA8"
+  ]
+ },
+ "X-153542": {
+  "type": "other",
+  "name": "UnityPoint Health-Des Moines School of Radiologic Technology",
+  "city": "Des Moines",
+  "state": "IA",
+  "unitid": "153542",
+  "ueis": [
+   "JAK1R46G4FP6"
+  ]
+ },
+ "X-230676": {
+  "type": "other",
+  "name": "Uintah Basin Technical College",
+  "city": "Roosevelt",
+  "state": "UT",
+  "unitid": "230676",
+  "ueis": [
+   "JAVSKLS5FQV5"
+  ]
+ },
+ "S-409379": {
+  "type": "system",
+  "name": "Tennessee Board of Regents",
+  "city": "Nashville",
+  "state": "TN",
+  "unitid": "409379",
+  "ueis": [
+   "JBG7T7RXQ2B7"
+  ]
+ },
+ "X-407832": {
+  "type": "other",
+  "name": "Warren County Career Center",
+  "city": "Lebanon",
+  "state": "OH",
+  "unitid": "407832",
+  "ueis": [
+   "JBK2HM6JGQP7"
+  ]
+ },
+ "X-418029": {
+  "type": "other",
+  "name": "Washington Saratoga Warren Hamilton Essex BOCES-Practical Nursing Program",
+  "city": "Hudson Falls",
+  "state": "NY",
+  "unitid": "418029",
+  "ueis": [
+   "JBX1RLUF2UL9"
+  ]
+ },
+ "X-496618": {
+  "type": "other",
+  "name": "National Institute for Medical Assistant Advancement (NIMAA)",
+  "city": "Denver",
+  "state": "CO",
+  "unitid": "496618",
+  "ueis": [
+   "JCTLTYRUTZK9"
+  ]
+ },
+ "X-418320": {
+  "type": "other",
+  "name": "Mid-America Technology Center",
+  "city": "Wayne",
+  "state": "OK",
+  "unitid": "418320",
+  "ueis": [
+   "JDL5ZX9M71Q5"
+  ]
+ },
+ "X-136659": {
+  "type": "other",
+  "name": "Radford M Locklin Technical College",
+  "city": "Milton",
+  "state": "FL",
+  "unitid": "136659",
+  "ueis": [
+   "JG4LLWLFK4M7"
+  ]
+ },
+ "X-485342": {
+  "type": "other",
+  "name": "Aparicio-Levy Technical College",
+  "city": "Tampa",
+  "state": "FL",
+  "unitid": "485342",
+  "ueis": [
+   "JGALFZBNVBC7"
+  ]
+ },
+ "S-404480": {
+  "type": "system",
+  "name": "University System of Maryland-Research Centers",
+  "city": "Baltimore",
+  "state": "MD",
+  "unitid": "404480",
+  "ueis": []
+ },
+ "X-221616": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Jackson",
+  "city": "Jackson",
+  "state": "TN",
+  "unitid": "221616",
+  "ueis": [
+   "JK1HC6L71BR9"
+  ]
+ },
+ "X-498739": {
+  "type": "other",
+  "name": "Lehigh Career & Technical Institute",
+  "city": "Schnecksville",
+  "state": "PA",
+  "unitid": "498739",
+  "ueis": [
+   "JMV4MMABY9F4"
+  ]
+ },
+ "X-431716": {
+  "type": "other",
+  "name": "Ocean County Vocational-Technical School",
+  "city": "Toms River",
+  "state": "NJ",
+  "unitid": "431716",
+  "ueis": [
+   "JN3JASKDJFU9"
+  ]
+ },
+ "X-172422": {
+  "type": "other",
+  "name": "Michigan Career and Technical Institute",
+  "city": "Plainwell",
+  "state": "MI",
+  "unitid": "172422",
+  "ueis": [
+   "JQX7W1QTQZY6"
+  ]
+ },
+ "X-219392": {
+  "type": "other",
+  "name": "Sanford Medical Center",
+  "city": "Sioux Falls",
+  "state": "SD",
+  "unitid": "219392",
+  "ueis": [
+   "JREYSSEK3K89"
+  ]
+ },
+ "X-419031": {
+  "type": "other",
+  "name": "United Technical Center",
+  "city": "Clarksburg",
+  "state": "WV",
+  "unitid": "419031",
+  "ueis": [
+   "JV8ZRBZJTZG1"
+  ]
+ },
+ "X-419226": {
+  "type": "other",
+  "name": "Marion Technical College",
+  "city": "Ocala",
+  "state": "FL",
+  "unitid": "419226",
+  "ueis": [
+   "JVZLJKPB5R97"
+  ]
+ },
+ "S-110501": {
+  "type": "system",
+  "name": "California State University-Chancellors Office",
+  "city": "Long Beach",
+  "state": "CA",
+  "unitid": "110501",
+  "ueis": [
+   "JW7YN4NDAHC1"
+  ]
+ },
+ "X-237543": {
+  "type": "other",
+  "name": "Mercer County Technical Education Center",
+  "city": "Princeton",
+  "state": "WV",
+  "unitid": "237543",
+  "ueis": [
+   "K2FKPMNZYRX6"
+  ]
+ },
+ "S-175999": {
+  "type": "system",
+  "name": "Board of Trustees-Mississippi State Institutions of Higher Learning",
+  "city": "Jackson",
+  "state": "MS",
+  "unitid": "175999",
+  "ueis": [
+   "K2GKE2AHEKU3"
+  ]
+ },
+ "X-498386": {
+  "type": "other",
+  "name": "Boone Career and Technical Center",
+  "city": "Foster",
+  "state": "WV",
+  "unitid": "498386",
+  "ueis": [
+   "K2UEJUZH4TN9"
+  ]
+ },
+ "X-177436": {
+  "type": "other",
+  "name": "Four Rivers Career Center",
+  "city": "Washington",
+  "state": "MO",
+  "unitid": "177436",
+  "ueis": [
+   "K4MWZ7WYCHY6"
+  ]
+ },
+ "X-409120": {
+  "type": "other",
+  "name": "Franklin Technology Center Adult Education",
+  "city": "Joplin",
+  "state": "MO",
+  "unitid": "409120",
+  "ueis": [
+   "K6Y5KKY6N8H5"
+  ]
+ },
+ "X-498809": {
+  "type": "other",
+  "name": "Yeshiva of Kasho",
+  "city": "Brooklyn",
+  "state": "NY",
+  "unitid": "498809",
+  "ueis": [
+   "KA6WEH83PUY6"
+  ]
+ },
+ "X-487889": {
+  "type": "other",
+  "name": "Regional Center for Border Health",
+  "city": "Somerton",
+  "state": "AZ",
+  "unitid": "487889",
+  "ueis": [
+   "KBEJL5YSFUU4"
+  ]
+ },
+ "S-117900": {
+  "type": "system",
+  "name": "Los Rios Community College District Office",
+  "city": "Sacramento",
+  "state": "CA",
+  "unitid": "117900",
+  "ueis": [
+   "KBQWP4JGA355"
+  ]
+ },
+ "X-418348": {
+  "type": "other",
+  "name": "Eastern Oklahoma County Technology Center",
+  "city": "Choctaw",
+  "state": "OK",
+  "unitid": "418348",
+  "ueis": [
+   "KFLLH77C8EC3"
+  ]
+ },
+ "X-364627": {
+  "type": "other",
+  "name": "Pioneer Technology Center",
+  "city": "Ponca City",
+  "state": "OK",
+  "unitid": "364627",
+  "ueis": [
+   "KGK4SMWF3FG6"
+  ]
+ },
+ "X-500810": {
+  "type": "other",
+  "name": "Bet Midrash Ohel Torah",
+  "city": "Lakewood",
+  "state": "NJ",
+  "unitid": "500810",
+  "ueis": [
+   "KHQ6UPPD9P59"
+  ]
+ },
+ "X-248633": {
+  "type": "other",
+  "name": "Franklin County Career and Technology Center",
+  "city": "Chambersburg",
+  "state": "PA",
+  "unitid": "248633",
+  "ueis": [
+   "KJHZTVSQF6H5"
+  ]
+ },
+ "X-216773": {
+  "type": "other",
+  "name": "Western Pennsylvania Hospital School of Nursing",
+  "city": "Pittsburgh",
+  "state": "PA",
+  "unitid": "216773",
+  "ueis": [
+   "KKFYB47MQPL3"
+  ]
+ },
+ "X-206321": {
+  "type": "other",
+  "name": "Upper Valley Career Center",
+  "city": "Piqua",
+  "state": "OH",
+  "unitid": "206321",
+  "ueis": [
+   "KKVKK19RDM84"
+  ]
+ },
+ "S-164146": {
+  "type": "system",
+  "name": "University System of Maryland",
+  "city": "Baltimore",
+  "state": "MD",
+  "unitid": "164146",
+  "ueis": [
+   "KMGEN62NKEM9"
+  ]
+ },
+ "X-481182": {
+  "type": "other",
+  "name": "Ukiah Adult School",
+  "city": "Ukiah",
+  "state": "CA",
+  "unitid": "481182",
+  "ueis": [
+   "KMKFFG3853M5"
+  ]
+ },
+ "S-103529": {
+  "type": "system",
+  "name": "University of Alaska System of Higher Education",
+  "city": "Fairbanks",
+  "state": "AK",
+  "unitid": "103529",
+  "ueis": [
+   "KNP1HA2B9BF8"
+  ]
+ },
+ "X-136491": {
+  "type": "other",
+  "name": "Pinellas Technical College-Clearwater",
+  "city": "Clearwater",
+  "state": "FL",
+  "unitid": "136491",
+  "ueis": [
+   "KVMCNVUNJ9W5"
+  ]
+ },
+ "X-175120": {
+  "type": "other",
+  "name": "Summit Academy Opportunities Industrialization Center",
+  "city": "Minneapolis",
+  "state": "MN",
+  "unitid": "175120",
+  "ueis": [
+   "KXGJA3KKGHP4"
+  ]
+ },
+ "X-219596": {
+  "type": "other",
+  "name": "TCAT Athens",
+  "city": "Athens",
+  "state": "TN",
+  "unitid": "219596",
+  "ueis": [
+   "KY1ENDC2ZTu1"
+  ]
+ },
+ "X-457624": {
+  "type": "other",
+  "name": "Southern Worcester County Regional Vocational School District",
+  "city": "Charlton",
+  "state": "MA",
+  "unitid": "457624",
+  "ueis": [
+   "KYM8PL48XX68"
+  ]
+ },
+ "X-389860": {
+  "type": "other",
+  "name": "Mid-EastCTC-Adult Education",
+  "city": "Zanesville",
+  "state": "OH",
+  "unitid": "389860",
+  "ueis": [
+   "KYNLGH71GC75"
+  ]
+ },
+ "S-105136": {
+  "type": "system",
+  "name": "Maricopa Community College System Office",
+  "city": "Tempe",
+  "state": "AZ",
+  "unitid": "105136",
+  "ueis": [
+   "L2V3TUBLQR27"
+  ]
+ },
+ "X-138497": {
+  "type": "other",
+  "name": "Withlacoochee Technical College",
+  "city": "Inverness",
+  "state": "FL",
+  "unitid": "138497",
+  "ueis": [
+   "L3C8FHRN92R8"
+  ]
+ },
+ "S-115287": {
+  "type": "system",
+  "name": "Grossmont-Cuyamaca Community College District",
+  "city": "El Cajon",
+  "state": "CA",
+  "unitid": "115287",
+  "ueis": [
+   "L3LUC5Y7B188"
+  ]
+ },
+ "X-418302": {
+  "type": "other",
+  "name": "Western Technology Center",
+  "city": "Burns Flat",
+  "state": "OK",
+  "unitid": "418302",
+  "ueis": [
+   "L3RFJPVW4DL5"
+  ]
+ },
+ "X-131830": {
+  "type": "other",
+  "name": "National Conservatory of Dramatic Arts",
+  "city": "Washington",
+  "state": "DC",
+  "unitid": "131830",
+  "ueis": [
+   "L4HMY19VHJH6"
+  ]
+ },
+ "X-371690": {
+  "type": "other",
+  "name": "Downey Adult School",
+  "city": "Downey",
+  "state": "CA",
+  "unitid": "371690",
+  "ueis": [
+   "L5AQB36TNQ56"
+  ]
+ },
+ "X-418560": {
+  "type": "other",
+  "name": "Indiana County Technology Center",
+  "city": "Indiana",
+  "state": "PA",
+  "unitid": "418560",
+  "ueis": [
+   "L6DPN8VJNDL5"
+  ]
+ },
+ "S-195827": {
+  "type": "system",
+  "name": "SUNY-System Office",
+  "city": "Albany",
+  "state": "NY",
+  "unitid": "195827",
+  "ueis": [
+   "L7SMZTNG7JW3",
+   "GMZUKXFDJMA9"
+  ]
+ },
+ "X-488086": {
+  "type": "other",
+  "name": "Northwest Suburban College",
+  "city": "Rollng Meadows",
+  "state": "IL",
+  "unitid": "488086",
+  "ueis": [
+   "L972L68MJTN6"
+  ]
+ },
+ "X-220394": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Jacksboro",
+  "city": "Jacksboro",
+  "state": "TN",
+  "unitid": "220394",
+  "ueis": [
+   "LA49GZM3BVP6"
+  ]
+ },
+ "X-216630": {
+  "type": "other",
+  "name": "Washington Health System School of Nursing",
+  "city": "Washington",
+  "state": "PA",
+  "unitid": "216630",
+  "ueis": [
+   "LCR1H26KQL34"
+  ]
+ },
+ "X-443100": {
+  "type": "other",
+  "name": "Colegio Educativo Tecnologico Industrial Inc",
+  "city": "Arecibo",
+  "state": "PR",
+  "unitid": "443100",
+  "ueis": [
+   "LDGMKYRLA913"
+  ]
+ },
+ "S-181747": {
+  "type": "system",
+  "name": "University of Nebraska-Central Administration System Office",
+  "city": "Lincoln",
+  "state": "NE",
+  "unitid": "181747",
+  "ueis": [
+   "LF77GRM3FWG5",
+   "M1T9PNB1LMB8"
+  ]
+ },
+ "X-500838": {
+  "type": "other",
+  "name": "Goodwill Technical College",
+  "city": "New Orleans",
+  "state": "LA",
+  "unitid": "500838",
+  "ueis": [
+   "LHN8UBHM3JJ9"
+  ]
+ },
+ "X-220279": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Hartsville",
+  "city": "Hartsville",
+  "state": "TN",
+  "unitid": "220279",
+  "ueis": [
+   "LJ5MRMJC54D1"
+  ]
+ },
+ "X-418296": {
+  "type": "other",
+  "name": "Indian Capital Technology Center-Muskogee",
+  "city": "Muskogee",
+  "state": "OK",
+  "unitid": "418296",
+  "ueis": [
+   "LJ6QLEHHVWJ8"
+  ]
+ },
+ "X-417123": {
+  "type": "other",
+  "name": "Ventura Adult and Continuing Education",
+  "city": "Ventura",
+  "state": "CA",
+  "unitid": "417123",
+  "ueis": [
+   "LKV1W42376K7"
+  ]
+ },
+ "S-243160": {
+  "type": "system",
+  "name": "University of Puerto Rico-Central Administration",
+  "city": "San Juan",
+  "state": "PR",
+  "unitid": "243160",
+  "ueis": [
+   "LLABHNB9ABM4"
+  ]
+ },
+ "X-188669": {
+  "type": "other",
+  "name": "The Ailey School",
+  "city": "New York",
+  "state": "NY",
+  "unitid": "188669",
+  "ueis": [
+   "LRMWSGQUNGF3"
+  ]
+ },
+ "X-455220": {
+  "type": "other",
+  "name": "Career School of NY",
+  "city": "Staten Island",
+  "state": "NY",
+  "unitid": "455220",
+  "ueis": [
+   "LV11ABEZCY71"
+  ]
+ },
+ "X-185679": {
+  "type": "other",
+  "name": "JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools",
+  "city": "Plainfield",
+  "state": "NJ",
+  "unitid": "185679",
+  "ueis": []
+ },
+ "X-104717": {
+  "type": "other",
+  "name": "Grand Canyon University",
+  "city": "Phoenix",
+  "state": "AZ",
+  "unitid": "104717",
+  "ueis": [
+   "LVUGTE1MRAT8"
+  ]
+ },
+ "X-386153": {
+  "type": "other",
+  "name": "Seminar L'moros Bais Yaakov",
+  "city": "Brooklyn",
+  "state": "NY",
+  "unitid": "386153",
+  "ueis": [
+   "LY24HPCYUS56"
+  ]
+ },
+ "X-215886": {
+  "type": "other",
+  "name": "Schuylkill Technology Center",
+  "city": "Frackville",
+  "state": "PA",
+  "unitid": "215886",
+  "ueis": [
+   "M6PYMLLGPJ17"
+  ]
+ },
+ "X-418083": {
+  "type": "other",
+  "name": "Rockland County BOCES-Practical Nursing Program",
+  "city": "West Nyack",
+  "state": "NY",
+  "unitid": "418083",
+  "ueis": [
+   "MAV8PGJECF68"
+  ]
+ },
+ "X-128151": {
+  "type": "other",
+  "name": "Pickens Technical College",
+  "city": "Aurora",
+  "state": "CO",
+  "unitid": "128151",
+  "ueis": [
+   "MB1UA3D3B8T5"
+  ]
+ },
+ "X-433068": {
+  "type": "other",
+  "name": "Okaloosa Technical College",
+  "city": "Fort Walton Beach",
+  "state": "FL",
+  "unitid": "433068",
+  "ueis": [
+   "MBRRGGXSK413"
+  ]
+ },
+ "X-246017": {
+  "type": "other",
+  "name": "Central Technology Center",
+  "city": "Drumright",
+  "state": "OK",
+  "unitid": "246017",
+  "ueis": [
+   "MCTADZQN3279"
+  ]
+ },
+ "X-372082": {
+  "type": "other",
+  "name": "Pomona Unified School District Adult and Career Education",
+  "city": "Pomona",
+  "state": "CA",
+  "unitid": "372082",
+  "ueis": [
+   "ME1QP2FLB1J8"
+  ]
+ },
+ "X-390905": {
+  "type": "other",
+  "name": "Polaris Career Center",
+  "city": "Middleburg Heights",
+  "state": "OH",
+  "unitid": "390905",
+  "ueis": [
+   "ME4SZ2FWNFN3"
+  ]
+ },
+ "X-418524": {
+  "type": "other",
+  "name": "Venango County Area Vocational Technical School",
+  "city": "Oil City",
+  "state": "PA",
+  "unitid": "418524",
+  "ueis": [
+   "MFJKHHNPXJJ8"
+  ]
+ },
+ "X-441593": {
+  "type": "other",
+  "name": "Orleans Niagara BOCES-Practical Nursing Program",
+  "city": "Lockport",
+  "state": "NY",
+  "unitid": "441593",
+  "ueis": [
+   "MGNXKHMELKG9"
+  ]
+ },
+ "X-441575": {
+  "type": "other",
+  "name": "Metropolitan Learning Institute",
+  "city": "Rego Park",
+  "state": "NY",
+  "unitid": "441575",
+  "ueis": [
+   "MJ9ZZ4JXDM16"
+  ]
+ },
+ "X-221607": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-McMinnville",
+  "city": "McMinnville",
+  "state": "TN",
+  "unitid": "221607",
+  "ueis": [
+   "MJYEGHJDKA79"
+  ]
+ },
+ "X-427308": {
+  "type": "other",
+  "name": "Merkaz Bnos-Business School",
+  "city": "Brooklyn",
+  "state": "NY",
+  "unitid": "427308",
+  "ueis": [
+   "MLJSDUGR1RH1"
+  ]
+ },
+ "X-494463": {
+  "type": "other",
+  "name": "Derech Hachaim Seminary",
+  "city": "Monroe",
+  "state": "NY",
+  "unitid": "494463",
+  "ueis": [
+   "MMJPSP5RMGV3"
+  ]
+ },
+ "S-144777": {
+  "type": "system",
+  "name": "DeVry University-Administrative Office",
+  "city": "Lisle",
+  "state": "IL",
+  "unitid": "144777",
+  "ueis": [
+   "MN6JA6YLM213"
+  ]
+ },
+ "X-449816": {
+  "type": "other",
+  "name": "Southwest Technical College",
+  "city": "Cedar City",
+  "state": "UT",
+  "unitid": "449816",
+  "ueis": [
+   "MNPBNJY7YJJ1"
+  ]
+ },
+ "X-491589": {
+  "type": "other",
+  "name": "Mystros Barber Academy",
+  "city": "Houston",
+  "state": "TX",
+  "unitid": "491589",
+  "ueis": [
+   "MP41LAKET6X4"
+  ]
+ },
+ "S-126100": {
+  "type": "system",
+  "name": "Yosemite Community College District Office",
+  "city": "Modesto",
+  "state": "CA",
+  "unitid": "126100",
+  "ueis": [
+   "MPKJSSVW4GY7"
+  ]
+ },
+ "X-417105": {
+  "type": "other",
+  "name": "Baldwin Park Adult & Community Education",
+  "city": "Baldwin Park",
+  "state": "CA",
+  "unitid": "417105",
+  "ueis": [
+   "MPU8BMCZ5BN8"
+  ]
+ },
+ "X-409591": {
+  "type": "other",
+  "name": "Lorain County Joint Vocational School District",
+  "city": "Oberlin",
+  "state": "OH",
+  "unitid": "409591",
+  "ueis": [
+   "MR3AJJ22CGC8"
+  ]
+ },
+ "X-176983": {
+  "type": "other",
+  "name": "Grand River Technical School",
+  "city": "Chillicothe",
+  "state": "MO",
+  "unitid": "176983",
+  "ueis": [
+   "MYCEK8LNJTN3"
+  ]
+ },
+ "X-481049": {
+  "type": "other",
+  "name": "Carthage R9 School District-Carthage Technical Center",
+  "city": "Carthage",
+  "state": "MO",
+  "unitid": "481049",
+  "ueis": [
+   "MZUAHATY5BT9"
+  ]
+ },
+ "X-407489": {
+  "type": "other",
+  "name": "Mahoning County Career and Technical Center",
+  "city": "Canfield",
+  "state": "OH",
+  "unitid": "407489",
+  "ueis": [
+   "N18BL5H9YEL3"
+  ]
+ },
+ "X-152497": {
+  "type": "other",
+  "name": "Saint Elizabeth School of Nursing",
+  "city": "Lafayette",
+  "state": "IN",
+  "unitid": "152497",
+  "ueis": [
+   "N1ZHH6Q7UTG6"
+  ]
+ },
+ "X-367972": {
+  "type": "other",
+  "name": "Capital Area Career Center",
+  "city": "Springfield",
+  "state": "IL",
+  "unitid": "367972",
+  "ueis": [
+   "N425KANCMQ84"
+  ]
+ },
+ "X-130837": {
+  "type": "other",
+  "name": "Margaret H Rollins School of Nursing at Beebe Medical Center",
+  "city": "Lewes",
+  "state": "DE",
+  "unitid": "130837",
+  "ueis": [
+   "N7D8BEBH2FD5"
+  ]
+ },
+ "X-126915": {
+  "type": "other",
+  "name": "Technical College of the Rockies",
+  "city": "Delta",
+  "state": "CO",
+  "unitid": "126915",
+  "ueis": [
+   "N83QCQH75911"
+  ]
+ },
+ "X-406325": {
+  "type": "other",
+  "name": "Schuyler Steuben Chemung Tioga Allegany BOCES",
+  "city": "Elmira",
+  "state": "NY",
+  "unitid": "406325",
+  "ueis": [
+   "N8KHKXJKFAG4"
+  ]
+ },
+ "X-418481": {
+  "type": "other",
+  "name": "Mifflin County Academy of Science and Technology",
+  "city": "Lewistown",
+  "state": "PA",
+  "unitid": "418481",
+  "ueis": [
+   "N9MXDWNEJ6K5"
+  ]
+ },
+ "X-190707": {
+  "type": "other",
+  "name": "CVPH Medical Center School of Radiologic Technology",
+  "city": "Plattsburgh",
+  "state": "NY",
+  "unitid": "190707",
+  "ueis": [
+   "NAXMBLMHCLR6"
+  ]
+ },
+ "X-487816": {
+  "type": "other",
+  "name": "Midfield Institute of Cosmetology",
+  "city": "Midfield",
+  "state": "AL",
+  "unitid": "487816",
+  "ueis": [
+   "NBHDR5QSNCN8"
+  ]
+ },
+ "S-125222": {
+  "type": "system",
+  "name": "West Valley Mission Community College District Office",
+  "city": "Saratoga",
+  "state": "CA",
+  "unitid": "125222",
+  "ueis": [
+   "NBNHM2KMTB46"
+  ]
+ },
+ "S-428453": {
+  "type": "system",
+  "name": "Minnesota State Colleges and Universities System Office",
+  "city": "ST PAUL",
+  "state": "MN",
+  "unitid": "428453",
+  "ueis": [
+   "NDGJNKX6HVV4",
+   "JF4FD4NNU8G8",
+   "RF7GC7TQVDP5"
+  ]
+ },
+ "X-138372": {
+  "type": "other",
+  "name": "Orange Technical College-West Campus",
+  "city": "Ocoee",
+  "state": "FL",
+  "unitid": "138372",
+  "ueis": [
+   "NE4JELLPCC97"
+  ]
+ },
+ "X-215974": {
+  "type": "other",
+  "name": "UPMC Shadyside School of Nursing",
+  "city": "Pittsburgh",
+  "state": "PA",
+  "unitid": "215974",
+  "ueis": [
+   "NE6NBM68AWM5"
+  ]
+ },
+ "S-199175": {
+  "type": "system",
+  "name": "University of North Carolina System",
+  "city": "Raleigh",
+  "state": "NC",
+  "unitid": "199175",
+  "ueis": [
+   "NEYCH3CVBTR6"
+  ]
+ },
+ "X-487773": {
+  "type": "other",
+  "name": "Butte County Regional Occupational Program",
+  "city": "Chico",
+  "state": "CA",
+  "unitid": "487773",
+  "ueis": [
+   "NG3QBCLL38M4"
+  ]
+ },
+ "S-440138": {
+  "type": "system",
+  "name": "Antioch University-System Administration",
+  "city": "Yellow Springs",
+  "state": "OH",
+  "unitid": "440138",
+  "ueis": [
+   "NGCKFNEEYJL5"
+  ]
+ },
+ "X-201478": {
+  "type": "other",
+  "name": "Buckeye Hills Career Center",
+  "city": "Rio Grande",
+  "state": "OH",
+  "unitid": "201478",
+  "ueis": [
+   "NGR4AMEKKFT1"
+  ]
+ },
+ "X-419420": {
+  "type": "other",
+  "name": "Putnam Career and Technical Center",
+  "city": "Eleanor",
+  "state": "WV",
+  "unitid": "419420",
+  "ueis": [
+   "NJEDGNQLETC8"
+  ]
+ },
+ "X-459408": {
+  "type": "other",
+  "name": "Tri County Regional Vocational Technical High School",
+  "city": "Franklin",
+  "state": "MA",
+  "unitid": "459408",
+  "ueis": [
+   "NJZFJNQT7471"
+  ]
+ },
+ "S-420802": {
+  "type": "system",
+  "name": "Arizona Board of Regents",
+  "city": "Phoenix",
+  "state": "AZ",
+  "unitid": "420802",
+  "ueis": [
+   "NKJGJQYQJKR3"
+  ]
+ },
+ "X-375407": {
+  "type": "other",
+  "name": "Madison Adult Career Center",
+  "city": "Mansfield",
+  "state": "OH",
+  "unitid": "375407",
+  "ueis": [
+   "NKKDD8R8DZ35"
+  ]
+ },
+ "X-486406": {
+  "type": "other",
+  "name": "Randolph Technical Center",
+  "city": "Elkins",
+  "state": "WV",
+  "unitid": "486406",
+  "ueis": [
+   "NMWUCMK6MJ63"
+  ]
+ },
+ "X-499866": {
+  "type": "other",
+  "name": "Atlantic Acting School",
+  "city": "New York",
+  "state": "NY",
+  "unitid": "499866",
+  "ueis": [
+   "NN9GBEG2A698"
+  ]
+ },
+ "X-427991": {
+  "type": "other",
+  "name": "Osceola Technical College",
+  "city": "Kissimmee",
+  "state": "FL",
+  "unitid": "427991",
+  "ueis": [
+   "NQAWDND5R877"
+  ]
+ },
+ "X-132976": {
+  "type": "other",
+  "name": "Charlotte Technical College",
+  "city": "Port Charlotte",
+  "state": "FL",
+  "unitid": "132976",
+  "ueis": [
+   "NTKBZDVK3F25"
+  ]
+ },
+ "S-166665": {
+  "type": "system",
+  "name": "University of Massachusetts-Central Office",
+  "city": "Boston",
+  "state": "MA",
+  "unitid": "166665",
+  "ueis": [
+   "NUKSGRX9L885"
+  ]
+ },
+ "X-135735": {
+  "type": "other",
+  "name": "Orange Technical College-South Campus",
+  "city": "Orlando",
+  "state": "FL",
+  "unitid": "135735",
+  "ueis": [
+   "NZ4ZFFJNCB83"
+  ]
+ },
+ "X-499820": {
+  "type": "other",
+  "name": "Diverse Media Institute",
+  "city": "St. Paul",
+  "state": "MN",
+  "unitid": "499820",
+  "ueis": [
+   "P2S7CQBAUM26"
+  ]
+ },
+ "X-457615": {
+  "type": "other",
+  "name": "Blackstone Valley Vocational Regional School District",
+  "city": "Upton",
+  "state": "MA",
+  "unitid": "457615",
+  "ueis": [
+   "PAJYM4EWG3W4"
+  ]
+ },
+ "X-413176": {
+  "type": "other",
+  "name": "Fayette Institute of Technology",
+  "city": "Oak Hill",
+  "state": "WV",
+  "unitid": "413176",
+  "ueis": [
+   "PCFFK5UZRV85"
+  ]
+ },
+ "X-230162": {
+  "type": "other",
+  "name": "Davis Technical College",
+  "city": "Kaysville",
+  "state": "UT",
+  "unitid": "230162",
+  "ueis": [
+   "PDPWAG98MZF4"
+  ]
+ },
+ "X-407522": {
+  "type": "other",
+  "name": "Pioneer Career and Technology Center",
+  "city": "Shelby",
+  "state": "OH",
+  "unitid": "407522",
+  "ueis": [
+   "PFCGQ1E6X3F4"
+  ]
+ },
+ "S-124557": {
+  "type": "system",
+  "name": "University of California-System Administration Central Office",
+  "city": "Oakland",
+  "state": "CA",
+  "unitid": "124557",
+  "ueis": [
+   "PKK5TD16N4H1",
+   "K5KAMCPRVED6"
+  ]
+ },
+ "X-430306": {
+  "type": "other",
+  "name": "Cayce/Reilly School of Massage",
+  "city": "Virginia Beach",
+  "state": "VA",
+  "unitid": "430306",
+  "ueis": [
+   "PKM3EA28T1F1"
+  ]
+ },
+ "S-242671": {
+  "type": "system",
+  "name": "Inter American University of Puerto Rico-Central Office",
+  "city": "San Juan",
+  "state": "PR",
+  "unitid": "242671",
+  "ueis": [
+   "PMELJCUDNL17"
+  ]
+ },
+ "S-123925": {
+  "type": "system",
+  "name": "State Center Community College District",
+  "city": "Fresno",
+  "state": "CA",
+  "unitid": "123925",
+  "ueis": [
+   "PMVLKBX5KCA8"
+  ]
+ },
+ "X-446206": {
+  "type": "other",
+  "name": "Culpeper Cosmetology Training Center",
+  "city": "Culpeper",
+  "state": "VA",
+  "unitid": "446206",
+  "ueis": [
+   "PNN2KANMU777"
+  ]
+ },
+ "S-122737": {
+  "type": "system",
+  "name": "San Jose-Evergreen Community College District",
+  "city": "San Jose",
+  "state": "CA",
+  "unitid": "122737",
+  "ueis": [
+   "PVMTEEW29zl5"
+  ]
+ },
+ "X-431017": {
+  "type": "other",
+  "name": "Mid-Del Technology Center",
+  "city": "Midwest City",
+  "state": "OK",
+  "unitid": "431017",
+  "ueis": [
+   "Q47NJ256JSJ2"
+  ]
+ },
+ "X-123493": {
+  "type": "other",
+  "name": "Charles A Jones Career and Education Center",
+  "city": "Sacramento",
+  "state": "CA",
+  "unitid": "123493",
+  "ueis": [
+   "Q4QJQR4MX729"
+  ]
+ },
+ "X-433040": {
+  "type": "other",
+  "name": "Monty Tech",
+  "city": "Fitchburg",
+  "state": "MA",
+  "unitid": "433040",
+  "ueis": [
+   "Q5BAK1KLUA78"
+  ]
+ },
+ "X-407577": {
+  "type": "other",
+  "name": "Scioto County Career Technical Center",
+  "city": "Lucasville",
+  "state": "OH",
+  "unitid": "407577",
+  "ueis": [
+   "Q7FAGH5KK4G1"
+  ]
+ },
+ "X-375726": {
+  "type": "other",
+  "name": "Kiamichi Technology Center-McAlester",
+  "city": "McAlester",
+  "state": "OK",
+  "unitid": "375726",
+  "ueis": [
+   "QA6LS3CLAEU4"
+  ]
+ },
+ "X-490319": {
+  "type": "other",
+  "name": "Yeshiva Bais Aharon",
+  "city": "Lakewood",
+  "state": "NJ",
+  "unitid": "490319",
+  "ueis": [
+   "QAZST9EZ5969"
+  ]
+ },
+ "X-446349": {
+  "type": "other",
+  "name": "John D Rockefeller IV Career Center",
+  "city": "New Cumberland",
+  "state": "WV",
+  "unitid": "446349",
+  "ueis": [
+   "QD6YZ8EPA3B3"
+  ]
+ },
+ "X-493974": {
+  "type": "other",
+  "name": "College of Athens",
+  "city": "Watkinsville",
+  "state": "GA",
+  "unitid": "493974",
+  "ueis": [
+   "QEAZTXN8CKM6"
+  ]
+ },
+ "S-214661": {
+  "type": "system",
+  "name": "Pennsylvania State System of Higher Education-Central Office",
+  "city": "Harrisburg",
+  "state": "PA",
+  "unitid": "214661",
+  "ueis": [
+   "QG9HTDGKJJL3"
+  ]
+ },
+ "X-461245": {
+  "type": "other",
+  "name": "Flagler Technical College",
+  "city": "Palm Coast",
+  "state": "FL",
+  "unitid": "461245",
+  "ueis": [
+   "QH46CHD9RL25"
+  ]
+ },
+ "X-203614": {
+  "type": "other",
+  "name": "Collins Career Technical Center",
+  "city": "Chesapeake",
+  "state": "OH",
+  "unitid": "203614",
+  "ueis": [
+   "QJL3V5133GVS"
+  ]
+ },
+ "X-192970": {
+  "type": "other",
+  "name": "Memorial Hospital School of Radiation Therapy Technology",
+  "city": "New York",
+  "state": "NY",
+  "unitid": "192970",
+  "ueis": [
+   "QKGCV2U6YGL4"
+  ]
+ },
+ "X-383084": {
+  "type": "other",
+  "name": "Hacienda La Puente Adult Education",
+  "city": "La Puente",
+  "state": "CA",
+  "unitid": "383084",
+  "ueis": [
+   "QP6JCCYF2ME8"
+  ]
+ },
+ "X-365480": {
+  "type": "other",
+  "name": "Meridian Technology Center",
+  "city": "Stillwater",
+  "state": "OK",
+  "unitid": "365480",
+  "ueis": [
+   "QR4JDTLQY3V9"
+  ]
+ },
+ "X-441414": {
+  "type": "other",
+  "name": "M-DCPS The English Center",
+  "city": "Miami",
+  "state": "FL",
+  "unitid": "441414",
+  "ueis": [
+   "QSNSD99U9JN3"
+  ]
+ },
+ "S-130882": {
+  "type": "system",
+  "name": "Delaware Technical Community College-Central Office",
+  "city": "Dover",
+  "state": "DE",
+  "unitid": "130882",
+  "ueis": [
+   "QT8SSYALAFS5| YN4MB2F33BD7| DFRSGEGKD6M6"
+  ]
+ },
+ "X-418409": {
+  "type": "other",
+  "name": "York County School of Technology-Adult & Continuing Education",
+  "city": "York",
+  "state": "PA",
+  "unitid": "418409",
+  "ueis": [
+   "QUHFHL8N56W9"
+  ]
+ },
+ "X-461087": {
+  "type": "other",
+  "name": "Northeast Technology Center",
+  "city": "Pryor",
+  "state": "OK",
+  "unitid": "461087",
+  "ueis": [
+   "QUNJQECMCY56"
+  ]
+ },
+ "X-220853": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Memphis",
+  "city": "Memphis",
+  "state": "TN",
+  "unitid": "220853",
+  "ueis": [
+   "R25BK2UQ8NJ6"
+  ]
+ },
+ "X-202657": {
+  "type": "other",
+  "name": "EHOVE Career Center",
+  "city": "Milan",
+  "state": "OH",
+  "unitid": "202657",
+  "ueis": [
+   "R5jhm7t7jj27"
+  ]
+ },
+ "X-382258": {
+  "type": "other",
+  "name": "Mt. Diablo Adult Education-Mt. Diablo USD",
+  "city": "Concord",
+  "state": "CA",
+  "unitid": "382258",
+  "ueis": [
+   "R8L1DRLVBNX8"
+  ]
+ },
+ "X-495226": {
+  "type": "other",
+  "name": "St. Louis Med Tech",
+  "city": "St. Louis",
+  "state": "MO",
+  "unitid": "495226",
+  "ueis": [
+   "R9HGL4TL2B33"
+  ]
+ },
+ "X-135294": {
+  "type": "other",
+  "name": "Lindsey Hopkins Technical College",
+  "city": "Miami",
+  "state": "FL",
+  "unitid": "135294",
+  "ueis": [
+   "R9K5RK51CHN6"
+  ]
+ },
+ "X-176798": {
+  "type": "other",
+  "name": "Cape Girardeau Career and Technology Center",
+  "city": "Cape Girardeau",
+  "state": "MO",
+  "unitid": "176798",
+  "ueis": [
+   "RAEVMTBX2LP8"
+  ]
+ },
+ "X-373711": {
+  "type": "other",
+  "name": "Upper Cape Cod Regional Technical School",
+  "city": "Bourne",
+  "state": "MA",
+  "unitid": "373711",
+  "ueis": [
+   "RALEMHP3JKN4"
+  ]
+ },
+ "X-113616": {
+  "type": "other",
+  "name": "DHARMA REALM BUDDHIST UNIVERSITY",
+  "city": "Ukiah",
+  "state": "CA",
+  "unitid": "113616",
+  "ueis": [
+   "RD63EM2258D5"
+  ]
+ },
+ "X-457387": {
+  "type": "other",
+  "name": "Immokalee Technical College",
+  "city": "Immokalee",
+  "state": "FL",
+  "unitid": "457387",
+  "ueis": [
+   "RD6DGGJW2G95"
+  ]
+ },
+ "X-417637": {
+  "type": "other",
+  "name": "Southern Missouri Technical Institute",
+  "city": "West Plains",
+  "state": "MO",
+  "unitid": "417637",
+  "ueis": [
+   "RDUGNJZNH5B3"
+  ]
+ },
+ "X-216162": {
+  "type": "other",
+  "name": "St Lukes Hospital School of Nursing",
+  "city": "Bethlehem",
+  "state": "PA",
+  "unitid": "216162",
+  "ueis": [
+   "RFKAVNHKKVB3"
+  ]
+ },
+ "X-500759": {
+  "type": "other",
+  "name": "Eisek Hatorah DRachmistrivka",
+  "city": "Staten Island",
+  "state": "NY",
+  "unitid": "500759",
+  "ueis": [
+   "RHBPPGCR6MB8"
+  ]
+ },
+ "X-441210": {
+  "type": "other",
+  "name": "East Valley Institute of Technology",
+  "city": "Mesa",
+  "state": "AZ",
+  "unitid": "441210",
+  "ueis": [
+   "RL6ZA6C8SHW6"
+  ]
+ },
+ "X-500087": {
+  "type": "other",
+  "name": "Doral College",
+  "city": "Doral",
+  "state": "FL",
+  "unitid": "500087",
+  "ueis": [
+   "RQV9R7GDL423"
+  ]
+ },
+ "X-459329": {
+  "type": "other",
+  "name": "Fred K Marchman Technical College",
+  "city": "New Port Richey",
+  "state": "FL",
+  "unitid": "459329",
+  "ueis": [
+   "RTFMX85CA853"
+  ]
+ },
+ "X-417983": {
+  "type": "other",
+  "name": "Cattaraugus Allegany BOCES-Practical Nursing Program",
+  "city": "Olean",
+  "state": "NY",
+  "unitid": "417983",
+  "ueis": [
+   "S7KKXWDFRTR4"
+  ]
+ },
+ "X-409537": {
+  "type": "other",
+  "name": "Pike County Joint Vocational School District",
+  "city": "Piketon",
+  "state": "OH",
+  "unitid": "409537",
+  "ueis": [
+   "S7KSHJU447G3"
+  ]
+ },
+ "X-127954": {
+  "type": "other",
+  "name": "Montessori Education Center of the Rockies",
+  "city": "Denver",
+  "state": "CO",
+  "unitid": "127954",
+  "ueis": [
+   "S8EBT3AC8RK8"
+  ]
+ },
+ "X-364946": {
+  "type": "other",
+  "name": "Caddo Kiowa Technology Center",
+  "city": "Fort Cobb",
+  "state": "OK",
+  "unitid": "364946",
+  "ueis": [
+   "S8NZNFC8DNC3"
+  ]
+ },
+ "X-137087": {
+  "type": "other",
+  "name": "Pinellas Technical College-St. Petersburg",
+  "city": "Saint Petersburg",
+  "state": "FL",
+  "unitid": "137087",
+  "ueis": [
+   "SAWEJ2XVSEE4"
+  ]
+ },
+ "X-221625": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Knoxville",
+  "city": "Knoxville",
+  "state": "TN",
+  "unitid": "221625",
+  "ueis": [
+   "SCLKP868KJA8"
+  ]
+ },
+ "X-139746": {
+  "type": "other",
+  "name": "Grady Health System Professional Schools",
+  "city": "Atlanta",
+  "state": "GA",
+  "unitid": "139746",
+  "ueis": [
+   "SK32M9ZYA2M6"
+  ]
+ },
+ "X-201098": {
+  "type": "other",
+  "name": "Ashland County-West Holmes Career Center",
+  "city": "Ashland",
+  "state": "OH",
+  "unitid": "201098",
+  "ueis": [
+   "SNHPDR6MN1L3"
+  ]
+ },
+ "X-208053": {
+  "type": "other",
+  "name": "High Plains Technology Center",
+  "city": "Woodward",
+  "state": "OK",
+  "unitid": "208053",
+  "ueis": [
+   "SPHFY4F13389"
+  ]
+ },
+ "X-154518": {
+  "type": "other",
+  "name": "Waldorf University",
+  "city": "Forest City",
+  "state": "IA",
+  "unitid": "154518",
+  "ueis": [
+   "STSKFTJMXU36"
+  ]
+ },
+ "X-364636": {
+  "type": "other",
+  "name": "Portage Lakes Career Center",
+  "city": "Uniontown",
+  "state": "OH",
+  "unitid": "364636",
+  "ueis": [
+   "SVZNZLNUKNF1"
+  ]
+ },
+ "X-214528": {
+  "type": "other",
+  "name": "Orleans Technical College",
+  "city": "Philadelphia",
+  "state": "PA",
+  "unitid": "214528",
+  "ueis": [
+   "SXQEGBSH4ZT1"
+  ]
+ },
+ "S-178439": {
+  "type": "system",
+  "name": "University of Missouri-System Office",
+  "city": "Columbia",
+  "state": "MO",
+  "unitid": "178439",
+  "ueis": [
+   "SZPJL5ZRCLF4|J9CDGR596MN3"
+  ]
+ },
+ "X-165060": {
+  "type": "other",
+  "name": "Signature Healthcare Brockton Hospital School of Nursing",
+  "city": "Brockton",
+  "state": "MA",
+  "unitid": "165060",
+  "ueis": [
+   "T1G1UZCHGZW9"
+  ]
+ },
+ "X-136455": {
+  "type": "other",
+  "name": "PENSACOLA CHRISTIAN COLLEGE",
+  "city": "Pensacola",
+  "state": "FL",
+  "unitid": "136455",
+  "ueis": [
+   "T4CHESCX9JF6"
+  ]
+ },
+ "X-246071": {
+  "type": "other",
+  "name": "Career Technology Center of Lackawanna County",
+  "city": "Scranton",
+  "state": "PA",
+  "unitid": "246071",
+  "ueis": [
+   "T4Q3KMH2A287"
+  ]
+ },
+ "X-485856": {
+  "type": "other",
+  "name": "Studio Incamminati",
+  "city": "Philadelphia",
+  "state": "PA",
+  "unitid": "485856",
+  "ueis": [
+   "T61CJ3CLK3K6"
+  ]
+ },
+ "X-431600": {
+  "type": "other",
+  "name": "UPMC Mercy School of Nursing",
+  "city": "Pittsburgh",
+  "state": "PA",
+  "unitid": "431600",
+  "ueis": [
+   "T6JJC7E2EGM5"
+  ]
+ },
+ "X-248606": {
+  "type": "other",
+  "name": "Moore Norman Technology Center",
+  "city": "Norman",
+  "state": "OK",
+  "unitid": "248606",
+  "ueis": [
+   "T7A6JJU5GH43"
+  ]
+ },
+ "X-155423": {
+  "type": "other",
+  "name": "Washburn Institute of Technology",
+  "city": "Topeka",
+  "state": "KS",
+  "unitid": "155423",
+  "ueis": [
+   "TCE8FCWEPLQ9"
+  ]
+ },
+ "X-497693": {
+  "type": "other",
+  "name": "Kansas Health Science University",
+  "city": "Wichita",
+  "state": "KS",
+  "unitid": "497693",
+  "ueis": [
+   "TD5TWYLNSZM7"
+  ]
+ },
+ "X-206154": {
+  "type": "other",
+  "name": "Tri-State Bible College",
+  "city": "South Point",
+  "state": "OH",
+  "unitid": "206154",
+  "ueis": [
+   "TFFAPRHWA9G6"
+  ]
+ },
+ "X-202152": {
+  "type": "other",
+  "name": "Columbiana County Career and Technical Center",
+  "city": "Lisbon",
+  "state": "OH",
+  "unitid": "202152",
+  "ueis": [
+   "TFHPD9HPLXJ1"
+  ]
+ },
+ "S-448381": {
+  "type": "system",
+  "name": "San Joaquin Valley College-Central Administrative Office",
+  "city": "Visalia",
+  "state": "CA",
+  "unitid": "448381",
+  "ueis": [
+   "TJLJT5ZE65J6"
+  ]
+ },
+ "X-481191": {
+  "type": "other",
+  "name": "Riverside County Office of Education-School of Career Education",
+  "city": "Riverside",
+  "state": "CA",
+  "unitid": "481191",
+  "ueis": [
+   "TMG9HC9BBG81"
+  ]
+ },
+ "X-418250": {
+  "type": "other",
+  "name": "Washington County Career Center-Adult Technical Training",
+  "city": "Marietta",
+  "state": "OH",
+  "unitid": "418250",
+  "ueis": [
+   "TN7ADJB7KZF4"
+  ]
+ },
+ "X-417992": {
+  "type": "other",
+  "name": "Orange Ulster BOCES",
+  "city": "Newburgh",
+  "state": "NY",
+  "unitid": "417992",
+  "ueis": [
+   "TPM4GR8CN2R7"
+  ]
+ },
+ "S-438665": {
+  "type": "system",
+  "name": "Rancho Santiago Community College District Office",
+  "city": "Santa Ana",
+  "state": "CA",
+  "unitid": "438665",
+  "ueis": [
+   "TQPJL16WX253"
+  ]
+ },
+ "S-448336": {
+  "type": "system",
+  "name": "Arkansas State University System",
+  "city": "Little Rock",
+  "state": "AR",
+  "unitid": "448336",
+  "ueis": []
+ },
+ "X-418205": {
+  "type": "other",
+  "name": "Career and Technology Education Centers of Licking County",
+  "city": "Newark",
+  "state": "OH",
+  "unitid": "418205",
+  "ueis": [
+   "TTAULNLVB8M6"
+  ]
+ },
+ "X-431275": {
+  "type": "other",
+  "name": "Herkimer County BOCES-Practical Nursing Program",
+  "city": "Herkimer",
+  "state": "NY",
+  "unitid": "431275",
+  "ueis": [
+   "TUESZRV5U113"
+  ]
+ },
+ "X-194259": {
+  "type": "other",
+  "name": "Otsego Area BOCES-Practical Nursing Program",
+  "city": "Oneonta",
+  "state": "NY",
+  "unitid": "194259",
+  "ueis": [
+   "TVGGK3DLQN83"
+  ]
+ },
+ "X-440916": {
+  "type": "other",
+  "name": "Southern University Law Center",
+  "city": "Baton Rouge",
+  "state": "LA",
+  "unitid": "440916",
+  "ueis": [
+   "TXYFZM5AMFM3"
+  ]
+ },
+ "X-500573": {
+  "type": "other",
+  "name": "Mississippi Baptist Seminary",
+  "city": "Jackson",
+  "state": "MS",
+  "unitid": "500573",
+  "ueis": [
+   "U7SKHTZWNJC9"
+  ]
+ },
+ "S-247083": {
+  "type": "system",
+  "name": "University of Louisiana-System Administration",
+  "city": "Baton Rouge",
+  "state": "LA",
+  "unitid": "247083",
+  "ueis": [
+   "UAGGMJLFJ1P1"
+  ]
+ },
+ "X-237844": {
+  "type": "other",
+  "name": "Fred W Eberle Technical Center",
+  "city": "Buckhannon",
+  "state": "WV",
+  "unitid": "237844",
+  "ueis": [
+   "UAGXSJP98J69"
+  ]
+ },
+ "X-366623": {
+  "type": "other",
+  "name": "Northwest Technology Center-Alva",
+  "city": "Alva",
+  "state": "OK",
+  "unitid": "366623",
+  "ueis": [
+   "UE76TK9HJ765"
+  ]
+ },
+ "X-418038": {
+  "type": "other",
+  "name": "Albany BOCES-Adult Practical Nursing Program",
+  "city": "Albany",
+  "state": "NY",
+  "unitid": "418038",
+  "ueis": [
+   "UEP6F8N4UUK8"
+  ]
+ },
+ "X-495235": {
+  "type": "other",
+  "name": "Total Beauty Institute",
+  "city": "Jacksonville",
+  "state": "FL",
+  "unitid": "495235",
+  "ueis": [
+   "UHA2LYQFLJS7"
+  ]
+ },
+ "X-368407": {
+  "type": "other",
+  "name": "Western Area Career & Technology Center",
+  "city": "Canonsburg",
+  "state": "PA",
+  "unitid": "368407",
+  "ueis": [
+   "UHKZWLK5VAG3"
+  ]
+ },
+ "X-184968": {
+  "type": "other",
+  "name": "Holy Name Medical Center-Sister Claire Tynan School of Nursing",
+  "city": "Englewood Cliffs",
+  "state": "NJ",
+  "unitid": "184968",
+  "ueis": [
+   "UHPQRM6D7GX4"
+  ]
+ },
+ "X-493770": {
+  "type": "other",
+  "name": "Vski Cosmetology School",
+  "city": "Charleston",
+  "state": "SC",
+  "unitid": "493770",
+  "ueis": [
+   "UHSNM5MFFH28"
+  ]
+ },
+ "X-406361": {
+  "type": "other",
+  "name": "Delaware Chenango Madison Otsego BOCES-Practical Nursing Program",
+  "city": "Norwich",
+  "state": "NY",
+  "unitid": "406361",
+  "ueis": [
+   "UJ73LJH5HLS4"
+  ]
+ },
+ "X-164535": {
+  "type": "other",
+  "name": "Assabet Valley Regional Technical School",
+  "city": "Marlborough",
+  "state": "MA",
+  "unitid": "164535",
+  "ueis": [
+   "ULQKD3R9E338"
+  ]
+ },
+ "X-237172": {
+  "type": "other",
+  "name": "Ben Franklin Career Center",
+  "city": "Dunbar",
+  "state": "WV",
+  "unitid": "237172",
+  "ueis": [
+   "UN24NF3KPM87"
+  ]
+ },
+ "X-417682": {
+  "type": "other",
+  "name": "Cass Career Center",
+  "city": "Harrisonville",
+  "state": "MO",
+  "unitid": "417682",
+  "ueis": [
+   "USCKMK4G27G3"
+  ]
+ },
+ "X-481021": {
+  "type": "other",
+  "name": "Berks Career & Technology Center",
+  "city": "Leesport",
+  "state": "PA",
+  "unitid": "481021",
+  "ueis": [
+   "UTZGGD3FK3A8"
+  ]
+ },
+ "X-201034": {
+  "type": "other",
+  "name": "Apollo Career Center",
+  "city": "Lima",
+  "state": "OH",
+  "unitid": "201034",
+  "ueis": [
+   "UUWRE2GAHCW6"
+  ]
+ },
+ "X-201131": {
+  "type": "other",
+  "name": "Ashtabula County Technical and Career Campus",
+  "city": "Jefferson",
+  "state": "OH",
+  "unitid": "201131",
+  "ueis": [
+   "UWP2X4W7EW74"
+  ]
+ },
+ "X-365383": {
+  "type": "other",
+  "name": "Wilkes-Barre Area Career and Technical Center Practical Nursing",
+  "city": "Wilkes Barre",
+  "state": "PA",
+  "unitid": "365383",
+  "ueis": [
+   "V4EPTSHKPXJ9"
+  ]
+ },
+ "X-419095": {
+  "type": "other",
+  "name": "Charles H McCann Technical School",
+  "city": "North Adams",
+  "state": "MA",
+  "unitid": "419095",
+  "ueis": [
+   "V4P6NNYVSCN5"
+  ]
+ },
+ "X-377485": {
+  "type": "other",
+  "name": "Virginia Beach City Public Schools School of Practical Nursing",
+  "city": "Virginia Beach",
+  "state": "VA",
+  "unitid": "377485",
+  "ueis": [
+   "V6BPDLE5K4H8"
+  ]
+ },
+ "X-134291": {
+  "type": "other",
+  "name": "George Stone Technical College",
+  "city": "Pensacola",
+  "state": "FL",
+  "unitid": "134291",
+  "ueis": [
+   "VA3LMZCJWSM3"
+  ]
+ },
+ "X-430795": {
+  "type": "other",
+  "name": "Carver Career Center",
+  "city": "Charleston",
+  "state": "WV",
+  "unitid": "430795",
+  "ueis": [
+   "VBEJJUM54666"
+  ]
+ },
+ "X-491464": {
+  "type": "other",
+  "name": "ABC Adult School",
+  "city": "Cerritos",
+  "state": "CA",
+  "unitid": "491464",
+  "ueis": [
+   "VBLXXFEQPNN7"
+  ]
+ },
+ "X-203030": {
+  "type": "other",
+  "name": "Adult and Community Education-Hudson",
+  "city": "Columbus",
+  "state": "OH",
+  "unitid": "203030",
+  "ueis": [
+   "VDN8EPGFMPE5"
+  ]
+ },
+ "X-417716": {
+  "type": "other",
+  "name": "Applied Tech",
+  "city": "Sunset Hills",
+  "state": "MO",
+  "unitid": "417716",
+  "ueis": [
+   "VE6TKW6A4FM9"
+  ]
+ },
+ "X-495013": {
+  "type": "other",
+  "name": "Western Maricopa Education Center",
+  "city": "Glendale",
+  "state": "AZ",
+  "unitid": "495013",
+  "ueis": [
+   "VGATZV78JTM7"
+  ]
+ },
+ "S-240435": {
+  "type": "system",
+  "name": "University of Wisconsin-System Administration",
+  "city": "Madison",
+  "state": "WI",
+  "unitid": "240435",
+  "ueis": [
+   "VGMJYMAD7DG7",
+   "HVEKL7MENUK1",
+   "DU31CJWGFKU1"
+  ]
+ },
+ "X-197531": {
+  "type": "other",
+  "name": "Word of Life Bible Institute",
+  "city": "Pottersville",
+  "state": "NY",
+  "unitid": "197531",
+  "ueis": [
+   "VKH7RC9VS8T8"
+  ]
+ },
+ "S-141963": {
+  "type": "system",
+  "name": "University of Hawaii System Office",
+  "city": "Honolulu",
+  "state": "HI",
+  "unitid": "141963",
+  "ueis": [
+   "VL5FH97BNMH5",
+   "KDVFJN7FXQC6"
+  ]
+ },
+ "X-201159": {
+  "type": "other",
+  "name": "Auburn Career Center",
+  "city": "Concord Twp",
+  "state": "OH",
+  "unitid": "201159",
+  "ueis": [
+   "VL8VKMUGBKF5"
+  ]
+ },
+ "X-457925": {
+  "type": "other",
+  "name": "Portland Actors Conservatory",
+  "city": "Portland",
+  "state": "OR",
+  "unitid": "457925",
+  "ueis": [
+   "VLLNLK1JD7N9"
+  ]
+ },
+ "X-237242": {
+  "type": "other",
+  "name": "Cabell County Career Technology Center",
+  "city": "Huntington",
+  "state": "WV",
+  "unitid": "237242",
+  "ueis": [
+   "VLVBZB9WNTCS"
+  ]
+ },
+ "X-437237": {
+  "type": "other",
+  "name": "IYRS School of Technology & Trades",
+  "city": "Newport",
+  "state": "RI",
+  "unitid": "437237",
+  "ueis": [
+   "VP32DBK53LR3"
+  ]
+ },
+ "X-382416": {
+  "type": "other",
+  "name": "Greater Lowell Technical School",
+  "city": "Tyngsboro",
+  "state": "MA",
+  "unitid": "382416",
+  "ueis": [
+   "VSA5NLHR81F3"
+  ]
+ },
+ "X-488590": {
+  "type": "other",
+  "name": "Christian Culinary Academy",
+  "city": "Cannon Beach",
+  "state": "OR",
+  "unitid": "488590",
+  "ueis": [
+   "VSQQJAAWLRX8"
+  ]
+ },
+ "X-430883": {
+  "type": "other",
+  "name": "Cayuga Onondaga BOCES-Practical Nursing Program",
+  "city": "Auburn",
+  "state": "NY",
+  "unitid": "430883",
+  "ueis": [
+   "VVQDJ9YAH9L7"
+  ]
+ },
+ "S-492263": {
+  "type": "system",
+  "name": "The University of Tennessee System Office",
+  "city": "Knoxville",
+  "state": "TN",
+  "unitid": "492263",
+  "ueis": [
+   "W51ZY3UDDE45| U5XGJG7ZVLK3| FN2YCS2YAUW3| VBVKFE7E5FJ9| X1M1PN3KG3E7"
+  ]
+ },
+ "X-206181": {
+  "type": "other",
+  "name": "Tri-Rivers Career Center",
+  "city": "Marion",
+  "state": "OH",
+  "unitid": "206181",
+  "ueis": [
+   "W6Z5S81H1EP9"
+  ]
+ },
+ "S-428426": {
+  "type": "system",
+  "name": "San Bernardino Community College District",
+  "city": "San Bernardino",
+  "state": "CA",
+  "unitid": "428426",
+  "ueis": [
+   "WAMMJDVL46B1",
+   "YXNNRRL7H3K9"
+  ]
+ },
+ "X-485360": {
+  "type": "other",
+  "name": "Graduate America",
+  "city": "Houston",
+  "state": "TX",
+  "unitid": "485360",
+  "ueis": [
+   "WBNNFRREP4R2"
+  ]
+ },
+ "S-501123": {
+  "type": "system",
+  "name": "Connecticut State Colleges and Universities System Office",
+  "city": "Hartford",
+  "state": "CT",
+  "unitid": "501123",
+  "ueis": [
+   "WCXRFY6FGU46"
+  ]
+ },
+ "X-383312": {
+  "type": "other",
+  "name": "Buckeye Joint Vocational School",
+  "city": "New Philadelphia",
+  "state": "OH",
+  "unitid": "383312",
+  "ueis": [
+   "WETUAB1NKPG6"
+  ]
+ },
+ "X-221050": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Morristown",
+  "city": "Morristown",
+  "state": "TN",
+  "unitid": "221050",
+  "ueis": [
+   "WJU3BBBPH3W8"
+  ]
+ },
+ "S-121178": {
+  "type": "system",
+  "name": "Peralta Community College System Office",
+  "city": "Oakland",
+  "state": "CA",
+  "unitid": "121178",
+  "ueis": [
+   "WJXKTHS8BB11"
+  ]
+ },
+ "X-407461": {
+  "type": "other",
+  "name": "Eastland-Fairfield Career and Technical Schools",
+  "city": "Groveport",
+  "state": "OH",
+  "unitid": "407461",
+  "ueis": [
+   "WMUUB94R5NY5"
+  ]
+ },
+ "X-221494": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology-Shelbyville",
+  "city": "Shelbyville",
+  "state": "TN",
+  "unitid": "221494",
+  "ueis": [
+   "WNALUSBA1AC4"
+  ]
+ },
+ "X-440730": {
+  "type": "other",
+  "name": "Onondaga Cortland Madison BOCES",
+  "city": "Liverpool",
+  "state": "NY",
+  "unitid": "440730",
+  "ueis": [
+   "WNMJW4MV99S5"
+  ]
+ },
+ "X-418454": {
+  "type": "other",
+  "name": "Greater Johnstown Career and Technology Center",
+  "city": "Johnstown",
+  "state": "PA",
+  "unitid": "418454",
+  "ueis": [
+   "WQEKDVLHKC15"
+  ]
+ },
+ "X-488891": {
+  "type": "other",
+  "name": "South Dade Technical College-South Dade Skills Center Campus",
+  "city": "HOMESTEAD",
+  "state": "FL",
+  "unitid": "488891",
+  "ueis": [
+   "WSUTKY3CK3V9"
+  ]
+ },
+ "X-237491": {
+  "type": "other",
+  "name": "Ralph R Willis Career and Technical Center",
+  "city": "Stollings",
+  "state": "WV",
+  "unitid": "237491",
+  "ueis": [
+   "WUDMB7JAK1Q9"
+  ]
+ },
+ "X-221236": {
+  "type": "other",
+  "name": "Tennessee College of Applied Technology Northwest",
+  "city": "Newbern",
+  "state": "TN",
+  "unitid": "221236",
+  "ueis": [
+   "WV1FVL7J2Vm5"
+  ]
+ },
+ "X-417442": {
+  "type": "other",
+  "name": "Career Center of Southern Illinois",
+  "city": "Red Bud",
+  "state": "IL",
+  "unitid": "417442",
+  "ueis": [
+   "WVNKT89R17W8"
+  ]
+ },
+ "S-112376": {
+  "type": "system",
+  "name": "Coast Community College District Office",
+  "city": "Costa Mesa",
+  "state": "CA",
+  "unitid": "112376",
+  "ueis": [
+   "WWBVTCQTBZG3"
+  ]
+ },
+ "X-375656": {
+  "type": "other",
+  "name": "Chisholm Trail Technology Center",
+  "city": "Omega",
+  "state": "OK",
+  "unitid": "375656",
+  "ueis": [
+   "X2B6ZHFELFU3"
+  ]
+ },
+ "X-383367": {
+  "type": "other",
+  "name": "Greater Altoona Career & Technology Center",
+  "city": "Altoona",
+  "state": "PA",
+  "unitid": "383367",
+  "ueis": [
+   "X356WHPLEG26"
+  ]
+ },
+ "S-229090": {
+  "type": "system",
+  "name": "The University of Texas System Office",
+  "city": "Austin",
+  "state": "TX",
+  "unitid": "229090",
+  "ueis": [
+   "X5NKD2NFF2V3"
+  ]
+ },
+ "X-128586": {
+  "type": "other",
+  "name": "Bais Binyomin Academy",
+  "city": "Monsey",
+  "state": "NY",
+  "unitid": "128586",
+  "ueis": [
+   "XG3JSLM23HC5"
+  ]
+ },
+ "X-500449": {
+  "type": "other",
+  "name": "New Orleans Culinary and Hospitality Institute",
+  "city": "New Orleans",
+  "state": "LA",
+  "unitid": "500449",
+  "ueis": [
+   "XM1RXKVD9VG7"
+  ]
+ },
+ "X-201539": {
+  "type": "other",
+  "name": "Canton City Schools Adult Career and Technical Education",
+  "city": "Canton",
+  "state": "OH",
+  "unitid": "201539",
+  "ueis": [
+   "XSWVQKYU8NH9"
+  ]
+ },
+ "X-230010": {
+  "type": "other",
+  "name": "Bridgerland Technical College",
+  "city": "Logan",
+  "state": "UT",
+  "unitid": "230010",
+  "ueis": [
+   "XW23NNCTGEE3"
+  ]
+ },
+ "S-149587": {
+  "type": "system",
+  "name": "University of Illinois System Offices",
+  "city": "Urbana",
+  "state": "IL",
+  "unitid": "149587",
+  "ueis": []
+ },
+ "S-117681": {
+  "type": "system",
+  "name": "Los Angeles Community College District Office",
+  "city": "Los Angeles",
+  "state": "CA",
+  "unitid": "117681",
+  "ueis": [
+   "Y9SWL6BWDM85"
+  ]
+ },
+ "X-368771": {
+  "type": "other",
+  "name": "Hypnosis Motivation Institute",
+  "city": "Tarzana",
+  "state": "CA",
+  "unitid": "368771",
+  "ueis": [
+   "YAJPLB9KM8H5"
+  ]
+ },
+ "X-428019": {
+  "type": "other",
+  "name": "Green Country Technology Center",
+  "city": "Okmulgee",
+  "state": "OK",
+  "unitid": "428019",
+  "ueis": [
+   "YHLEKQLFY8G8"
+  ]
+ },
+ "X-501390": {
+  "type": "other",
+  "name": "Yeshiva Gedola Amidei Dgirsa",
+  "city": "Brooklyn",
+  "state": "NY",
+  "unitid": "501390",
+  "ueis": [
+   "YHXECMJECL56"
+  ]
+ },
+ "X-418445": {
+  "type": "other",
+  "name": "Jefferson County DuBois Area Vocational Technical School",
+  "city": "Reynoldsville",
+  "state": "PA",
+  "unitid": "418445",
+  "ueis": [
+   "YJ74LE63U7G7"
+  ]
+ },
+ "X-230490": {
+  "type": "other",
+  "name": "Ogden-Weber Technical College",
+  "city": "Ogden",
+  "state": "UT",
+  "unitid": "230490",
+  "ueis": [
+   "YK8WW54NUPN7"
+  ]
+ },
+ "S-144500": {
+  "type": "system",
+  "name": "City Colleges of Chicago-District Office",
+  "city": "Chicago",
+  "state": "IL",
+  "unitid": "144500",
+  "ueis": [
+   "YMNEVAXEKK37"
+  ]
+ },
+ "S-448637": {
+  "type": "system",
+  "name": "West Hills Community College District",
+  "city": "Coalinga",
+  "state": "CA",
+  "unitid": "448637",
+  "ueis": [
+   "YSZ7ZKSDJ7R8"
+  ]
+ },
+ "S-183327": {
+  "type": "system",
+  "name": "University System of New Hampshire System Office",
+  "city": "Concord",
+  "state": "NH",
+  "unitid": "183327",
+  "ueis": [
+   "Z2QKFRGLGNL3"
+  ]
+ },
+ "X-190008": {
+  "type": "other",
+  "name": "Circle in the Square Theatre School",
+  "city": "New York",
+  "state": "NY",
+  "unitid": "190008",
+  "ueis": [
+   "Z48HHJS8B5Q9"
+  ]
+ },
+ "X-457378": {
+  "type": "other",
+  "name": "Emerald Coast Technical College",
+  "city": "DeFuniak Springs",
+  "state": "FL",
+  "unitid": "457378",
+  "ueis": [
+   "Z5E1QBK6WCT5"
+  ]
+ },
+ "X-406422": {
+  "type": "other",
+  "name": "Central Susquehanna Intermediate Unit LPN Career",
+  "city": "Milton",
+  "state": "PA",
+  "unitid": "406422",
+  "ueis": [
+   "Z8MMCUH6ZJT4"
+  ]
+ },
+ "X-457794": {
+  "type": "other",
+  "name": "EDP School",
+  "city": "Brooklyn",
+  "state": "NY",
+  "unitid": "457794",
+  "ueis": [
+   "ZDK6UAZRR9W1"
+  ]
+ },
+ "X-500713": {
+  "type": "other",
+  "name": "Virginia Christian College",
+  "city": "Dumfries",
+  "state": "VA",
+  "unitid": "500713",
+  "ueis": [
+   "ZNNUNJ588H15"
+  ]
+ },
+ "S-190035": {
+  "type": "system",
+  "name": "CUNY System Office",
+  "city": "New York",
+  "state": "NY",
+  "unitid": "190035",
+  "ueis": [
+   "ZQ5JYL7HQFS7",
+   "EUYXHRL5MLL3",
+   "FWY1FX3THXC5",
+   "W92KFZJL9KB5",
+   "UJ36PVKE4RY9"
+  ]
+ },
+ "S-128300": {
+  "type": "system",
+  "name": "University of Colorado System Office",
+  "city": "Denver",
+  "state": "CO",
+  "unitid": "128300",
+  "ueis": [
+   "ZXMLJ7G7XLE1"
+  ]
+ },
+ "X-368364": {
+  "type": "other",
+  "name": "Southwest Technology Center",
+  "city": "Altus",
+  "state": "OK",
+  "unitid": "368364",
+  "ueis": [
+   "kxbba3wbthn6"
+  ]
+ },
+ "X-365505": {
+  "type": "other",
+  "name": "Waynesville Career Center",
+  "city": "Waynesville",
+  "state": "MO",
+  "unitid": "365505",
+  "ueis": [
+   "mk64rjmusch3"
+  ]
+ },
+ "X-440004": {
+  "type": "other",
+  "name": "Upper Valley Educators Institute",
+  "city": "Lebanon",
+  "state": "NH",
+  "unitid": "440004",
+  "ueis": [
+   "ub3mxbl218h1"
+  ]
+ },
+ "X-364548": {
+  "type": "other",
+  "name": "Great Plains Technology Center",
+  "city": "Lawton",
+  "state": "OK",
+  "unitid": "364548",
+  "ueis": [
+   "umfmtn95lgp8"
+  ]
+ },
+ "X-407513": {
+  "type": "other",
+  "name": "Pickaway Ross Joint Vocational School District",
+  "city": "Chillicothe",
+  "state": "OH",
+  "unitid": "407513",
+  "ueis": [
+   "xwenmjzx79a5"
+  ]
+ },
+ "X-491473": {
+  "type": "other",
+  "name": "Polytech Adult Education",
+  "city": "Woodside",
+  "state": "DE",
+  "unitid": "491473",
+  "ueis": [
+   "y361qphhran5"
+  ]
+ },
+ "S-432144": {
+  "type": "system",
+  "name": "South Orange County Community College District",
+  "city": "MISSION VIEJO",
+  "state": "CA",
+  "unitid": "432144",
+  "ueis": [
+   "EMG2X8H5TN49"
+  ]
+ },
+ "F-SCHOOL-OF-PREVENTIVE-MEDICINE-AND-PUBLIC": {
+  "type": "foreign",
+  "name": "School of Preventive Medicine and Public Health",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "U1UCAJL3PEW9"
+  ]
+ },
+ "S-129367": {
+  "type": "system",
+  "name": "Connecticut State Community College",
+  "city": "WATERBURY",
+  "state": "CT",
+  "unitid": "129367",
+  "ueis": [
+   "NEY6K8B6V835",
+   "HBMCELU6SGA1",
+   "V9HAESFBZHD4",
+   "FSMGQ4ZYNHR1",
+   "N1PZLYBYC1D3",
+   "Z7QQDHT9VSD3"
+  ]
+ },
+ "S-121619": {
+  "type": "system",
+  "name": "Rancho Santiago Community College District Office",
+  "city": "SANTA ANA",
+  "state": "CA",
+  "unitid": "121619",
+  "ueis": []
+ },
+ "S-SAN-MATEO-COUNTY-COMMUNITY-COLLEGE-DISTR": {
+  "type": "system",
+  "name": "San Mateo County Community College District Office",
+  "city": "SAN MATEO",
+  "state": "CA",
+  "unitid": null,
+  "ueis": [
+   "QB6NNZ72CPH5"
+  ]
+ },
+ "S-243832": {
+  "type": "system",
+  "name": "University of Puerto Rico Inc-San Juan",
+  "city": "SAN JUAN",
+  "state": "PR",
+  "unitid": "243832",
+  "ueis": []
+ },
+ "S-236692": {
+  "type": "system",
+  "name": "Spokane Community College",
+  "city": "SPOKANE",
+  "state": "WA",
+  "unitid": "236692",
+  "ueis": [
+   "RKLDNC6MJ9M6"
+  ]
+ },
+ "F-AMSTERDAM-UMC": {
+  "type": "foreign",
+  "name": "Amsterdam UMC",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "LUURS78YJ8F3"
+  ]
+ },
+ "F-AMERICAN-UNIVERSITY-OF-BEIRUT": {
+  "type": "foreign",
+  "name": "American University of Beirut",
+  "city": "NEW YORK",
+  "state": "NY",
+  "unitid": null,
+  "ueis": [
+   "JA17A756E3E1"
+  ]
+ },
+ "F-UNIVERSITY-OF-ZIMBABWE": {
+  "type": "foreign",
+  "name": "University of Zimbabwe",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "JM7HM1QFW4N1"
+  ]
+ },
+ "F-HANOI-MEDICAL-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Hanoi Medical University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "PKMEKZPKJCG9"
+  ]
+ },
+ "F-KAMUZU-UNIVERSITY-OF-HEALTH-SCIENCES": {
+  "type": "foreign",
+  "name": "Kamuzu University of Health Sciences",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "E7PXR3Q3LWJ4"
+  ]
+ },
+ "F-KWAME-NKRUMAH-UNIVERSITY-OF-SCIENCE-AND-": {
+  "type": "foreign",
+  "name": "Kwame Nkrumah University of Science and Technology",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "XSNQG1AB5HE6"
+  ]
+ },
+ "F-LIVERPOOL-SCHOOL-OF-TROPICAL-MEDICINE": {
+  "type": "foreign",
+  "name": "Liverpool School of Tropical Medicine",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "CL8TKXCL1UZ7"
+  ]
+ },
+ "F-LONDON-SCHOOL-OF-HYGIENE-AND-TROPICAL-ME": {
+  "type": "foreign",
+  "name": "London School of Hygiene and Tropical Medicine",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "UJTFXECZS4V6"
+  ]
+ },
+ "F-MAKERERE-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Makerere University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "QSXBGHKN8KV6",
+   "F7UJLM6TE621"
+  ]
+ },
+ "F-REDEEMER-S-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Redeemer's University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "JE9TT48NRNE5"
+  ]
+ },
+ "F-AGA-KHAN-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Aga Khan University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "VJ84MM7PBNM3"
+  ]
+ },
+ "F-KILIMANJARO-CHRISTIAN-MEDICAL-CENTRE": {
+  "type": "foreign",
+  "name": "Kilimanjaro Christian Medical Centre",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "GVJJBRLX78W5"
+  ]
+ },
+ "F-MCGILL-UNIVERSITY": {
+  "type": "foreign",
+  "name": "McGill University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "VJ62F6V2LE48"
+  ]
+ },
+ "F-UNIVERSITY-OF-BRITISH-COLUMBIA": {
+  "type": "foreign",
+  "name": "University of British Columbia",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "SJR5MQHSLWT6"
+  ]
+ },
+ "F-UNIVERSITY-OF-MANITOBA": {
+  "type": "foreign",
+  "name": "University of Manitoba",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "KZVHNCYJMHJ3"
+  ]
+ },
+ "F-UGANDA-VIRUS-RESEARCH-INSTITUTE": {
+  "type": "foreign",
+  "name": "Uganda Virus Research Institute",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "FH73AZ3YCBA3"
+  ]
+ },
+ "F-UNIVERSIDAD-DEL-DESARROLLO": {
+  "type": "foreign",
+  "name": "Universidad del Desarrollo",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "L6GLPJMB4N67"
+  ]
+ },
+ "F-UNIVERSIDAD-DEL-VALLE-DE-GUATEMALA": {
+  "type": "foreign",
+  "name": "Universidad del Valle de Guatemala",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "W7P8PHNF4477"
+  ]
+ },
+ "F-UNIVERSIDAD-PERUANA-CAYETANO-HEREDIA": {
+  "type": "foreign",
+  "name": "Universidad Peruana Cayetano Heredia",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "R2CESKBNTS36"
+  ]
+ },
+ "F-USTTB-BAMAKO": {
+  "type": "foreign",
+  "name": "USTTB Bamako",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "K4Y7NMTJM6D3"
+  ]
+ },
+ "F-UNIVERSITY-OF-OSLO": {
+  "type": "foreign",
+  "name": "University of Oslo",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "D2HNZH1A2KC8"
+  ]
+ },
+ "F-UNIVERSITY-OF-CAPE-TOWN": {
+  "type": "foreign",
+  "name": "University of Cape Town",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "NN5NML6VUCF9"
+  ]
+ },
+ "F-UNIVERSITY-OF-GHANA": {
+  "type": "foreign",
+  "name": "University of Ghana",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "FWUVUCDMQ7M1"
+  ]
+ },
+ "F-UNIVERSITY-OF-KWAZULU-NATAL": {
+  "type": "foreign",
+  "name": "University of KwaZulu-Natal",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "LL6NTW1MJGK3"
+  ]
+ },
+ "F-UNIVERSITY-OF-MALAWI-COLLEGE-OF-MEDICINE": {
+  "type": "foreign",
+  "name": "University of Malawi College of Medicine",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "CV5WC6JRDLK7"
+  ]
+ },
+ "F-UNIVERSITY-OF-NAIROBI": {
+  "type": "foreign",
+  "name": "University of Nairobi",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "JRVPLLKYCM65"
+  ]
+ },
+ "F-VIB-FLANDERS-INSTITUTE-FOR-BIOTECHNOLOGY": {
+  "type": "foreign",
+  "name": "VIB Flanders Institute for Biotechnology",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "JGFVXSHCGYL1"
+  ]
+ },
+ "I-ALLEN-INSTITUTE": {
+  "type": "institute",
+  "name": "Allen Institute",
+  "city": "SEATTLE",
+  "state": "WA",
+  "unitid": null,
+  "ueis": [
+   "NFHEUCKBFMU4"
+  ]
+ },
+ "I-HUDSONALPHA-INSTITUTE-FOR-BIOTECHNOLOGY": {
+  "type": "institute",
+  "name": "HudsonAlpha Institute for Biotechnology",
+  "city": "HUNTSVILLE",
+  "state": "AL",
+  "unitid": null,
+  "ueis": [
+   "M3GAQBN4BWH6"
+  ]
+ },
+ "I-INSTITUTE-FOR-ADVANCED-STUDY": {
+  "type": "institute",
+  "name": "Institute for Advanced Study",
+  "city": "PRINCETON",
+  "state": "NJ",
+  "unitid": null,
+  "ueis": [
+   "MNMJWSC5Z4H1"
+  ]
+ },
+ "I-J-CRAIG-VENTER-INSTITUTE": {
+  "type": "institute",
+  "name": "J. Craig Venter Institute",
+  "city": "LA JOLLA",
+  "state": "CA",
+  "unitid": null,
+  "ueis": [
+   "FL8UNYTG72D1"
+  ]
+ },
+ "I-GLADSTONE-INSTITUTES": {
+  "type": "institute",
+  "name": "Gladstone Institutes",
+  "city": "SAN FRANCISCO",
+  "state": "CA",
+  "unitid": null,
+  "ueis": [
+   "KH6NJ6ND8737"
+  ]
+ },
+ "I-LAS-CUMBRES-OBSERVATORY": {
+  "type": "institute",
+  "name": "Las Cumbres Observatory",
+  "city": "GOLETA",
+  "state": "CA",
+  "unitid": null,
+  "ueis": [
+   "GKNXAU6D3629"
+  ]
+ },
+ "I-MAX-PLANCK-FLORIDA-INSTITUTE-FOR-NEUROSC": {
+  "type": "institute",
+  "name": "Max Planck Florida Institute for Neuroscience",
+  "city": "JUPITER",
+  "state": "FL",
+  "unitid": null,
+  "ueis": [
+   "L8RJFGJXXS36"
+  ]
+ },
+ "I-PENNINGTON-BIOMEDICAL-RESEARCH-CENTER": {
+  "type": "institute",
+  "name": "Pennington Biomedical Research Center",
+  "city": "BATON ROUGE",
+  "state": "LA",
+  "unitid": null,
+  "ueis": [
+   "MWYVQTQ32ME5"
+  ]
+ },
+ "I-STOWERS-INSTITUTE-FOR-MEDICAL-RESEARCH": {
+  "type": "institute",
+  "name": "Stowers Institute for Medical Research",
+  "city": "KANSAS CITY",
+  "state": "MO",
+  "unitid": null,
+  "ueis": [
+   "KNSQZPJ3K775"
+  ]
+ },
+ "I-TEXAS-BIOMEDICAL-RESEARCH-INSTITUTE": {
+  "type": "institute",
+  "name": "Texas Biomedical Research Institute",
+  "city": "SAN ANTONIO",
+  "state": "TX",
+  "unitid": null,
+  "ueis": [
+   "J4EYPCJDQ1H6"
+  ]
+ },
+ "I-BROAD-INSTITUTE": {
+  "type": "institute",
+  "name": "Broad Institute",
+  "city": "CAMBRIDGE",
+  "state": "MA",
+  "unitid": null,
+  "ueis": [
+   "H5G9NWEFHXN4"
+  ]
+ },
+ "I-UNIVERSITY-OF-MARYLAND-CENTER-FOR-ENVIRO": {
+  "type": "institute",
+  "name": "University of Maryland Center for Environmental Science",
+  "city": "CAMBRIDGE",
+  "state": "MD",
+  "unitid": "404480",
+  "ueis": [
+   "JHTYTGKYWLL9"
+  ]
+ },
+ "I-VAN-ANDEL-RESEARCH-INSTITUTE": {
+  "type": "institute",
+  "name": "Van Andel Research Institute",
+  "city": "GRAND RAPIDS",
+  "state": "MI",
+  "unitid": null,
+  "ueis": [
+   "QLRCUJ8JTN53"
+  ]
+ },
+ "I-WHITEHEAD-INSTITUTE-FOR-BIOMEDICAL-RESEA": {
+  "type": "institute",
+  "name": "Whitehead Institute for Biomedical Research",
+  "city": "CAMBRIDGE",
+  "state": "MA",
+  "unitid": null,
+  "ueis": [
+   "C186U32QSBR9"
+  ]
+ },
+ "I-WOODS-HOLE-OCEANOGRAPHIC-INSTITUTION": {
+  "type": "institute",
+  "name": "Woods Hole Oceanographic Institution",
+  "city": "WOODS HOLE",
+  "state": "MA",
+  "unitid": null,
+  "ueis": [
+   "GFKFBWG2TV98"
+  ]
+ },
+ "S-COMMUNITY-COLLEGE-SYSTEM-OF-NEW-HAMPSHIR": {
+  "type": "system",
+  "name": "Community College System of New Hampshire",
+  "city": "CONCORD",
+  "state": "NH",
+  "unitid": null,
+  "ueis": [
+   "M529CN2JZMN5"
+  ]
+ },
+ "S-WASHINGTON-STATE-BOARD-FOR-COMMUNITY-AND": {
+  "type": "system",
+  "name": "Washington State Board for Community and Technical Colleges",
+  "city": "OLYMPIA",
+  "state": "WA",
+  "unitid": null,
+  "ueis": []
+ },
+ "F-UNIVERSITY-OF-NEW-SOUTH-WALES": {
+  "type": "foreign",
+  "name": "University Of New South Wales",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "QHAHG1WUM3J1"
+  ]
+ },
+ "F-THE-UNIVERSITY-OF-QUEENSLAND": {
+  "type": "foreign",
+  "name": "The University Of Queensland",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "C13XVQRKLNC6"
+  ]
+ },
+ "F-TECHNISCHE-UNIVERSITEIT-DELFT": {
+  "type": "foreign",
+  "name": "Technische Universiteit Delft",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "UKKCFM9NTDQ4"
+  ]
+ },
+ "F-EIDG-TECHNISCHE-HOCHSCHULE-ETHZ": {
+  "type": "foreign",
+  "name": "Eidg. Technische Hochschule (Ethz)",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "K443S6YDNM81"
+  ]
+ },
+ "F-UNIVERSITY-OF-SYDNEY": {
+  "type": "foreign",
+  "name": "University Of Sydney",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "CRPQN9NU7X28"
+  ]
+ },
+ "F-UNIVERSITY-OF-OXFORD": {
+  "type": "foreign",
+  "name": "University Of Oxford",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "G124UKMYGZJ6",
+   "G8SWKDWEM1C7",
+   "KAKBVGTNBZ53"
+  ]
+ },
+ "F-THE-CHANCELLOR-MASTERS-AND-SCHOLARS-OF-T": {
+  "type": "foreign",
+  "name": "The Chancellor, Masters, And Scholars Of The University Of Cambridge",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "LY2ZWNG2HKF8"
+  ]
+ },
+ "F-ECOLE-POLYTECHNIQUE-FEDERALE-DE-LAUSANNE": {
+  "type": "foreign",
+  "name": "Ecole Polytechnique Federale De Lausanne, Epfl",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "QWQBWLFTX5Q8"
+  ]
+ },
+ "F-THE-GOVERNING-COUNCIL-OF-THE-UNIVERSITY-": {
+  "type": "foreign",
+  "name": "The Governing Council Of The University Of Toronto",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "NBMSSFM3HP56"
+  ]
+ },
+ "F-IMPERIAL-COLLEGE-OF-SCIENCE-TECHNOLOGY-A": {
+  "type": "foreign",
+  "name": "Imperial College Of Science, Technology And Medicine",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "T9F5NHX87N25"
+  ]
+ },
+ "F-UNIVERSITY-COLLEGE-LONDON": {
+  "type": "foreign",
+  "name": "University College London",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "KSBTBM8584V1"
+  ]
+ },
+ "I-UNIVERSITIES-SPACE-RESEARCH-ASSOCIATION": {
+  "type": "institute",
+  "name": "Universities Space Research Association",
+  "city": "COLUMBIA",
+  "state": "MD",
+  "unitid": null,
+  "ueis": [
+   "VPWMMPGGPJ74"
+  ]
+ },
+ "F-QUEENSLAND-UNIVERSITY-OF-TECHNOLOGY": {
+  "type": "foreign",
+  "name": "Queensland University Of Technology",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "JQ33L6NTHJD6"
+  ]
+ },
+ "F-MACQUARIE-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Macquarie University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "CS58C37BL6W8"
+  ]
+ },
+ "F-MBARARA-UNIVERSITY-OF-SCIENCE-AND-TECHNO": {
+  "type": "foreign",
+  "name": "Mbarara University Of Science And Technology",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "HWXLSV26ZLC3"
+  ]
+ },
+ "F-WEIZMANN-INSTITUTE-OF-SCIENCE": {
+  "type": "foreign",
+  "name": "Weizmann Institute Of Science",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "NPJ8YBLFTKX6"
+  ]
+ },
+ "F-INSTITUTE-OF-CANCER-RESEARCH-ROYAL-CANCE": {
+  "type": "foreign",
+  "name": "Institute Of Cancer Research: Royal Cancer Hospital (The)",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "KXJBJJGTZTU3"
+  ]
+ },
+ "F-UNIVERSITAT-BERN": {
+  "type": "foreign",
+  "name": "Universitat Bern",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "MX7JPQLVM5V5"
+  ]
+ },
+ "F-THE-UNIVERSITY-OF-ADELAIDE": {
+  "type": "foreign",
+  "name": "The University Of Adelaide",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "ZNF3SKNJSKM7"
+  ]
+ },
+ "F-DEAKIN-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Deakin University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "WES6DBHULKE3"
+  ]
+ },
+ "F-THE-UNIVERSITY-OF-AUCKLAND": {
+  "type": "foreign",
+  "name": "The University Of Auckland",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "F1EHWJFBEWL8"
+  ]
+ },
+ "F-SEOUL-NATIONAL-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Seoul National University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "PGPZH8LTLC12"
+  ]
+ },
+ "F-UNIVERSITY-OF-BIRMINGHAM": {
+  "type": "foreign",
+  "name": "University Of Birmingham",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "L4NJBZ31UKK3"
+  ]
+ },
+ "F-THE-UNIVERSITY-OF-MANCHESTER": {
+  "type": "foreign",
+  "name": "The University Of Manchester",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "DER5FUHVV136"
+  ]
+ },
+ "F-THE-UNIVERSITY-COURT-OF-THE-UNIVERSITY-O": {
+  "type": "foreign",
+  "name": "The University Court Of The University Of St Andrews",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "EJY7CCGLGJ25"
+  ]
+ },
+ "F-HEBREW-UNIVERSITY-OF-JERUSALEM-THE": {
+  "type": "foreign",
+  "name": "Hebrew University Of Jerusalem (The)",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "HJDLWK8DNDL7"
+  ]
+ },
+ "S-ANA-G-MENDEZ-UNIVERSITY-SYSTEM": {
+  "type": "system",
+  "name": "Ana G. Mendez University System",
+  "city": "GURABO",
+  "state": "PR",
+  "unitid": null,
+  "ueis": []
+ },
+ "F-UNIVERSITY-OF-OTTAWA": {
+  "type": "foreign",
+  "name": "University Of Ottawa",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "Y86XXKDHXBA3"
+  ]
+ },
+ "S-RIVERSIDE-COMMUNITY-COLLEGE-DISTRICT": {
+  "type": "system",
+  "name": "Riverside Community College District",
+  "city": "RIVERSIDE",
+  "state": "CA",
+  "unitid": null,
+  "ueis": [
+   "JJNCL1H3NJQ1"
+  ]
+ },
+ "F-LAURENTIAN-UNIVERSITY-OF-SUDBURY": {
+  "type": "foreign",
+  "name": "Laurentian University Of Sudbury",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "ZKC9SB8E1UP2"
+  ]
+ },
+ "F-QUEENS-UNIVERSITY-AT-KINGSTON": {
+  "type": "foreign",
+  "name": "Queens University At Kingston",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "SU8CALPMK4C1"
+  ]
+ },
+ "F-TEL-AVIV-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Tel Aviv University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "FZGGEMMR3PP9"
+  ]
+ },
+ "F-MASTER-FELLOWS-AND-SCHOLARS-OF-PEMBROKE-": {
+  "type": "foreign",
+  "name": "Master Fellows And Scholars Of Pembroke College",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "HSXGDKVZCEM8"
+  ]
+ },
+ "F-THE-GOVERNORS-OF-THE-UNIVERSITY-OF-CALGA": {
+  "type": "foreign",
+  "name": "The Governors Of The University Of Calgary",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "XC87G4J7F7M8"
+  ]
+ },
+ "F-UNIVERSITY-OF-STRATHCLYDE-VIZ-ROYAL-COLL": {
+  "type": "foreign",
+  "name": "University Of Strathclyde Viz Royal College Of Science & Technology",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "DPADN7WD7XB3"
+  ]
+ },
+ "F-THE-UNIVERSITY-OF-HERTFORDSHIRE": {
+  "type": "foreign",
+  "name": "The University Of Hertfordshire",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "FCUSGL43NCY4"
+  ]
+ },
+ "F-AUSTRALIAN-NATIONAL-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Australian National University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "GJV9JC7N6MY7"
+  ]
+ },
+ "F-AARHUS-UNIVERSITET": {
+  "type": "foreign",
+  "name": "Aarhus Universitet",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "R7VGL7BYWS98"
+  ]
+ },
+ "F-ROYAL-MELBOURNE-INSTITUTE-OF-TECHNOLOGY": {
+  "type": "foreign",
+  "name": "Royal Melbourne Institute Of Technology",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "YDCGW6PB2G78"
+  ]
+ },
+ "F-THE-GOVERNORS-OF-THE-UNIVERSITY-OF-ALBER": {
+  "type": "foreign",
+  "name": "The Governors Of The University Of Alberta",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "F2ZFXUC713L3"
+  ]
+ },
+ "F-UNIVERSITY-OF-WATERLOO": {
+  "type": "foreign",
+  "name": "University Of Waterloo",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "RHJRA5J1A2B5"
+  ]
+ },
+ "F-TOBB-EKONOMI-VE-TEKNOLOJI-UNIVERSITESI": {
+  "type": "foreign",
+  "name": "Tobb Ekonomi Ve Teknoloji Universitesi",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "CTRFZULFKMJ7"
+  ]
+ },
+ "F-UNIVERSITY-OF-NEWCASTLE-UPON-TYNE": {
+  "type": "foreign",
+  "name": "University Of Newcastle Upon Tyne",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "KANSTBAHRMD5"
+  ]
+ },
+ "F-MCMASTER-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Mcmaster University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "Q7EMP68DMNM5"
+  ]
+ },
+ "F-SVEUCILISTE-U-ZAGREBU-FAKULTET-ELEKTROTE": {
+  "type": "foreign",
+  "name": "Sveuciliste U Zagrebu Fakultet Elektrotehnike I Racunarstva",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "CDFVVNMUHGQ1"
+  ]
+ },
+ "F-INSTITUTO-TECNOLOGICO-Y-DE-ESTUDIOS-SUPE": {
+  "type": "foreign",
+  "name": "Instituto Tecnologico Y De Estudios Superiores De Monterrey",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "SL1NWEUZT145"
+  ]
+ },
+ "F-NATIONAL-TAIWAN-UNIVERSITY": {
+  "type": "foreign",
+  "name": "National Taiwan University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "HZ9SXM6AHZP8"
+  ]
+ },
+ "F-UNIVERSITY-OF-DURHAM": {
+  "type": "foreign",
+  "name": "University Of Durham",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "DLJTMZ3L8ST6"
+  ]
+ },
+ "F-CHALMERS-TEKNISKA-HOGSKOLA-AKTIEBOLAG": {
+  "type": "foreign",
+  "name": "Chalmers Tekniska Hogskola Aktiebolag",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "H3JTLWKLGJY4"
+  ]
+ },
+ "F-UNIVERSITA-DEGLI-STUDI-DI-ROMA-LA-SAPIEN": {
+  "type": "foreign",
+  "name": "Universita' Degli Studi Di Roma La Sapienza",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "CX5UDN3D9D25"
+  ]
+ },
+ "F-UNIVERSIDAD-CARLOS-III-DE-MADRID": {
+  "type": "foreign",
+  "name": "Universidad Carlos Iii De Madrid",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "KPXFAMFRZD15"
+  ]
+ },
+ "F-KOREA-ADVANCED-INSTITUTE-OF-SCIENCE-AND-": {
+  "type": "foreign",
+  "name": "Korea Advanced Institute Of Science And Technology",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "DCGLCA8ZN555"
+  ]
+ },
+ "F-THE-QUEEN-S-UNIVERSITY-OF-BELFAST": {
+  "type": "foreign",
+  "name": "The Queen'S University Of Belfast",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "Y7MBSQFLTJ46"
+  ]
+ },
+ "F-UNIVERSITY-OF-NOTTINGHAM-THE": {
+  "type": "foreign",
+  "name": "University Of Nottingham (The)",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "C8BPML4336D9"
+  ]
+ },
+ "F-CURTIN-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Curtin University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "Z62KF2L852E3"
+  ]
+ },
+ "I-SALK-INSTITUTE-FOR-BIOLOGICAL-STUDIES": {
+  "type": "institute",
+  "name": "Salk Institute for Biological Studies",
+  "city": "LA JOLLA",
+  "state": "CA",
+  "unitid": null,
+  "ueis": [
+   "NNJ6BMBTFGN5"
+  ]
+ },
+ "F-COVENANT-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Covenant University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "Y5CQJFQ6XW25"
+  ]
+ },
+ "F-AMERICAN-UNIVERSITY-IN-CAIRO": {
+  "type": "foreign",
+  "name": "American University in Cairo",
+  "city": "NEW YORK",
+  "state": "NY",
+  "unitid": null,
+  "ueis": [
+   "XANUCRLGSEQ7"
+  ]
+ },
+ "F-UNIVERSITY-OF-TECHNOLOGY-SYDNEY": {
+  "type": "foreign",
+  "name": "University Of Technology Sydney",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "YZ89RQL9NEG8"
+  ]
+ },
+ "F-UNIVERSITY-OF-SUSSEX-THE": {
+  "type": "foreign",
+  "name": "University Of Sussex(The)",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "XDH5TM3JDZ74"
+  ]
+ },
+ "F-THE-UNIVERSITY-OF-WOLLONGONG": {
+  "type": "foreign",
+  "name": "The University Of Wollongong",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "YAMCXRMMEYN5"
+  ]
+ },
+ "F-HELSINGIN-YLIOPISTO": {
+  "type": "foreign",
+  "name": "Helsingin Yliopisto",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "YM1UNKPWTJL9"
+  ]
+ },
+ "F-DALHOUSIE-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Dalhousie University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "C1FXPHMHR966"
+  ]
+ },
+ "F-JAMES-COOK-UNIVERSITY": {
+  "type": "foreign",
+  "name": "James Cook University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "XMH7VSBEADK4"
+  ]
+ },
+ "F-SIMON-FRASER-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Simon Fraser University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "Q8FRNDEN4VA3"
+  ]
+ },
+ "F-TRINITY-COLLEGE-DUBLIN": {
+  "type": "foreign",
+  "name": "Trinity College Dublin",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "PMDXT6F1X7E6"
+  ]
+ },
+ "F-SUNGKYUNKWAN-UNIVERSITY-RESEARCH-BUSINES": {
+  "type": "foreign",
+  "name": "Sungkyunkwan University Research & Business Foundation",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "JDRFNNZGLL25"
+  ]
+ },
+ "I-SOUTHWEST-RESEARCH-INSTITUTE": {
+  "type": "institute",
+  "name": "Southwest Research Institute",
+  "city": "SAN ANTONIO",
+  "state": "TX",
+  "unitid": null,
+  "ueis": [
+   "PB11V1KH3KV4"
+  ]
+ },
+ "I-MONELL-CHEMICAL-SENSES-CENTER": {
+  "type": "institute",
+  "name": "Monell Chemical Senses Center",
+  "city": "PHILADELPHIA",
+  "state": "PA",
+  "unitid": null,
+  "ueis": [
+   "DJCTQA1PR7Q4"
+  ]
+ },
+ "F-VRIJE-UNIVERSITEIT-BRUSSEL": {
+  "type": "foreign",
+  "name": "Vrije Universiteit Brussel",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "XH3LULJ2DY86"
+  ]
+ },
+ "F-THE-UNIVERSITY-OF-HUDDERSFIELD": {
+  "type": "foreign",
+  "name": "The University Of Huddersfield",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "JR1NUF1Z1L87"
+  ]
+ },
+ "F-YORK-UNIVERSITY": {
+  "type": "foreign",
+  "name": "York University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "HT23J5SXQ1J4"
+  ]
+ },
+ "F-UNIVERSITA-DEGLI-STUDI-DI-GENOVA": {
+  "type": "foreign",
+  "name": "Universita' Degli Studi Di Genova",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "UTN5VKAN7MK9"
+  ]
+ },
+ "F-UNIVERSITA-DEGLI-STUDI-DI-ROMA-TOR-VERGA": {
+  "type": "foreign",
+  "name": "Universita' Degli Studi Di Roma Tor Vergata",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "XPNML7MBWL86"
+  ]
+ },
+ "S-UNIVERSITY-OF-CALIFORNIA-AGRICULTURE-AND": {
+  "type": "system",
+  "name": "University of California Agriculture and Natural Resources",
+  "city": "OAKLAND",
+  "state": "CA",
+  "unitid": null,
+  "ueis": [
+   "DJA9TB2ULCT1"
+  ]
+ },
+ "F-COLLEGE-OF-MICRONESIA": {
+  "type": "foreign",
+  "name": "College of Micronesia",
+  "city": "POHNPEI",
+  "state": "FM",
+  "unitid": null,
+  "ueis": [
+   "R1CJJUMM9WP3"
+  ]
+ },
+ "S-UNIVERSITY-OF-WISCONSIN-SYSTEM-ADMINISTR": {
+  "type": "system",
+  "name": "University of Wisconsin System Administration",
+  "city": "MADISON",
+  "state": "WI",
+  "unitid": null,
+  "ueis": []
+ },
+ "I-RAND-CORPORATION": {
+  "type": "institute",
+  "name": "RAND Corporation",
+  "city": "Santa Monica",
+  "state": "CA",
+  "unitid": "121628",
+  "ueis": [
+   "YY46Q97AEZA8"
+  ]
+ },
+ "X-SAN-JOAQUIN-COE": {
+  "type": "other",
+  "name": "San Joaquin County Office of Education",
+  "city": "Stockton",
+  "state": "CA",
+  "unitid": null,
+  "ueis": [
+   "M5F2BPZWLJE7"
+  ]
+ },
+ "F-UNIVERSIDADE-PRESBITERIANA-MACKENZIE": {
+  "type": "foreign",
+  "name": "Universidade Presbiteriana Mackenzie",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "FDE8QKQR3Q85"
+  ]
+ },
+ "F-CHULALONGKORN-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Chulalongkorn University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "L237QX57L1K7"
+  ]
+ },
+ "F-UNIVERSITY-OF-ST-GALLEN": {
+  "type": "foreign",
+  "name": "University of St. Gallen",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "LLK6D5M1UAF1"
+  ]
+ },
+ "F-QUEEN-MARY-UNIVERSITY-OF-LONDON": {
+  "type": "foreign",
+  "name": "Queen Mary University of London",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "THE2VARBDFC5"
+  ]
+ },
+ "F-MUHIMBILI-UNIVERSITY-OF-HEALTH-AND-ALLIE": {
+  "type": "foreign",
+  "name": "Muhimbili University of Health and Allied Sciences",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "U61RWTFLV559"
+  ]
+ },
+ "F-UNIVERSITY-OF-LIVERPOOL": {
+  "type": "foreign",
+  "name": "University of Liverpool",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "VFHSMEHGFGG5"
+  ]
+ },
+ "F-UNIVERSITY-OF-EXETER": {
+  "type": "foreign",
+  "name": "University of Exeter",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "ZNQ1VJLJQ827"
+  ]
+ },
+ "S-LOUISIANA-COMMUNITY-AND-TECHNICAL-COLLEG": {
+  "type": "system",
+  "name": "Louisiana Community and Technical College System",
+  "city": "BATON ROUGE",
+  "state": "LA",
+  "unitid": null,
+  "ueis": [
+   "NFDYXNG8MNT1"
+  ]
+ },
+ "S-VIRGINIA-COMMUNITY-COLLEGE-SYSTEM": {
+  "type": "system",
+  "name": "Virginia Community College System",
+  "city": "RICHMOND",
+  "state": "VA",
+  "unitid": null,
+  "ueis": [
+   "KK6WBRW6EYG3"
+  ]
+ },
+ "F-LEBANESE-AMERICAN-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Lebanese American University",
+  "city": "NEW YORK",
+  "state": "NY",
+  "unitid": null,
+  "ueis": [
+   "FMVHVXQBBED5"
+  ]
+ },
+ "S-COLORADO-COMMUNITY-COLLEGE-SYSTEM": {
+  "type": "system",
+  "name": "Colorado Community College System",
+  "city": "DENVER",
+  "state": "CO",
+  "unitid": null,
+  "ueis": [
+   "MLZBKBMQW8N9"
+  ]
+ },
+ "S-WEST-VIRGINIA-HIGHER-EDUCATION-POLICY-CO": {
+  "type": "system",
+  "name": "West Virginia Higher Education Policy Commission",
+  "city": "CHARLESTON",
+  "state": "WV",
+  "unitid": null,
+  "ueis": [
+   "JVHQWVE2SZE6"
+  ]
+ },
+ "S-TEXAS-A-M-UNIVERSITY-SYSTEM-OFFICE": {
+  "type": "system",
+  "name": "Texas A & M University System Office",
+  "city": "COLLEGE STATION",
+  "state": "TX",
+  "unitid": null,
+  "ueis": [
+   "HH6VX5XDL284"
+  ]
+ },
+ "F-KENYATTA-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Kenyatta University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "R66LMR75YKD6"
+  ]
+ },
+ "F-AMERICAN-UNIVERSITY-OF-AFGHANISTAN": {
+  "type": "foreign",
+  "name": "American University of Afghanistan",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "J6CAMYULT415"
+  ]
+ },
+ "F-UNIVERSIDAD-NACIONAL-AGRARIA-LA-MOLINA": {
+  "type": "foreign",
+  "name": "Universidad Nacional Agraria La Molina",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "E1KJPMG7LYZ6"
+  ]
+ },
+ "I-DAUPHIN-ISLAND-SEA-LAB-MARINE-ENVIRONMEN": {
+  "type": "institute",
+  "name": "Dauphin Island Sea Lab (Marine Environmental Sciences Consortium)",
+  "city": "DAUPHIN ISLAND",
+  "state": "AL",
+  "unitid": null,
+  "ueis": [
+   "N47JDKML6UT5"
+  ]
+ },
+ "F-AMERICAN-UNIVERSITY-OF-KURDISTAN": {
+  "type": "foreign",
+  "name": "American University of Kurdistan",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "R3CUZDRNN317"
+  ]
+ },
+ "F-AMERICAN-UNIVERSITY-OF-IRAQ-BAGHDAD": {
+  "type": "foreign",
+  "name": "American University of Iraq Baghdad",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "TNLJEDQECYS9"
+  ]
+ },
+ "I-LOUISIANA-UNIVERSITIES-MARINE-CONSORTIUM": {
+  "type": "institute",
+  "name": "Louisiana Universities Marine Consortium (LUMCON)",
+  "city": "CHAUVIN",
+  "state": "LA",
+  "unitid": null,
+  "ueis": [
+   "F7NHNQKGLJK4"
+  ]
+ },
+ "F-AMERICAN-UNIVERSITY-OF-IRAQ-SULAIMANI": {
+  "type": "foreign",
+  "name": "American University of Iraq Sulaimani",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "FHC1Q4NP6TL5"
+  ]
+ },
+ "S-CHABOT-LAS-POSITAS-COMMUNITY-COLLEGE-DIS": {
+  "type": "system",
+  "name": "Chabot-Las Positas Community College District",
+  "city": "PLEASANTON",
+  "state": "CA",
+  "unitid": null,
+  "ueis": [
+   "P2MESJCECM35"
+  ]
+ },
+ "F-CATHOLIC-UNIVERSITY-IN-ERBIL": {
+  "type": "foreign",
+  "name": "Catholic University in Erbil",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "C5LVAL9NL6K3"
+  ]
+ },
+ "F-GHANA-INSTITUTE-OF-MANAGEMENT-AND-PUBLIC": {
+  "type": "foreign",
+  "name": "Ghana Institute of Management and Public Administration",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "VQASRJ6CMVS3"
+  ]
+ },
+ "F-UNIVERSITY-OF-THE-WEST-INDIES": {
+  "type": "foreign",
+  "name": "University of the West Indies",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "ETJ9E32JBBT1",
+   "V9JKLHUETD15"
+  ]
+ },
+ "F-UNITED-STATES-INTERNATIONAL-UNIVERSITY-A": {
+  "type": "foreign",
+  "name": "United States International University-Africa",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "L8J8ESFN12R3"
+  ]
+ },
+ "F-UNIVERSIDAD-DE-ORIENTE": {
+  "type": "foreign",
+  "name": "Universidad de Oriente",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "WFJ7HC6J3J73"
+  ]
+ },
+ "X-PAWNEE-NATION-COLLEGE": {
+  "type": "other",
+  "name": "Pawnee Nation College",
+  "city": "PAWNEE",
+  "state": "OK",
+  "unitid": null,
+  "ueis": [
+   "L13KW16MUJE7"
+  ]
+ },
+ "F-AMERICAN-UNIVERSITY-OF-ARMENIA": {
+  "type": "foreign",
+  "name": "American University of Armenia",
+  "city": "YEREVAN",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "NRMMLMKHA6X8"
+  ]
+ },
+ "F-AFRICA-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Africa University",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "VFT2J1ZDJ988"
+  ]
+ },
+ "X-HOLY-NAMES-UNIVERSITY": {
+  "type": "other",
+  "name": "Holy Names University",
+  "city": "OAKLAND",
+  "state": "CA",
+  "unitid": null,
+  "ueis": [
+   "FVJMAY9HM3A5"
+  ]
+ },
+ "F-CESAG": {
+  "type": "foreign",
+  "name": "CESAG",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "DNETPKBVHLB7"
+  ]
+ },
+ "F-CARLETON-UNIVERSITY": {
+  "type": "foreign",
+  "name": "Carleton University",
+  "city": "OTTAWA",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "PAYJLPX4A435"
+  ]
+ },
+ "X-MILLS-COLLEGE": {
+  "type": "other",
+  "name": "Mills College",
+  "city": "OAKLAND",
+  "state": "CA",
+  "unitid": null,
+  "ueis": [
+   "M4MNMFNLBCE6"
+  ]
+ },
+ "F-MEMORIAL-UNIVERSITY-OF-NEWFOUNDLAND": {
+  "type": "foreign",
+  "name": "Memorial University of Newfoundland",
+  "city": "ST JOHNS",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "Z4KRYP5UWHU5"
+  ]
+ },
+ "X-LOWER-BRULE-COMMUNITY-COLLEGE": {
+  "type": "other",
+  "name": "Lower Brule Community College",
+  "city": "LOWER BRULE",
+  "state": "SD",
+  "unitid": null,
+  "ueis": [
+   "EJCHHDB921K8"
+  ]
+ },
+ "F-AMERICAN-UNIVERSITY-OF-CENTRAL-ASIA": {
+  "type": "foreign",
+  "name": "American University of Central Asia",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "GU1LAJT398N1"
+  ]
+ },
+ "S-UTAH-SYSTEM-OF-HIGHER-EDUCATION": {
+  "type": "system",
+  "name": "Utah System of Higher Education",
+  "city": "SALT LAKE CITY",
+  "state": "UT",
+  "unitid": null,
+  "ueis": [
+   "E87AMJLATDP9"
+  ]
+ },
+ "S-MAINE-COMMUNITY-COLLEGE-SYSTEM": {
+  "type": "system",
+  "name": "Maine Community College System",
+  "city": "AUGUSTA",
+  "state": "ME",
+  "unitid": null,
+  "ueis": [
+   "F6XMPMVYG8J3"
+  ]
+ },
+ "F-UNIVERSITY-OF-OULU": {
+  "type": "foreign",
+  "name": "University of Oulu",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "HUF2M24KQD46"
+  ]
+ },
+ "F-KING-S-COLLEGE-LONDON": {
+  "type": "foreign",
+  "name": "King's College London",
+  "city": "",
+  "state": "",
+  "unitid": null,
+  "ueis": [
+   "NMH2NELG8E88"
+  ]
+ },
+ "X-FINLANDIA-UNIVERSITY": {
+  "type": "other",
+  "name": "Finlandia University",
+  "city": "HANCOCK",
+  "state": "MI",
+  "unitid": null,
+  "ueis": [
+   "DAASENEJ1FA3"
+  ]
+ }
+}

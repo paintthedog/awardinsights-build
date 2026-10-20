@@ -1,0 +1,927 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Research Designation Explorer</title>
+<meta name="description" content="Where any institution stands against the Carnegie R1, R2, and RCU thresholds, what binds it, and where the newest data points for 2028.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Readex+Pro:wght@300;400;500;600;700&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --ground:#f1efe8;--paper:#fff;--ink:#191917;--muted:#63625c;--faint:#8f8d85;
+  --line:#e3ded3;--line-soft:#eeeae0;
+  --accent:#0f6f7c;--accent-ink:#0b5560;--accent-soft:#dcecec;
+  --t1:#184f95;--t2:#2a78d6;--t3:#86b6ef;         /* R1 / R2 / RCU ordinal blue */
+  --t1soft:#e5edf7;--t2soft:#eaf2fc;--t3soft:#f0f6fd;
+  --you:#e2611f;--you-soft:#fbe9df;
+  --other:#c3bdb0;
+  --warn:#a6602a;--good:#0ca30c;
+  --shadow:0 1px 2px rgba(20,20,18,.05),0 10px 30px -14px rgba(20,20,18,.22);
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --ground:#0d0f10;--paper:#17191b;--ink:#e9e9e3;--muted:#9a9a91;--faint:#6a6a63;
+  --line:#292b2d;--line-soft:#202224;
+  --accent:#4bb4c1;--accent-ink:#7fd0da;--accent-soft:#15302f;
+  --t1:#9ec5f4;--t2:#5598e7;--t3:#2a78d6;
+  --t1soft:#16233a;--t2soft:#131f31;--t3soft:#101a29;
+  --you:#f0824f;--you-soft:#3a1e10;
+  --other:#54575a;
+  --warn:#d08a52;--good:#3ecb5e;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 12px 32px -16px rgba(0,0,0,.65);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0d0f10;--paper:#17191b;--ink:#e9e9e3;--muted:#9a9a91;--faint:#6a6a63;
+  --line:#292b2d;--line-soft:#202224;
+  --accent:#4bb4c1;--accent-ink:#7fd0da;--accent-soft:#15302f;
+  --t1:#9ec5f4;--t2:#5598e7;--t3:#2a78d6;
+  --t1soft:#16233a;--t2soft:#131f31;--t3soft:#101a29;
+  --you:#f0824f;--you-soft:#3a1e10;
+  --other:#54575a;
+  --warn:#d08a52;--good:#3ecb5e;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 12px 32px -16px rgba(0,0,0,.65);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Readex Pro",system-ui,sans-serif;line-height:1.45;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding:26px 20px 40px}
+h1,h2,h3{margin:0}
+.mono{font-family:"Readex Pro",system-ui,sans-serif;font-variant-numeric:tabular-nums;font-weight:400}
+.masthead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding-bottom:6px}
+.masthead h1{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:26px;letter-spacing:-.01em}
+.masthead .sub{color:var(--muted);font-size:13.5px;max-width:66ch}
+.tag{margin-left:auto;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);border-radius:2px;padding:4px 8px}
+.legendbar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:16px 0 20px;font-size:12px;color:var(--muted)}
+.legendbar .lk{display:inline-flex;align-items:center;gap:6px}
+.legendbar .dot{width:11px;height:11px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
+.search{position:relative;margin-bottom:20px}
+.search label{display:block;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.search input{width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:12px 14px}
+.search input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.results{position:absolute;z-index:30;left:0;right:0;top:100%;margin-top:4px;background:var(--paper);border:1px solid var(--line);border-radius:5px;box-shadow:var(--shadow);max-height:340px;overflow:auto}
+.results button{display:flex;width:100%;text-align:left;gap:10px;align-items:baseline;background:none;border:0;border-bottom:1px solid var(--line-soft);padding:10px 14px;color:var(--ink);font-family:inherit;font-size:14px;cursor:pointer}
+.results button:last-child{border-bottom:0}
+.results button:hover,.results button:focus{background:var(--accent-soft);outline:none}
+.results .rn{font-family:"Young Serif",Georgia,serif;font-weight:400}
+.results .rs{margin-left:auto;color:var(--faint);font-size:12px;white-space:nowrap}
+.empty{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:30px 28px;margin-bottom:22px}
+.empty h2{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:21px;margin-bottom:8px}
+.empty p{color:var(--muted);font-size:14px;max-width:70ch;margin:0 0 14px}
+.tierdefs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+@media(max-width:720px){.tierdefs{grid-template-columns:1fr}}
+.tierdef{border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+.tierdef .th{display:flex;align-items:center;gap:8px;font-weight:400;font-family:"Young Serif",Georgia,serif;font-size:15px}
+.tierdef .th .sw{width:12px;height:12px;border-radius:50%}
+.tierdef .rq{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+.pe-picks{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px}
+.pe-lab{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+.pe-picks button{font-family:inherit;font-size:13px;font-weight:500;color:var(--accent-ink);background:var(--accent-soft);border:1px solid var(--accent);border-radius:100px;padding:6px 13px;cursor:pointer}
+.pe-picks button:hover{background:var(--accent);color:#fff}
+/* standing panel */
+.stand{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:20px}
+.stand .hd{display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px 18px;padding:20px 22px 16px;border-bottom:1px solid var(--line-soft)}
+.stand .nm{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:22px;line-height:1.15;letter-spacing:-.01em}
+.stand .loc{color:var(--muted);font-size:13px;margin-top:3px}
+.stand .old{color:var(--faint);font-size:12px;margin-top:6px}
+.badge{margin-left:auto;text-align:center;padding:10px 16px;border-radius:8px;color:#fff;min-width:120px}
+.badge .bt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.badge .bd{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:26px;line-height:1.1;margin-top:2px}
+.badge.R1{background:var(--t1)}.badge.R2{background:var(--t2)}.badge.RCU{background:var(--t3);color:#0b2540}
+.badge.RCU .bt{opacity:.7}
+.ladder{padding:8px 22px 20px}
+.ladder h3,.rails h3,.scatterwrap h3{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:16px 0 10px}
+.crit{display:grid;grid-template-columns:auto 1fr auto;gap:2px 14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line-soft)}
+.crit:last-child{border-bottom:0}
+.crit .ic{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700}
+.crit .ic.yes{background:color-mix(in srgb,var(--good) 18%,transparent);color:var(--good)}
+.crit .ic.no{background:var(--line-soft);color:var(--faint)}
+.crit .cl{font-weight:600;font-size:14px}
+.crit .cr{font-size:12px;color:var(--muted);grid-column:2;margin-top:1px}
+.crit .cv{grid-column:3;grid-row:1/3;text-align:right;align-self:center;font-size:12.5px;color:var(--muted);max-width:20ch}
+.crit .cv b{color:var(--ink)}
+.nextbox{margin:16px 22px 20px;padding:13px 16px;border-radius:8px;background:var(--you-soft);border:1px solid color-mix(in srgb,var(--you) 40%,transparent);font-size:13px;line-height:1.55}
+.nextbox b{color:var(--you)}
+.nextbox.top{background:var(--accent-soft);border-color:var(--accent)}
+.nextbox.top b{color:var(--accent-ink)}
+.rails{padding:0 22px 8px}
+.rail{margin-bottom:18px}
+.rail .rlab{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:20px}
+.rail .track{position:relative;height:6px;background:var(--line-soft);border-radius:4px}
+.rail .fill{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:color-mix(in srgb,var(--accent) 55%,var(--line))}
+.rail .mk{position:absolute;top:-7px;width:2px;height:20px;background:var(--faint)}
+.rail .mk span{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:9.5px;letter-spacing:.03em;color:var(--faint);white-space:nowrap;text-transform:uppercase}
+.rail .pin{position:absolute;top:50%;width:13px;height:13px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid var(--paper)}
+.rail .pin.avg{background:var(--you)}
+.rail .pin.lat{background:none;border-color:var(--you)}
+.rail .pin span{position:absolute;top:14px;left:50%;transform:translateX(-50%);font-size:9.5px;color:var(--you);white-space:nowrap;font-weight:600}
+.rail .pin.lat span{opacity:.8}
+/* scatter */
+.scatterwrap{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:18px 20px 20px}
+.filters{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin-bottom:6px}
+.filters .fl{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-right:2px}
+.filters select{font-family:inherit;font-size:12.5px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:5px 8px}
+.fchip{font-family:inherit;font-size:11.5px;padding:4px 9px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--muted);cursor:pointer}
+.fchip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:500}
+.plot{position:relative;width:100%}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.tt{position:fixed;z-index:50;pointer-events:none;background:var(--paper);border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);padding:8px 10px;font-size:12px;max-width:230px;opacity:0;transition:opacity .08s}
+.tt .ttn{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:13px}
+.tt .ttr{color:var(--muted);font-size:11.5px;margin-top:2px}
+.axlab{fill:var(--muted);font-size:11px;font-family:"Readex Pro",sans-serif}
+.axttl{fill:var(--muted);font-size:11.5px;font-weight:600;font-family:"Readex Pro",sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.thline{stroke:var(--faint);stroke-width:1;stroke-dasharray:3 3}
+.thlab{fill:var(--faint);font-size:10px;font-family:"Readex Pro",system-ui,sans-serif}
+/* mode switch + movers */
+.modeswitch{display:inline-flex;gap:3px;background:var(--line-soft);border-radius:8px;padding:3px;margin:0 0 20px}
+.modeswitch button{font-family:inherit;font-size:13.5px;font-weight:600;border:0;background:none;color:var(--muted);padding:8px 18px;border-radius:6px;cursor:pointer}
+.modeswitch button[aria-pressed="true"]{background:var(--paper);color:var(--accent-ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.mv-controls{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.mv-controls button{font-family:inherit;font-size:13px;font-weight:500;border:1px solid var(--line);background:var(--paper);color:var(--muted);border-radius:100px;padding:7px 14px;cursor:pointer}
+.mv-controls button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.mv-note{font-size:13px;color:var(--muted);margin:2px 0 16px;max-width:78ch;line-height:1.55}
+.mvtable{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}
+.mvrow{display:grid;grid-template-columns:var(--cols,34px 1fr);gap:3px 16px;align-items:center;padding:12px 18px;border-bottom:1px solid var(--line-soft);cursor:pointer;text-align:left;width:100%;background:none;border-left:0;border-right:0;border-top:0;font-family:inherit}
+.mvrow:last-child{border-bottom:0}
+.mvrow:hover{background:var(--accent-soft)}
+.mvrow.hdr{cursor:default;background:var(--line-soft);border-bottom:1px solid var(--line)}
+.mvrow.hdr:hover{background:var(--line-soft)}
+.mvrow .rk{font-family:"Readex Pro",system-ui,sans-serif;font-size:13px;color:var(--faint);text-align:right}
+.mvrow .mn{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:14.5px}
+.mvrow .ms{grid-column:2;font-size:12px;color:var(--muted);margin-top:1px}
+.mvrow .cell{text-align:right;font-size:13px;min-width:0;font-variant-numeric:tabular-nums}
+.mvrow .cell.mono{font-family:"Readex Pro",system-ui,sans-serif}
+.mvrow .cell .chip,.mvrow .cell .bind{font-family:"Readex Pro",sans-serif}
+.bind.ok{border-color:var(--good);color:var(--good)}
+.mvrow .cell .bind{display:inline-block}
+.hdr .cell{line-height:1.3}
+.mvrow .cell .cv{font-family:"Readex Pro",system-ui,sans-serif;font-weight:400;font-variant-numeric:tabular-nums}
+.mvrow .cell .ck{display:block;font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin-bottom:1px}
+.mvrow .chip{font-size:10.5px;font-weight:600;padding:1px 7px;border-radius:100px;color:#fff}
+.chip.R1{background:var(--t1)}.chip.R2{background:var(--t2)}.chip.RCU{background:var(--t3);color:#0b2540}
+.trend.up{color:var(--good)}.trend.dn{color:var(--warn)}.trend.flat{color:var(--faint)}
+.hdr .cell,.hdr .rk,.hdr .mn{font-family:"Readex Pro",sans-serif;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:600}
+@media(max-width:760px){.mvrow{grid-template-columns:var(--cols-sm,22px 1fr);gap:2px 10px;padding:11px 12px}.mvrow .cell.hidesm{display:none}.mvrow .cell{font-size:12px}}
+.foot{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);color:var(--faint);font-size:11.5px;line-height:1.65;max-width:80ch}
+.foot b{color:var(--muted)}
+.acts{margin-top:10px;display:flex;gap:8px}
+.actbtn{font-family:inherit;font-size:12.5px;font-weight:500;color:var(--accent-ink);background:var(--accent-soft);border:1px solid var(--accent);border-radius:5px;padding:6px 12px;cursor:pointer}
+.actbtn:hover{background:var(--accent);color:#fff}
+.dq{margin:14px 22px 0;padding:10px 14px;border-radius:8px;border:1px dashed var(--line);background:var(--line-soft)}
+.dq p{margin:3px 0;font-size:12.5px;color:var(--muted);line-height:1.5}.dq b{color:var(--ink)}
+.dag{color:var(--warn);font-size:11px;margin-left:2px}
+.mvfoot{padding:10px 18px;font-size:11.5px;color:var(--faint);border-top:1px solid var(--line-soft)}
+.alert{margin:16px 22px 4px;padding:12px 16px;border-radius:8px;background:var(--you-soft);border:1px solid color-mix(in srgb,var(--you) 40%,transparent);font-size:13px;line-height:1.55}
+.alert .alh{font-weight:700;color:var(--you);font-size:13px}
+.alert p{margin:4px 0 0}
+.gapwrap{padding:4px 22px 8px}
+.gapwrap h3,.projwrap h3{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+.holdln{font-size:13px;margin:0 0 10px;padding:8px 12px;border-radius:6px;background:var(--line-soft);max-width:none}
+.holdln.warn{background:var(--you-soft);border:1px solid color-mix(in srgb,var(--you) 35%,transparent)}
+.verdict{font-size:13.5px;margin:0 0 12px;max-width:80ch;line-height:1.55}
+.gcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.gcard{border:1px solid var(--line);border-radius:8px;padding:13px 15px;border-left-width:4px}
+.gcard.ok{border-left-color:var(--good)}.gcard.short{border-left-color:var(--warn)}
+.gk{font-weight:600;font-size:13.5px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.gtag{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;font-weight:600}
+.gcard.ok .gtag{color:var(--good)}.gcard.short .gtag{color:var(--warn)}
+.gv{font-size:24px;font-weight:400;margin-top:4px}
+.gu{font-size:13px;color:var(--muted);margin-left:2px}
+.gs{font-size:12px;color:var(--muted)}
+.gn{font-size:12.5px;margin-top:8px;line-height:1.5}
+.projwrap{padding:0 22px 6px}
+.pnote,.pcav{font-size:12.5px;color:var(--muted);margin:0 0 10px;max-width:84ch;line-height:1.5}
+.pcav{font-size:11.5px;color:var(--faint);margin-top:8px}
+.pgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,1fr);gap:18px;align-items:start}
+@media(max-width:760px){.pgrid{grid-template-columns:1fr}}
+.pleg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11.5px;color:var(--muted);margin-top:6px}.pleg span{display:inline-flex;align-items:center;gap:6px}.pleg i{display:inline-block;width:16px}
+.sl{display:block;margin-bottom:12px;font-size:12.5px;color:var(--muted)}
+.sl span{display:flex;justify-content:space-between}
+.sl b{color:var(--you);font-family:"Readex Pro",system-ui,sans-serif;font-weight:500}
+.sl input{width:100%;accent-color:var(--you);margin-top:4px}
+.ctab{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.ctab th{text-align:left;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:600;padding:5px 6px;border-bottom:1px solid var(--line)}
+.ctab td{padding:7px 6px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+.ctab td span{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.ctab td span.chip{display:inline-block;color:#fff;font-size:10.5px;margin:0}.ctab td span.chip.RCU{color:#0b2540}.ctab td span.chip.none{color:var(--muted)}
+.ctab tr.you td:first-child{color:var(--you);font-weight:600}
+.chip{font-size:10.5px;font-weight:600;padding:1px 7px;border-radius:100px;color:#fff;display:inline-block}
+.chip.none{background:var(--line);color:var(--muted)}
+.bind{font-size:10.5px;font-weight:600;padding:1px 7px;border-radius:100px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.bind.doct{border-color:var(--warn);color:var(--warn)}
+@media print{body{background:#fff}.masthead .tag,.legendbar,.modeswitch,.search,.scatterwrap,#movers,.foot,.acts,.sl,.rails{display:none!important}.stand{box-shadow:none;border:0}.wrap{padding:0}}
+.fldwrap{padding:0 22px 8px}
+.fldwrap h3{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+.fld{display:grid;gap:2px}
+.fr{display:grid;grid-template-columns:minmax(120px,230px) 1fr 44px 44px;gap:12px;align-items:center;padding:4px 0;font-size:12.5px}
+.fr .fn{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fr.oth .fn{color:var(--muted)}
+.fb{position:relative;height:12px}
+.fbar{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:0 3px 3px 0;opacity:.85}
+.fr.oth .fbar{background:var(--other)}
+.ftick{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);opacity:.55;margin-left:-1px}
+.fv{text-align:right}
+.fd{text-align:right;font-size:12px}
+.dp{color:var(--good)}.dn{color:var(--warn)}.dz{color:var(--faint)}
+@media(max-width:560px){.fr{grid-template-columns:110px 1fr 34px 38px;gap:8px;font-size:12px}}
+.alert.up{background:var(--accent-soft);border-color:var(--accent)}.alert.up .alh{color:var(--accent-ink)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="wrap">
+  <div class="masthead">
+    <h1>Research Activity Designations</h1>
+    <span class="sub">Where any institution stands against the 2025 Carnegie R1, R2, and Research College thresholds, which measure is further from the next threshold, and where the newest data points for the 2028 cycle.</span>
+    <span class="tag">Prototype</span>
+  </div>
+  <div class="legendbar">
+    <span class="lk"><span class="dot" style="background:var(--t1)"></span>R1 · Very High</span>
+    <span class="lk"><span class="dot" style="background:var(--t2)"></span>R2 · High</span>
+    <span class="lk"><span class="dot" style="background:var(--t3)"></span>RCU · Research College</span>
+    <span class="lk"><span class="dot" style="background:var(--you)"></span>Selected institution</span>
+    <span class="lk" style="margin-left:auto;color:var(--faint)">541 designated institutions · data through FY2024 R&amp;D / AY2024–25 doctorates</span>
+  </div>
+
+  <div class="modeswitch" role="tablist" aria-label="View">
+    <button data-mode="lookup" aria-pressed="true">By institution</button>
+    <button data-mode="movers" aria-pressed="false">Trends</button>
+  </div>
+
+  <div class="search">
+    <label for="q">Find an institution</label>
+    <input id="q" type="text" autocomplete="off" placeholder="Type an institution name…" aria-label="Search for an institution">
+    <div id="results" class="results" hidden></div>
+  </div>
+
+  <div id="empty" class="empty">
+    <h2>Search any of the 541 designated institutions</h2>
+    <p>See exactly where it lands against every 2025 Carnegie research threshold, which criteria it clears (and by which path — its three-year average or its most recent year), and how far it sits from the next tier up. The 2025 designations rest on just two numbers. <b>The next update is in 2028, and Carnegie has said it will use three-year averages only</b> — the "most recent year" path that lifted 57 institutions in 2025 goes away.</p>
+    <div class="tierdefs">
+      <div class="tierdef"><div class="th"><span class="sw" style="background:var(--t1)"></span>R1 — Very High</div><div class="rq">≥ $50M research spending <b>and</b> ≥ 70 research doctorates per year. <b>187 institutions.</b></div></div>
+      <div class="tierdef"><div class="th"><span class="sw" style="background:var(--t2)"></span>R2 — High</div><div class="rq">≥ $5M research spending <b>and</b> ≥ 20 research doctorates per year. <b>139 institutions.</b></div></div>
+      <div class="tierdef"><div class="th"><span class="sw" style="background:var(--t3)"></span>RCU — Research College</div><div class="rq">≥ $2.5M research spending (no doctorate requirement). <b>215 institutions.</b></div></div>
+    </div>
+    <div class="pe-picks"><span class="pe-lab">Try</span>
+      <button data-u="129020">University of Connecticut</button>
+      <button data-u="142115">Boise State University</button>
+      <button data-u="197869">Appalachian State University</button>
+    </div>
+  </div>
+
+  <div id="stand" class="stand" hidden></div>
+
+  <div class="scatterwrap">
+    <h3>The landscape — spending × doctorates</h3>
+    <div class="filters" id="filters">
+      <span class="fl">Control</span>
+      <button class="fchip" data-f="ct" data-v="Public" aria-pressed="false">Public</button>
+      <button class="fchip" data-f="ct" data-v="Private nonprofit" aria-pressed="false">Private</button>
+      <span class="fl" style="margin-left:8px">Region</span>
+      <button class="fchip" data-f="reg" data-v="Northeast" aria-pressed="false">NE</button>
+      <button class="fchip" data-f="reg" data-v="Midwest" aria-pressed="false">MW</button>
+      <button class="fchip" data-f="reg" data-v="South" aria-pressed="false">S</button>
+      <button class="fchip" data-f="reg" data-v="West" aria-pressed="false">W</button>
+      <span class="fl" style="margin-left:8px">State</span>
+      <select id="stateSel"><option value="">All</option></select>
+      <button class="fchip" id="clearF" style="margin-left:auto;border-color:var(--accent);color:var(--accent-ink)">Reset</button>
+    </div>
+    <div class="plot"><svg id="svg" viewBox="0 0 900 560" role="img" aria-label="Scatter of research spending versus research doctorates"></svg></div>
+  </div>
+
+  <div id="movers" hidden>
+    <div class="mv-controls">
+      <button data-mv="risk" aria-pressed="true">R1 nearest the threshold</button>
+      <button data-mv="r1" aria-pressed="false">Closest to R1</button>
+      <button data-mv="r2risk" aria-pressed="false">R2 nearest the threshold</button>
+      <button data-mv="r2" aria-pressed="false">Closest to R2</button>
+      <button data-mv="rcu" aria-pressed="false">Closest to RCU</button>
+      <button data-mv="exposed" aria-pressed="false">Qualified on latest year</button>
+      <button data-mv="newest" aria-pressed="false">Changes on newest data</button>
+    </div>
+    <p class="mv-note" id="mvnote"></p>
+    <div class="mvtable" id="mvlist"></div>
+  </div>
+
+  <div class="foot">
+    <b>Sources:</b> Carnegie Classifications 2025 Research Activity Designations public data file. Research spending is total R&amp;D expenditure from the NSF HERD survey (FY2020–24 microdata), joined to IPEDS by UNITID plus a hand-checked crosswalk for HERD reporters with missing or outdated IDs. 516 of 541 institutions match Carnegie's FY2021–23 figures within 2%; the rest are flagged on their pages (combined campus reports, NSF revisions, or units that don't reconcile). Single-year swings over +60% or −40% are treated as likely reporting changes and left out of growth rates. Research doctorates are IPEDS Completions "Doctor's degree – research/scholarship," first major, AY2020–21 to 2024–25; AY2020–21 to 2022–23 reproduce Carnegie's counts for every designated institution exactly. AY2024–25 is IPEDS' first release and may be revised. The 2025 designations used the higher of the three-year average or the most recent year — the rule this tool applies to reproduce every 2025 designation. Private for-profit institutions are excluded (one: Ponce Health Sciences University, RCU). Carnegie has stated that future releases will use the three-year average only; the next update is scheduled for 2028. Cycle windows for 2028 and 2031 assume Carnegie keeps the 2025 data lag. Projections extend recent growth and are not forecasts. Prototype.
+  </div>
+</div>
+
+<div id="tt" class="tt"></div>
+
+<script>
+const DATA=__RAD__;
+const CLIMB=__CLIMB__;
+const TH={rcu:2.5e6, r2e:5e6, r2d:20, r1e:50e6, r1d:70};
+const byU=Object.fromEntries(DATA.map(d=>[d.u,d]));
+const DESN={R1:"Research 1 — Very High",R2:"Research 2 — High",RCU:"Research College (RCU)"};
+const $=id=>document.getElementById(id);
+function money(v){ if(v==null)return "—"; if(v>=1e9)return "$"+(v/1e9).toFixed(2)+"B"; if(v>=1e6)return "$"+(v/1e6).toFixed(1)+"M"; return "$"+Math.round(v/1e3)+"k"; }
+function bestE(d){ return Math.max(d.ha||0, d.h3||0); }
+function bestD(d){ return Math.max(d.ra||0, d.d3||0); }
+function pathE(d){ return (d.h3||0)>(d.ha||0) ? "latest yr" : "3-yr avg"; }
+function pathD(d){ return (d.d3||0)>(d.ra||0) ? "latest yr" : "3-yr avg"; }
+
+/* ---------- designation math ---------- */
+const YRS=[2020,2021,2022,2023,2024];
+const TIER={R1:{e:TH.r1e,d:TH.r1d},R2:{e:TH.r2e,d:TH.r2d},RCU:{e:TH.rcu,d:0}};
+function desOf(e,dd){ if(e>=TH.r1e&&dd>=TH.r1d)return "R1"; if(e>=TH.r2e&&dd>=TH.r2d)return "R2"; if(e>=TH.rcu)return "RCU"; return "None"; }
+const RANK={None:0,RCU:1,R2:2,R1:3};
+function series(d){
+  const out=[];
+  YRS.forEach((y,i)=>{ let v=d.hy?d.hy[i]:null;
+    if(v==null){ if(y===2021)v=d.h1; else if(y===2022)v=d.h2; else if(y===2023)v=d.h3; }
+    if(v!=null&&v>0) out.push({y,v}); });
+  return out;
+}
+function cg(a,b,n){ if(!a||a<=0||!b||b<=0||n<=0)return null; return Math.pow(b/a,1/n)-1; }
+/* a single-year swing of more than +60% / -40% (from a $2M+ base, or $10M+ in absolute terms) is treated as a likely reporting change */
+function jumpsOf(s){ const j=[]; for(let i=1;i<s.length;i++){ const a=s[i-1],b=s[i]; if(b.y===a.y+1&&(a.v>=2e6||Math.abs(b.v-a.v)>=1e7)&&(b.v/a.v>1.6||b.v/a.v<0.6)) j.push({y:b.y,p:Math.round((b.v/a.v-1)*100)}); } return j; }
+function paces(d){
+  const s=series(d); if(!s.length) return {s,base:null,long:null,short:null,jumps:[]};
+  const base=s[s.length-1], jumps=jumpsOf(s);
+  // growth is measured only on the stable stretch after the last likely reporting change
+  const st=jumps.length?s.filter(p=>p.y>=jumps[jumps.length-1].y):s;
+  const f=st[0], t2=st.find(p=>p.y===base.y-2);
+  const long=st.length>=2?cg(f.v,base.v,base.y-f.y):null;
+  const short=t2&&t2!==f?cg(t2.v,base.v,2):null;
+  return {s,base,long,longYrs:[f.y,base.y],short,jumps};
+}
+/* a designation cycle C averages fiscal years C-4..C-2 (2025 -> FY21-23, 2028 -> FY24-26) */
+function valAt(P,y,g){ const k=P.s.find(p=>p.y===y); if(k)return k.v; return P.base.v*Math.pow(1+g,y-P.base.y); }
+function cycAvg(P,g,C){ let t=0; for(let y=C-4;y<=C-2;y++)t+=valAt(P,y,g); return t/3; }
+function reqG(P,C,T){ // growth/yr (from latest HERD year) needed for cycle C avg to reach T
+  if(cycAvg(P,-0.6,C)>=T) return -1; // clears even with steep decline
+  let lo=-0.6,hi=3; if(cycAvg(P,hi,C)<T) return Infinity;
+  for(let i=0;i<60;i++){ const m=(lo+hi)/2; cycAvg(P,m,C)>=T?hi=m:lo=m; } return hi;
+}
+function newAvg(d){ const v=[2022,2023,2024].map(y=>d.hy?d.hy[YRS.indexOf(y)]:null); return v.every(x=>x!=null&&x>0)?(v[0]+v[1]+v[2])/3:null; }
+function newDAvg(d){ return d.dy?(d.dy[2]+d.dy[3]+d.dy[4])/3:(d.ra||0); }
+function dLatest(d){ return d.dy?d.dy[4]:(d.d3||0); }
+/* IPEDS completions year Y = academic year (Y-1)-Y; cycle C averages Y = C-4..C-2 */
+function dAt(d,y,X){ if(d.dy&&y>=2021&&y<=2025)return d.dy[y-2021]; return X; }
+function dCyc(d,X,C){ let t=0; for(let y=C-4;y<=C-2;y++)t+=dAt(d,y,X); return t/3; }
+function newDes(d){ const na=newAvg(d); return na==null?null:desOf(na,newDAvg(d)); }
+function pathDep(d){ return desOf(d.ha||0,d.ra||0)!==d.des; }
+function targetOf(d){ return d.des==="R1"?{t:"R1",hold:true}:d.des==="R2"?{t:"R1",hold:false}:{t:"R2",hold:false}; }
+function pct(g){ if(g==null||!isFinite(g))return "—"; const p=g*100; return (p>=0?"+":"")+(Math.abs(p)<10?p.toFixed(1):Math.round(p))+"%"; }
+/* binding constraint for reaching/holding tier t on the 2028 cycle */
+function binding(d,t){
+  const P=paces(d), T=TIER[t];
+  const eNow=newAvg(d)??d.ha, dNow=newDAvg(d);
+  const need=P.base?reqG(P,2028,T.e):Infinity;
+  const pace=P.long;
+  const eOk = need<=0 ? true : (pace!=null && pace>=need);
+  const dProj=dCyc(d,dLatest(d),2028), dNeed=3*T.d-dAt(d,2024,0)-dAt(d,2025,0);
+  const dOk = T.d===0 || dProj>=T.d;
+  return {P,T,eNow,dNow,dProj,dNeed,need,pace,eOk,dOk,
+    bind: eOk&&dOk?"none": !eOk&&!dOk?"both": !dOk?"doct":"money"};
+}
+
+/* ---------- standing panel ---------- */
+const proj={g:null,dd:null};
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+function chipD(t){ return t==="None"?'<span class="chip none">Not designated</span>':`<span class="chip ${t}">${t}</span>`; }
+function renderStand(d){
+  $("empty").hidden=true;
+  const el=$("stand"); el.hidden=false;
+  const be=bestE(d), bd=bestD(d);
+  const okRCU=be>=TH.rcu, okR2=be>=TH.r2e&&bd>=TH.r2d, okR1=be>=TH.r1e&&bd>=TH.r1d;
+  const crit=(ok,label,req,valhtml)=>`<div class="crit"><div class="ic ${ok?'yes':'no'}">${ok?'✓':'○'}</div>
+    <div class="cl">${label}</div><div class="cr">${req}</div><div class="cv">${valhtml}</div></div>`;
+  const eVal=`<b>${money(be)}</b><br><span style="font-size:11px">${money(d.ha)} avg · ${money(d.h3)} FY23</span>`;
+  const dVal=`<b>${bd.toFixed(0)} doctorates</b><br><span style="font-size:11px">${(d.ra||0).toFixed(0)} avg · ${(d.d3||0).toFixed(0)} latest</span>`;
+  const P=paces(d);
+  proj.g = P.long!=null ? Math.max(-10,Math.min(30,Math.round(P.long*200)/2)) : 5;
+  proj.dd = dLatest(d);
+  el.innerHTML=`
+    <div class="hd">
+      <div>
+        <div class="nm">${esc(d.n)}</div>
+        <div class="loc">${d.city}, ${d.st}${d.ct?" · "+d.ct:""}${d.en?" · "+Math.round(d.en).toLocaleString()+" students":""}</div>
+        <div class="old">2021 Carnegie basic: ${d.old}</div>
+        <div class="acts"><button id="briefBtn" class="actbtn" hidden>Download one-page brief</button><button id="printBtn" class="actbtn" hidden>Print brief</button></div>
+      </div>
+      <div class="badge ${d.des}"><div class="bt">2025 designation</div><div class="bd">${d.des}</div></div>
+    </div>
+    ${dqNotes(d)}
+    ${alert2028(d)}
+    <div class="ladder">
+      <h3>2025 criteria — what it clears</h3>
+      ${crit(okRCU,"Research College floor","≥ $2.5M research spending",eVal)}
+      ${crit(okR2,"R2 — High","≥ $5M spending &amp; ≥ 20 doctorates",dVal)}
+      ${crit(okR1,"R1 — Very High","≥ $50M spending &amp; ≥ 70 doctorates",`<b>${money(be)}</b> · <b>${bd.toFixed(0)}</b> doctorates`)}
+    </div>
+    ${gapBlock(d)}
+    <div class="projwrap" id="projwrap"></div>
+    ${fieldBlock(d)}
+    <div class="rails">
+      <h3>Position against every threshold</h3>
+      ${railE(d)}
+      ${railD(d)}
+    </div>`;
+  renderProj(d);
+  wireBrief(d);
+  drawScatter();
+}
+
+/* data-quality notes for this institution */
+function dqNotes(d){
+  const n=[], uq=d.uq||{}, P=paces(d);
+  if(uq.t==='comb') n.push(`<b>Combined HERD report.</b> NSF's HERD survey reports ${esc(uq.name)} as one unit. Carnegie's FY2021–23 campus split is used here; there is no campus-level FY2020 or FY2024 figure, so newer-data checks for this campus aren't available.`);
+  if(uq.t==='rev') n.push(`<b>Revised by NSF.</b> NSF revised this institution's FY${uq.yrs.map(y=>String(y).slice(2)).join(' and FY')} R&amp;D after Carnegie's release (${uq.p.map(p=>(p>0?'+':'')+p+'%').join(', ')}). Newer-data checks and projections use the current HERD figures; the 2025 criteria use Carnegie's.`);
+  if(uq.t==='minor') n.push(`<b>Slightly different unit.</b> HERD's report for this institution includes branch or regional campuses and runs about ${Math.abs(uq.p)}% ${uq.p>0?'above':'below'} Carnegie's figure.`);
+  if(uq.t==='major') n.push(`<b>Figures differ between sources.</b> HERD's reported R&amp;D for this institution differs from Carnegie's by up to ${uq.p}%, so only Carnegie's FY2021–23 figures are used and newer-data checks aren't available.`);
+  if(P.jumps.length) n.push(`<b>Likely reporting change.</b> Research spending moved ${P.jumps.map(j=>`${j.p>0?'+':''}${j.p}% in FY${String(j.y).slice(2)}`).join(' and ')} in a single year — usually a change in what's reported, not research growth. Growth rates here are measured ${P.long!=null?`from FY${String(P.longYrs[0]).slice(2)} on`:'only after that change, and there aren\'t enough years yet to measure one'}.`);
+  return n.length?`<div class="dq">${n.map(x=>`<p>${x}</p>`).join("")}</div>`:"";
+}
+/* 2028 rule-change alert */
+function alert2028(d){
+  const na=newAvg(d), nd=newDAvg(d), nowDes=newDes(d);
+  const dep=pathDep(d), avgDes=desOf(d.ha||0,d.ra||0);
+  const up = nowDes && RANK[nowDes]>RANK[d.des];
+  const down = nowDes && RANK[nowDes]<RANK[d.des];
+  if(!dep && !up && !down) return "";
+  const lbl=x=>x==="None"?"<b>undesignated</b>":"<b>"+x+"</b>";
+  const holds = dep && nowDes && RANK[nowDes]>=RANK[d.des];
+  const head = up&&!dep ? "On the newest three-year averages, this institution meets a higher tier's thresholds"
+    : holds ? "Qualified on its latest year in 2025; the newest three-year averages also meet the thresholds"
+    : "From 2028, Carnegie will use three-year averages only";
+  let h=`<div class="alert${(up&&!dep)||holds?' up':''}"><div class="alh">${head}</div><p>`;
+  if(dep) h+=`${esc(d.n)} earned <b>${d.des}</b> in 2025 through its <b>most recent year</b>; on three-year averages alone (FY2021–23) it would have been ${lbl(avgDes)}. `;
+  if(holds) h+=`Carnegie has said 2028 will use three-year averages only. `;
+  if(na!=null) h+=`On its newest three-year averages — <span class="mono">${money(na)}</span> R&amp;D (FY2022–24) and <span class="mono">${nd.toFixed(0)}</span> research doctorates (AY2022–23 to 2024–25) — it would be ${lbl(nowDes)}.`;
+  else h+=(d.uq&&d.uq.t==='comb')?`Its FY2024 spending is reported together with ${esc(d.uq.name.replace(/^.*?\(|\)$/g,''))}, so there's no newer campus figure to test.`:`Newer spending data for it isn't available (see the note above).`;
+  return h+'</p></div>';
+}
+
+/* binding-constraint block */
+function gapBlock(d){
+  const tg=targetOf(d);
+  const b=binding(d,tg.t);
+  const T=b.T;
+  const verb=tg.hold?"hold "+tg.t:"reach "+tg.t;
+  let verdict;
+  if(b.bind==="none") verdict = tg.hold
+      ? `At recent growth rates, both measures would meet the ${tg.t} thresholds in the 2028 cycle.`
+      : `At recent growth rates, both measures would meet the ${tg.t} thresholds by the 2028 cycle.`;
+  else if(b.bind==="doct") verdict=`<b>Research doctorates are the further measure.</b> At recent growth, spending would meet the ${tg.t} threshold in 2028; at last year's count, the doctorate average would not. Doctorate counts tend to move more slowly, since new research-doctoral programs take years to produce graduates.`;
+  else if(b.bind==="money") verdict=`<b>Research spending is the further measure.</b> The doctorate average already meets the ${tg.t} threshold; at recent growth, spending would not by 2028.`;
+  else verdict=`<b>Both measures are below the ${tg.t} thresholds for 2028 at recent growth.</b> Doctorate counts tend to move more slowly, since new research-doctoral programs take years to produce graduates.`;
+  // spending card
+  const P=b.P;
+  const eGap=T.e-b.eNow;
+  let needTxt;
+  if(!P.base) needTxt="No HERD history available.";
+  else if(b.need<=-0.59) needTxt=`FY${String(P.base.y).slice(2)} spending alone puts the 2028 average above the threshold.`;
+  else if(b.need<=0) needTxt=`Could shrink up to <b>${Math.abs(b.need*100).toFixed(b.need>-0.1?1:0)}%/yr</b> after FY${String(P.base.y).slice(2)} and still clear in 2028. Recent pace: ${pct(b.pace)}/yr.`;
+  else if(!isFinite(b.need)||b.need>1) needTxt=`Meeting the 2028 average would take more than doubling each year.`;
+  else needTxt=`2028 cycle needs <b>${pct(b.need)}/yr</b> growth after FY${String(P.base.y).slice(2)}. Recent pace: <b>${pct(b.pace)}/yr</b> (FY${String(P.longYrs[0]).slice(2)}–${String(P.longYrs[1]).slice(2)})${P.short!=null?`, ${pct(P.short)}/yr (FY${String(P.base.y-2).slice(2)}–${String(P.base.y).slice(2)})`:""}.`;
+  const eCard=`<div class="gcard ${b.eOk?'ok':'short'}"><div class="gk">Research spending <span class="gtag">${b.eOk?(eGap<=0?"Meets threshold":"Meets at recent growth"):"Below at recent growth"}</span></div>
+    <div class="gv mono">${money(b.eNow)}</div>
+    <div class="gs">${newAvg(d)!=null?"3-yr avg, FY2022–24":"3-yr avg, FY2021–23"} · bar ${money(T.e)} · ${eGap>0?`<b>${money(eGap)} below</b>`:`${money(-eGap)} above`}</div>
+    <div class="gn">${needTxt}</div></div>`;
+  let dCard="";
+  if(T.d>0){
+    const dGap=T.d-b.dNow;
+    const y24=dAt(d,2024,0), y25=dAt(d,2025,0);
+    let note;
+    if(b.dNeed<=0) note=`AY2023–24 (${y24}) and 2024–25 (${y25}) alone put the 2028 average above the ${tg.t} threshold.`;
+    else note=`The 2028 window is two-thirds in: AY2023–24 (${y24}) and 2024–25 (${y25}). It needs <b>${Math.ceil(b.dNeed)} research doctorates in AY2025–26</b> to average ${T.d}${b.dNeed>y25?` — ${Math.ceil(b.dNeed-y25)} more than last year`:""}.`;
+    dCard=`<div class="gcard ${b.dOk?'ok':'short'}"><div class="gk">Research doctorates <span class="gtag">${b.dOk?(dGap<=0?"Meets threshold":"Meets at recent growth"):"Below at recent growth"}</span></div>
+      <div class="gv mono">${b.dNow.toFixed(0)}<span class="gu">/yr</span></div>
+      <div class="gs">3-yr avg, AY2022–23 to 2024–25 · bar ${T.d} · ${dGap>0?`<b>${Math.ceil(dGap)} below</b>`:`${Math.floor(-dGap)} above`}</div>
+      <div class="gn">${note}</div></div>`;
+  }
+  let hold="";
+  if(!tg.hold){
+    const hb=binding(d,d.des), HT=TIER[d.des];
+    const bits=[];
+    if(!hb.eOk) bits.push(`its FY2022–24 spending average (${money(hb.eNow)}) is below the ${money(HT.e)} threshold`);
+    if(!hb.dOk) bits.push(`its doctorate average would need ${Math.ceil(hb.dNeed)} in AY2025–26 to reach ${HT.d}`);
+    hold = bits.length
+      ? `<p class="holdln warn"><b>Keeping ${d.des} in 2028:</b> ${bits.join("; ")}.</p>`
+      : `<p class="holdln"><b>Keeping ${d.des} in 2028:</b> both measures meet the thresholds at recent growth${HT.d?(hb.dNeed<=0?`; the doctorate average is already above ${HT.d} for the window`:` (${Math.ceil(hb.dNeed)} research doctorates in AY2025–26 would keep the average at ${HT.d})`):""}.</p>`;
+  }
+  return `<div class="gapwrap"><h3>Distance to ${tg.t} thresholds</h3>${hold}<p class="verdict">${verdict}</p><div class="gcards">${eCard}${dCard}</div></div>`;
+}
+
+/* ---------- doctorates by field ---------- */
+const CIP={"01":"Agriculture & veterinary sciences","03":"Natural resources & conservation","04":"Architecture","05":"Area, ethnic & gender studies","09":"Communication & journalism","10":"Communications technologies","11":"Computer & information sciences","12":"Personal & culinary services","13":"Education","14":"Engineering","15":"Engineering technologies","16":"Languages & linguistics","19":"Family & consumer sciences","22":"Law & legal studies","23":"English language & literature","24":"Liberal arts & humanities","25":"Library science","26":"Biological & biomedical sciences","27":"Mathematics & statistics","28":"Military science","29":"Military technologies","30":"Multi/interdisciplinary studies","31":"Parks, recreation & kinesiology","38":"Philosophy & religious studies","39":"Theology & religious vocations","40":"Physical sciences","41":"Science technologies","42":"Psychology","43":"Security & protective services","44":"Public administration & social service","45":"Social sciences","49":"Transportation","50":"Visual & performing arts","51":"Health professions","52":"Business & management","54":"History","60":"Health residency programs"};
+function fieldRows(d){
+  const f=d.fd||{}; return Object.entries(f).map(([c,[o,n]])=>({c,name:CIP[c]||("CIP "+c),o,n})).filter(r=>r.n>0||r.o>0).sort((a,b)=>b.n-a.n||b.o-a.o);
+}
+function fieldBlock(d,top=8){
+  const rows=fieldRows(d); if(!rows.length) return "";
+  const tot=rows.reduce((s,r)=>s+r.n,0), totO=rows.reduce((s,r)=>s+r.o,0);
+  const show=rows.slice(0,top), rest=rows.slice(top);
+  if(rest.length){ show.push({c:"x",name:`Other fields (${rest.length})`,o:rest.reduce((s,r)=>s+r.o,0),n:rest.reduce((s,r)=>s+r.n,0),other:true}); }
+  const mx=Math.max(...show.map(r=>Math.max(r.n,r.o)),1);
+  const fmt=v=>v>=10||v===0?Math.round(v):v.toFixed(1);
+  const dl=v=>{ const x=Math.round(v*10)/10; if(Math.abs(x)<0.5)return '<span class="dz">±0</span>'; return `<span class="${x>0?'dp':'dn'}">${x>0?'+':''}${Math.abs(x)>=10?Math.round(x):x.toFixed(1)}</span>`; };
+  let h=`<div class="fldwrap"><h3>Where research doctorates come from</h3>
+    <p class="pnote">Average research doctorates per year by field, AY2022–23 to 2024–25 (<b class="mono">${fmt(tot)}</b> total). The tick marks the 2025 designation window (AY2020–21 to 2022–23, <span class="mono">${fmt(totO)}</span>); the last column is the change.</p>
+    <div class="fld">`;
+  show.forEach(r=>{ h+=`<div class="fr${r.other?' oth':''}"><div class="fn">${r.name}</div>
+      <div class="fb"><div class="fbar" style="width:${(r.n/mx*100).toFixed(1)}%"></div><div class="ftick" style="left:${(r.o/mx*100).toFixed(1)}%"></div></div>
+      <div class="fv mono">${fmt(r.n)}</div><div class="fd mono">${dl(r.n-r.o)}</div></div>`; });
+  const ed=(d.fd&&d.fd["13"])?d.fd["13"][1]:0;
+  if(tot>0&&ed/tot>=0.5) h+=`</div><p class="pnote" style="margin-top:10px"><b>${Math.round(ed/tot*100)}% of these are in Education.</b> Whether an EdD is reported as a research/scholarship doctorate or a professional-practice degree is each institution's own IPEDS classification, so this count can move with a reporting decision rather than a change in research activity.</p></div>`;
+  else h+=`</div></div>`;
+  return h;
+}
+
+/* ---------- projection ---------- */
+const LEG=`<div class="pleg"><span><i style="background:var(--ink);height:2px"></i>Actual (HERD)</span><span><i style="background:var(--accent);opacity:.3;height:9px"></i>Range at recent pace</span><span><i style="background:var(--you);height:2px"></i>Scenario</span><span><i style="background:var(--you);opacity:.55;height:4px"></i>Scenario cycle average</span></div>`;
+function renderProj(d){
+  const w=$("projwrap"); const P=paces(d);
+  if(!P.base||P.s.length<2){ w.innerHTML=""; return; }
+  const tg=targetOf(d), T=TIER[tg.t];
+  const dMax=Math.max(Math.ceil(T.d*1.6),Math.ceil(dLatest(d)*1.5),40);
+  w.innerHTML=`<h3>Path to ${tg.t} — projected by designation cycle</h3>
+    <p class="pnote">Carnegie re-designates every three years on a three-year average. Following the 2025 pattern, the <b>2028</b> cycle would average FY2024–26 spending and AY2023–24 to 2025–26 doctorates; the <b>2031</b> cycle the three years after that. The shaded band is where recent growth would take spending; move the sliders to test a scenario.</p>
+    <div class="pgrid">
+      <div class="pchart"><svg id="psvg" viewBox="0 0 560 260" role="img" aria-label="Research spending history and projection"></svg>${LEG}</div>
+      <div class="pside">
+        <label class="sl"><span>Spending growth <b id="gOut"></b></span><input id="gIn" type="range" min="-10" max="30" step="0.5" value="${proj.g}"></label>
+        <label class="sl"><span>Research doctorates / yr from AY2025–26 <b id="dOut"></b></span><input id="dIn" type="range" min="0" max="${dMax}" step="1" value="${proj.dd}"></label>
+        <div id="ctab"></div>
+      </div>
+    </div>
+    <p class="pcav">Projections extend recent growth; they are not forecasts. Doctorate counts through AY2024–25 are actual (IPEDS); the slider sets every year after that.</p>`;
+  const upd=()=>{ proj.g=+$("gIn").value; proj.dd=+$("dIn").value;
+    $("gOut").textContent=(proj.g>=0?"+":"")+proj.g+"%/yr"; $("dOut").textContent=proj.dd;
+    $("psvg").innerHTML=projSVG(d,false); $("ctab").innerHTML=cycleTable(d); };
+  $("gIn").addEventListener("input",upd); $("dIn").addEventListener("input",upd); upd();
+}
+function scen(d){
+  const P=paces(d);
+  const rows=[];
+  const dl=dLatest(d);
+  if(P.long!=null) rows.push({k:`Recent pace, FY${String(P.longYrs[0]).slice(2)}–${String(P.longYrs[1]).slice(2)}`,g:P.long,dd:dl});
+  if(P.short!=null) rows.push({k:`Recent pace, FY${String(P.base.y-2).slice(2)}–${String(P.base.y).slice(2)}`,g:P.short,dd:dl});
+  rows.push({k:"Your scenario",g:proj.g/100,dd:proj.dd,you:true});
+  return {P,rows};
+}
+function cycleTable(d){
+  const {P,rows}=scen(d);
+  let h='<table class="ctab"><thead><tr><th></th><th>2028</th><th>2031</th></tr></thead><tbody>';
+  rows.forEach(r=>{
+    const c=[2028,2031].map(C=>{ const e=cycAvg(P,r.g,C), dd=dCyc(d,r.dd,C); return {t:desOf(e,dd),e,dd}; });
+    h+=`<tr class="${r.you?'you':''}"><td>${r.k}<span>${pct(r.g)}/yr · ${Math.round(r.dd)} dr/yr${r.you?"":" (flat)"}</span></td>${c.map(x=>`<td>${chipD(x.t)}<span class="mono">${money(x.e)} · ${x.dd.toFixed(0)} dr</span></td>`).join("")}</tr>`;
+  });
+  return h+'</tbody></table>';
+}
+/* static=true resolves colors for the standalone brief */
+function projSVG(d){
+  const {P,rows}=scen(d);
+  const tg=targetOf(d), T=TIER[tg.t];
+  const W=560,H=260,pl=56,pr=14,pt=14,pb=30, iw=W-pl-pr, ih=H-pt-pb;
+  const y0=2020,y1=2029;
+  const X=y=>pl+(y-(y0-0.3))/((y1+0.5)-(y0-0.3))*iw;
+  const pts=(g)=>{const a=[]; for(let y=P.base.y;y<=y1;y++)a.push([y,valAt(P,y,g)]); return a;};
+  const lo=P.long!=null&&P.short!=null?Math.min(P.long,P.short):(P.long??P.short??0);
+  const hi=P.long!=null&&P.short!=null?Math.max(P.long,P.short):lo;
+  const sc=proj.g/100;
+  let vmax=Math.max(T.e*1.12, ...P.s.map(p=>p.v));
+  [lo,hi,sc].forEach(g=>{ vmax=Math.max(vmax, valAt(P,y1,g)); });
+  vmax=Math.min(vmax, Math.max(T.e*2.2, ...P.s.map(p=>p.v))*1.05);
+  const Y=v=>pt+ih-Math.min(v,vmax)/vmax*ih;
+  let s="";
+  // cycle windows
+  [[2024,2026,"2028 cycle"],[2027,2029,"2031 cycle"]].forEach(([a,b,l])=>{
+    s+=`<rect x="${X(a-0.4)}" y="${pt}" width="${X(b+0.4)-X(a-0.4)}" height="${ih}" fill="var(--line-soft)" opacity=".7"/>`;
+    s+=`<text class="thlab" x="${(X(a-0.4)+X(b+0.4))/2}" y="${pt+ih-6}" text-anchor="middle">${l}</text>`; });
+  // y grid
+  const step=niceStep(vmax/4);
+  for(let v=0;v<=vmax;v+=step){ s+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)" stroke-width=".6"/><text class="axlab" x="${pl-6}" y="${Y(v)+3}" text-anchor="end">${money(v).replace('.0M','M')}</text>`; }
+  for(let y=y0;y<=y1;y++) s+=`<text class="axlab" x="${X(y)}" y="${H-10}" text-anchor="middle">${y===y0||y%2===0?"FY"+String(y).slice(2):""}</text>`;
+  // threshold
+  s+=`<line class="thline" x1="${pl}" x2="${W-pr}" y1="${Y(T.e)}" y2="${Y(T.e)}"/><text class="thlab" x="${W-pr}" y="${Y(T.e)-4}" text-anchor="end">${tg.t} bar ${money(T.e)}</text>`;
+  // band between paces
+  const hasPace=P.long!=null||P.short!=null;
+  const A=pts(lo),B=pts(hi);
+  if(hasPace){
+  s+=`<path d="M${A.map(p=>X(p[0])+","+Y(p[1])).join("L")}L${B.slice().reverse().map(p=>X(p[0])+","+Y(p[1])).join("L")}Z" fill="var(--accent)" opacity=".13"/>`;
+  s+=`<path d="M${A.map(p=>X(p[0])+","+Y(p[1])).join("L")}" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3"/>`;
+  s+=`<path d="M${B.map(p=>X(p[0])+","+Y(p[1])).join("L")}" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3"/>`;
+  }
+  // scenario
+  const S=pts(sc);
+  s+=`<path d="M${S.map(p=>X(p[0])+","+Y(p[1])).join("L")}" fill="none" stroke="var(--you)" stroke-width="2"/>`;
+  // scenario cycle averages
+  [2028,2031].forEach(C=>{ const v=cycAvg(P,sc,C); s+=`<line x1="${X(C-4-0.4)}" x2="${X(C-2+0.4)}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--you)" stroke-width="3" opacity=".55"/>`; });
+  // actual
+  s+=`<path d="M${P.s.map(p=>X(p.y)+","+Y(p.v)).join("L")}" fill="none" stroke="var(--ink)" stroke-width="2.2"/>`;
+  P.s.forEach(p=>{ s+=`<circle cx="${X(p.y)}" cy="${Y(p.v)}" r="3" fill="var(--ink)"/>`; });
+  return s;
+}
+function niceStep(x){ const p=Math.pow(10,Math.floor(Math.log10(x))); const m=x/p; return (m<1.5?1:m<3.5?2.5:m<7.5?5:10)*p; }
+
+/* ---------- one-page brief ---------- */
+let DL=null;
+setTimeout(async()=>{ try{ if(window.claude&&window.claude.use){ DL=await window.claude.use("downloads"); } }catch(e){ DL=null; }
+  if(state.sel) wireBrief(byU[state.sel]); },0);
+function wireBrief(d){
+  const b=$("briefBtn"), p=$("printBtn"); if(!b)return;
+  b.hidden=!DL; p.hidden=!!DL;
+  b.onclick=async()=>{ try{ await DL.save({filename:`${d.n.replace(/[^A-Za-z0-9 &-]/g,"").slice(0,80)} - Designation Brief.html`,data:briefHTML(d)}); }catch(e){ if(e&&e.code==="unavailable"){b.hidden=true;p.hidden=false;} } };
+  p.onclick=()=>window.print();
+}
+function briefHTML(d){
+  const tg=targetOf(d), b=binding(d,tg.t);
+  const tmp=document.createElement("div");
+  tmp.innerHTML=gapBlock(d)+alert2028(d)+cycleTable(d);
+  const gap=tmp.querySelector(".gapwrap"), al=tmp.querySelector(".alert"), ct=tmp.querySelector(".ctab");
+  const today=new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+  const css=`:root{--ground:#fff;--paper:#fff;--ink:#191917;--muted:#63625c;--faint:#8f8d85;--line:#e3ded3;--line-soft:#f1eee7;--accent:#0f6f7c;--accent-ink:#0b5560;--accent-soft:#dcecec;--t1:#184f95;--t2:#2a78d6;--t3:#86b6ef;--you:#e2611f;--you-soft:#fbe9df;--good:#0a7d0a;--warn:#a6602a}
+*{box-sizing:border-box}body{margin:0;font-family:"Readex Pro",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.45;font-size:12.5px}
+.page{max-width:780px;margin:0 auto;padding:32px 36px}
+.top{display:flex;align-items:flex-start;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:12px}
+.eyb{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:24px;margin:2px 0 2px;line-height:1.15}
+.loc{color:var(--muted)}
+.badge{margin-left:auto;text-align:center;padding:8px 14px;border-radius:6px;color:#fff;min-width:110px}.badge .bt{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}.badge .bd{font-family:Young Serif,Georgia,serif;font-weight:400;font-size:24px}
+.R1{background:var(--t1)}.R2{background:var(--t2)}.RCU{background:var(--t3);color:#0b2540}
+h3{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:6px;margin-top:14px}
+.facts div{padding:9px 11px;border-right:1px solid var(--line)}.facts div:last-child{border-right:0}
+.facts .k{font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}.facts .v{font-family:"Readex Pro",system-ui,sans-serif;font-size:15px;font-weight:400}
+.alert{margin-top:14px;padding:10px 13px;border-left:3px solid var(--you);background:var(--you-soft)}.alert .alh{font-weight:700;font-size:12px}.alert p{margin:3px 0 0}
+.verdict{margin:0 0 8px}.holdln{font-size:11.5px;margin:0 0 8px;padding:6px 10px;background:#f4f2ec}.holdln.warn{background:var(--you-soft)}.gcards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gcard{border:1px solid var(--line);border-radius:6px;padding:10px 12px}.gcard.short{border-left:3px solid var(--warn)}.gcard.ok{border-left:3px solid var(--good)}
+.gk{font-weight:600;font-size:12px}.gtag{float:right;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.gv{font-family:"Readex Pro",system-ui,sans-serif;font-size:19px;margin-top:2px}.gu{font-size:11px;color:var(--muted)}.gs{font-size:11px;color:var(--muted)}.gn{font-size:11.5px;margin-top:5px}
+.row2{display:grid;grid-template-columns:1.35fr 1fr;gap:14px;align-items:start}
+svg{width:100%;height:auto;display:block}.axlab{fill:var(--muted);font-size:10px}.thline{stroke:var(--faint);stroke-dasharray:3 3}.thlab{fill:var(--faint);font-size:9.5px;font-family:"Readex Pro",system-ui,sans-serif}
+.ctab{width:100%;border-collapse:collapse;font-size:11px}.ctab th{text-align:left;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid var(--line);padding:4px}
+.ctab td{padding:5px 4px;border-bottom:1px solid var(--line-soft);vertical-align:top}.ctab td span{display:block;font-size:10px;color:var(--muted)}.ctab td span.chip{display:inline-block;color:#fff}.ctab td span.chip.RCU{color:#0b2540}.ctab td span.chip.none{color:#555}.ctab tr.you td:first-child{color:var(--you);font-weight:600}
+.chip{font-size:10px;font-weight:600;padding:1px 7px;border-radius:100px;color:#fff;display:inline-block}.chip.none{background:#ddd;color:#555}
+.mono{font-family:"Readex Pro",system-ui,sans-serif}
+.foot{margin-top:18px;padding-top:8px;border-top:1px solid var(--line);font-size:9.5px;color:var(--faint)}
+.fldwrap h3{margin-top:16px}.pnote{font-size:11px;color:var(--muted);margin:0 0 6px}.fr{display:grid;grid-template-columns:200px 1fr 36px 40px;gap:10px;align-items:center;padding:2px 0;font-size:11.5px}.fb{position:relative;height:10px}.fbar{position:absolute;left:0;top:0;bottom:0;background:var(--accent);opacity:.85}.fr.oth .fbar{background:#c3bdb0}.ftick{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink);opacity:.55}.fv,.fd{text-align:right;font-family:"Readex Pro",system-ui,sans-serif}.pleg{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:10px;color:var(--muted);margin-top:4px}.pleg span{display:inline-flex;align-items:center;gap:5px}.pleg i{display:inline-block;width:14px}.dp{color:var(--good)}.dn{color:var(--warn)}.dz{color:var(--faint)}.alert.up{border-left-color:var(--accent);background:var(--accent-soft)}
+.dq{margin-top:12px;padding:8px 11px;border:1px dashed var(--line);background:#f6f4ee}.dq p{margin:2px 0;font-size:11px;color:var(--muted)}.dq b{color:var(--ink)}
+@media print{.page{padding:0}@page{margin:.5in}}`;
+  const na=newAvg(d);
+  return `<!doctype html><html><head><meta charset="utf-8"><title>${esc(d.n)} — Research Designation Brief</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Readex+Pro:wght@400;500;600&display=swap"><style>${css}</style></head><body><div class="page">
+  <div class="top"><div><div class="eyb">Research Designation Brief · ${today}</div><h1>${esc(d.n)}</h1><div class="loc">${d.city}, ${d.st}${d.ct?" · "+d.ct:""}${d.en?" · "+Math.round(d.en).toLocaleString()+" students":""}</div></div>
+  <div class="badge ${d.des}"><div class="bt">2025 designation</div><div class="bd">${d.des}</div></div></div>
+  <div class="facts">
+    <div><div class="k">R&amp;D 3-yr avg · FY21–23</div><div class="v">${money(d.ha)}</div></div>
+    <div><div class="k">R&amp;D 3-yr avg · FY22–24</div><div class="v">${na!=null?money(na):"—"}</div></div>
+    <div><div class="k">Latest R&amp;D · FY${String(b.P.base?b.P.base.y:2023).slice(2)}</div><div class="v">${b.P.base?money(b.P.base.v):"—"}</div></div>
+    <div><div class="k">Research doctorates · avg AY23–25</div><div class="v">${newDAvg(d).toFixed(0)}</div></div>
+  </div>
+  ${dqNotes(d)}
+  ${al?al.outerHTML:""}
+  ${gap?gap.outerHTML:""}
+  ${fieldBlock(d,6)}
+  <h3>Path to ${tg.t} by designation cycle</h3>
+  <div class="row2"><div><svg viewBox="0 0 560 260">${projSVG(d)}</svg>${LEG}</div><div>${ct?ct.outerHTML:""}<p style="font-size:10px;color:var(--muted);margin-top:6px">2028 cycle ≈ FY2024–26 average; 2031 ≈ FY2027–29. Projections extend recent growth and are not forecasts.</p></div></div>
+  <div class="foot">Sources: Carnegie Classifications 2025 Research Activity Designations public data file; NSF HERD survey FY2020–24 total R&amp;D expenditures (joined on IPEDS UNITID); research doctorates (Doctor's degree – research/scholarship, first major) from IPEDS Completions AY2020–21 to 2024–25; AY2024–25 is the first release and may be revised. Carnegie has stated future designations will use three-year averages only; next update 2028. Thresholds: R1 ≥ $50M &amp; ≥ 70 research doctorates; R2 ≥ $5M &amp; ≥ 20; RCU ≥ $2.5M.</div>
+  </div></body></html>`;
+}
+
+/* expenditure rail (log) with markers at 2.5M,5M,50M */
+function railE(d){
+  const lo=Math.log10(1e6), hi=Math.log10(4e9);
+  const pos=v=>Math.max(0,Math.min(100,(Math.log10(Math.max(v,1e6))-lo)/(hi-lo)*100));
+  const mk=(v,l)=>`<div class="mk" style="left:${pos(v)}%"><span>${l}</span></div>`;
+  const avg=pos(d.ha||0), lat=pos(d.h3||0);
+  return `<div class="rail"><div class="rlab"><span>Research spending</span><span class="mono">${money(d.ha)} avg · ${money(d.h3)} latest</span></div>
+    <div class="track"><div class="fill" style="width:${Math.max(avg,lat)}%"></div>
+    ${mk(TH.rcu,"$2.5M")}${mk(TH.r2e,"$5M")}${mk(TH.r1e,"$50M")}
+    <div class="pin avg" style="left:${avg}%"><span>avg</span></div>
+    <div class="pin lat" style="left:${lat}%"></div></div></div>`;
+}
+/* doctorate rail (sqrt) with markers at 20,70 */
+function railD(d){
+  const hi=Math.sqrt(950);
+  const pos=v=>Math.max(0,Math.min(100,Math.sqrt(Math.max(v,0))/hi*100));
+  const mk=(v,l)=>`<div class="mk" style="left:${pos(v)}%"><span>${l}</span></div>`;
+  const avg=pos(d.ra||0), lat=pos(d.d3||0);
+  return `<div class="rail"><div class="rlab"><span>Research doctorates / year</span><span class="mono">${(d.ra||0).toFixed(0)} avg · ${(d.d3||0).toFixed(0)} latest</span></div>
+    <div class="track"><div class="fill" style="width:${Math.max(avg,lat)}%"></div>
+    ${mk(TH.r2d,"20")}${mk(TH.r1d,"70")}
+    <div class="pin avg" style="left:${avg}%"><span>avg</span></div>
+    <div class="pin lat" style="left:${lat}%"></div></div></div>`;
+}
+
+/* ---------- scatter ---------- */
+const state={sel:null, ct:new Set(), reg:new Set(), st:""};
+const PAD={l:64,r:20,t:16,b:52}, W=900,H=560;
+const IW=W-PAD.l-PAD.r, IH=H-PAD.t-PAD.b;
+const xLo=Math.log10(1e6), xHi=Math.log10(4e9);
+const yHi=Math.sqrt(950);
+const sx=v=>PAD.l+(Math.log10(Math.max(v,1e6))-xLo)/(xHi-xLo)*IW;
+const sy=v=>PAD.t+IH-(Math.sqrt(Math.max(v,0))/yHi)*IH;
+function inFilter(d){
+  if(state.ct.size&&!state.ct.has(d.ct))return false;
+  if(state.reg.size&&!state.reg.has(d.reg))return false;
+  if(state.st&&d.st!==state.st)return false;
+  return true;
+}
+function drawScatter(){
+  const svg=$("svg");
+  let s='';
+  // region tints (nested): RCU (x>=2.5M full height), R2 (x>=5M,y>=20), R1 (x>=50M,y>=70)
+  const x25=sx(TH.rcu),x5=sx(TH.r2e),x50=sx(TH.r1e),y0=sy(0),y20=sy(TH.r2d),y70=sy(TH.r1d),yTop=PAD.t;
+  s+=`<rect x="${x25}" y="${yTop}" width="${W-PAD.r-x25}" height="${y0-yTop}" fill="var(--t3soft)"/>`;
+  s+=`<rect x="${x5}" y="${y20}" width="${W-PAD.r-x5}" height="${y0-y20}" fill="var(--t2soft)"/>`;
+  s+=`<rect x="${x50}" y="${y70}" width="${W-PAD.r-x50}" height="${y0-y70}" fill="var(--t1soft)"/>`;
+  // axes frame
+  s+=`<line x1="${PAD.l}" y1="${PAD.t}" x2="${PAD.l}" y2="${PAD.t+IH}" stroke="var(--line)"/>`;
+  s+=`<line x1="${PAD.l}" y1="${PAD.t+IH}" x2="${W-PAD.r}" y2="${PAD.t+IH}" stroke="var(--line)"/>`;
+  // x gridlines/ticks at powers of 10
+  [1e6,1e7,1e8,1e9].forEach(v=>{ const x=sx(v); s+=`<line x1="${x}" y1="${PAD.t}" x2="${x}" y2="${PAD.t+IH}" stroke="var(--line-soft)"/>`;
+    s+=`<text class="axlab" x="${x}" y="${PAD.t+IH+16}" text-anchor="middle">${v>=1e9?"$"+v/1e9+"B":"$"+v/1e6+"M"}</text>`; });
+  // y ticks
+  [0,20,70,150,300,500,800].forEach(v=>{ const y=sy(v); s+=`<line x1="${PAD.l}" y1="${y}" x2="${W-PAD.r}" y2="${y}" stroke="var(--line-soft)"/>`;
+    s+=`<text class="axlab" x="${PAD.l-8}" y="${y+3}" text-anchor="end">${v}</text>`; });
+  // threshold lines
+  const thl=(x1,y1,x2,y2,lab,lx,ly,anc)=>`<line class="thline" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/><text class="thlab" x="${lx}" y="${ly}" text-anchor="${anc}">${lab}</text>`;
+  s+=thl(x50,PAD.t,x50,y0,"$50M",x50+3,PAD.t+9,"start");
+  s+=thl(x5,PAD.t,x5,y0,"$5M",x5+3,PAD.t+9,"start");
+  s+=thl(x25,PAD.t,x25,y0,"$2.5M",x25-3,PAD.t+9,"end");
+  s+=thl(PAD.l,y70,W-PAD.r,y70,"70 doctorates",W-PAD.r,y70-4,"end");
+  s+=thl(PAD.l,y20,W-PAD.r,y20,"20 doctorates",W-PAD.r,y20-4,"end");
+  // axis titles
+  s+=`<text class="axttl" x="${PAD.l+IW/2}" y="${H-8}" text-anchor="middle">Research spending (log)</text>`;
+  s+=`<text class="axttl" transform="translate(16,${PAD.t+IH/2}) rotate(-90)" text-anchor="middle">Research doctorates / yr</text>`;
+  // points
+  const fil=DATA.filter(inFilter);
+  const active=new Set(fil.map(d=>d.u));
+  DATA.forEach(d=>{
+    if(d.u===state.sel)return;
+    const on=active.has(d.u);
+    const c=d.des==="R1"?"var(--t1)":d.des==="R2"?"var(--t2)":"var(--t3)";
+    s+=`<circle cx="${sx(bestE(d)).toFixed(1)}" cy="${sy(bestD(d)).toFixed(1)}" r="${on?3.4:2}" fill="${on?c:"var(--other)"}" opacity="${on?0.9:0.28}" stroke="var(--paper)" stroke-width="0.5" data-u="${d.u}" class="pt"/>`;
+  });
+  // selected on top with avg->latest trajectory
+  if(state.sel&&byU[state.sel]){
+    const d=byU[state.sel];
+    const ax=sx(d.ha||0),ay=sy(d.ra||0),lx=sx(d.h3||0),ly=sy(d.d3||0);
+    s+=`<line x1="${ax}" y1="${ay}" x2="${lx}" y2="${ly}" stroke="var(--you)" stroke-width="1.5" opacity="0.6"/>`;
+    s+=`<circle cx="${ax}" cy="${ay}" r="3.5" fill="none" stroke="var(--you)" stroke-width="1.5"/>`;
+    s+=`<circle cx="${sx(bestE(d))}" cy="${sy(bestD(d))}" r="6.5" fill="var(--you)" stroke="var(--paper)" stroke-width="1.6" data-u="${d.u}" class="pt"/>`;
+    s+=`<text x="${sx(bestE(d))+9}" y="${sy(bestD(d))+4}" style="fill:var(--you);font-size:12px;font-weight:400;font-family:Young Serif,Georgia,serif">${d.n.replace(/&/g,'&amp;').replace(/</g,'&lt;').slice(0,30)}</text>`;
+  }
+  svg.innerHTML=s;
+  svg.querySelectorAll(".pt").forEach(c=>{
+    c.style.cursor="pointer";
+    c.addEventListener("mouseenter",e=>showTT(e,byU[c.dataset.u]));
+    c.addEventListener("mousemove",moveTT);
+    c.addEventListener("mouseleave",hideTT);
+    c.addEventListener("click",()=>select(c.dataset.u));
+  });
+}
+const tt=$("tt");
+function showTT(e,d){ tt.innerHTML=`<div class="ttn">${d.n.replace(/</g,'')}</div><div class="ttr">${DESN[d.des]} · ${d.st}</div><div class="ttr mono">${money(bestE(d))} · ${bestD(d).toFixed(0)} doctorates/yr</div>`; tt.style.opacity=1; moveTT(e); }
+function moveTT(e){ const p=12; let x=e.clientX+p,y=e.clientY+p; if(x>innerWidth-240)x=e.clientX-240; tt.style.left=x+"px"; tt.style.top=y+"px"; }
+function hideTT(){ tt.style.opacity=0; }
+
+/* ---------- search / select ---------- */
+const q=$("q"), results=$("results");
+function select(u){ state.sel=u; q.value=""; results.hidden=true; renderStand(byU[u]); window.scrollTo({top:0,behavior:"smooth"}); }
+q.addEventListener("input",()=>{
+  const s=q.value.trim().toLowerCase();
+  if(!s){results.hidden=true;return;}
+  const hits=DATA.filter(d=>d.n.toLowerCase().includes(s)).sort((a,b)=>bestE(b)-bestE(a)).slice(0,12);
+  results.innerHTML=hits.length?hits.map(d=>`<button data-u="${d.u}"><span class="rn">${d.n.replace(/</g,'')}</span><span class="rs">${d.st} · ${d.des} · ${money(bestE(d))}</span></button>`).join(""):'<button disabled style="color:var(--faint)">No institution found</button>';
+  results.hidden=false;
+  results.querySelectorAll("button[data-u]").forEach(b=>b.addEventListener("click",()=>select(b.dataset.u)));
+});
+document.addEventListener("click",e=>{ if(!e.target.closest(".search"))results.hidden=true; });
+document.querySelectorAll("#empty button[data-u]").forEach(b=>b.addEventListener("click",()=>select(b.dataset.u)));
+
+/* ---------- filters ---------- */
+$("filters").querySelectorAll(".fchip[data-f]").forEach(b=>b.addEventListener("click",()=>{
+  const set=state[b.dataset.f]; const v=b.dataset.v;
+  set.has(v)?set.delete(v):set.add(v);
+  b.setAttribute("aria-pressed",set.has(v));
+  drawScatter();
+}));
+const stateSel=$("stateSel");
+[...new Set(DATA.map(d=>d.st))].sort().forEach(s=>{ const o=document.createElement("option");o.value=s;o.textContent=s;stateSel.appendChild(o); });
+stateSel.addEventListener("change",()=>{ state.st=stateSel.value; drawScatter(); });
+$("clearF").addEventListener("click",()=>{ state.ct.clear();state.reg.clear();state.st="";stateSel.value="";
+  document.querySelectorAll(".fchip[data-f]").forEach(b=>b.setAttribute("aria-pressed","false")); drawScatter(); });
+
+/* ---------- movers ---------- */
+function trend(d){
+  const P=paces(d);
+  if(P.long==null) return {cls:'flat',txt:'—'};
+  const p=P.long*100, yrs=`FY${String(P.longYrs[0]).slice(2)}–${String(P.longYrs[1]).slice(2)}`;
+  const f=(p>=0?'+':'')+(Math.abs(p)<10?p.toFixed(1):Math.round(p))+'%/yr';
+  if(p>=2) return {cls:'up',txt:'▲ '+f,yrs};
+  if(p<=-2) return {cls:'dn',txt:'▼ '+f,yrs};
+  return {cls:'flat',txt:'≈ '+f,yrs};
+}
+let mvKind='risk';
+const MVN={
+ r1:"R2 institutions ranked by how close they sit to the R1 thresholds — ≥ $50M research spending and ≥ 70 research doctorates a year — on the 2025 basis. “Further measure” shows which of the two is further from its threshold for the 2028 cycle, using FY2024 HERD and AY2023–25 IPEDS data.",
+ r2:"Research Colleges ranked by how close they sit to the R2 thresholds — ≥ $5M spending and ≥ 20 research doctorates. “Further measure” shows which of the two is further from its threshold for the 2028 cycle.",
+ exposed:"",
+ newest:"",
+ risk:"R1 institutions closest above the R1 thresholds on the 2025 basis, ranked by the smaller of their two margins. “Newest 3-yr avgs” re-tests each on FY2022–24 R&D and AY2022–23 to 2024–25 doctorates, the three-year-average rule Carnegie plans for 2028.",
+ r2risk:"R2 institutions closest above the R2 thresholds ($5M spending, 20 research doctorates), ranked by the smaller of their two margins. “Newest 3-yr avgs” re-tests each on the most recent data.",
+ rcu:"Not-yet-designated institutions closest to the $2.5M Research College threshold, on total R&D from the FY2024 NSF HERD survey. Those marked “Above in FY24” were over the threshold that year. Because 2028 uses a three-year average, a single year above it does not by itself qualify."
+};
+function renderMovers(){
+  document.querySelectorAll("#movers .mv-controls button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.mv===mvKind));
+  $("mvnote").innerHTML=MVN[mvKind]||"";
+  const k=mvKind;
+  const gcell=g=>{ if(g==null||!isFinite(g))return '<span class="dz">—</span>'; const p=g*100; const f=(p>=0?'+':'')+(Math.abs(p)<10?p.toFixed(1):Math.round(p))+'%'; return `<span class="${p>=2?'dp':p<=-2?'dn':'dz'}">${f}</span>`; };
+  const G={h:"R&amp;D growth/yr<br>FY2020–24",w:"92px",c:r=>{ const P=paces(r.d); return gcell(P.long)+(P.jumps.length?'<span class="dag" title="Measured after a likely reporting change">†</span>':''); }};
+  const sub=d=>`${chipD(d.des)} ${d.st}`;
+  let cols, rows, click=true;
+  if(k==='risk'||k==='r2risk'){
+    const t=k==='risk'?'R1':'R2', T=TIER[t];
+    rows=DATA.filter(d=>d.des===t).map(d=>{ const be=bestE(d),bd=bestD(d); return {d,be,bd,s:Math.min(be/T.e-1,bd/T.d-1)}; }).sort((a,b)=>a.s-b.s).slice(0,25);
+    cols=[
+      {h:"Research $<br>2025 basis",w:"96px",c:r=>money(r.be)},
+      {h:"Doctorates<br>2025 basis",w:"84px",c:r=>r.bd.toFixed(0)},
+      {h:"$ above<br>threshold",w:"92px",sm:1,c:r=>`<span class="${r.be-T.e<T.e*0.1?'dn':''}">+${money(r.be-T.e)}</span>`},
+      {h:"Doctorates<br>above threshold",w:"88px",sm:1,c:r=>`<span class="${r.bd-T.d<T.d*0.1?'dn':''}">+${Math.round(r.bd-T.d)}</span>`},
+      G,
+      {h:"Newest<br>3-yr avgs",w:"96px",c:r=>{ const n=newDes(r.d); return n?chipD(n):'<span class="dz">—</span>'; }}];
+  } else if(k==='r1'||k==='r2'){
+    const t=k==='r1'?'R1':'R2', T=TIER[t], src=k==='r1'?'R2':'RCU';
+    rows=DATA.filter(d=>d.des===src).map(d=>{ const be=bestE(d),bd=bestD(d); const eg=Math.max(0,T.e-be), dg=Math.max(0,T.d-bd); return {d,be,bd,eg,dg,s:Math.max(eg/T.e,dg/T.d),b:binding(d,t)}; }).sort((a,b)=>a.s-b.s).slice(0,25);
+    const BL={doct:"Doctorates",money:"Spending",both:"Both",none:"Neither"};
+    cols=[
+      {h:"Research $<br>2025 basis",w:"96px",c:r=>money(r.be)},
+      {h:"Doctorates<br>2025 basis",w:"84px",c:r=>r.bd.toFixed(0)},
+      {h:"$ to<br>threshold",w:"88px",sm:1,c:r=>r.eg>0?"+"+money(r.eg):'<span class="dp">met</span>'},
+      {h:"Doctorates<br>to threshold",w:"88px",sm:1,c:r=>r.dg>0?"+"+Math.ceil(r.dg):'<span class="dp">met</span>'},
+      G,
+      {h:"Further<br>measure (2028)",w:"104px",c:r=>`<span class="bind ${r.b.bind==='none'?'ok':'doct'}">${BL[r.b.bind]}</span>`}];
+  } else if(k==='rcu'){
+    click=false;
+    rows=CLIMB.slice().sort((a,b)=>Math.abs(a.t-TH.rcu)-Math.abs(b.t-TH.rcu)).slice(0,25).map(c=>({c,d:{des:"None",st:c.st,n:c.n}}));
+    cols=[
+      {h:"Research $<br>FY2024",w:"96px",sm:1,c:r=>money(r.c.t)},
+      {h:"vs. $2.5M<br>floor",w:"92px",sm:1,c:r=>r.c.t>=TH.rcu?`<span class="dp">+${money(r.c.t-TH.rcu)}</span>`:`<span class="dn">−${money(TH.rcu-r.c.t)}</span>`},
+      {h:"R&amp;D growth/yr<br>HERD",w:"92px",c:r=>gcell(r.c.g==null?null:r.c.g/100)},
+      {h:"FY2024",w:"104px",c:r=>r.c.t>=TH.rcu?'<span class="bind ok">Above in FY24</span>':'<span class="bind">Below in FY24</span>'}];
+  } else if(k==='exposed'){
+    rows=DATA.filter(pathDep).map(d=>{
+      const T=TIER[d.des], na=newAvg(d), nd=newDAvg(d);
+      const eOk=na!=null&&na>=T.e, dOk=nd>=T.d;
+      let out,cls;
+      if(na==null){out=(d.uq&&d.uq.t==='comb')?"Combined report":"No newer data";cls="";}
+      else if(eOk&&dOk){out="Meets on averages";cls="ok";}
+      else if(!eOk&&!dOk){out="Below: both";cls="doct";}
+      else if(!dOk){out="Below: doctorates";cls="doct";}
+      else {out="Below: spending";cls="doct";}
+      return {d,na,nd,out,cls,s:Math.min((na??d.ha)/T.e,T.d?nd/T.d:9)};
+    }).sort((a,b)=>RANK[b.d.des]-RANK[a.d.des]||a.s-b.s);
+    const cnt={R1:0,R2:0,RCU:0}; rows.forEach(r=>cnt[r.d.des]++);
+    $("mvnote").innerHTML=`<b>${rows.length} institutions</b> (${cnt.R1} R1, ${cnt.R2} R2, ${cnt.RCU} RCU) qualified for their 2025 designation through the most-recent-year path; on three-year averages alone they would have been placed one tier lower. Carnegie has said future releases, starting in 2028, will use three-year averages only. The last column re-tests each tier on its newest three-year averages.`;
+    cols=[
+      {h:"R&amp;D avg<br>FY22–24",w:"96px",sm:1,c:r=>r.na!=null?money(r.na):'<span class="dz">—</span>'},
+      {h:"Doctorates avg<br>AY23–25",w:"96px",c:r=>r.nd.toFixed(0)},
+      G,
+      {h:"On newest<br>3-yr avgs",w:"124px",sm:1,c:r=>`<span class="bind ${r.cls}">${r.out}</span>`}];
+  } else if(k==='newest'){
+    rows=DATA.map(d=>({d,n:newDes(d)})).filter(r=>r.n&&r.n!==r.d.des)
+      .sort((a,b)=>(RANK[b.n]-RANK[b.d.des])-(RANK[a.n]-RANK[a.d.des])||RANK[b.d.des]-RANK[a.d.des]);
+    const up=rows.filter(r=>RANK[r.n]>RANK[r.d.des]).length;
+    $("mvnote").innerHTML=`Re-running the 2025 thresholds on each institution's <b>newest three-year averages</b> — FY2022–24 R&amp;D from NSF HERD and AY2022–23 to 2024–25 research doctorates from IPEDS — using the three-year-average rule Carnegie says it will use from 2028. <b>${up} would move up and ${rows.length-up} would move down.</b> A snapshot, not a forecast: the 2028 cycle will likely average one year later on each measure.`;
+    cols=[
+      {h:"2025",w:"84px",c:r=>chipD(r.d.des)},
+      {h:"Newest",w:"104px",sm:1,c:r=>`<span class="${RANK[r.n]>RANK[r.d.des]?'dp':'dn'}">${RANK[r.n]>RANK[r.d.des]?'▲':'▼'}</span> ${chipD(r.n)}`},
+      {h:"R&amp;D avg<br>FY22–24",w:"96px",sm:1,c:r=>money(newAvg(r.d))},
+      {h:"Doctorates avg<br>AY23–25",w:"96px",c:r=>newDAvg(r.d).toFixed(0)},
+      G];
+  }
+  const L=$("mvlist");
+  L.style.setProperty("--cols",`34px minmax(0,1fr) ${cols.map(c=>c.w).join(" ")}`);
+  L.style.setProperty("--cols-sm",`22px minmax(0,1fr) ${cols.filter(c=>c.sm).map(c=>Math.min(parseInt(c.w),96)+"px").join(" ")}`);
+  let h=`<div class="mvrow hdr"><div class="rk">#</div><div class="mn">Institution</div>${cols.map(c=>`<div class="cell${c.sm?'':' hidesm'}">${c.h}</div>`).join("")}</div>`;
+  h+=rows.map((r,i)=>{
+    const tag=click?`button class="mvrow" data-u="${r.d.u}"`:`div class="mvrow" style="cursor:default"`;
+    const nm=esc(r.d.n);
+    const subl = k==='rcu' ? `${r.c.st}` : sub(r.d);
+    return `<${tag}><div class="rk">${i+1}</div><div><div class="mn">${nm}</div><div class="ms">${subl}</div></div>${cols.map(c=>`<div class="cell mono${c.sm?'':' hidesm'}">${c.c(r)}</div>`).join("")}</${click?'button':'div'}>`;
+  }).join("");
+  if(k!=='rcu') h+=`<div class="mvfoot">† Growth measured only after a single-year swing of more than +60% or −40%, which usually signals a reporting change rather than research growth.</div>`;
+  L.innerHTML=h;
+  L.querySelectorAll("[data-u]").forEach(b=>b.addEventListener("click",()=>{ setMode('lookup'); select(b.dataset.u); }));
+}
+document.querySelectorAll("#movers .mv-controls button").forEach(b=>b.addEventListener("click",()=>{ mvKind=b.dataset.mv; renderMovers(); }));
+
+/* ---------- mode ---------- */
+function setMode(m){
+  document.querySelectorAll(".modeswitch button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.mode===m));
+  const lookup=m==='lookup';
+  document.querySelector(".search").hidden=!lookup;
+  $("empty").hidden = !lookup || !!state.sel;
+  $("stand").hidden = !lookup || !state.sel;
+  document.querySelector(".scatterwrap").hidden=!lookup;
+  $("movers").hidden=lookup;
+  if(!lookup) renderMovers();
+}
+document.querySelectorAll(".modeswitch button").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
+
+drawScatter();
+</script>
+</body></html>

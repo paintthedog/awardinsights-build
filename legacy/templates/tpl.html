@@ -1,0 +1,726 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NSF Award Insights</title>
+<meta name="description" content="What institutions like yours have won from NSF, by year, division and program, against peers you choose.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Readex+Pro:wght@300;400;500;600;700&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --ground:#f1efe8;--paper:#fff;--ink:#191917;--muted:#63625c;--faint:#8f8d85;
+  --line:#e3ded3;--line-soft:#eeeae0;
+  --accent:#0f6f7c;--accent-ink:#0b5560;--accent-soft:#dcecec;
+  --t1:#184f95;--t2:#2a78d6;--t3:#86b6ef;
+  --you:#e2611f;--you-soft:#fbe9df;
+  --c1:#2a78d6;--c2:#eb6834;--c3:#1baf7a;--c4:#eda100;--c5:#e87ba4;--c6:#008300;--c7:#4a3aa7;--c8:#e34948;
+  --other:#b4aea1;--good:#0a7d0a;--warn:#a6602a;
+  --shadow:0 1px 2px rgba(20,20,18,.05),0 10px 30px -14px rgba(20,20,18,.22);
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --ground:#0d0f10;--paper:#17191b;--ink:#e9e9e3;--muted:#9a9a91;--faint:#6a6a63;
+  --line:#292b2d;--line-soft:#202224;
+  --accent:#4bb4c1;--accent-ink:#7fd0da;--accent-soft:#15302f;
+  --t1:#9ec5f4;--t2:#5598e7;--t3:#2a78d6;
+  --you:#f0824f;--you-soft:#3a1e10;
+  --c1:#3987e5;--c2:#d95926;--c3:#199e70;--c4:#c98500;--c5:#d55181;--c6:#008300;--c7:#9085e9;--c8:#e66767;
+  --other:#585b52;--good:#3ecb5e;--warn:#d08a52;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 12px 32px -16px rgba(0,0,0,.65);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0d0f10;--paper:#17191b;--ink:#e9e9e3;--muted:#9a9a91;--faint:#6a6a63;
+  --line:#292b2d;--line-soft:#202224;
+  --accent:#4bb4c1;--accent-ink:#7fd0da;--accent-soft:#15302f;
+  --t1:#9ec5f4;--t2:#5598e7;--t3:#2a78d6;
+  --you:#f0824f;--you-soft:#3a1e10;
+  --c1:#3987e5;--c2:#d95926;--c3:#199e70;--c4:#c98500;--c5:#d55181;--c6:#008300;--c7:#9085e9;--c8:#e66767;
+  --other:#585b52;--good:#3ecb5e;--warn:#d08a52;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 12px 32px -16px rgba(0,0,0,.65);
+}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Readex Pro",system-ui,sans-serif;line-height:1.45;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:26px 20px 40px;min-width:0}
+#mode-inst,#mode-trends{min-width:0}
+h1,h2,h3{margin:0}
+.mono{font-family:"Readex Pro",system-ui,sans-serif;font-variant-numeric:tabular-nums;font-weight:400}
+.masthead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding-bottom:18px}
+.masthead h1{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:26px;letter-spacing:-.01em}
+.masthead .sub{color:var(--muted);font-size:13.5px;max-width:64ch}
+.tag{margin-left:auto;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);border-radius:2px;padding:4px 8px}
+.modeswitch{display:inline-flex;gap:3px;background:var(--line-soft);border-radius:8px;padding:3px;margin-bottom:18px}
+.modeswitch button{font-family:inherit;font-size:13.5px;font-weight:600;border:0;background:none;color:var(--muted);padding:8px 18px;border-radius:6px;cursor:pointer}
+.modeswitch button[aria-pressed="true"]{background:var(--paper);color:var(--accent-ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.search{position:relative;margin-bottom:20px}
+.search label{display:block;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.search input{width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:12px 14px}
+.search input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.results{position:absolute;z-index:30;left:0;right:0;top:100%;margin-top:4px;background:var(--paper);border:1px solid var(--line);border-radius:5px;box-shadow:var(--shadow);max-height:340px;overflow:auto}
+.results button{display:flex;width:100%;text-align:left;gap:10px;align-items:baseline;background:none;border:0;border-bottom:1px solid var(--line-soft);padding:10px 14px;color:var(--ink);font-family:inherit;font-size:14px;cursor:pointer}
+.results button:last-child{border-bottom:0}
+.results button:hover,.results button:focus{background:var(--accent-soft);outline:none}
+.results .rn{font-family:"Young Serif",Georgia,serif;font-weight:400}
+.results .rs{margin-left:auto;color:var(--faint);font-size:12px;white-space:nowrap}
+.empty{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:30px 28px}
+.empty h2{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:21px;margin-bottom:8px}
+.empty p{color:var(--muted);font-size:14px;max-width:70ch;margin:0 0 14px}
+.pe-picks{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+.pe-lab{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+.pe-picks button{font-family:inherit;font-size:13px;font-weight:500;color:var(--accent-ink);background:var(--accent-soft);border:1px solid var(--accent);border-radius:100px;padding:6px 13px;cursor:pointer}
+.pe-picks button:hover{background:var(--accent);color:#fff}
+/* institution header */
+.phead{display:flex;flex-wrap:wrap;align-items:flex-start;gap:10px 18px;margin-bottom:16px}
+.phead .nm{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:23px;line-height:1.15;letter-spacing:-.01em}
+.phead>div{min-width:0}.phead .loc{color:var(--muted);font-size:13px;margin-top:4px;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.chip{display:inline-block;font-size:10.5px;font-weight:600;padding:1px 7px;border-radius:100px;color:#fff;line-height:1.6}
+.chip.R1{background:var(--t1)}.chip.R2{background:var(--t2)}.chip.RCU{background:var(--t3);color:#0b2540}.chip.None{background:var(--other);color:var(--ink)}
+.chip.o{background:none;border:1px solid var(--line);color:var(--muted);font-weight:500}
+.kpis{display:flex;gap:1px;margin-left:auto;background:var(--line-soft);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.kpi{background:var(--paper);padding:10px 16px;text-align:right}
+.kpi .k{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint)}
+.kpi .v{font-family:"Readex Pro",system-ui,sans-serif;font-size:19px;font-weight:400;font-variant-numeric:tabular-nums;margin-top:3px}
+.kpi .v small{font-size:11px;color:var(--faint);font-weight:400}
+@media(max-width:700px){.kpis{margin-left:0;width:100%}.kpi{flex:1}}
+/* peer card */
+.peersel{margin-bottom:16px;padding:14px 16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+.peerhd{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;margin-bottom:11px}
+.peerhd .ph{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.pcount{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.pcount b{color:var(--accent-ink);font-family:"Readex Pro",system-ui,sans-serif}
+.pfacets{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:7px 10px}
+.pfac{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:7px;cursor:pointer;background:var(--paper)}
+.pfac.on{border-color:var(--accent);background:var(--accent-soft)}
+.pfac input{margin:0;margin-top:1px;accent-color:var(--accent);width:15px;height:15px;flex:none}
+.pfac .pl{font-size:12px;font-weight:600;line-height:1.25}
+.pfac .pv{font-size:11px;color:var(--muted);display:block;margin-top:1px}
+.pfac.on .pv{color:var(--accent-ink)}
+.pfoot{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin-top:10px}
+.pmore{font-family:inherit;font-size:12.5px;font-weight:500;color:var(--accent);background:none;border:0;cursor:pointer;padding:2px 0}
+.asp{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);cursor:pointer}
+.asp input{accent-color:var(--you);margin:0}
+.asp b{color:var(--ink);font-weight:600}
+/* cards */
+.stack{display:grid;gap:16px;min-width:0}
+.card{min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:16px 18px 18px}
+.card h3{font-size:13px;font-weight:600;letter-spacing:.01em}
+.card .csub{font-size:11.5px;color:var(--faint);margin:2px 0 12px}
+.split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:start}
+.split>div{min-width:0;overflow-x:auto}
+@media(max-width:760px){.split{grid-template-columns:1fr}}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.axlab{fill:var(--muted);font-size:11px;font-family:"Readex Pro",sans-serif}
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.tbl th{text-align:right;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:600;padding:5px 4px;border-bottom:1px solid var(--line);white-space:normal;line-height:1.2;vertical-align:bottom}
+.tbl th:first-child{text-align:left}
+.tbl td{padding:6px 4px;border-bottom:1px solid var(--line-soft);text-align:right;font-family:"Readex Pro",system-ui,sans-serif;font-weight:400;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl td:first-child{text-align:left;font-family:"Readex Pro",sans-serif;white-space:normal}
+.tbl td .sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+.tbl td.rk{color:var(--muted)}.tbl td.rk.hi{color:var(--good);font-weight:500}.tbl td.rk.lo{color:var(--faint)}
+.tbl tr.tot td{border-top:2px solid var(--line);font-weight:600}
+.tbl td.acc{color:var(--faint)}
+.tbl small{color:var(--faint);font-family:"Readex Pro",sans-serif;font-size:11px}
+/* division bars */
+.bars{display:grid;gap:3px}
+.br{display:grid;grid-template-columns:minmax(120px,230px) 48px 1fr 64px 64px;gap:12px;align-items:center;font-size:12.5px;padding:3px 0}
+.br .bd{font-size:10.5px;letter-spacing:.04em;color:var(--faint);text-transform:uppercase}
+.br .bn{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.br .bn small{color:var(--faint);font-family:"Readex Pro",system-ui,sans-serif;font-size:10.5px;margin-left:5px}
+.br .bb{position:relative;height:12px}
+.br .bf{position:absolute;left:0;top:0;bottom:0;border-radius:0 3px 3px 0}
+.br .bm{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);opacity:.5;margin-left:-1px}
+.br .bv,.br .rk{text-align:right;font-family:"Readex Pro",system-ui,sans-serif;font-size:12px;font-variant-numeric:tabular-nums}
+.br .rk{color:var(--muted)}.br .rk.hi{color:var(--good);font-weight:500}.br .rk.lo{color:var(--faint)}
+@media(max-width:560px){.br{grid-template-columns:110px 1fr 54px 54px;gap:8px}.br .bd{display:none}}
+.bleg{font-size:11.5px;color:var(--faint);margin-top:10px;display:flex;flex-wrap:wrap;gap:4px 14px}
+.bleg i{display:inline-block;width:2px;height:11px;background:var(--ink);opacity:.5;vertical-align:-1px;margin-right:5px}
+/* program lists */
+.pgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+@media(max-width:760px){.pgrid{grid-template-columns:1fr}}
+.pg h4{font-size:12.5px;font-weight:600;margin:0 0 2px}
+.pg .pgs{font-size:11.5px;color:var(--faint);margin-bottom:8px}
+.prow{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:2px 10px;padding:7px 0;border-bottom:1px solid var(--line-soft);align-items:baseline}
+.prow:last-child{border-bottom:0}
+.prow .rk{font-family:"Readex Pro",system-ui,sans-serif;font-size:11px;color:var(--faint);text-align:right}
+.prow .pn{font-size:13px;font-weight:500}
+.prow .pd{grid-column:2;font-size:11px;color:var(--faint)}
+.prow .pv{grid-column:3;grid-row:1/3;align-self:center;text-align:right;font-family:"Readex Pro",system-ui,sans-serif;font-size:12px;font-variant-numeric:tabular-nums}
+.prow .pv small{display:block;font-size:10px;color:var(--faint);font-family:"Readex Pro",sans-serif}
+.note{font-size:12.5px;color:var(--muted);margin:0 0 10px;max-width:80ch;line-height:1.5}
+.note b{color:var(--ink)}
+.nonsf{padding:12px 14px;border-radius:8px;background:var(--line-soft);font-size:13px;color:var(--muted);margin-bottom:14px}
+.nonsf b{color:var(--ink)}
+/* trends */
+.tfilters{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin-bottom:12px}
+.tfilters .fl{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-right:2px}
+.tfilters select{font-family:inherit;font-size:12.5px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:6px 9px;max-width:100%}
+.fchip{font-family:inherit;font-size:11.5px;padding:5px 10px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--muted);cursor:pointer}
+.fchip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:500}
+.tfilters .sep{width:1px;height:20px;background:var(--line);margin:0 3px}
+.morewrap{margin-bottom:14px}
+.moref{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 22px;padding:12px 14px;background:var(--paper);border:1px solid var(--line);border-radius:8px;margin-bottom:12px}
+.moref .g{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:5px}
+.moref .fchips{display:flex;flex-wrap:wrap;gap:4px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:16px}
+@media(max-width:560px){.stats{grid-template-columns:1fr 1fr}}
+.stile{background:var(--paper);padding:12px 16px;min-width:0;overflow:hidden}
+.stile .k{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.stile .v{font-family:"Readex Pro",system-ui,sans-serif;font-size:21px;font-weight:400;margin-top:3px;font-variant-numeric:tabular-nums}
+.stile .v small{font-size:12px;color:var(--muted);font-weight:400}
+.dvleg{display:flex;flex-wrap:wrap;gap:4px 8px;margin-top:10px}
+.dvleg button{font-family:inherit;display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);background:none;border:1px solid transparent;border-radius:100px;padding:3px 9px 3px 6px;cursor:pointer}
+.dvleg button .sw{width:11px;height:11px;border-radius:3px;flex:none}
+.dvleg button[aria-pressed="false"]{opacity:.4}
+.dvleg button:hover{border-color:var(--line)}
+.dvtablewrap{overflow-x:auto;margin-top:12px}
+.dvtable{width:100%;border-collapse:collapse;font-size:12.5px;min-width:700px}
+.dvtable th{text-align:right;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:600;padding:7px 8px;border-bottom:1px solid var(--line);white-space:nowrap;cursor:pointer;user-select:none}
+.dvtable th.l{text-align:left}.dvtable th[aria-sort]{color:var(--accent-ink)}
+.dvtable td{padding:6px 8px;border-bottom:1px solid var(--line-soft);text-align:right;font-family:"Readex Pro",system-ui,sans-serif;font-weight:400;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dvtable td.l{text-align:left;font-family:"Readex Pro",sans-serif;white-space:normal}
+.dvtable td.l small{color:var(--faint);font-family:"Readex Pro",system-ui,sans-serif;font-size:10.5px;margin-left:6px}
+.dvtable td.dir{text-align:left;font-family:"Readex Pro",sans-serif;color:var(--muted);font-size:12px}
+.dvtable td .sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.dvtable td.acc{color:var(--faint)}
+.dvtable td.chg.up{color:var(--good)}.dvtable td.chg.dn{color:var(--warn)}
+.dvtable tr.tot td{font-weight:600;border-top:2px solid var(--line)}
+.listhd{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px}
+.listhd .n{font-size:12.5px;color:var(--muted)}
+.seg{display:inline-flex;background:var(--line-soft);border-radius:6px;padding:2px;margin-left:auto}
+.seg button{font-family:inherit;font-size:12px;font-weight:500;border:0;background:none;color:var(--muted);padding:5px 11px;border-radius:5px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.irow{display:grid;grid-template-columns:30px minmax(0,1fr) 96px 110px;gap:2px 14px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line-soft);cursor:pointer;background:none;border-left:0;border-right:0;border-top:0;width:100%;text-align:left;font-family:inherit;color:var(--ink)}
+.irow:last-child{border-bottom:0}.irow:hover{background:var(--accent-soft)}
+.irow .rk{font-family:"Readex Pro",system-ui,sans-serif;font-size:12px;color:var(--faint);text-align:right}
+.irow .in{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:14px}
+.irow .is{grid-column:2;font-size:11.5px;color:var(--faint)}
+.irow .iv{grid-column:3;grid-row:1/3;text-align:right;font-family:"Readex Pro",system-ui,sans-serif;font-size:13px;font-variant-numeric:tabular-nums}
+.irow .ia{grid-column:4;grid-row:1/3;text-align:right;font-size:11.5px;color:var(--faint)}
+@media(max-width:560px){.irow{grid-template-columns:24px minmax(0,1fr) 80px}.irow .ia{display:none}}
+.irow.hdr{cursor:default;padding:5px 0}.irow.hdr:hover{background:none}
+.irow.hdr .rk,.irow.hdr .in,.irow.hdr .iv,.irow.hdr .ia{font-family:"Readex Pro",sans-serif;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.more{font-family:inherit;font-size:12.5px;color:var(--accent);background:none;border:0;cursor:pointer;padding:10px 0 0}
+.tt{position:fixed;z-index:50;pointer-events:none;background:var(--paper);border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);padding:7px 10px;font-size:12px;opacity:0;transition:opacity .08s;max-width:260px}
+.foot{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);color:var(--faint);font-size:11.5px;line-height:1.65;max-width:84ch}
+.foot b{color:var(--muted)}
+
+/* topbar + basis */
+.topbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-bottom:18px}
+.topbar .modeswitch{margin-bottom:0}
+.basis{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;color:var(--faint);margin-left:auto}
+.basis .seg{margin-left:0}
+/* card header with csv */
+.chd{display:flex;align-items:baseline;gap:10px}
+.csv{margin-left:auto;font-family:inherit;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);background:none;border:1px solid var(--line);border-radius:4px;padding:3px 8px;cursor:pointer;white-space:nowrap}
+.csv:hover{border-color:var(--accent);background:var(--accent-soft)}
+.listhd .csv{margin-left:8px}
+/* peer list */
+.plist{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line-soft)}
+.pchip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:100px;padding:3px 4px 3px 10px;font-size:12px;background:var(--paper)}
+.pchip .pgo{font-family:inherit;font-size:12px;color:var(--ink);background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.pchip .pgo:hover{color:var(--accent-ink);text-decoration:underline}
+.pchip .pd{font-family:"Readex Pro",system-ui,sans-serif;font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums}
+.pchip .px{font-family:inherit;font-size:14px;line-height:1;color:var(--faint);background:none;border:0;width:20px;height:20px;border-radius:100px;cursor:pointer}
+.pchip .px:hover{background:var(--you-soft);color:var(--you)}
+.pexcl{font-size:12px;color:var(--muted);margin-top:8px;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.pre{font-family:inherit;font-size:12px;color:var(--accent-ink);background:none;border:1px solid var(--line);border-radius:100px;padding:2px 9px;cursor:pointer}
+.pre:hover{background:var(--accent-soft)}
+/* year table extra column */
+.tbl td.pf{color:var(--muted)}
+/* directorate / division rows */
+.br{grid-template-columns:minmax(150px,260px) 1fr 70px 54px 84px 64px}
+.br.hdr{padding-bottom:4px}
+.br.hdr .bv,.br.hdr .rk{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint)}
+.br.dirrow{cursor:pointer;border-radius:6px;margin:0 -6px;padding:5px 6px;font-weight:500}
+.br.dirrow:hover,.br.dirrow:focus-visible{background:var(--accent-soft);outline:none}
+.br.divrow{padding-left:26px;color:var(--muted)}
+.br.divrow .bn{font-size:12px}
+.br .car{display:inline-block;width:14px;color:var(--faint);font-size:11px}
+.br .swd{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:7px;vertical-align:-1px}
+.br .bv.pf{color:var(--muted)}
+@media(max-width:640px){.br{grid-template-columns:minmax(110px,1fr) 1fr 62px 60px;gap:8px}.br .bv:nth-child(4),.br .rk{display:none}.br.divrow{padding-left:14px}}
+/* awards table */
+.awwrap{overflow-x:auto}
+.tbl.aw{min-width:640px}
+.tbl.aw td.ti,.tbl.aw td.dv,.tbl.aw td.pg{text-align:left;white-space:normal;font-family:"Readex Pro",sans-serif}
+.tbl.aw td.ti{min-width:260px;max-width:460px}
+.tbl.aw td.ti a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.tbl.aw td.ti a:hover{color:var(--accent-ink);border-color:var(--accent)}
+.tbl.aw td.ti small,.tbl.aw td.dv small{display:block;font-size:10.5px}
+.tbl.aw td.pg{font-size:11.5px;color:var(--muted);max-width:220px}
+.tbl.aw th:nth-child(2),.tbl.aw th:nth-child(3),.tbl.aw th:nth-child(4){text-align:left}
+.irow .ia.up{color:var(--good)}.irow .ia.dn{color:var(--warn)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="wrap">
+  <div class="masthead">
+    <h1>NSF Award Insights</h1>
+    <span class="sub">What institutions like yours have received from NSF, by year, division and program, alongside the peers you choose.</span>
+    <span class="tag">Prototype</span>
+  </div>
+  <div class="topbar">
+    <div class="modeswitch" role="tablist" aria-label="View">
+      <button data-mode="inst" aria-pressed="true">By institution</button>
+      <button data-mode="trends" aria-pressed="false">Trends</button>
+    </div>
+    <div class="basis"><span>Dollars</span><span class="seg" id="basis"><button data-b="intn" aria-pressed="true" title="Each award's full intended value, counted in the year it was made">Full award value</button><button data-b="obl" aria-pressed="false" title="What NSF has actually obligated on each award so far">Obligated to date</button></span></div>
+  </div>
+
+  <div id="mode-inst">
+    <div class="search">
+      <label for="q">Find an institution</label>
+      <input id="q" type="text" autocomplete="off" placeholder="Type an institution name…" aria-label="Search for an institution">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <div id="empty" class="empty">
+      <h2>Search any of __N__ institutions</h2>
+      <p>See its NSF awards for FY2022–26 by year, division and program, alongside the peers you pick. It works whether or not the institution has held an NSF award.</p>
+      <div class="pe-picks"><span class="pe-lab">Try</span>
+        <button data-u="131520">Howard University</button>
+        <button data-u="142115">Boise State University</button>
+        <button data-u="110608">Cal State Northridge</button>
+      </div>
+    </div>
+    <div id="prof" hidden>
+      <div class="phead" id="phead"></div>
+      <div class="peersel" id="peersel"></div>
+      <div class="stack">
+        <div class="card" id="cardYear"></div>
+        <div class="card" id="cardDiv"></div>
+        <div class="card" id="cardProg"></div>
+        <div class="card" id="cardAw"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="mode-trends" hidden>
+    <div class="tfilters" id="tfilters"></div>
+    <div class="morewrap" id="morewrap" hidden><div class="moref" id="moref"></div></div>
+    <div class="stats" id="xstats"></div>
+    <div class="stack">
+      <div class="card" id="cardTDiv"></div>
+      <div class="card" id="cardTList"></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <b>Sources:</b> NSF award records FY2022–26 (data pulled Sept 19, 2026), joined to institutions by UEI and a hand-checked crosswalk. <b>Coverage:</b> of __NALL__ NSF awards worth __DALL__ made in this period, __NIN__ (__DIN__, __DPCT__ of dollars) are matched to one of the __N__ institutions here; the rest went mostly to non-university recipients (research consortia, federal labs, nonprofits, companies) or to private for-profit institutions, which are excluded throughout, so totals here are not NSF's totals. <b>Dollars:</b> by default each award counts at its <b>full intended value</b> in the fiscal year it was made, not the amount paid out so far; that keeps years comparable, since continuing grants are paid in annual increments, but it counts money that could still be cut. The "Obligated to date" switch shows instead what NSF has actually committed on each award so far, which understates recent years. FY2026 is a partial year. <b>Ranks</b> are competition ranks among the institution and its peers (T- marks a tie); no rank is shown where the institution has nothing in that row or the peer group has fewer than 4 members. Peers and filtered sets are drawn from the full Carnegie universe of __N__ degree-granting institutions whether or not they hold NSF awards. Institutional factors: 2025 Carnegie Classifications, IPEDS, NSF HERD. R&amp;D bands use each institution's exact total R&amp;D from HERD (FY2024, or FY2023 if that's its latest report); campuses HERD reports together use Carnegie's FY2023 campus figure. Texas A&amp;M's engineering and agriculture agencies are counted with the College Station campus, as HERD reports them. An institution showing $0 may hold small awards not yet resolved in the crosswalk. Prototype.
+  </div>
+</div>
+<div id="tt" class="tt"></div>
+
+<script>
+const U=__UNIVERSE__;
+const AWARDS=__AWARDS__;   // [unitid, award FY, full intended value, div, [progCodes], obligated to date, award id, title]
+const PARTIAL=2026;        // data pulled Sept 19 2026: FY2026 not yet complete
+const PROGINFO=__PROGINFO__; // code -> [name, directorate]
+const COV=__COV__;         // {n_all,d_all,n_in,d_in}
+const byU=Object.fromEntries(U.map(d=>[d.u,d]));
+const YEARS=[2022,2023,2024,2025,2026];
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const money=d=>!d?"$0":d>=1e9?"$"+(d/1e9).toFixed(2)+"B":d>=1e6?"$"+(d/1e6).toFixed(d<1e7?1:0)+"M":"$"+Math.round(d/1e3)+"K";
+const TIERORD={None:0,RCU:1,R2:2,R1:3};
+const BANDS=["No reported R&D","Under $2M","$2–3M","$3–5M","$5–7.5M","$7.5–15M","$15–30M","$30–75M","$75–250M","$250–500M","$500M–1B","$1B+"];
+const HERDORD=Object.fromEntries(BANDS.map((b,i)=>[b,i]));
+const DIRS=[["MPS","Math & Physical Sciences","var(--c1)"],["ENG","Engineering","var(--c2)"],["CSE","Computer & Info Science","var(--c3)"],["GEO","Geosciences","var(--c4)"],["BIO","Biological Sciences","var(--c5)"],["EDU","STEM Education","var(--c6)"],["SBE","Social, Behavioral & Economic","var(--c7)"],["TIP","Technology, Innovation & Partnerships","var(--c8)"],["O/D","Office of the Director","var(--other)"]];
+const DIRCOL=Object.fromEntries(DIRS.map(d=>[d[0],d[2]])), DIRNAME=Object.fromEntries(DIRS.map(d=>[d[0],d[1]]));
+const DIVINFO={AGS:["Atmospheric & Geospace Sciences","GEO"],AST:["Astronomical Sciences","MPS"],BCS:["Behavioral & Cognitive Sciences","SBE"],CBET:["Chemical, Bioengineering, Environmental & Transport","ENG"],CCF:["Computing & Communication Foundations","CSE"],CHE:["Chemistry","MPS"],CMMI:["Civil, Mechanical & Manufacturing Innovation","ENG"],CNS:["Computer & Network Systems","CSE"],CRSP:["Research Security Strategy & Policy","O/D"],DBI:["Biological Infrastructure","BIO"],DEB:["Environmental Biology","BIO"],DGE:["Graduate Education","EDU"],DMR:["Materials Research","MPS"],DMS:["Mathematical Sciences","MPS"],DRL:["Research on Learning","EDU"],DUE:["Undergraduate Education","EDU"],EAR:["Earth Sciences","GEO"],ECCS:["Electrical, Communications & Cyber Systems","ENG"],EEC:["Engineering Education & Centers","ENG"],EES:["Equity for Excellence in STEM","EDU"],EF:["Emerging Frontiers","BIO"],EFMA:["Emerging Frontiers in Research & Innovation","ENG"],IIS:["Information & Intelligent Systems","CSE"],IOS:["Integrative Organismal Systems","BIO"],ITE:["Innovation & Technology Ecosystems","TIP"],MCB:["Molecular & Cellular Biosciences","BIO"],NCSE:["Science & Engineering Statistics","SBE"],OAC:["Advanced Cyberinfrastructure","CSE"],OCE:["Ocean Sciences","GEO"],OIA:["Integrative Activities (EPSCoR, MRI…)","O/D"],OISE:["International Science & Engineering","O/D"],OPP:["Polar Programs","GEO"],OSI:["Strategic Initiatives","MPS"],PHY:["Physics","MPS"],RISE:["Integrative & Collaborative Education & Research","GEO"],SES:["Social & Economic Sciences","SBE"],SMA:["SBE Multidisciplinary Activities","SBE"],SPH:["Other","O/D"],TF:["Technology Frontiers","TIP"],TI:["Translational Impacts","TIP"]};
+const divName=dv=>(DIVINFO[dv]||[dv,"O/D"])[0], divDir=dv=>(DIVINFO[dv]||[dv,"O/D"])[1];
+const NSFURL=id=>`https://www.nsf.gov/awardsearch/show-award?AWD_ID=${encodeURIComponent(id)}`;
+
+/* ---- dollar basis ---- */
+let basis="intn"; // "intn" = full intended value | "obl" = obligated to date
+const amt=a=>basis==="intn"?a[2]:a[5];
+const BASIS_LABEL=()=>basis==="intn"?"full intended value":"amount obligated to date";
+
+/* ---- per-institution aggregates ---- */
+const AG={}; // u -> {tot, yr:{y:$}, dv:{code:{d,n}}, dr:{dir:{d,n}}, pg:{code:{d,n}}, n, aw:[rows]}
+function buildAG(){
+  for(const k in AG) delete AG[k];
+  for(const a of AWARDS){
+    const u=a[0], v=amt(a); const g=AG[u]||(AG[u]={tot:0,yr:{},dv:{},dr:{},pg:{},n:0,aw:[]});
+    g.tot+=v; g.n++; g.aw.push(a); g.yr[a[1]]=(g.yr[a[1]]||0)+v;
+    const dv=a[3]||"SPH", dr=divDir(dv);
+    const x=g.dv[dv]||(g.dv[dv]={d:0,n:0}); x.d+=v; x.n++;
+    const y=g.dr[dr]||(g.dr[dr]={d:0,n:0}); y.d+=v; y.n++;
+    const codes=a[4]||[]; for(const c of codes){ const p=g.pg[c]||(g.pg[c]={d:0,n:0}); p.d+=v/codes.length; p.n++; }
+  }
+  U.forEach(d=>{ const g=agOf(d.u); d.ndol=Math.round(g.tot); d.naw=g.n; d.nsf=g.n?1:0; d.y22=g.yr[2022]||0; d.y25=g.yr[2025]||0; d.gr=d.y22>=5e5?(d.y25-d.y22)/d.y22:null; });
+}
+const EMPTYAG={tot:0,yr:{},dv:{},dr:{},pg:{},n:0,aw:[]};
+const agOf=u=>AG[u]||EMPTYAG;
+buildAG();
+
+/* ---- ranking ---- */
+// competition rank among peers plus the institution itself; t = peers tied at the same value
+function rankOf(arr,v){ return {r:1+arr.filter(x=>x>v).length,t:arr.filter(x=>x===v).length,n:arr.length+1,v}; }
+const MINPEERS=4;
+const rkCls=rk=>!rk||!rk.v?"":rk.r<=Math.ceil(rk.n/4)?"hi":rk.r>rk.n-Math.floor(rk.n/4)?"lo":"";
+const rkTxt=rk=>!rk||!rk.v?"—":`${rk.t?"T-":""}${rk.r} of ${rk.n}`;
+const tt=$("tt");
+function showTT(e,html){ tt.innerHTML=html; tt.style.opacity=1; moveTT(e); }
+function moveTT(e){ let x=e.clientX+12,y=e.clientY+12; if(x>innerWidth-270)x=e.clientX-270; tt.style.left=x+"px"; tt.style.top=y+"px"; }
+function hideTT(){ tt.style.opacity=0; }
+function median(arr){ if(!arr.length)return 0; const s=[...arr].sort((a,b)=>a-b),m=Math.floor(s.length/2); return s.length%2?s[m]:(s[m-1]+s[m])/2; }
+
+/* ---- CSV export ---- */
+let DL=null;
+setTimeout(async()=>{ try{ if(window.claude&&window.claude.use){ DL=await window.claude.use("downloads"); } }catch(e){ DL=null; } },0);
+const CSVS={};
+function csvBtn(key,label){ return `<button class="csv" data-csv="${key}" title="Download this table as CSV">${label||"CSV"}</button>`; }
+function csvText(rows){ return rows.map(r=>r.map(c=>{ c=c==null?"":String(c); return /[",\n]/.test(c)?'"'+c.replace(/"/g,'""')+'"':c; }).join(",")).join("\n"); }
+async function downloadCSV(name,rows){
+  const data=csvText(rows), filename=name.replace(/[^A-Za-z0-9 &()-]/g,"").slice(0,90)+".csv";
+  if(DL){ try{ await DL.save({filename,data}); return; }catch(e){ if(!(e&&e.code==="unavailable")) return; DL=null; } }
+  const b=new Blob([data],{type:"text/csv"}), a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download=filename; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},500);
+}
+function wireCSV(root){ root.querySelectorAll("[data-csv]").forEach(b=>b.addEventListener("click",e=>{ e.stopPropagation(); const f=CSVS[b.dataset.csv]; if(f){ const {name,rows}=f(); downloadCSV(name,rows); } })); }
+
+/* ================= BY INSTITUTION ================= */
+const FACETS=[
+ {id:"t",  label:"Research designation",core:true,ladder:"tier",val:d=>d.t==="None"?"Not designated":d.t},
+ {id:"hb", label:"R&D expenditure",     core:true,ladder:"herd",val:d=>d.hb},
+ {id:"ct", label:"Control",             core:true,val:d=>d.ct},
+ {id:"alf",label:"Degree level focus",  core:true,val:d=>d.alf||"—"},
+ {g:"Reach",id:"reg", label:"Region",         val:d=>d.reg||"—"},
+ {g:"Reach",id:"sz",  label:"Enrollment size",val:d=>d.sz||"—"},
+ {g:"Reach",id:"ep",  label:"EPSCoR",bool:1,  val:d=>d.ep?"EPSCoR":"Non-EPSCoR"},
+ {g:"Mission",id:"hbcu",label:"HBCU",bool:1,   val:d=>d.hbcu?"HBCU":"Non-HBCU"},
+ {g:"Mission",id:"hsi", label:"HSI",bool:1,    val:d=>d.hsi?"HSI":"Non-HSI"},
+ {g:"Mission",id:"msi", label:"Minority-serving",bool:1,val:d=>d.msi?"Minority-serving":"Not MSI"},
+ {g:"Mission",id:"lg",  label:"Land-grant",bool:1,val:d=>d.lg?"Land-grant":"Not land-grant"},
+ {g:"Mission",id:"cce", label:"Community-engaged",bool:1,val:d=>d.cce?"Community-engaged":"Not classified"},
+ {g:"Mission",id:"wo",  label:"Women's college",bool:1,val:d=>d.wo?"Women's college":"Not a women's college"},
+ {g:"Affiliation",id:"aau", label:"AAU",bool:1,val:d=>d.aau?"AAU member":"Non-AAU"},
+ {g:"Affiliation",id:"aplu",label:"APLU",bool:1,val:d=>d.aplu?"APLU member":"Non-APLU"},
+];
+const held={t:true,hb:true,ct:true,alf:true};
+let curSel=null, curD=null, pShowMore=false, aspir=false, showPeers=false, awCap=12;
+const excl=new Set();            // peers removed by hand
+const dvx=new Set(); let dvAll=false; // expanded directorates; show every division
+function computePeers(d,ignoreExcl){
+  const on=FACETS.filter(f=>held[f.id]);
+  return U.filter(p=>{
+    if(p.u===d.u)return false;
+    if(!ignoreExcl&&excl.has(p.u))return false;
+    for(const f of on){
+      if(aspir&&f.ladder==="tier"){ if(TIERORD[p.t]<TIERORD[d.t])return false; continue; }
+      if(aspir&&f.ladder==="herd"){ if(HERDORD[p.hb]<HERDORD[d.hb])return false; continue; }
+      const a=f.bool?(p[f.id]||0):(p[f.id]||""), b=f.bool?(d[f.id]||0):(d[f.id]||""); if(a!==b)return false;
+    }
+    return true;
+  });
+}
+function renderPeers(d){
+  const core=FACETS.filter(f=>f.core), opt=FACETS.filter(f=>!f.core);
+  const peers=computePeers(d); const canRank=peers.length>=MINPEERS;
+  const rk=rankOf(peers.map(p=>p.ndol),d.ndol);
+  const optOn=opt.filter(f=>held[f.id]).length;
+  const row=f=>`<label class="pfac ${held[f.id]?'on':''}"><input type="checkbox" data-f="${f.id}" ${held[f.id]?'checked':''}><span><span class="pl">${f.label}${aspir&&f.ladder&&held[f.id]?' <span style="color:var(--you)">＋ up</span>':''}</span><span class="pv">${esc(f.val(d))}</span></span></label>`;
+  let status;
+  if(!peers.length) status="no peers match; turning off a factor widens the group";
+  else if(!canRank) status=`<span style="color:var(--warn)">fewer than ${MINPEERS} peers, so no ranks are shown; turning off a factor widens the group</span>`;
+  else if(!d.ndol) status=`no NSF awards on record · <b>${peers.filter(p=>p.nsf).length}</b> of ${peers.length} peers hold awards`;
+  else status=`NSF $ rank <b>${rkTxt(rk)}</b>${peers.length<8?' · small group':''}`;
+  let h=`<div class="peerhd"><span class="ph">Peers — hold constant</span><span class="pcount"><b>${peers.length}</b> peers${excl.size?` <span style="color:var(--faint)">(${excl.size} removed)</span>`:""} · ${status}</span></div>`;
+  h+=`<div class="pfacets">`+core.map(row).join("")+(pShowMore?opt.map(row).join(""):"")+`</div>`;
+  h+=`<div class="pfoot"><button class="pmore" id="pmoreBtn">${pShowMore?'− Fewer factors':'+ More peer factors'}${optOn?` · ${optOn} on`:''}</button>
+      <button class="pmore" id="plistBtn">${showPeers?'− Hide peer list':`+ Show the ${peers.length} peers`}</button>
+      <label class="asp"><input type="checkbox" id="aspBox" ${aspir?'checked':''}> <b>Include the next tier</b> — also compare with institutions one designation or R&D band up</label></div>`;
+  if(showPeers){
+    const list=peers.slice().sort((a,b)=>b.ndol-a.ndol);
+    h+=`<div class="plist">${list.map(p=>`<span class="pchip"><button class="pgo" data-go="${p.u}" title="Open this institution">${esc(p.n)}</button><span class="pd">${p.nsf?money(p.ndol):"none"}</span><button class="px" data-x="${p.u}" title="Remove from peer group" aria-label="Remove ${esc(p.n)}">×</button></span>`).join("")}</div>`;
+    const ex=[...excl].map(u=>byU[u]).filter(Boolean);
+    if(ex.length) h+=`<div class="pexcl">Removed: ${ex.map(p=>`<button class="pre" data-re="${p.u}">${esc(p.n)} ↺</button>`).join("")} <button class="pre" id="reAll">restore all</button></div>`;
+  }
+  $("peersel").innerHTML=h;
+  $("peersel").querySelectorAll("input[data-f]").forEach(cb=>cb.addEventListener("change",e=>{ held[e.target.dataset.f]=e.target.checked; render(curD); }));
+  $("pmoreBtn").addEventListener("click",()=>{ pShowMore=!pShowMore; render(curD); });
+  $("plistBtn").addEventListener("click",()=>{ showPeers=!showPeers; render(curD); });
+  $("aspBox").addEventListener("change",e=>{ aspir=e.target.checked; render(curD); });
+  $("peersel").querySelectorAll("[data-x]").forEach(b=>b.addEventListener("click",()=>{ excl.add(b.dataset.x); render(curD); }));
+  $("peersel").querySelectorAll("[data-re]").forEach(b=>b.addEventListener("click",()=>{ excl.delete(b.dataset.re); render(curD); }));
+  $("peersel").querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>select(b.dataset.go)));
+  const ra=$("reAll"); if(ra) ra.addEventListener("click",()=>{ excl.clear(); render(curD); });
+  return peers;
+}
+function yearCard(d,peers){
+  const g=agOf(d.u); const mine=YEARS.map(y=>g.yr[y]||0); const canRank=peers.length>=MINPEERS;
+  const pv=YEARS.map(y=>peers.map(p=>agOf(p.u).yr[y]||0));
+  const pm=pv.map(median), pf=pv.map(a=>a.filter(x=>x>0).length);
+  const rks=YEARS.map((y,i)=>rankOf(pv[i],mine[i]));
+  const W=520,H=230,pl=56,pr=12,pt=14,pb=28,iw=W-pl-pr,ih=H-pt-pb;
+  const vmax=Math.max(...mine,...pm,1); const step=(()=>{const r=vmax/4,p=Math.pow(10,Math.floor(Math.log10(r))),m=r/p;return (m<1.5?1:m<3?2:m<7?5:10)*p;})();
+  const Y=v=>pt+ih-v/vmax*ih, bw=iw/YEARS.length, barw=bw*.5;
+  let s="";
+  for(let v=0;v<=vmax*1.001;v+=step) s+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line-soft)"/><text class="axlab" x="${pl-6}" y="${Y(v)+4}" text-anchor="end">${money(v)}</text>`;
+  YEARS.forEach((y,i)=>{ const cx=pl+bw*i+bw/2;
+    if(y>=PARTIAL) s+=`<rect x="${pl+bw*i}" y="${pt}" width="${bw}" height="${ih}" fill="var(--line-soft)" opacity=".5"/>`;
+    s+=`<rect class="hv" data-i="${i}" x="${cx-barw/2}" y="${Y(mine[i])}" width="${barw}" height="${Math.max(0,Y(0)-Y(mine[i]))}" fill="var(--you)" rx="0"/>`;
+    s+=`<text class="axlab" x="${cx}" y="${H-8}" text-anchor="middle">FY${String(y).slice(2)}${y>=PARTIAL?" *":""}</text>`; });
+  if(peers.length){ s+=`<path d="M${YEARS.map((y,i)=>`${pl+bw*i+bw/2},${Y(pm[i])}`).join("L")}" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 3"/>`;
+    YEARS.forEach((y,i)=>{ s+=`<circle cx="${pl+bw*i+bw/2}" cy="${Y(pm[i])}" r="3.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>`; }); }
+  s+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--line)"/>`;
+  const short=d.n.length>22?d.n.slice(0,20)+"…":d.n;
+  let tb=`<table class="tbl"><thead><tr><th>Fiscal year</th><th>${esc(short)}</th><th>Peer median</th><th>Peers funded</th><th>Rank</th></tr></thead><tbody>`;
+  YEARS.forEach((y,i)=>{ tb+=`<tr><td>FY${String(y).slice(2)}${y>=PARTIAL?' <small>partial</small>':''}</td><td class="${y>=PARTIAL?'acc':''}">${money(mine[i])}</td><td class="${y>=PARTIAL?'acc':''}">${peers.length?money(pm[i]):"—"}</td><td class="pf">${peers.length?`${pf[i]} of ${peers.length}`:"—"}</td><td class="rk ${canRank?rkCls(rks[i]):''}">${canRank?rkTxt(rks[i]):"—"}</td></tr>`; });
+  const tot=mine.reduce((a,b)=>a+b,0), ptot=median(peers.map(p=>p.ndol)), rkT=rankOf(peers.map(p=>p.ndol),tot);
+  tb+=`<tr class="tot"><td>FY22–26</td><td>${money(tot)}</td><td>${peers.length?money(ptot):"—"}</td><td class="pf">${peers.length?`${peers.filter(p=>p.nsf).length} of ${peers.length}`:"—"}</td><td class="rk">${canRank?rkTxt(rkT):"—"}</td></tr></tbody></table>`;
+  CSVS.year=()=>({name:`${d.n} - NSF by year`,rows:[["Fiscal year",d.n+" ("+BASIS_LABEL()+")","Peer median","Peers funded","Peers","Rank"],...YEARS.map((y,i)=>["FY"+y,mine[i],peers.length?pm[i]:"",pf[i],peers.length,canRank?rkTxt(rks[i]):""])]});
+  $("cardYear").innerHTML=`<div class="chd"><h3>NSF awards by year</h3>${csvBtn("year")}</div><div class="csub">${BASIS_LABEL()[0].toUpperCase()+BASIS_LABEL().slice(1)} of awards made each fiscal year · bars are ${esc(d.n)}, dashed line is the peer median${canRank?"":peers.length?" · ranks need at least "+MINPEERS+" peers":""} · FY2026 is a partial year</div>
+    <div class="split"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="NSF dollars by fiscal year versus peer median">${s}</svg><div>${tb}</div></div>`;
+  $("cardYear").querySelectorAll(".hv").forEach(r=>{ r.addEventListener("mouseenter",e=>{ const i=+r.dataset.i; showTT(e,`<b>FY${String(YEARS[i]).slice(2)}</b> · ${money(mine[i])}${peers.length?`<br>peer median ${money(pm[i])} · ${pf[i]} of ${peers.length} peers funded${canRank&&mine[i]?` · rank ${rkTxt(rks[i])}`:""}`:""}`); }); r.addEventListener("mousemove",moveTT); r.addEventListener("mouseleave",hideTT); });
+  wireCSV($("cardYear"));
+}
+function divCard(d,peers){
+  const g=agOf(d.u); const canRank=peers.length>=MINPEERS; const np=peers.length;
+  const stat=(mine,pv)=>{ const f=pv.filter(x=>x>0); return {v:mine.d,n:mine.n,np:f.length,pmf:median(f),rk:rankOf(pv,mine.d)}; };
+  const dirs=DIRS.map(D=>{
+    const dr=D[0]; const mine=g.dr[dr]||{d:0,n:0}; const pv=peers.map(p=>(agOf(p.u).dr[dr]||{d:0}).d);
+    const codes=new Set(Object.keys(g.dv).filter(c=>divDir(c)===dr)); peers.forEach(p=>Object.keys(agOf(p.u).dv).forEach(c=>{ if(divDir(c)===dr)codes.add(c); }));
+    const divs=[...codes].map(c=>({c,name:divName(c),...stat(g.dv[c]||{d:0,n:0},peers.map(p=>(agOf(p.u).dv[c]||{d:0}).d))})).filter(r=>dvAll||r.v>0||r.np>0).sort((a,b)=>b.v-a.v||b.np-a.np||b.pmf-a.pmf);
+    return {dr,name:D[1],col:D[2],...stat(mine,pv),divs};
+  }).filter(r=>dvAll||r.v>0||r.np>0).sort((a,b)=>b.v-a.v||b.np-a.np||b.pmf-a.pmf);
+  const hidden=DIRS.length-dirs.length;
+  let h=`<div class="chd"><h3>NSF funding by directorate and division</h3>${csvBtn("div")}</div><div class="csub">FY2022–26 ${BASIS_LABEL()} by the NSF unit that made the award · click a directorate to see its divisions · tick marks the median among peers funded there · rank is among ${esc(d.n.length>28?"this institution":d.n)} and its ${np} peers${canRank?"":np?" (not shown under "+MINPEERS+" peers)":""}</div>`;
+  if(!dirs.length){ h+=`<p class="note">No NSF awards on record for this institution or its peers.</p>`; $("cardDiv").innerHTML=h; return; }
+  const mx=Math.max(...dirs.map(r=>Math.max(r.v,r.pmf)),1);
+  const hdr=`<div class="br hdr"><div></div><div></div><div class="bv">FY22–26</div><div class="bv">Awards</div><div class="bv">Peers funded</div><div class="rk">Rank</div></div>`;
+  const rowH=(r,isDir)=>`<div class="br ${isDir?"dirrow":"divrow"}" data-k="${isDir?r.dr:r.c}" ${isDir?`role="button" tabindex="0" aria-expanded="${dvx.has(r.dr)}"`:""}>
+      <div class="bn">${isDir?`<span class="car">${dvx.has(r.dr)?"▾":"▸"}</span><span class="swd" style="background:${r.col}"></span>${esc(r.name)}<small>${r.dr}</small>`:`${esc(r.name)}<small>${r.c}</small>`}</div>
+      <div class="bb"><div class="bf" style="width:${(r.v/mx*100).toFixed(1)}%;background:var(--accent);opacity:${isDir?1:.55}"></div>${np&&r.np?`<div class="bm" style="left:${(r.pmf/mx*100).toFixed(1)}%"></div>`:""}</div>
+      <div class="bv">${money(r.v)}</div><div class="bv">${r.n||"—"}</div><div class="bv pf">${np?`${r.np} of ${np}`:"—"}</div><div class="rk ${canRank?rkCls(r.rk):''}">${canRank?rkTxt(r.rk):"—"}</div></div>`;
+  h+=`<div class="bars">`+hdr+dirs.map(r=>rowH(r,true)+(dvx.has(r.dr)?(r.divs.length?r.divs.map(x=>rowH(x,false)).join(""):`<div class="br divrow"><div class="bn" style="color:var(--faint)">No division-level awards here for this institution or its peers</div></div>`):"")).join("")+`</div>`;
+  h+=`<div class="bleg"><span><i></i>median among peers funded in that unit</span><span>Awards = number of awards FY2022–26</span>${hidden||!dvAll?`<button class="pmore" id="dvAllBtn">${dvAll?"Hide units with no awards":`Show all units${hidden?` (${hidden} directorate${hidden>1?"s":""} hidden)`:""}`}</button>`:""}<button class="pmore" id="dvXBtn">${dvx.size?"Collapse all":"Expand all"}</button></div>`;
+  CSVS.div=()=>({name:`${d.n} - NSF by division`,rows:[["Directorate","Division","Code",d.n+" ("+BASIS_LABEL()+")","Awards","Peers funded","Peers","Median among funded peers","Rank"],...dirs.flatMap(r=>[[r.name,"(all)",r.dr,r.v,r.n,r.np,np,r.pmf,canRank?rkTxt(r.rk):""],...r.divs.map(x=>[r.name,x.name,x.c,x.v,x.n,x.np,np,x.pmf,canRank?rkTxt(x.rk):""])])]});
+  $("cardDiv").innerHTML=h;
+  $("cardDiv").querySelectorAll(".dirrow").forEach(el=>{ const go=()=>{ const k=el.dataset.k; dvx.has(k)?dvx.delete(k):dvx.add(k); divCard(curD,peers); }; el.addEventListener("click",go); el.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();go();} }); });
+  const ab=$("dvAllBtn"); if(ab) ab.addEventListener("click",()=>{ dvAll=!dvAll; divCard(curD,peers); });
+  $("dvXBtn").addEventListener("click",()=>{ if(dvx.size)dvx.clear(); else dirs.forEach(r=>dvx.add(r.dr)); divCard(curD,peers); });
+  const all=[...dirs,...dirs.flatMap(r=>r.divs)];
+  $("cardDiv").querySelectorAll(".br[data-k]").forEach(el=>{ const r=all.find(x=>(x.dr||x.c)===el.dataset.k); if(!r)return; el.addEventListener("mouseenter",e=>showTT(e,`<b>${esc(r.name)}</b> (${r.dr||r.c})<br>${money(r.v)} across ${r.n||0} award${r.n===1?"":"s"}${np?`<br>${r.np} of ${np} peers funded here${r.np?` · median among them ${money(r.pmf)}`:""}`:""}`)); el.addEventListener("mousemove",moveTT); el.addEventListener("mouseleave",hideTT); });
+  wireCSV($("cardDiv"));
+}
+function awardCard(d){
+  const g=agOf(d.u); const aw=g.aw.slice().sort((a,b)=>amt(b)-amt(a)); const show=aw.slice(0,awCap);
+  let h=`<div class="chd"><h3>Awards</h3>${aw.length?csvBtn("aw","CSV · all "+aw.length):""}</div><div class="csub">Largest NSF awards to ${esc(d.n)}, FY2022–26, by ${BASIS_LABEL()} · each links to the award record on nsf.gov</div>`;
+  if(!aw.length){ h+=`<p class="note">No NSF awards on record for FY2022–26.</p>`; $("cardAw").innerHTML=h; return; }
+  h+=`<div class="awwrap"><table class="tbl aw"><thead><tr><th>FY</th><th>Title</th><th>Division</th><th>Program</th><th>Intended</th><th>Obligated</th></tr></thead><tbody>`;
+  h+=show.map(a=>{ const pg=(a[4]||[]).map(c=>(PROGINFO[c]||[c])[0]); return `<tr><td>FY${String(a[1]).slice(2)}${a[1]>=PARTIAL?" <small>*</small>":""}</td><td class="ti"><a href="${NSFURL(a[6])}" target="_blank" rel="noopener">${esc(a[7]||a[6])}</a><small>${a[6]}</small></td><td class="dv">${esc(divName(a[3]||"SPH"))}<small>${a[3]||""}</small></td><td class="pg">${esc(pg.slice(0,2).join(" · "))}${pg.length>2?` <small>+${pg.length-2}</small>`:""}</td><td>${money(a[2])}</td><td class="acc">${money(a[5])}</td></tr>`; }).join("");
+  h+=`</tbody></table></div>`;
+  if(aw.length>show.length) h+=`<button class="more" id="awMore">Show ${Math.min(25,aw.length-show.length)} more of ${aw.length}</button>`;
+  CSVS.aw=()=>({name:`${d.n} - NSF awards FY2022-26`,rows:[["Award ID","Fiscal year","Title","Directorate","Division","Programs","Full intended value","Obligated to date","URL"],...aw.map(a=>[a[6],a[1],a[7],divDir(a[3]||"SPH"),divName(a[3]||"SPH"),(a[4]||[]).map(c=>(PROGINFO[c]||[c])[0]).join("; "),a[2],a[5],NSFURL(a[6])])]});
+  $("cardAw").innerHTML=h;
+  const m=$("awMore"); if(m) m.addEventListener("click",()=>{ awCap+=25; awardCard(curD); });
+  wireCSV($("cardAw"));
+}
+function progCard(d,peers){
+  const g=agOf(d.u); const funded=peers.filter(p=>p.nsf);
+  const roll={}; funded.forEach(p=>{ const pg=agOf(p.u).pg; for(const c in pg){ const r=roll[c]||(roll[c]={d:0,np:0}); r.d+=pg[c].d; r.np++; } });
+  const gap=Object.entries(roll).filter(([c])=>!g.pg[c]).map(([c,r])=>({c,...r})).sort((a,b)=>b.np-a.np||b.d-a.d).slice(0,12);
+  const mine=Object.entries(g.pg).map(([c,p])=>({c,d:p.d,n:p.n,np:(roll[c]||{np:0}).np})).sort((a,b)=>b.d-a.d).slice(0,12);
+  const prow=(p,i,right)=>`<div class="prow"><div class="rk">${i+1}</div><div class="pn">${esc((PROGINFO[p.c]||[p.c])[0])}</div><div class="pd">${esc((PROGINFO[p.c]||["",""])[1]||"")}</div><div class="pv">${right}</div></div>`;
+  let h=`<h3>Programs</h3><div class="csub">NSF programs, FY2022–26 · ${funded.length} of ${peers.length} peers hold NSF awards · a program a peer holds is a place to look, not a requirement</div><div class="pgrid">`;
+  h+=`<div class="pg"><h4>Programs held by peers, not yet by ${esc(d.n.length>30?"this institution":d.n)}</h4><div class="pgs">Ranked by how many peers hold the program</div>`;
+  h+=gap.length?gap.map((p,i)=>prow(p,i,`${p.np}<small>of ${funded.length} peers</small>`)).join(""):`<p class="note">${peers.length?"Every program held by a peer is also held here.":"Pick peer factors to see this list."}</p>`;
+  h+=`</div><div class="pg"><h4>Programs held by ${esc(d.n.length>30?"this institution":d.n)}</h4><div class="pgs">Ranked by award value · with how many peers also hold each</div>`;
+  h+=mine.length?mine.map((p,i)=>prow(p,i,`${money(p.d)}<small>${p.np} of ${funded.length} peers</small>`)).join(""):`<p class="note">No NSF awards on record for FY2022–26.</p>`;
+  h+=`</div></div>`;
+  $("cardProg").innerHTML=h;
+}
+function render(d){
+  curD=d; $("empty").hidden=true; $("prof").hidden=false;
+  const flags=[d.ep&&"EPSCoR",d.hbcu&&"HBCU",d.hsi&&"HSI",d.msi&&!d.hbcu&&!d.hsi&&"MSI",d.lg&&"Land-grant",d.aau&&"AAU",d.aplu&&"APLU"].filter(Boolean);
+  const peers=renderPeers(d); const canRank=peers.length>=MINPEERS;
+  const rk=rankOf(peers.map(p=>p.ndol),d.ndol);
+  const rkV=!peers.length?`—`:!canRank?`—<small> under ${MINPEERS} peers</small>`:!d.ndol?`—<small> ${peers.filter(p=>p.nsf).length} of ${peers.length} peers funded</small>`:`${rk.t?"T-":""}${rk.r}<small> of ${rk.n}</small>`;
+  $("phead").innerHTML=`<div><div class="nm">${esc(d.n)}</div>
+    <div class="loc"><span class="chip ${d.t}">${d.t==="None"?"Not designated":d.t}</span><span>${esc(d.c)}, ${d.s} · ${d.ct} · ${esc(d.ctype)}</span>${flags.map(f=>`<span class="chip o">${f}</span>`).join("")}
+      <span>· R&amp;D ${d.herd?money(d.herd):"none reported"}${d.hby?` (FY${String(d.hby).slice(2)})`:""}</span></div></div>
+    <div class="kpis"><div class="kpi"><div class="k">NSF ${basis==="intn"?"awarded":"obligated"} FY22–26</div><div class="v">${money(d.ndol)}</div></div>
+      <div class="kpi"><div class="k">Awards</div><div class="v">${d.naw.toLocaleString()}</div></div>
+      <div class="kpi"><div class="k">Rank among peers</div><div class="v">${rkV}</div></div></div>`;
+  yearCard(d,peers); divCard(d,peers); awardCard(d); progCard(d,peers);
+  writeHash();
+}
+const q=$("q"),results=$("results");
+function select(u,keep){ if(!byU[u])return; if(curSel!==u&&!keep){ excl.clear(); dvx.clear(); awCap=12; } curSel=u; q.value=""; results.hidden=true; render(byU[u]); window.scrollTo({top:0,behavior:"smooth"}); }
+q.addEventListener("input",()=>{
+  const s=q.value.trim().toLowerCase(); if(!s){results.hidden=true;return;}
+  const hits=U.filter(d=>d.n.toLowerCase().includes(s)).sort((a,b)=>b.ndol-a.ndol||(b.herd||0)-(a.herd||0)).slice(0,12);
+  results.innerHTML=hits.length?hits.map(d=>`<button data-u="${d.u}"><span class="rn">${esc(d.n)}</span><span class="rs">${d.s} · ${d.t==="None"?"—":d.t} · ${money(d.ndol)}</span></button>`).join(""):'<button disabled style="color:var(--faint)">No institution found</button>';
+  results.hidden=false; results.querySelectorAll("button[data-u]").forEach(b=>b.addEventListener("click",()=>select(b.dataset.u)));
+});
+document.addEventListener("click",e=>{ if(!e.target.closest(".search"))results.hidden=true; });
+document.querySelectorAll("#empty button[data-u]").forEach(b=>b.addEventListener("click",()=>select(b.dataset.u)));
+
+/* ================= TRENDS ================= */
+const CATF=[
+ {id:"t",label:"Designation",order:["R1","R2","RCU","None"],lab:v=>v==="None"?"Not designated":v,core:1,chips:1},
+ {id:"ct",label:"Control",order:["Public","Private nonprofit"],core:1,chips:1},
+ {id:"reg",label:"Region",order:["Northeast","Midwest","South","West"],core:1},
+ {id:"hb",label:"R&D band",order:BANDS.slice().reverse(),core:1},
+ {id:"ctype",label:"Carnegie type",order:["Doctoral","Master's","Baccalaureate","Associate's","Special Focus","Tribal"]},
+ {id:"sz",label:"Enrollment size",order:["Very large","Large","Medium","Small","Very small"]},
+ {id:"alf",label:"Degree level focus",order:["Associate's-focused","Associate's–Bachelor's","Bachelor's-focused","Bachelor's–Master's","Doctoral/Professional","Exclusively graduate"]},
+ {id:"loc",label:"Setting",order:["City","Suburb","Town","Rural"]},
+];
+const BOOLF=[{id:"ep",label:"EPSCoR"},{id:"hbcu",label:"HBCU"},{id:"hsi",label:"HSI"},{id:"msi",label:"Minority-serving"},{id:"lg",label:"Land-grant"},{id:"aau",label:"AAU"},{id:"aplu",label:"APLU"},{id:"md",label:"Medical school"},{id:"cce",label:"Community-engaged"},{id:"wo",label:"Women's college"}];
+const xstate={cat:Object.fromEntries(CATF.map(f=>[f.id,new Set()])),bool:Object.fromEntries(BOOLF.map(f=>[f.id,false])),more:false,sort:"ndol",list:"inst",cap:60};
+const dvstate={dirs:new Set(DIRS.map(d=>d[0])),sort:"tot",dir:-1};
+function exploreFilter(){ return U.filter(d=>{ for(const f of CATF){ const s=xstate.cat[f.id]; if(s.size&&!s.has(d[f.id]))return false; } for(const f of BOOLF){ if(xstate.bool[f.id]&&d[f.id]!==1)return false; } return true; }); }
+function renderFilters(){
+  const chip=(f,v)=>`<button class="fchip" data-cat="${f.id}" data-v="${esc(v)}" aria-pressed="${xstate.cat[f.id].has(v)}">${esc(f.lab?f.lab(v):v)}</button>`;
+  const sel=f=>{ const cur=[...xstate.cat[f.id]][0]||""; return `<select data-catsel="${f.id}" aria-label="${f.label}"><option value="">${f.label}: all</option>${f.order.map(v=>`<option value="${esc(v)}" ${cur===v?"selected":""}>${esc(v)}</option>`).join("")}</select>`; };
+  let h=`<span class="fl">Filter</span>`;
+  CATF.filter(f=>f.core&&f.chips).forEach(f=>{ h+=f.order.map(v=>chip(f,v)).join("")+`<span class="sep"></span>`; });
+  CATF.filter(f=>f.core&&!f.chips).forEach(f=>{ h+=sel(f); });
+  const moreOn=CATF.filter(f=>!f.core).reduce((n,f)=>n+xstate.cat[f.id].size,0)+BOOLF.filter(f=>xstate.bool[f.id]).length;
+  h+=`<button class="fchip" id="moreBtn" aria-pressed="${xstate.more}">${xstate.more?"− Fewer filters":"+ More filters"}${moreOn?` · ${moreOn} on`:""}</button>`;
+  h+=`<button class="fchip" id="resetBtn" style="margin-left:auto;border-color:var(--accent);color:var(--accent-ink)">Reset</button>`;
+  $("tfilters").innerHTML=h;
+  $("morewrap").hidden=!xstate.more;
+  if(xstate.more){
+    let m=CATF.filter(f=>!f.core).map(f=>`<div><div class="g">${f.label}</div><div class="fchips">${f.order.map(v=>chip(f,v)).join("")}</div></div>`).join("");
+    m+=`<div><div class="g">Mission &amp; membership</div><div class="fchips">${BOOLF.map(f=>`<button class="fchip" data-bool="${f.id}" aria-pressed="${xstate.bool[f.id]}">${f.label}</button>`).join("")}</div></div>`;
+    $("moref").innerHTML=m;
+  }
+  document.querySelectorAll("#mode-trends [data-cat]").forEach(b=>b.addEventListener("click",()=>{ const s=xstate.cat[b.dataset.cat],v=b.dataset.v; s.has(v)?s.delete(v):s.add(v); renderTrends(); }));
+  document.querySelectorAll("#mode-trends [data-catsel]").forEach(s=>s.addEventListener("change",()=>{ const set=xstate.cat[s.dataset.catsel]; set.clear(); if(s.value)set.add(s.value); renderTrends(); }));
+  document.querySelectorAll("#mode-trends [data-bool]").forEach(b=>b.addEventListener("click",()=>{ xstate.bool[b.dataset.bool]=!xstate.bool[b.dataset.bool]; renderTrends(); }));
+  $("moreBtn").addEventListener("click",()=>{ xstate.more=!xstate.more; renderFilters(); writeHash(); });
+  $("resetBtn").addEventListener("click",()=>{ CATF.forEach(f=>xstate.cat[f.id].clear()); BOOLF.forEach(f=>xstate.bool[f.id]=false); renderTrends(); });
+}
+function divTotals(unitSet){ const T={}; for(const a of AWARDS){ if(unitSet&&!unitSet.has(a[0]))continue; const dv=a[3]||"SPH"; const t=T[dv]||(T[dv]={}); t[a[1]]=(t[a[1]]||0)+amt(a); } return T; }
+function trendDivCard(set,label){
+  const unitSet=new Set(set.map(d=>d.u)); const T=divTotals(set.length===U.length?null:unitSet);
+  const byDir={}; for(const dv in T){ const dir=divDir(dv); byDir[dir]=byDir[dir]||{}; for(const y of YEARS) byDir[dir][y]=(byDir[dir][y]||0)+(T[dv][y]||0); }
+  const on=DIRS.filter(d=>dvstate.dirs.has(d[0])&&byDir[d[0]]);
+  const W=900,H=300,pl=66,pr=14,pt=14,pb=30,iw=W-pl-pr,ih=H-pt-pb;
+  const totals=YEARS.map(y=>on.reduce((s,d)=>s+(byDir[d[0]][y]||0),0)); const vmax=Math.max(...totals,1);
+  const step=(()=>{const r=vmax/4,p=Math.pow(10,Math.floor(Math.log10(r))),m=r/p;return (m<1.5?1:m<3?2:m<7?5:10)*p;})();
+  const Y=v=>pt+ih-v/vmax*ih, bw=iw/YEARS.length, barw=bw*.56;
+  let s="";
+  for(let v=0;v<=vmax*1.001;v+=step) s+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line-soft)"/><text class="axlab" x="${pl-8}" y="${Y(v)+4}" text-anchor="end">${money(v)}</text>`;
+  YEARS.forEach((y,i)=>{ const cx=pl+bw*i+bw/2; let acc=0;
+    if(y>=PARTIAL) s+=`<rect x="${pl+bw*i}" y="${pt}" width="${bw}" height="${ih}" fill="var(--line-soft)" opacity=".5"/>`;
+    for(const d of on){ const v=byDir[d[0]][y]||0; if(!v)continue; const y1=Y(acc+v),y0=Y(acc); s+=`<rect class="dvbar" data-tip="${esc(d[1])} · FY${String(y).slice(2)} · ${money(v)}" x="${cx-barw/2}" y="${y1}" width="${barw}" height="${Math.max(0,y0-y1-1)}" fill="${d[2]}"/>`; acc+=v; }
+    s+=`<text x="${cx}" y="${Y(totals[i])-6}" text-anchor="middle" font-size="11.5" font-family="Readex Pro,system-ui,sans-serif" fill="var(--ink)">${money(totals[i])}</text>`;
+    s+=`<text class="axlab" x="${cx}" y="${H-10}" text-anchor="middle">FY${String(y).slice(2)}${y>=PARTIAL?" *":""}</text>`; });
+  s+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--line)"/>`;
+  const rows=Object.keys(T).map(dv=>{ const ys=YEARS.map(y=>T[dv][y]||0), tot=ys.reduce((a,b)=>a+b,0); return {dv,name:divName(dv),dir:divDir(dv),ys,tot,chg:ys[0]>0?(ys[3]-ys[0])/ys[0]:null}; }).filter(r=>dvstate.dirs.has(r.dir)&&r.tot>0);
+  const k=dvstate.sort; rows.sort((a,b)=>{ let va=a[k],vb=b[k]; if(k==="name"||k==="dir")return dvstate.dir*String(va).localeCompare(String(vb)); if(k.startsWith("y")){va=a.ys[+k.slice(1)];vb=b.ys[+k.slice(1)];} va=va==null?-Infinity:va; vb=vb==null?-Infinity:vb; return dvstate.dir*(va-vb); });
+  const th=(key,lab,cls="")=>`<th class="${cls}" data-k="${key}" ${dvstate.sort===key?`aria-sort="${dvstate.dir>0?"ascending":"descending"}"`:""}>${lab}${dvstate.sort===key?(dvstate.dir>0?" ↑":" ↓"):""}</th>`;
+  const chg=c=>c==null?'<td class="chg">—</td>':`<td class="chg ${c>=.05?"up":c<=-.05?"dn":""}">${c>=0?"+":""}${Math.round(c*100)}%</td>`;
+  let tb=`<table class="dvtable"><thead><tr>${th("name","Division","l")}${th("dir","Dir.","l")}${YEARS.map((y,i)=>th("y"+i,"FY"+String(y).slice(2)+(y>=PARTIAL?" *":""),y>=PARTIAL?"acc":"")).join("")}${th("tot","FY22–26")}${th("chg","FY22→25")}</tr></thead><tbody>`;
+  tb+=rows.map(r=>`<tr><td class="l">${esc(r.name)}<small>${r.dv}</small></td><td class="dir"><span class="sw" style="background:${DIRCOL[r.dir]}"></span>${r.dir}</td>${r.ys.map((v,i)=>`<td class="${YEARS[i]>=PARTIAL?"acc":""}">${money(v)}</td>`).join("")}<td>${money(r.tot)}</td>${chg(r.chg)}</tr>`).join("");
+  const colT=YEARS.map((y,i)=>rows.reduce((s,r)=>s+r.ys[i],0)), gT=colT.reduce((a,b)=>a+b,0);
+  tb+=`<tr class="tot"><td class="l">All shown divisions</td><td></td>${colT.map((v,i)=>`<td class="${YEARS[i]>=PARTIAL?"acc":""}">${money(v)}</td>`).join("")}<td>${money(gT)}</td>${chg(colT[0]>0?(colT[3]-colT[0])/colT[0]:null)}</tr></tbody></table>`;
+  CSVS.tdiv=()=>({name:`NSF by division - ${label}`,rows:[["Division","Code","Directorate",...YEARS.map(y=>"FY"+y),"FY2022-26","FY22 to FY25 change"],...rows.map(r=>[r.name,r.dv,r.dir,...r.ys,r.tot,r.chg==null?"":Math.round(r.chg*1000)/1000])]});
+  $("cardTDiv").innerHTML=`<div class="chd"><h3>NSF awards by year and division</h3>${csvBtn("tdiv")}</div><div class="csub">${esc(label)} · ${BASIS_LABEL()} of awards made each fiscal year, stacked by directorate · FY2026 is a partial year (data through Sept 19, 2026) · click a directorate to hide it, a column header to sort</div>
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="NSF dollars per fiscal year stacked by directorate">${s}</svg>
+    <div class="dvleg">${DIRS.filter(d=>byDir[d[0]]).map(d=>`<button data-d="${d[0]}" aria-pressed="${dvstate.dirs.has(d[0])}"><span class="sw" style="background:${d[2]}"></span>${d[0]} · ${d[1]}</button>`).join("")}</div>
+    <div class="dvtablewrap">${tb}</div>`;
+  $("cardTDiv").querySelectorAll(".dvleg button").forEach(b=>b.addEventListener("click",()=>{ const kk=b.dataset.d; dvstate.dirs.has(kk)?dvstate.dirs.delete(kk):dvstate.dirs.add(kk); renderTrends(); }));
+  $("cardTDiv").querySelectorAll("th[data-k]").forEach(x=>x.addEventListener("click",()=>{ const kk=x.dataset.k; if(dvstate.sort===kk)dvstate.dir*=-1; else{dvstate.sort=kk;dvstate.dir=(kk==="name"||kk==="dir")?1:-1;} renderTrends(); }));
+  $("cardTDiv").querySelectorAll(".dvbar").forEach(r=>{ r.addEventListener("mouseenter",e=>showTT(e,r.dataset.tip)); r.addEventListener("mousemove",moveTT); r.addEventListener("mouseleave",hideTT); });
+  wireCSV($("cardTDiv"));
+}
+const pct=v=>v==null?"—":(v>=0?"+":"")+Math.round(v*100)+"%";
+function trendListCard(set){
+  const funded=set.filter(d=>d.nsf);
+  let h=`<div class="listhd"><h3>${xstate.list==="inst"?"Institutions":"Programs"}</h3><span class="n">${xstate.list==="inst"?`${set.length.toLocaleString()} in this set · ${funded.length.toLocaleString()} with NSF awards`:`held by the ${funded.length.toLocaleString()} funded institutions in this set`}</span>
+    <span class="seg"><button data-l="inst" aria-pressed="${xstate.list==="inst"}">Institutions</button><button data-l="prog" aria-pressed="${xstate.list==="prog"}">Programs</button></span></div>`;
+  if(xstate.list==="inst"){
+    const k=xstate.sort;
+    const list=set.slice().sort((a,b)=>k==="n"?a.n.localeCompare(b.n):k==="gr"?((b.gr==null?-Infinity:b.gr)-(a.gr==null?-Infinity:a.gr))||b.ndol-a.ndol:(b[k]||0)-(a[k]||0));
+    const growth=k==="gr";
+    h+=`<div class="listhd" style="margin-top:4px"><span class="n">Sort</span><span class="seg" style="margin-left:0"><button data-s="ndol" aria-pressed="${k==="ndol"}">NSF $</button><button data-s="gr" aria-pressed="${k==="gr"}">Growth FY22→25</button><button data-s="naw" aria-pressed="${k==="naw"}">Awards</button><button data-s="herd" aria-pressed="${k==="herd"}">R&amp;D</button><button data-s="en" aria-pressed="${k==="en"}">Size</button><button data-s="n" aria-pressed="${k==="n"}">Name</button></span>${csvBtn("tlist")}</div>`;
+    if(growth) h+=`<div class="note" style="margin:2px 0 8px">Growth compares FY2025 with FY2022 and is shown only where FY2022 awards were at least $500K; FY2026 is left out because it is a partial year.</div>`;
+    h+=`<div class="irow hdr"><div class="rk">#</div><div class="in">Institution</div><div class="iv">${growth?"FY22 → FY25":"FY22–26"}</div><div class="ia">${growth?"Growth":"Awards · R&amp;D"}</div></div>`;
+    h+=list.slice(0,xstate.cap).map((d,i)=>`<button class="irow" data-u="${d.u}"><div class="rk">${i+1}</div><div class="in">${esc(d.n)}</div><div class="is"><span class="chip ${d.t}" style="font-size:9.5px">${d.t==="None"?"—":d.t}</span> ${esc(d.c)}, ${d.s} · ${d.ct}</div><div class="iv">${growth?`${money(d.y22)} → ${money(d.y25)}`:d.nsf?money(d.ndol):'<span style="color:var(--faint);font-size:11px">none</span>'}</div><div class="ia ${growth?(d.gr>=.05?"up":d.gr<=-.05?"dn":""):""}">${growth?pct(d.gr):`${d.naw?d.naw.toLocaleString()+" awd · ":""}${d.herd?money(d.herd):"—"}`}</div></button>`).join("");
+    if(list.length>xstate.cap) h+=`<button class="more" id="capBtn">Show ${Math.min(100,list.length-xstate.cap)} more of ${list.length.toLocaleString()}</button>`;
+    CSVS.tlist=()=>({name:"NSF institutions - current filter",rows:[["Institution","UNITID","State","Designation","Control","NSF FY2022-26 ("+BASIS_LABEL()+")","Awards","FY2022","FY2025","Growth FY22 to FY25","R&D (HERD)"],...list.map(d=>[d.n,d.u,d.s,d.t,d.ct,d.ndol,d.naw,d.y22,d.y25,d.gr==null?"":Math.round(d.gr*1000)/1000,d.herd||""])]});
+  } else {
+    const roll={}; funded.forEach(p=>{ const pg=agOf(p.u).pg; for(const c in pg){ const r=roll[c]||(roll[c]={d:0,np:0}); r.d+=pg[c].d; r.np++; } });
+    const arr=Object.entries(roll).map(([c,r])=>({c,...r})).sort((a,b)=>b.np-a.np||b.d-a.d).slice(0,40);
+    h+=`<div class="pg" style="margin-top:6px">`+(arr.length?arr.map((p,i)=>`<div class="prow"><div class="rk">${i+1}</div><div class="pn">${esc((PROGINFO[p.c]||[p.c])[0])}</div><div class="pd">${esc((PROGINFO[p.c]||["",""])[1]||"")}</div><div class="pv">${p.np}<small>institutions · ${money(p.d)}</small></div></div>`).join(""):`<p class="note">No funded institutions in this set.</p>`)+`</div>`;
+  }
+  $("cardTList").innerHTML=h;
+  $("cardTList").querySelectorAll("[data-l]").forEach(b=>b.addEventListener("click",()=>{ xstate.list=b.dataset.l; renderTrends(); }));
+  $("cardTList").querySelectorAll("[data-s]").forEach(b=>b.addEventListener("click",()=>{ xstate.sort=b.dataset.s; renderTrends(); }));
+  $("cardTList").querySelectorAll(".irow[data-u]").forEach(b=>b.addEventListener("click",()=>{ setMode("inst"); select(b.dataset.u); }));
+  const cb=$("capBtn"); if(cb) cb.addEventListener("click",()=>{ xstate.cap+=100; renderTrends(); });
+  wireCSV($("cardTList"));
+}
+function renderTrends(){
+  renderFilters();
+  const set=exploreFilter(), funded=set.filter(d=>d.nsf), tot=funded.reduce((a,d)=>a+d.ndol,0);
+  const medH=median(set.filter(d=>d.herd).map(d=>d.herd));
+  $("xstats").innerHTML=`<div class="stile"><div class="k">Institutions</div><div class="v">${set.length.toLocaleString()}</div></div>
+    <div class="stile"><div class="k">With NSF awards</div><div class="v">${funded.length.toLocaleString()} <small>${set.length?Math.round(100*funded.length/set.length):0}%</small></div></div>
+    <div class="stile"><div class="k">NSF ${basis==="intn"?"awarded":"obligated"} FY22–26</div><div class="v">${money(tot)}</div></div>
+    <div class="stile"><div class="k">Median R&amp;D</div><div class="v">${medH?money(medH):"—"}</div></div>`;
+  const anyF=CATF.some(f=>xstate.cat[f.id].size)||BOOLF.some(f=>xstate.bool[f.id]);
+  trendDivCard(set, anyF?`${set.length.toLocaleString()} institutions in the current filter`:`all ${U.length.toLocaleString()} institutions`);
+  trendListCard(set);
+  writeHash();
+}
+let mode="inst";
+function setMode(m){
+  mode=m;
+  document.querySelectorAll(".modeswitch button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.mode===m));
+  $("mode-inst").hidden=m!=="inst"; $("mode-trends").hidden=m!=="trends";
+  if(m==="trends") renderTrends(); else writeHash();
+}
+document.querySelectorAll(".modeswitch button").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
+
+/* ---- dollar basis toggle ---- */
+function setBasis(b){
+  basis=b; document.querySelectorAll("#basis button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.b===b));
+  buildAG();
+  if(mode==="trends") renderTrends(); else if(curD) render(curD); else writeHash();
+}
+document.querySelectorAll("#basis button").forEach(b=>b.addEventListener("click",()=>setBasis(b.dataset.b)));
+
+/* ---- shareable state in the URL ---- */
+let hashLock=false;
+function writeHash(){
+  if(hashLock)return;
+  const p=new URLSearchParams();
+  if(mode==="trends"){ p.set("v","trends");
+    CATF.forEach(f=>{ const s=xstate.cat[f.id]; if(s.size)p.set(f.id,[...s].join("|")); });
+    const bs=BOOLF.filter(f=>xstate.bool[f.id]).map(f=>f.id); if(bs.length)p.set("b",bs.join(","));
+    if(xstate.list!=="inst")p.set("list",xstate.list); if(xstate.sort!=="ndol")p.set("sort",xstate.sort);
+    const off=DIRS.filter(d=>!dvstate.dirs.has(d[0])).map(d=>d[0]); if(off.length)p.set("hide",off.join(","));
+  } else if(curSel){ p.set("u",curSel);
+    const hold=FACETS.filter(f=>held[f.id]).map(f=>f.id).join(","); if(hold!=="t,hb,ct,alf")p.set("hold",hold);
+    if(aspir)p.set("up","1"); if(excl.size)p.set("x",[...excl].join(","));
+  }
+  if(basis!=="intn")p.set("basis",basis);
+  const s=p.toString(); try{ history.replaceState(null,"",s?"#"+s:location.pathname+location.search); }catch(e){}
+}
+function readHash(){
+  const p=new URLSearchParams(location.hash.replace(/^#/,"")); if(![...p.keys()].length)return false;
+  hashLock=true;
+  try{
+    if(p.get("basis")==="obl"){ basis="obl"; document.querySelectorAll("#basis button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.b===basis)); buildAG(); }
+    if(p.get("v")==="trends"){
+      CATF.forEach(f=>{ const v=p.get(f.id); if(v)v.split("|").forEach(x=>{ if(f.order.includes(x))xstate.cat[f.id].add(x); }); });
+      (p.get("b")||"").split(",").filter(Boolean).forEach(id=>{ if(id in xstate.bool)xstate.bool[id]=true; });
+      if(CATF.filter(f=>!f.core).some(f=>xstate.cat[f.id].size)||BOOLF.some(f=>xstate.bool[f.id]))xstate.more=true;
+      const l=p.get("list"); if(l==="prog")xstate.list=l; const so=p.get("sort"); if(["ndol","gr","naw","herd","en","n"].includes(so))xstate.sort=so;
+      (p.get("hide")||"").split(",").filter(Boolean).forEach(d=>dvstate.dirs.delete(d));
+      hashLock=false; setMode("trends"); return true;
+    }
+    const u=p.get("u"); if(u&&byU[u]){
+      const hold=p.get("hold"); if(hold!=null){ FACETS.forEach(f=>held[f.id]=false); hold.split(",").forEach(id=>{ if(FACETS.some(f=>f.id===id))held[id]=true; }); if(FACETS.filter(f=>!f.core).some(f=>held[f.id]))pShowMore=true; }
+      aspir=p.get("up")==="1"; (p.get("x")||"").split(",").filter(Boolean).forEach(x=>{ if(byU[x])excl.add(x); });
+      hashLock=false; curSel=u; render(byU[u]); return true;
+    }
+  } finally { hashLock=false; }
+  return false;
+}
+readHash();
+</script>
+</body></html>

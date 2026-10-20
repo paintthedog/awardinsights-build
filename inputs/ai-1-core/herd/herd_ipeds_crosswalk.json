@@ -1,0 +1,59 @@
+{
+  "_about": "HERD inst_id -> reporting entity. Built 2026-09-23. 'link' = HERD report covers exactly one IPEDS unit; 'piece' = HERD reports a component separately that Carnegie folds into the IPEDS unit (summed); 'combined' = one HERD report covers several IPEDS units that Carnegie designates separately (kept as one entity, never split); 'independent' = research institution with no usable IPEDS/Carnegie record; 'drop' = excluded. Every link/piece/combined row was checked against Carnegie's FY2021-23 R&D.",
+  "link": {
+    "029977": {"u": "162928", "note": "Johns Hopkins University"},
+    "008802": {"u": "204796", "note": "Ohio State University-Main Campus"},
+    "003632": {"u": "228723", "note": "Texas A&M University-College Station (HERD report includes Health Science Center, as does IPEDS)"},
+    "353086": {"u": "221999", "note": "Vanderbilt University (HERD report includes VUMC research, as does Carnegie)"},
+    "008805": {"u": "201885", "note": "University of Cincinnati-Main Campus"},
+    "008718": {"u": "129020", "note": "University of Connecticut"},
+    "003210": {"u": "209542", "note": "Oregon State University"},
+    "002589": {"u": "183044", "note": "University of New Hampshire-Main Campus"},
+    "102059": {"u": "176017", "note": "University of Mississippi"},
+    "208828": {"u": "231624", "note": "William & Mary"},
+    "008803": {"u": "204857", "note": "Ohio University-Main Campus"},
+    "008799": {"u": "203517", "note": "Kent State University at Kent (HERD includes branch campuses; ~2% above Carnegie)"},
+    "009167": {"u": "206604", "note": "Wright State University-Main Campus"},
+    "001479": {"u": "133553", "note": "Embry-Riddle Aeronautical University-Daytona Beach (HERD covers all campuses; 4-7% above Carnegie)"},
+    "008800": {"u": "204024", "note": "Miami University-Oxford (HERD includes regional campuses; ~1-3% above Carnegie)"},
+    "012310": {"u": "200800", "note": "University of Akron Main Campus"},
+    "008796": {"u": "201441", "note": "Bowling Green State University-Main Campus"},
+    "100588": {"u": "181020", "note": "Doane University (FY2020-21 only, <$1M)"}
+  },
+  "piece": {
+    "004508": {"u": "126562", "note": "CU Anschutz Medical Campus -> University of Colorado Denver/Anschutz (one IPEDS unit)"},
+    "006740": {"u": "126562", "note": "CU Denver -> University of Colorado Denver/Anschutz"},
+    "102091": {"u": "190576", "note": "CUNY Graduate School of Public Health -> CUNY Graduate Center (as Carnegie does)"},
+    "102060": {"u": "190576", "note": "CUNY Advanced Science Research Center -> CUNY Graduate Center (as Carnegie does)"},
+    "330010": {"u": "160621", "note": "Southern University Ag Research & Extension Center -> Southern University and A&M College (as Carnegie does)"},
+    "102056": {"u": "228802", "note": "UT Health Science Center at Tyler -> UT Tyler (merged in IPEDS; Carnegie sums them)"},
+    "009016": {"u": "137351", "note": "USF St. Petersburg (FY2020, pre-consolidation) -> University of South Florida"},
+    "330002": {"u": "137351", "note": "USF Sarasota-Manatee (FY2020, pre-consolidation) -> University of South Florida"}
+  },
+  "combined": {
+    "C-UMD": {"name": "University of Maryland (College Park + Baltimore)", "units": ["163286", "163259"], "herd": ["102092"], "flag": "163286"},
+    "C-CORNELL": {"name": "Cornell University (incl. Weill Cornell Medicine)", "units": ["190415", "190424"], "herd": ["008779"], "flag": "190415"},
+    "C-NEB": {"name": "University of Nebraska (Lincoln + Medical Center)", "units": ["181464", "181428"], "herd": ["102130", "@181464", "@181428"], "flag": "181464", "why": "separate HERD reports through FY2022, one combined report from FY2023; summed across all years for a continuous series"},
+    "C-OU": {"name": "University of Oklahoma (Norman + Health Sciences)", "units": ["207500", "207342"], "herd": ["@207500", "102041"], "flag": "207500", "why": "HERD's Norman report covers the Health Sciences Center; Tulsa reported separately through FY2023"},
+    "C-WMU": {"name": "Western Michigan University (incl. Homer Stryker M.D. School of Medicine)", "units": ["172699", "490373"], "herd": ["233046"], "flag": "172699"},
+    "C-MWU": {"name": "Midwestern University (Downers Grove + Glendale)", "units": ["143853", "423643"], "herd": ["001657"], "flag": "143853"}
+  },
+  "independent": {
+    "I-USUHS": {"name": "Uniformed Services University of the Health Sciences", "st": "MD", "herd": ["029169"]},
+    "I-SCRIPPS": {"name": "Scripps Research", "st": "CA", "herd": ["022635"]},
+    "I-WHOI": {"name": "Woods Hole Oceanographic Institution", "st": "MA", "herd": ["002230"]},
+    "I-CSHL": {"name": "Cold Spring Harbor Laboratory", "st": "NY", "herd": ["101520"]},
+    "I-VAI": {"name": "Van Andel Institute", "st": "MI", "herd": ["102013"]},
+    "I-UMCES": {"name": "University of Maryland Center for Environmental Science", "st": "MD", "herd": ["019039"]},
+    "I-DRI": {"name": "Desert Research Institute", "st": "NV", "herd": ["008907"]},
+    "I-MSK": {"name": "Memorial Sloan Kettering Gerstner Graduate School", "st": "NY", "herd": ["101708"]},
+    "I-NWC": {"name": "U.S. Naval War College", "st": "RI", "herd": ["100864"]},
+    "I-NDU": {"name": "National Defense University", "st": "DC", "herd": ["101481"]},
+    "I-AWC": {"name": "U.S. Army War College", "st": "PA", "herd": ["101662"]}
+  },
+  "drop": {
+    "029119": "Polytechnic University of Puerto Rico - under $1M, IPEDS ID not confirmable",
+    "003353": "University of the Sciences - merged into Saint Joseph's 2022; FY2020-21 only, ~$4M",
+    "003875": "Northland College - closed; ~$1M"
+  }
+}

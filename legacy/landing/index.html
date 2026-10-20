@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Award Insights</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --ground:#eef1f1;--ink:#161b1d;--faint:#869598;--line:#d4dcdb;--accent:#0f6f7c;
+  --display:"Young Serif",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;--ground:#0e1315;--ink:#e7edec;--faint:#6b7c7e;--line:#2a3432;--accent:#4bb4c1;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;--ground:#0e1315;--ink:#e7edec;--faint:#6b7c7e;--line:#2a3432;--accent:#4bb4c1;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--ground);color:var(--ink);font-family:var(--display)}
+main{min-height:100%;max-width:640px;margin:0 auto;padding-inline:24px;padding-block:18vh 48px}
+h1{font-weight:400;font-size:clamp(34px,6vw,48px);margin:0 0 40px;letter-spacing:-.005em}
+ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+li{border-bottom:1px solid var(--line)}
+a{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-block:18px;color:var(--ink);text-decoration:none;font-size:clamp(20px,3.4vw,26px);transition:color .15s}
+a span{color:var(--faint);font-size:18px;transition:transform .15s,color .15s}
+a:hover,a:focus-visible{color:var(--accent);outline:none}
+a:hover span,a:focus-visible span{color:var(--accent);transform:translateX(4px)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<main>
+  <h1>Award Insights</h1>
+  <ul>
+    <li><a href="nsf.html">NSF Award Insights <span>→</span></a></li>
+    <li><a href="designations.html">Research Activity Designations <span>→</span></a></li>
+    <li><a href="portfolio.html">Research Portfolio Trends <span>→</span></a></li>
+  </ul>
+</main>
+</body>
+</html>

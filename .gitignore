@@ -1,0 +1,10 @@
+# data stays out of git: trimmed downloads and every build output
+inputs/trimmed/*
+!inputs/trimmed/.keep
+build/
+node_modules/
+*.zip
+.DS_Store
+inputs/subawards/*
+!inputs/subawards/.keep
+__pycache__/

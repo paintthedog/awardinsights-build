@@ -1,0 +1,508 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Research Portfolio Trends</title>
+<meta name="description" content="How an institution's research funding across federal agencies and across fields has shifted over FY2020–24.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Readex+Pro:wght@300;400;500;600;700&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --ground:#f1efe8;--paper:#fff;--ink:#191917;--muted:#63625c;--faint:#8f8d85;
+  --line:#e3ded3;--line-soft:#eeeae0;--surface:#fcfcfb;
+  --accent:#0f6f7c;--accent-ink:#0b5560;--accent-soft:#dcecec;
+  --c1:#2a78d6;--c2:#eb6834;--c3:#1baf7a;--c4:#eda100;--c5:#e87ba4;--c6:#008300;--c7:#4a3aa7;--c8:#e34948;
+  --other:#b4aea1;--good:#0ca30c;--warn:#a6602a;
+  --shadow:0 1px 2px rgba(20,20,18,.05),0 10px 30px -14px rgba(20,20,18,.22);
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --ground:#0d0f10;--paper:#17191b;--ink:#e9e9e3;--muted:#9a9a91;--faint:#6a6a63;
+  --line:#292b2d;--line-soft:#202224;--surface:#1a1a19;
+  --accent:#4bb4c1;--accent-ink:#7fd0da;--accent-soft:#15302f;
+  --c1:#3987e5;--c2:#d95926;--c3:#199e70;--c4:#c98500;--c5:#d55181;--c6:#008300;--c7:#9085e9;--c8:#e66767;
+  --other:#585b52;--good:#3ecb5e;--warn:#d08a52;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 12px 32px -16px rgba(0,0,0,.65);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0d0f10;--paper:#17191b;--ink:#e9e9e3;--muted:#9a9a91;--faint:#6a6a63;
+  --line:#292b2d;--line-soft:#202224;--surface:#1a1a19;
+  --accent:#4bb4c1;--accent-ink:#7fd0da;--accent-soft:#15302f;
+  --c1:#3987e5;--c2:#d95926;--c3:#199e70;--c4:#c98500;--c5:#d55181;--c6:#008300;--c7:#9085e9;--c8:#e66767;
+  --other:#585b52;--good:#3ecb5e;--warn:#d08a52;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 12px 32px -16px rgba(0,0,0,.65);
+}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Readex Pro",system-ui,sans-serif;line-height:1.45;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:26px 20px 40px}
+h1,h2,h3{margin:0}
+.mono{font-family:"Readex Pro",system-ui,sans-serif;font-variant-numeric:tabular-nums;font-weight:400}
+.masthead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding-bottom:18px}
+.masthead h1{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:26px;letter-spacing:-.01em}
+.masthead .sub{color:var(--muted);font-size:13.5px;max-width:64ch}
+.tag{margin-left:auto;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);border-radius:2px;padding:4px 8px}
+.search{position:relative;margin-bottom:20px}
+.search label{display:block;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.search input{width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:12px 14px}
+.search input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.results{position:absolute;z-index:30;left:0;right:0;top:100%;margin-top:4px;background:var(--paper);border:1px solid var(--line);border-radius:5px;box-shadow:var(--shadow);max-height:340px;overflow:auto}
+.results button{display:flex;width:100%;text-align:left;gap:10px;align-items:baseline;background:none;border:0;border-bottom:1px solid var(--line-soft);padding:10px 14px;color:var(--ink);font-family:inherit;font-size:14px;cursor:pointer}
+.results button:last-child{border-bottom:0}
+.results button:hover,.results button:focus{background:var(--accent-soft);outline:none}
+.results .rn{font-family:"Young Serif",Georgia,serif;font-weight:400}
+.results .rs{margin-left:auto;color:var(--faint);font-size:12px;white-space:nowrap}
+.empty{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:30px 28px}
+.empty h2{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:21px;margin-bottom:8px}
+.empty p{color:var(--muted);font-size:14px;max-width:70ch;margin:0 0 14px}
+.pe-picks{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+.pe-lab{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+.pe-picks button{font-family:inherit;font-size:13px;font-weight:500;color:var(--accent-ink);background:var(--accent-soft);border:1px solid var(--accent);border-radius:100px;padding:6px 13px;cursor:pointer}
+.pe-picks button:hover{background:var(--accent);color:#fff}
+.phead{display:flex;flex-wrap:wrap;align-items:flex-start;gap:10px 18px;margin-bottom:16px}
+.phead .nm{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:23px;line-height:1.15;letter-spacing:-.01em}
+.phead .loc{color:var(--muted);font-size:13px;margin-top:3px}
+.kpis{display:flex;gap:1px;margin-left:auto;background:var(--line-soft);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.kpi{background:var(--paper);padding:10px 16px;text-align:right}
+.kpi .k{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint)}
+.kpi .v{font-family:"Readex Pro",system-ui,sans-serif;font-size:19px;font-weight:400;font-variant-numeric:tabular-nums;margin-top:3px}
+.kpi .v.up{color:var(--good)}.kpi .v.dn{color:var(--warn)}
+.grid2{display:grid;grid-template-columns:1fr;gap:16px}
+.grid2 .card{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,1fr);column-gap:28px;align-items:start}
+.grid2 .card h3,.grid2 .card .csub{grid-column:1/-1}
+.grid2 .card svg{grid-column:1;max-height:340px}
+.grid2 .card .leg{grid-column:2;margin-top:0;align-self:center}
+@media(max-width:760px){.grid2 .card{grid-template-columns:1fr}.grid2 .card .leg{grid-column:1;margin-top:12px}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:16px 18px 18px}
+.card h3{font-size:12.5px;font-weight:600;letter-spacing:.02em}
+.card .csub{font-size:11.5px;color:var(--faint);margin:2px 0 12px}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.axlab{fill:var(--muted);font-size:10.5px;font-family:"Readex Pro",sans-serif}
+.leg{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:12px}
+.leg .lk{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--muted)}
+.leg .sw{width:11px;height:11px;border-radius:3px;flex:none}
+.peersel{margin-bottom:16px;padding:14px 16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+.ktag{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.02em;padding:1px 7px;border-radius:100px;border:1px solid var(--line);color:var(--muted);margin-left:4px;vertical-align:1px}
+.knotes{margin-top:8px;max-width:78ch}.knotes p{margin:4px 0;font-size:12.5px;color:var(--muted);line-height:1.5}.knotes b{color:var(--warn)}
+.knote{font-size:13px;color:var(--muted);margin:0}
+.jflag{color:var(--warn);font-size:12px}
+.incl{white-space:nowrap;font-size:12.5px;color:var(--ink);cursor:pointer}.incl input{accent-color:var(--accent);vertical-align:-2px}
+.peerhd{display:flex;align-items:baseline;gap:10px;margin-bottom:11px}
+.peerhd .ph{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.pcount{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.pcount b{color:var(--accent-ink);font-family:"Readex Pro",system-ui,sans-serif}
+.pfacets{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:7px 10px}
+.pfac{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:7px;cursor:pointer;background:var(--paper)}
+.pfac.on{border-color:var(--accent);background:var(--accent-soft)}
+.pfac input{margin:0;margin-top:1px;accent-color:var(--accent);width:15px;height:15px;flex:none}
+.pfac .pl{font-size:12px;font-weight:600;line-height:1.25}
+.pfac .pv{font-size:11px;color:var(--muted);display:block;margin-top:1px}
+.pfac.on .pv{color:var(--accent-ink)}
+.pmore{font-family:inherit;font-size:12.5px;font-weight:500;color:var(--accent);background:none;border:0;cursor:pointer;padding:12px 0 2px}
+.legrow .pct{width:72px;white-space:nowrap;text-align:right;font-family:"Readex Pro",system-ui,sans-serif;font-size:11px;color:var(--muted)}
+.legrow .pct.hi{color:var(--good);font-weight:500}.legrow .pct.lo{color:var(--faint)}
+.legrow.leghd{border-bottom:1px solid var(--line)}
+.leghd .amt,.leghd .chg,.leghd .pct{font-family:"Readex Pro",sans-serif;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.leghd .chg{width:64px}
+.leg .lg{margin-left:auto;font-family:"Readex Pro",system-ui,sans-serif;font-size:11px}
+.leg .lg.up{color:var(--good)}.leg .lg.dn{color:var(--warn)}.leg .lg.flat{color:var(--faint)}
+.legrow{display:flex;align-items:center;gap:8px;width:100%;padding:3px 0;border-bottom:1px solid var(--line-soft)}
+.legrow:last-child{border-bottom:0}
+.legrow .nm{font-size:12px}
+.legrow .amt{margin-left:auto;font-family:"Readex Pro",system-ui,sans-serif;font-size:11.5px;color:var(--muted)}
+.legrow .chg{font-family:"Readex Pro",system-ui,sans-serif;font-size:11px;width:64px;text-align:right}
+.chg.up{color:var(--good)}.chg.dn{color:var(--warn)}.chg.flat{color:var(--faint)}
+.tt{position:fixed;z-index:50;pointer-events:none;background:var(--paper);border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);padding:8px 10px;font-size:12px;max-width:240px;opacity:0;transition:opacity .08s}
+.tt .ttn{font-weight:600}.tt .ttr{color:var(--muted);font-size:11.5px;margin-top:2px}
+.modeswitch{display:inline-flex;gap:3px;background:var(--line-soft);border-radius:8px;padding:3px;margin-bottom:18px}
+.modeswitch button{font-family:inherit;font-size:13.5px;font-weight:600;border:0;background:none;color:var(--muted);padding:8px 18px;border-radius:6px;cursor:pointer}
+.modeswitch button[aria-pressed="true"]{background:var(--paper);color:var(--accent-ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.tctrl{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin-bottom:14px}
+.tctrl .fl{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.tctrl select{font-family:inherit;font-size:13px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:7px 10px;min-width:180px}
+.seg2{display:inline-flex;background:var(--line-soft);border-radius:6px;padding:2px}
+.seg2 button{font-family:inherit;font-size:12px;font-weight:500;border:0;background:none;color:var(--muted);padding:6px 12px;border-radius:5px;cursor:pointer}
+.seg2 button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.tfilters{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin-bottom:14px}
+.tfilters select{font-family:inherit;font-size:12.5px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:6px 9px}
+.fchip{font-family:inherit;font-size:11.5px;padding:5px 10px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--muted);cursor:pointer}
+.fchip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:500}
+.tfilters .sep{width:1px;height:20px;background:var(--line);margin:0 3px}
+.tnote{font-size:12.5px;color:var(--muted);margin:0 0 14px;max-width:80ch;line-height:1.5}
+.ttable{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}
+.trow{display:grid;grid-template-columns:32px 1fr 84px 96px 72px;gap:2px 14px;align-items:center;padding:11px 18px;border-bottom:1px solid var(--line-soft);width:100%;text-align:left;background:none;border-left:0;border-right:0;border-top:0;font-family:inherit;cursor:pointer}
+.trow:last-child{border-bottom:0}
+.trow:hover{background:var(--accent-soft)}
+.trow.hdr{cursor:default;background:var(--line-soft);border-bottom:1px solid var(--line)}
+.trow.hdr:hover{background:var(--line-soft)}
+.trow .rk{font-family:"Readex Pro",system-ui,sans-serif;font-size:13px;color:var(--faint);text-align:right}
+.trow .tn{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:14px}
+.trow .ts{grid-column:2;font-size:11.5px;color:var(--faint);margin-top:1px}
+.trow .num{text-align:right;font-family:"Readex Pro",system-ui,sans-serif;font-size:13px;font-variant-numeric:tabular-nums}
+.trow .num.up{color:var(--good)}.trow .num.dn{color:var(--warn)}
+.trow .spk{grid-column:5;grid-row:1/3;align-self:center}
+.hdr .rk,.hdr .tn,.hdr .num,.hdr .spk{font-family:"Readex Pro",sans-serif;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:600}
+@media(max-width:640px){.trow{grid-template-columns:26px 1fr 80px 64px}.trow .spk,.trow .num.hidesm{display:none}}
+.foot{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);color:var(--faint);font-size:11.5px;line-height:1.65;max-width:82ch}
+.foot b{color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="wrap">
+  <div class="masthead">
+    <h1>Research Portfolio Trends</h1>
+    <span class="sub">How an institution's R&amp;D across federal agencies and across fields of science has shifted over FY2020–24.</span>
+    <span class="tag">Prototype</span>
+  </div>
+  <div class="modeswitch" role="tablist" aria-label="View">
+    <button data-mode="inst" aria-pressed="true">Institution</button>
+    <button data-mode="trends" aria-pressed="false">Trends</button>
+  </div>
+
+  <div class="search">
+    <label for="q">Find an institution</label>
+    <input id="q" type="text" autocomplete="off" placeholder="Type an institution name…" aria-label="Search for an institution">
+    <div id="results" class="results" hidden></div>
+  </div>
+  <div id="empty" class="empty">
+    <h2>Search any of the __NPROF__ R&amp;D-reporting institutions</h2>
+    <p>See five years of research funding: which federal agencies fund the work (NSF, NIH, DOD, DOE, NASA, USDA), how that mix is shifting, and which fields of science are growing or shrinking. Totals reconcile to the NSF HERD survey.</p>
+    <div class="pe-picks"><span class="pe-lab">Try</span>
+      <button data-u="170976">University of Michigan, Ann Arbor</button>
+      <button data-u="139755">Georgia Institute of Technology</button>
+      <button data-u="199120">UNC Chapel Hill</button>
+    </div>
+  </div>
+
+  <div id="prof" hidden>
+    <div class="phead" id="phead"></div>
+    <div class="peersel" id="peersel"></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>R&amp;D by funding source</h3>
+        <div class="csub">$ per fiscal year · federal vs. other sources</div>
+        <svg id="svgSrc" viewBox="0 0 460 300" role="img" aria-label="R&D by funding source over time"></svg>
+        <div class="leg" id="legSrc"></div>
+      </div>
+      <div class="card">
+        <h3>Federal R&amp;D by agency</h3>
+        <div class="csub">$ per fiscal year · stacked by funding agency</div>
+        <svg id="svgAg" viewBox="0 0 460 300" role="img" aria-label="Federal R&D by agency over time"></svg>
+        <div class="leg" id="legAg"></div>
+      </div>
+      <div class="card">
+        <h3>Total R&amp;D by field</h3>
+        <div class="csub">$ per fiscal year · all funding sources</div>
+        <svg id="svgFld" viewBox="0 0 460 300" role="img" aria-label="R&D by field over time"></svg>
+        <div class="leg" id="legFld"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="trends" hidden>
+    <div class="tctrl">
+      <span class="fl">Dimension</span>
+      <select id="dimSel" aria-label="Agency or field"></select>
+      <span class="seg2" id="dirSeg" role="group" aria-label="Direction">
+        <button data-dir="grow" aria-pressed="true">Growing</button>
+        <button data-dir="drop" aria-pressed="false">Declining</button>
+      </span>
+      <span class="seg2" id="sortSeg" role="group" aria-label="Rank by">
+        <button data-sort="pct" aria-pressed="true">Avg annual %</button>
+        <button data-sort="abs" aria-pressed="false">$ change</button>
+      </span>
+    </div>
+    <div class="tfilters" id="tfilters">
+      <span class="fl">Filter</span>
+      <select id="fCt"><option value="">All control</option><option>Public</option><option>Private nonprofit</option></select>
+      <select id="fReg"><option value="">All regions</option><option>Northeast</option><option>Midwest</option><option>South</option><option>West</option></select>
+      <span class="sep"></span>
+      <button class="fchip" data-des="R1">R1</button><button class="fchip" data-des="R2">R2</button><button class="fchip" data-des="RCU">RCU</button>
+      <span class="sep"></span>
+      <button class="fchip" data-flag="hbcu">HBCU</button><button class="fchip" data-flag="hsi">HSI</button><button class="fchip" data-flag="msi">MSI</button><button class="fchip" data-flag="lg">Land-grant</button><button class="fchip" data-flag="aau">AAU</button><button class="fchip" data-flag="aplu">APLU</button><button class="fchip" data-flag="ep">EPSCoR</button>
+      <button class="fchip" id="fReset" style="margin-left:auto;border-color:var(--accent);color:var(--accent-ink)">Reset</button>
+    </div>
+    <p class="tnote" id="tnote"></p>
+    <div class="ttable" id="tlist"></div>
+  </div>
+
+  <div class="foot">
+    <b>Source:</b> NSF Higher Education R&amp;D (HERD) survey microdata, FY2020–24, joined to IPEDS by UNITID plus a hand-checked crosswalk for the 34 HERD reporters with no or outdated IPEDS IDs (Johns Hopkins, Ohio State, Maryland, Texas A&amp;M, Vanderbilt and others); every link was checked against Carnegie's FY2021–23 figures. Where one HERD report covers campuses Carnegie designates separately, it's shown as one combined institution, never split. Research institutions without IPEDS records are included but left out of peer benchmarks. Private for-profit institutions are excluded. "Federal R&amp;D by agency" is federally financed expenditures split by funding agency; "by field" is total R&amp;D (all sources) by field of science. Growth figures compare the first and last year each institution reported. Designation from the 2025 Carnegie Research Activity file. Prototype.
+  </div>
+</div>
+<div id="tt" class="tt"></div>
+
+<script>
+const PROF=__PROF__;
+const $=id=>document.getElementById(id);
+const YEARS=["2020","2021","2022","2023","2024"];
+const AGN=[["NSF","NSF","var(--c1)"],["HHS","NIH / HHS","var(--c2)"],["DOD","DOD","var(--c3)"],["DOE","DOE","var(--c4)"],["NASA","NASA","var(--c5)"],["USDA","USDA","var(--c6)"],["Other agencies","Other federal","var(--c7)"]];
+const FCOL=["var(--c1)","var(--c2)","var(--c3)","var(--c4)","var(--c5)","var(--c6)","var(--c7)"];
+const SRC=[["__fed","Federal","var(--c1)"],["Institution funds","Institutional","var(--c3)"],["Business","Business / industry","var(--c2)"],["State and local government","State & local","var(--c4)"],["Nonprofit organziations","Nonprofit","var(--c5)"],["All other sources","Other","var(--other)"]];
+function agVal(row,k){ row=row||{}; if(k==="__fed")return AGN.reduce((s,a)=>s+(row[a[0]]||0),0); return row[k]||0; }
+function money(v){ if(v==null||v===0)return "$0"; const a=Math.abs(v); if(a>=1e9)return "$"+(v/1e9).toFixed(2)+"B"; if(a>=1e6)return "$"+(v/1e6).toFixed(1)+"M"; if(a>=1e3)return "$"+Math.round(v/1e3)+"k"; return "$"+Math.round(v); }
+const K=v=>(v||0)*1000; // profile stored in $thousands
+function yrsAvail(d,grp){ return YEARS.filter(y=>d[grp][y]); }
+function pct(a,b){ if(!a)return null; return Math.round((b-a)/a*100); }
+/* likely reporting changes: a single-year swing in total R&D of more than +60% or -40% (from a $2M+ base) */
+function totY(d,y){ return Object.values(d.ag[y]||{}).reduce((s,v)=>s+v,0); }
+function jumps(d){ const out=[]; for(let i=1;i<YEARS.length;i++){ const a=totY(d,YEARS[i-1]), b=totY(d,YEARS[i]); if((a>=2000||Math.abs(b-a)>=10000)&&a>0&&b>0&&(b/a>1.6||b/a<0.6)) out.push({y:YEARS[i],p:Math.round((b/a-1)*100)}); } return out; }
+function kindTag(d){ return d.k==='comb'?'<span class="ktag">Combined HERD report</span>':d.k==='ind'?'<span class="ktag">Independent research institution</span>':''; }
+function cagr(first,last,years){ if(!first||first<=0||!years||years<=0)return null; const r=last/first; if(r<=0)return -100; return (Math.pow(r,1/years)-1)*100; }
+
+/* generic stacked-bar chart into an svg; series=[{key,label,color}], valfn(year,key) */
+function stackChart(svg, series, valfn, leghost, isField, d, pcts){
+  const W=460,H=300,PAD={l:52,r:8,t:10,b:26};
+  const IW=W-PAD.l-PAD.r, IH=H-PAD.t-PAD.b;
+  const yrs=YEARS;
+  const totals=yrs.map(y=>series.reduce((s,se)=>s+K(valfn(y,se.key)),0));
+  const max=Math.max(...totals,1);
+  const bw=IW/yrs.length*0.62, gap=IW/yrs.length;
+  const sy=v=>PAD.t+IH-(v/max)*IH;
+  let s='';
+  // y gridlines
+  const step=niceStep(max);
+  for(let g=0; g<=max*1.001; g+=step){ const y=sy(g); s+=`<line x1="${PAD.l}" y1="${y}" x2="${W-PAD.r}" y2="${y}" stroke="var(--line-soft)"/><text class="axlab" x="${PAD.l-7}" y="${y+3}" text-anchor="end">${money(g)}</text>`; }
+  yrs.forEach((y,i)=>{
+    const cx=PAD.l+gap*i+gap/2;
+    let acc=0;
+    series.forEach(se=>{
+      const v=K(valfn(y,se.key)); if(v<=0)return;
+      const h=(v/max)*IH; const y0=sy(acc)-h;
+      s+=`<rect x="${(cx-bw/2).toFixed(1)}" y="${y0.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(0,h-1).toFixed(1)}" fill="${se.color}" data-y="${y}" data-k="${se.key}" data-lab="${se.label}" data-v="${v}" class="seg" rx="1"/>`;
+      acc+=v;
+    });
+    s+=`<text class="axlab" x="${cx}" y="${PAD.t+IH+16}" text-anchor="middle">FY${y.slice(2)}</text>`;
+  });
+  svg.innerHTML=s;
+  svg.querySelectorAll(".seg").forEach(r=>{
+    r.addEventListener("mouseenter",e=>{const tot=totals[YEARS.indexOf(r.dataset.y)]; showTT(e,`<div class="ttn">${r.dataset.lab}</div><div class="ttr">FY${r.dataset.y} · <span class="mono">${money(+r.dataset.v)}</span> · ${Math.round(+r.dataset.v/tot*100)}% of year</div>`);});
+    r.addEventListener("mousemove",moveTT); r.addEventListener("mouseleave",hideTT);
+  });
+  // legend with each series' latest value + first→last change
+  const av=yrsAvail(d,isField?'fld':'ag');
+  const y0=av[0],y1=av[av.length-1];
+  const hasPct=pcts&&Object.keys(pcts).length>0;
+  const hdr=`<div class="legrow leghd"><span class="sw" style="visibility:hidden"></span><span class="nm"></span><span class="amt">FY24 $</span><span class="chg">avg/yr</span><span class="pct">${hasPct?'Rank':''}</span></div>`;
+  leghost.innerHTML=hdr+series.map(se=>{
+    const last=K(valfn(y1,se.key)), first=K(valfn(y0,se.key));
+    const p=cagr(first,last,(+y1)-(+y0)); const pr=p==null?null:Math.round(p);
+    const cls=pr==null?'flat':(pr>=2?'up':pr<=-2?'dn':'flat');
+    const ptxt=pr==null?'—':(pr>=0?'+'+pr+'%':pr+'%');
+    const pv=pcts?pcts[se.key]:undefined;
+    const pcell=pv==null?'<span class="pct"></span>':`<span class="pct ${pv.r<=Math.ceil(pv.n/4)?'hi':pv.r>pv.n-Math.floor(pv.n/4)?'lo':''}" title="Rank among this institution and its ${pv.n-1} peers, by FY2024 dollars">${pv.r} of ${pv.n}</span>`;
+    return `<div class="legrow"><span class="sw" style="background:${se.color}"></span><span class="nm">${se.label}</span><span class="amt">${money(last)}</span><span class="chg ${cls}">${ptxt}</span>${pcell}</div>`;
+  }).join("");
+}
+function niceStep(max){ const raw=max/4; const p=Math.pow(10,Math.floor(Math.log10(raw))); const m=raw/p; const n=m<1.5?1:m<3?2:m<7?5:10; return n*p; }
+
+/* ---------- peer benchmarking (hold-constant facets, like the NSF page) ---------- */
+const BY="2024";
+let curD=null, pShowMore=false;
+const FACETS=[
+ {id:'des',label:'Research designation',core:true,val:d=>d.des==='—'?'Not designated':d.des},
+ {id:'hb', label:'R&D expenditure',    core:true,val:d=>d.hb||'—'},
+ {id:'ct', label:'Control',            core:true,val:d=>d.ct||'—'},
+ {id:'alf',label:'Degree level focus', core:true,val:d=>d.alf||'—'},
+ {g:'Reach',id:'reg',label:'Region',           val:d=>d.reg||'—'},
+ {g:'Reach',id:'sz', label:'Enrollment size',  val:d=>d.sz||'—'},
+ {g:'Reach',id:'ep', label:'EPSCoR', bool:1,   val:d=>d.ep?'EPSCoR':'Non-EPSCoR'},
+ {g:'Mission',id:'hbcu',label:'HBCU', bool:1,  val:d=>d.hbcu?'HBCU':'Non-HBCU'},
+ {g:'Mission',id:'hsi', label:'HSI',  bool:1,  val:d=>d.hsi?'HSI':'Non-HSI'},
+ {g:'Mission',id:'msi', label:'Minority-serving',bool:1,val:d=>d.msi?'Minority-serving':'Not MSI'},
+ {g:'Mission',id:'lg',  label:'Land-grant',bool:1,val:d=>d.lg?'Land-grant':'Not land-grant'},
+ {g:'Mission',id:'cce', label:'Community-engaged',bool:1,val:d=>d.cce?'Community-engaged':'Not classified'},
+ {g:'Mission',id:'wo',  label:"Women's college",bool:1,val:d=>d.wo?"Women's college":"Not a women's college"},
+ {g:'Affiliation',id:'aau', label:'AAU',bool:1,val:d=>d.aau?'AAU member':'Non-AAU'},
+ {g:'Affiliation',id:'aplu',label:'APLU',bool:1,val:d=>d.aplu?'APLU member':'Non-APLU'},
+];
+const held={des:true,hb:true,ct:true,alf:true};
+function computePeers(d){
+  const on=FACETS.filter(f=>held[f.id]);
+  if(d.k&&d.k!=='u') return [];
+  return LIST.filter(p=>{
+    if(p.u===curSel)return false;
+    if(p.k&&p.k!=='u')return false;
+    for(const f of on){ const a=f.bool?(p[f.id]||0):(p[f.id]||''), b=f.bool?(d[f.id]||0):(d[f.id]||''); if(a!==b)return false; }
+    return true;
+  });
+}
+/* rank of v among [v + peer values], largest = 1; ties share the better rank */
+function rankOf(arr,v){ return {r:1+arr.filter(x=>x>v).length, n:arr.length+1}; }
+function pctile(arr,v){ if(!arr.length)return null; const n=arr.filter(x=>x<=v).length; return Math.round(n/arr.length*100); }
+function ord(p){ const v=p%100,s=["th","st","nd","rd"]; return p+((v>=11&&v<=13)?"th":(s[p%10]||"th")); }
+function facRow(f,d){
+  const on=!!held[f.id];
+  return `<label class="pfac ${on?'on':''}"><input type="checkbox" data-f="${f.id}" ${on?'checked':''}><span><span class="pl">${f.label}</span><span class="pv">${f.val(d)}</span></span></label>`;
+}
+function renderPeers(d){
+  if(d.k&&d.k!=='u'){ $("peersel").innerHTML=`<div class="peerhd"><span class="ph">Peers</span></div><p class="knote">${d.k==='comb'?'No peer benchmark: this HERD report covers more than one campus, so it has no single set of IPEDS and Carnegie attributes to match peers on.':'No peer benchmark: this institution isn\'t in IPEDS or the Carnegie designations, so there are no attributes to match peers on.'}</p>`; return []; }
+  const core=FACETS.filter(f=>f.core), opt=FACETS.filter(f=>!f.core);
+  const peers=computePeers(d);
+  const t24=Object.values(d.fld[BY]||{}).reduce((s,v)=>s+K(v),0);
+  const ptot=peers.length?rankOf(peers.map(p=>Object.values(p.fld[BY]||{}).reduce((s,v)=>s+K(v),0)), t24):null;
+  const optOn=opt.filter(f=>held[f.id]).length;
+  let h=`<div class="peerhd"><span class="ph">Peers — hold constant</span><span class="pcount"><b>${peers.length}</b> peers${ptot?` · total R&D rank <b>${ptot.r} of ${ptot.n}</b>`:''}</span></div>`;
+  h+=`<div class="pfacets">`+core.map(f=>facRow(f,d)).join("");
+  if(pShowMore) h+=opt.map(f=>facRow(f,d)).join("");
+  h+=`</div><button class="pmore" id="pmoreBtn">${pShowMore?'− Fewer factors':'+ More peer factors'}${optOn?` · ${optOn} on`:''}</button>`;
+  $("peersel").innerHTML=h;
+  $("peersel").querySelectorAll("input[data-f]").forEach(cb=>cb.addEventListener("change",e=>{ held[e.target.dataset.f]=e.target.checked; render(curD); }));
+  const mb=$("pmoreBtn"); if(mb)mb.addEventListener("click",()=>{ pShowMore=!pShowMore; render(curD); });
+  return peers;
+}
+function pctMap(peers, keys, valOf){
+  const m={}; if(peers.length<1)return m;
+  keys.forEach(k=>{ m[k]=rankOf(peers.map(p=>valOf(p,k)), valOf(curD,k)); });
+  return m;
+}
+function profNotes(d){
+  const n=[];
+  if(d.k==='comb') n.push(`HERD reports these campuses as one unit${d.why?' ('+d.why+')':''}. Carnegie designates them separately (${d.des}); the figures here are the combined report and are not split between campuses.`);
+  if(d.k==='ind') n.push(`A research institution that reports to HERD but has no IPEDS or Carnegie record used here. Shown for completeness; it is left out of peer benchmarks and the factor filters.`);
+  const j=jumps(d);
+  if(j.length) n.push(`<b>Likely reporting change:</b> total R&amp;D moved ${j.map(x=>`${x.p>0?'+':''}${x.p}% in FY${String(x.y).slice(2)}`).join(' and ')} in a single year. Swings that size usually reflect a change in what's reported (a merger, a unit added or moved), not research growth, so growth rates across ${j.length>1?'those years':'that year'} overstate the real trend.`);
+  return n.length?`<div class="knotes">${n.map(x=>`<p>${x}</p>`).join("")}</div>`:"";
+}
+function render(d){
+  curD=d;
+  $("empty").hidden=true; $("prof").hidden=false;
+  const av=yrsAvail(d,'fld'); const y0=av[0],y1=av[av.length-1];
+  const tot=y=>Object.values(d.fld[y]||{}).reduce((s,v)=>s+K(v),0);
+  const t24=tot(y1), t0=tot(y0), gc=cagr(t0,t24,(+y1)-(+y0)), g=gc==null?null:Math.round(gc);
+  // top agency & field 2024
+  const agLatest=d.ag[y1]||{};
+  const fedTot=AGN.reduce((s,a)=>s+K(agLatest[a[0]]||0),0);
+  $("phead").innerHTML=`
+    <div><div class="nm">${d.n.replace(/</g,'')}</div>
+      <div class="loc">${d.st}${d.des&&d.des!=='—'?" · "+d.des:""} · FY${y0.slice(2)}–${y1.slice(2)} ${kindTag(d)}</div>${profNotes(d)}</div>
+    <div class="kpis">
+      <div class="kpi"><div class="k">Total R&D FY${y1.slice(2)}</div><div class="v">${money(t24)}</div></div>
+      <div class="kpi"><div class="k">Avg annual</div><div class="v ${g>=0?'up':'dn'}">${g==null?'—':(g>=0?'+':'')+g+'%'}</div></div>
+      <div class="kpi"><div class="k">Federal share</div><div class="v">${t24?Math.round(fedTot/t24*100):0}%</div></div>
+    </div>`;
+  const peers=renderPeers(d);
+  // funding source chart + peer percentiles
+  const srcPct=pctMap(peers, SRC.map(s=>s[0]), (p,k)=>K(agVal(p.ag[BY]||{},k)));
+  stackChart($("svgSrc"), SRC.map(s=>({key:s[0],label:s[1],color:s[2]})), (y,k)=>agVal(d.ag[y]||{},k), $("legSrc"), false, d, srcPct);
+  // agency chart (7 fixed) + peer percentiles
+  const agPct=pctMap(peers, AGN.map(a=>a[0]), (p,k)=>K((p.ag[BY]||{})[k]||0));
+  stackChart($("svgAg"), AGN.map(a=>({key:a[0],label:a[1],color:a[2]})), (y,k)=>(d.ag[y]||{})[k]||0, $("legAg"), false, d, agPct);
+  // field chart: top 6 by latest + Other
+  const flatest=d.fld[y1]||{};
+  const fsorted=Object.entries(flatest).sort((a,b)=>b[1]-a[1]);
+  const topF=fsorted.slice(0,6).map(e=>e[0]);
+  const fseries=topF.map((f,i)=>({key:f,label:f,color:FCOL[i]}));
+  fseries.push({key:"__other",label:"Other fields",color:"var(--other)"});
+  const fval=(y,k)=>{ const row=d.fld[y]||{}; if(k==="__other"){ return Object.entries(row).filter(([kk])=>!topF.includes(kk)).reduce((s,[,v])=>s+v,0); } return row[k]||0; };
+  const fPct=pctMap(peers, topF.concat(["__other"]), (p,k)=>{ const row=p.fld[BY]||{}; if(k==="__other")return Object.entries(row).filter(([kk])=>!topF.includes(kk)).reduce((s,[,v])=>s+K(v),0); return K(row[k]||0); });
+  stackChart($("svgFld"), fseries, fval, $("legFld"), true, d, fPct);
+}
+
+const tt=$("tt");
+function showTT(e,html){ tt.innerHTML=html; tt.style.opacity=1; moveTT(e); }
+function moveTT(e){ let x=e.clientX+12,y=e.clientY+12; if(x>innerWidth-250)x=e.clientX-250; tt.style.left=x+"px"; tt.style.top=y+"px"; }
+function hideTT(){ tt.style.opacity=0; }
+
+const LIST=Object.entries(PROF).map(([u,d])=>({u,...d}));
+function tot24(d){ const av=yrsAvail(d,'fld'); return Object.values(d.fld[av[av.length-1]]||{}).reduce((s,v)=>s+v,0); }
+const q=$("q"), results=$("results");
+let curSel=null;
+function select(u){ curSel=u; q.value=""; results.hidden=true; render({...PROF[u]}); window.scrollTo({top:0,behavior:"smooth"}); }
+q.addEventListener("input",()=>{
+  const s=q.value.trim().toLowerCase(); if(!s){results.hidden=true;return;}
+  const hits=LIST.filter(d=>d.n.toLowerCase().includes(s)).sort((a,b)=>tot24(b)-tot24(a)).slice(0,12);
+  results.innerHTML=hits.length?hits.map(d=>`<button data-u="${d.u}"><span class="rn">${d.n.replace(/</g,'')}</span><span class="rs">${d.k==='comb'?'Combined · ':d.k==='ind'?'Independent · ':''}${d.st}${d.des&&d.des!=='—'?" · "+d.des:""} · ${money(tot24(d)*1000)}</span></button>`).join(""):'<button disabled style="color:var(--faint)">No institution found</button>';
+  results.hidden=false;
+  results.querySelectorAll("button[data-u]").forEach(b=>b.addEventListener("click",()=>select(b.dataset.u)));
+});
+document.addEventListener("click",e=>{ if(!e.target.closest(".search"))results.hidden=true; });
+document.querySelectorAll("#empty button[data-u]").forEach(b=>b.addEventListener("click",()=>select(b.dataset.u)));
+
+/* ---------- trends ---------- */
+const FIELDS_L=["Life sciences","Engineering","Physical sciences","Computer & info sci","Math & statistics","Psychology","Social sciences","Geosciences","Other sciences","Non-S&E"];
+const tstate={type:'ag',key:'HHS',dir:'grow',sort:'pct'};
+(function(){
+  const sel=$("dimSel");
+  const og1=document.createElement("optgroup"); og1.label="Federal agency";
+  AGN.forEach(a=>{ if(a[0]==='Other agencies')return; const o=document.createElement("option"); o.value='ag|'+a[0]; o.textContent=a[1]; og1.appendChild(o); });
+  const og2=document.createElement("optgroup"); og2.label="Field of science";
+  FIELDS_L.forEach(f=>{ const o=document.createElement("option"); o.value='fld|'+f; o.textContent=f; og2.appendChild(o); });
+  const og3=document.createElement("optgroup"); og3.label="Funding source";
+  [["__fed","Federal (all agencies)"],["Institution funds","Institutional funds"],["Business","Business / industry"],["State and local government","State & local govt"],["Nonprofit organziations","Nonprofit orgs"]].forEach(s=>{const o=document.createElement("option");o.value='ag|'+s[0];o.textContent=s[1];og3.appendChild(o);});
+  sel.appendChild(og1); sel.appendChild(og2); sel.appendChild(og3); sel.value='ag|HHS';
+  sel.addEventListener("change",()=>{ const p=sel.value.split('|'); tstate.type=p[0]; tstate.key=p[1]; renderTrends(); });
+})();
+$("dirSeg").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ tstate.dir=b.dataset.dir; renderTrends(); }));
+$("sortSeg").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ tstate.sort=b.dataset.sort; renderTrends(); }));
+const fstate={ct:'',reg:'',des:new Set(),flags:new Set()};
+$("fCt").addEventListener("change",e=>{fstate.ct=e.target.value;renderTrends();});
+$("fReg").addEventListener("change",e=>{fstate.reg=e.target.value;renderTrends();});
+document.querySelectorAll("#tfilters [data-des]").forEach(b=>b.addEventListener("click",()=>{const v=b.dataset.des;fstate.des.has(v)?fstate.des.delete(v):fstate.des.add(v);b.setAttribute("aria-pressed",fstate.des.has(v));renderTrends();}));
+document.querySelectorAll("#tfilters [data-flag]").forEach(b=>b.addEventListener("click",()=>{const v=b.dataset.flag;fstate.flags.has(v)?fstate.flags.delete(v):fstate.flags.add(v);b.setAttribute("aria-pressed",fstate.flags.has(v));renderTrends();}));
+$("fReset").addEventListener("click",()=>{fstate.ct='';fstate.reg='';fstate.des.clear();fstate.flags.clear();$("fCt").value='';$("fReg").value='';document.querySelectorAll("#tfilters [data-des],#tfilters [data-flag]").forEach(b=>b.setAttribute("aria-pressed","false"));renderTrends();});
+function spark(series,color){
+  const w=64,h=20,mx=Math.max(...series),mn=Math.min(...series),rng=(mx-mn)||1;
+  const pts=series.map((v,i)=>`${(i/(series.length-1)*w).toFixed(1)},${(h-(v-mn)/rng*h).toFixed(1)}`).join(" ");
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
+}
+function renderTrends(){
+  $("dirSeg").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.dir===tstate.dir));
+  $("sortSeg").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.sort===tstate.sort));
+  const grp=tstate.type,key=tstate.key,FLOOR=1000;
+  const rows=[]; let nflag=0;
+  const anyF=fstate.ct||fstate.reg||fstate.des.size||fstate.flags.size;
+  for(const u in PROF){ const d=PROF[u];
+    if(anyF && d.k && d.k!=='u')continue;
+    if(fstate.ct && d.ct!==fstate.ct)continue;
+    if(fstate.reg && d.reg!==fstate.reg)continue;
+    if(fstate.des.size && !fstate.des.has(d.des))continue;
+    if(fstate.flags.size){ let ok=true; fstate.flags.forEach(fl=>{if(!d[fl])ok=false;}); if(!ok)continue; }
+    const g=d[grp];
+    const raw=(row)=> key==='__fed'?agVal(row,key):((row||{})[key]);
+    const v0=raw(g['2020']), v1=raw(g['2024']);
+    if(v0==null||v1==null)continue;
+    // %-ranking needs a real FY2020 base (kills tiny-base blowups); $-ranking needs a substantial endpoint
+    const pass = tstate.sort==='pct' ? (v0>=FLOOR) : (Math.max(v0,v1)>=FLOOR);
+    if(!pass)continue;
+    const dpct = v0>0 ? cagr(v0,v1,4) : null;
+    const jf=jumps(d).length>0;
+    if(jf && !tstate.incl){ nflag++; continue; }
+    rows.push({jf,u,n:d.n,st:d.st,des:d.des,v0,v1,dpct,dabs:v1-v0,ser:YEARS.map(y=>(g[y]||{})[key]||0)});
+  }
+  const sk=tstate.sort==='pct'?'dpct':'dabs';
+  rows.sort((a,b)=> tstate.dir==='grow'? b[sk]-a[sk] : a[sk]-b[sk]);
+  const top=rows.slice(0,25);
+  const dimLabel=grp==='ag'?((AGN.find(a=>a[0]===key)||SRC.find(s=>s[0]===key)||[,key])[1]):key;
+  const basis=tstate.sort==='pct'?'a $1M+ FY2020 base':'at least $1M in either year';
+  const dimKind=grp==='fld'?'field':(SRC.find(s=>s[0]===key)?'source':'agency');
+  $("tnote").innerHTML=`Institutions ranked by ${tstate.dir==='grow'?'growth':'decline'} in <b>${dimLabel}</b> R&D, FY2020→FY2024 ${tstate.sort==='pct'?'(avg annual %, compound)':'(dollar change)'}, among the ${rows.length} with ${basis} in this ${dimKind}. Click a row for its full profile.${nflag?` <b>${nflag}</b> institution${nflag>1?'s':''} with a likely reporting change in total R&amp;D (a single-year swing over +60% or −40%) ${nflag>1?'are':'is'} left out. <label class="incl"><input type="checkbox" id="inclF"${tstate.incl?' checked':''}> Include them</label>`:(tstate.incl?` <label class="incl"><input type="checkbox" id="inclF" checked> Include institutions with likely reporting changes</label>`:'')}`;
+  let h=`<div class="trow hdr"><div class="rk">#</div><div class="tn">Institution</div><div class="num">FY24</div><div class="num">Δ FY20–24</div><div class="spk">Trend</div></div>`;
+  h+=top.map((r,i)=>{
+    const up=r.dabs>=0,col=up?'var(--good)':'var(--warn)';
+    const pctxt=r.dpct==null?'new':((r.dpct>=0?'+':'')+Math.round(r.dpct)+'%');
+    const abstxt=(r.dabs>=0?'+':'−')+money(Math.abs(r.dabs)*1000);
+    const showv=tstate.sort==='pct'?pctxt:abstxt, subv=tstate.sort==='pct'?abstxt:pctxt;
+    return `<button class="trow" data-u="${r.u}">
+      <div class="rk">${i+1}</div>
+      <div><div class="tn">${r.n.replace(/</g,'')}${r.jf?' <span class="jflag" title="Likely reporting change">⚑</span>':''}</div><div class="ts">${r.st}${r.des&&r.des!=='—'?" · "+r.des:""} ${kindTag(PROF[r.u])}</div></div>
+      <div class="num hidesm">${money(r.v1*1000)}</div>
+      <div class="num ${up?'up':'dn'}">${showv}<span style="display:block;font-size:10px;color:var(--faint)">${subv}</span></div>
+      <div class="spk">${spark(r.ser,col)}</div>
+    </button>`;
+  }).join("");
+  $("tlist").innerHTML=h;
+  const ic=$("inclF"); if(ic) ic.addEventListener("change",e=>{ tstate.incl=e.target.checked; renderTrends(); });
+  $("tlist").querySelectorAll("[data-u]").forEach(b=>b.addEventListener("click",()=>{ setMode('inst'); select(b.dataset.u); }));
+}
+/* ---------- mode ---------- */
+function setMode(m){
+  document.querySelectorAll(".modeswitch button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.mode===m));
+  const inst=m==='inst';
+  document.querySelector(".search").hidden=!inst;
+  $("empty").hidden=!inst || !!curSel;
+  $("prof").hidden=!inst || !curSel;
+  $("trends").hidden=inst;
+  if(!inst) renderTrends();
+}
+document.querySelectorAll(".modeswitch button").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
+</script>
+</body></html>
