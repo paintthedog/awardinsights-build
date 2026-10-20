@@ -40,7 +40,7 @@ function hashFor(id) {
   return "#" + p.toString();
 }
 function links() {
-  bar.querySelectorAll("nav a[data-t]").forEach(a => { a.href = "/" + a.dataset.t + "/" + hashFor(a.dataset.t); });
+  document.querySelectorAll(".sitebar nav a[data-t], .ai-src a[data-t]").forEach(a => { a.href = "/" + a.dataset.t + "/" + hashFor(a.dataset.t); });
 }
 
 function toolsFor(r) { return TOOLS.filter(t => r[3] & t.bit); }

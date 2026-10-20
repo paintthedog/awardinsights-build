@@ -17,6 +17,11 @@
 :root[data-theme="dark"] .sitebar .i-sun{display:block}:root[data-theme="dark"] .sitebar .i-moon{display:none}
 @media(max-width:620px){.sitebar .theme{order:1;margin-left:auto}.sitebar nav{order:2;flex-basis:100%;margin-left:-11px}}
 
+/* where each tool's numbers come from */
+.ai-src{margin:-8px 0 18px;max-width:96ch;font:400 12.5px/1.5 "Readex Pro",system-ui,sans-serif;color:var(--faint)}
+.ai-src a{color:var(--muted);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px}
+.ai-src a:hover,.ai-src a:focus-visible{color:var(--accent);text-decoration-color:currentColor}
+
 /* search hits from other tools, and the note shown when this tool doesn't cover the chosen institution */
 .results .ai-sep{padding:8px 12px 4px;font:600 10.5px/1.2 "Readex Pro",system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);border-top:1px solid var(--line)}
 .results button.ai-other .rs{color:var(--faint)}

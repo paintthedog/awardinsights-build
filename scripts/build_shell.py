@@ -22,6 +22,20 @@ OLD = {"nsf": "nsf.html", "designations": "designations.html", "portfolio": "por
 # the home links the original pages carry in their mastheads; the site bar replaces them
 HOME_LINKS = ['<a class="tag" href="index.html" style="text-decoration:none">Award Insights</a>',
               '<a class="tag" href="index.html">Award Insights</a>']
+# one line under each tool's title: where its numbers come from, and why they differ from another tool's
+def tl(t, name): return f'<a href="/{t}/" data-t="{t}">{name}</a>'
+SOURCES = {
+    "federal": "Source: USAspending.gov, FY2022–26, obligations by fiscal year. " + tl("nsf", "NSF Award Insights")
+               + " (NSF's own award records, full award value) and " + tl("portfolio", "Research Portfolio Trends")
+               + " (R&amp;D spending institutions report to NSF's HERD survey) count differently, so their figures differ.",
+    "nsf": "Source: NSF's own award records, FY2022–26; each award counts at its full intended value in the year it was made. "
+           + tl("federal", "Federal Award Insights") + " counts NSF obligations by year from USAspending, so its NSF figures differ.",
+    "designations": "Source: Carnegie 2025 Research Activity Designations, R&amp;D spending from NSF's HERD survey (FY2020–24) "
+                    "and research doctorates from IPEDS.",
+    "portfolio": "Source: NSF's HERD survey, FY2020–24: the R&amp;D spending each institution reports, by funding agency and field, "
+                 "not awards. " + tl("federal", "Federal Award Insights") + " counts award obligations, so its agency figures differ.",
+}
+
 # Federal ids for organizations Portfolio lists under another id (checked by hand, 20 Oct 2026)
 FED_SAME = {"I-UNIVERSITY-OF-MARYLAND-CENTER-FOR-ENVIRO": "I-UMCES", "I-WOODS-HOLE-OCEANOGRAPHIC-INSTITUTION": "I-WHOI",
             "I-VAN-ANDEL-RESEARCH-INSTITUTE": "I-VAI", "X-MILLS-COLLEGE": "118888"}
@@ -82,6 +96,9 @@ def inject(html, tool, name):
     if html.count('<div class="masthead">') != 1: sys.exit(f"{name}: expected one masthead")
     if "</head>" not in html: sys.exit(f"{name}: no </head>")   # Designations has a second one inside its print template; the first is the page's
     for h in HOME_LINKS: html = html.replace(h, "")
+    i = html.index('<div class="masthead">'); j = html.index("</div>", i) + len("</div>")
+    if "<div" in html[i + 5:j]: sys.exit(f"{name}: masthead has a nested div")
+    html = html[:j] + f'\n  <p class="ai-src">{SOURCES[tool]}</p>' + html[j:]
     return html.replace('<div class="masthead">', sitebar(tool) + '\n  <div class="masthead">', 1).replace("</head>", head(), 1)
 
 def stub(tool):
