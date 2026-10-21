@@ -51,6 +51,7 @@ h3.ctog:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-
 .pall{margin-top:14px;border-top:1px solid var(--line-soft);padding-top:10px}.pall summary{cursor:pointer;font-size:12.5px;color:var(--accent-ink);font-weight:500}.pallg{columns:2 320px;column-gap:24px;margin-top:6px}.pallg .prow{break-inside:avoid}
 .prow.go{cursor:pointer;border-radius:6px}.prow.go:hover{background:var(--accent-soft)}
 .br.divrow.go{cursor:pointer;border-radius:6px}
+.bleg.top{margin:0 0 6px;padding:0;border:0}.bleg.top #agXBtn{margin-left:auto}.pf small{color:var(--faint);font-size:.9em}
 .br.grp{cursor:pointer;color:var(--muted)}.br.grp .bn{overflow:visible;white-space:nowrap;position:relative;z-index:1}.br.grp .bb{visibility:hidden}.br.grp .bn small{color:var(--faint)}.br.grp:hover{background:var(--line-soft)}
 .smallgrp .br .bn,.smallgrp .br .bv{color:var(--muted)}.br.divrow.go:hover{background:var(--accent-soft)}
 .modeswitch{flex-wrap:wrap}
@@ -418,9 +419,9 @@ function yearCard(d,peers){
   s+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--line)"/>`;
   const showA=typ!=="c", showC=typ!=="a";
   let tb=`<table class="tbl"><thead><tr><th>Fiscal year</th>${showA&&showC?"<th>Grants &amp; agreements</th><th>Contracts</th>":""}<th>Total</th><th>Peer median</th><th>Peers funded</th><th>Rank</th></tr></thead><tbody>`;
-  YEARS.forEach((y,i)=>{ const p=y>=PARTIAL?"acc":""; tb+=`<tr><td>FY${String(y).slice(2)}${y>=PARTIAL?' <small>partial</small>':''}</td>${showA&&showC?`<td class="${p}">${money(A[i])}</td><td class="${p}">${money(C[i])}</td>`:""}<td class="${p}">${money(mine[i])}</td><td class="${p}">${peers.length?money(pm[i]):"—"}</td><td class="pf">${peers.length?`${pf[i]} of ${peers.length}`:"—"}</td><td class="rk ${canRank?rkCls(rks[i]):''}">${canRank?rkTxt(rks[i]):"—"}</td></tr>`; });
+  YEARS.forEach((y,i)=>{ const p=y>=PARTIAL?"acc":""; tb+=`<tr><td>FY${String(y).slice(2)}${y>=PARTIAL?' <small>partial</small>':''}</td>${showA&&showC?`<td class="${p}">${money(A[i])}</td><td class="${p}">${money(C[i])}</td>`:""}<td class="${p}">${money(mine[i])}</td><td class="${p}">${peers.length?money(pm[i]):"—"}</td><td class="pf">${peers.length?`${pctS(pf[i]/peers.length)} <small>(${pf[i]})</small>`:"—"}</td><td class="rk ${canRank?rkCls(rks[i]):''}">${canRank?rkTxt(rks[i]):"—"}</td></tr>`; });
   const sA=A.reduce((a,b)=>a+b,0), sC=C.reduce((a,b)=>a+b,0), tot=sA+sC, ptot=median(peers.map(p=>p.fdol)), rkT=rankOf(peers.map(p=>p.fdol),tot);
-  tb+=`<tr class="tot"><td>FY22–26</td>${showA&&showC?`<td>${money(sA)}</td><td>${money(sC)}</td>`:""}<td>${money(tot)}</td><td>${peers.length?money(ptot):"—"}</td><td class="pf">${peers.length?`${peers.filter(p=>p.fed).length} of ${peers.length}`:"—"}</td><td class="rk">${canRank?rkTxt(rkT):"—"}</td></tr></tbody></table>`;
+  tb+=`<tr class="tot"><td>FY22–26</td>${showA&&showC?`<td>${money(sA)}</td><td>${money(sC)}</td>`:""}<td>${money(tot)}</td><td>${peers.length?money(ptot):"—"}</td><td class="pf">${peers.length?`${pctS(peers.filter(p=>p.fed).length/peers.length)} <small>(${peers.filter(p=>p.fed).length})</small>`:"—"}</td><td class="rk">${canRank?rkTxt(rkT):"—"}</td></tr></tbody></table>`;
   CSVS.year=()=>({name:`${d.n} - federal by year`,rows:[["Fiscal year","Grants & agreements","Contracts","Total ("+TYPLAB()+")","Peer median","Peers funded","Peers","Rank"],...YEARS.map((y,i)=>["FY"+y,A[i],C[i],mine[i],peers.length?pm[i]:"",pf[i],peers.length,canRank?rkTxt(rks[i]):""])]});
   const leg=showA&&showC?`<div class="leg2"><span><i style="background:var(--you)"></i>Grants &amp; cooperative agreements</span><span><i style="background:var(--you);opacity:.42"></i>Contracts</span>${peers.length?'<span>– – peer median (total)</span>':""}${tot?`<span>Contracts are <b style="color:var(--ink);font-weight:500">${pctS(sC/tot)}</b> of this institution's FY22–26 total</span>`:""}</div>`:"";
   const emNote=g.em?`<p class="note" style="margin:10px 0 0">Not included above: <b>${money(g.em)}</b> in congressionally directed spending (earmarks) across ${g.emN} award${g.emN===1?"":"s"}, listed under Programs and Awards.</p>`:"";
@@ -437,10 +438,9 @@ function agCard(d,peers){
     const subs=new Set(Object.keys(g.sb).map(Number).filter(s=>SUB[s].ag===A.i)); peers.forEach(p=>Object.keys(agOf(p.u).sb).forEach(s=>{ if(SUB[s].ag===A.i)subs.add(+s); }));
     const minNp=Math.max(2,Math.ceil(peers.length*0.2));
     const all=[...subs].map(s=>({s,name:SUB[s].name,...stat(selV(g.sb[s]),peers.map(p=>selV(agOf(p.u).sb[s]).d))})).filter(r=>r.v!==0||r.np>0).sort((a,b)=>b.v-a.v||b.np-a.np||b.pmf-a.pmf);
-    const flat=isFlat(A.i), kids=flat?[]:agAll?all:all.filter(r=>r.v!==0||r.np>=minNp);
+    const flat=isFlat(A.i), kids=flat?[]:all.filter(r=>r.v!==0||r.np>=minNp);
     return {a:A.i,code:A.short,name:A.name,col:A.col,...stat(mine,pv),kids,more:flat?0:all.length-kids.length,minNp,em:selEm(g,A.i),flat};
-  }).filter(r=>agAll||r.v>0||r.np>0||r.em).sort((a,b)=>b.v-a.v||b.np-a.np||b.pmf-a.pmf);
-  const hidden=AGS.length-rows.length;
+  }).filter(r=>r.v>0||r.np>0||r.em).sort((a,b)=>b.v-a.v||b.np-a.np||b.pmf-a.pmf);
   const pills=`<div class="ypills" role="group" aria-label="Fiscal years">${YEARS.map((y,i)=>`<button class="fchip" data-yr="${i}" aria-pressed="${agSel!==ALLYRS&&!!(agSel>>i&1)}">FY${String(y).slice(2)}${y>=PARTIAL?" *":""}</button>`).join("")}<button class="fchip" data-yr="all" aria-pressed="${agSel===ALLYRS}">All years</button>${agSel>>(YEARS.length-1)&1&&agSel!==ALLYRS?'<span class="note" style="margin:0 0 0 4px">* FY26 is a partial year</span>':""}</div>`;
   let h=`<div class="chd"><h3>By agency and sub-agency</h3>${csvBtn("ag")}</div>${pills}<div class="csub">${yrsLabel()} ${TYPLAB()} · click an agency to see its sub-agencies (NIH by institute or center; NSF by directorate; CDC, HRSA, SAMHSA and CMS open their awards) · tick marks the median among peers funded there · rank is among ${esc(shortN(d,28))} and its ${np} peers${canRank||!np?"":" (not shown under "+MINPEERS+" peers)"}</div>`;
   if(!rows.length){ h+=`<p class="note">No ${TYPLAB()} on record for this institution${np?" or its peers":""}.</p>`; $("cardAg").innerHTML=h; return; }
@@ -450,23 +450,23 @@ function agCard(d,peers){
     return `<div class="br ${top?"dirrow":"divrow go"+(subLabel(r.name).ab?" ab":"")}" data-k="${top?"a"+r.a:"s"+r.s}" ${top?`role="button" tabindex="0" aria-expanded="${agx.has(r.a)}"`:`role="button" tabindex="0" title="See these awards"`}>
       <div class="bn">${top?`<span class="car">${r.flat?"":agx.has(r.a)?"▾":"▸"}</span><span class="swd" style="background:${r.col}"></span>${agL(r.a)}`:subL(r.name)}</div>
       <div class="bb"><div class="bf" style="width:${(w-wc).toFixed(1)}%;background:var(--accent);opacity:${top?1:.55}"></div>${wc?`<div class="bf c" style="left:${(w-wc).toFixed(1)}%;width:${wc.toFixed(1)}%;background:var(--accent);border-radius:0 3px 3px 0"></div>`:""}${np&&r.np?`<div class="bm" style="left:${(r.pmf/mx*100).toFixed(1)}%"></div>`:""}${top&&r.em?`<span class="emtag" style="left:calc(${Math.min(w,62).toFixed(1)}% + 6px)" title="Congressionally directed spending, not counted in totals or ranks">+${money(r.em)} earmarked</span>`:""}</div>
-      <div class="bv">${money(r.v)}</div><div class="bv">${r.n?r.n.toLocaleString():"—"}</div><div class="bv pf">${np?`${r.np} of ${np}`:"—"}</div><div class="rk ${canRank?rkCls(r.rk):''}">${canRank?rkTxt(r.rk):"—"}</div></div>`; };
+      <div class="bv">${money(r.v)}</div><div class="bv">${r.n?r.n.toLocaleString():"—"}</div><div class="bv pf">${np?`${pctS(r.np/np)} <small>(${r.np})</small>`:"—"}</div><div class="rk ${canRank?rkCls(r.rk):''}">${canRank?rkTxt(r.rk):"—"}</div></div>`; };
   // Emphasis (docs/SPEC.md): an agency gets its own row if it is at least 1% of this institution's dollars, or at least a fifth
   // of the peers get 1% or more of theirs from it; the rest fold into "Smaller agencies". Inside an agency, sub-agencies with
   // at least 5% of its dollars here (always the top three) get rows; the rest fold into "Other <agency>".
   const T=rows.reduce((a,r)=>a+Math.max(0,r.v),0);
   const ptot=peers.map(p=>{ const h=agOf(p.u); return AGS.reduce((a,A)=>a+Math.max(0,selV(h.ag[A.i]).d),0); });
   const peerBig=a=>np>0&&peers.filter((p,j)=>ptot[j]>0&&selV(agOf(p.u).ag[a]).d>=.01*ptot[j]).length>=Math.ceil(np*.2);
-  const main=[], small=[]; rows.forEach(r=>((agAll||(T>0&&r.v>=.01*T)||peerBig(r.a))?main:small).push(r));
+  const main=[], small=[]; rows.forEach(r=>(((T>0&&r.v>=.01*T)||peerBig(r.a))?main:small).push(r));
   const grpRow=(k,label,list,top)=>{ const v=list.reduce((a,r)=>a+r.v,0), n=list.reduce((a,r)=>a+(r.n||0),0), w=Math.min(100,Math.max(0,v)/mx*100), open=top?agx.has(-1):agox.has(k);
     return `<div class="br ${top?"dirrow":"divrow"} grp" data-g="${top?"a":"o"+k}" role="button" tabindex="0" aria-expanded="${open}"><div class="bn"><span class="car">${open?"▾":"▸"}</span>${top?'<span class="swd" style="background:var(--other)"></span>':""}${label}</div>
       <div class="bb"><div class="bf" style="width:${w.toFixed(1)}%;background:var(--other)"></div></div><div class="bv">${money(v)}</div><div class="bv">${n?n.toLocaleString():"—"}</div><div class="bv pf">—</div><div class="rk">—</div></div>`; };
   const kidsH=r=>{ const keep=r.kids.filter((x,i)=>i<3||(r.v>0&&x.v>=.05*r.v)), rest=r.kids.filter(x=>!keep.includes(x));
     if(rest.length<2) return r.kids.map(x=>rowH(x,false)).join("");
     return keep.map(x=>rowH(x,false)).join("")+grpRow(r.a,`Other ${esc(r.code)} <small>(${rest.length})</small>`,rest,false)+(agox.has(r.a)?`<div class="smallgrp">${rest.map(x=>rowH(x,false)).join("")}</div>`:""); };
-  const block=r=>rowH(r,true)+(agx.has(r.a)?kidsH(r)+(r.more?`<div class="br divrow"><div class="bn" style="color:var(--faint);grid-column:1/-1">${r.more} more held by fewer than ${r.minNp} peers and not by this institution · <button class="pmore" data-agall="1">show all</button></div></div>`:"")+`<div class="br divrow"><div class="bn" style="grid-column:1/-1"><button class="pmore" data-awag="${r.a}">See ${esc(r.code)} awards to ${esc(shortN(d,30))}${np?" and its peers":""} →</button> <span style="color:var(--faint);font-size:11px">or click any row above</span></div></div>`:"");
+  const block=r=>rowH(r,true)+(agx.has(r.a)?kidsH(r)+`<div class="br divrow"><div class="bn" style="grid-column:1/-1"><button class="pmore" data-awag="${r.a}">See ${esc(r.code)} awards to ${esc(shortN(d,30))}${np?" and its peers":""} →</button> <span style="color:var(--faint);font-size:11px">or click any row above</span></div></div>`:"");
+  h+=`<div class="bleg top">${typ==="all"?'<span><i style="width:10px;height:10px;border-radius:2px;background:var(--accent);opacity:.45"></i>contracts</span>':""}${np?"<span><i></i>peer median</span>":""}<button class="pmore" id="agXBtn">${agx.size?"Collapse all":"Expand all"}</button></div>`;
   h+=`<div class="bars">`+hdr+main.map(block).join("")+(small.length>=2?grpRow(-1,`Smaller agencies <small>(${small.length})</small>`,small,true)+(agx.has(-1)?`<div class="smallgrp">${small.map(block).join("")}</div>`:""):small.map(block).join(""))+`</div>`;
-  h+=`<div class="bleg">${typ==="all"?'<span><i style="width:10px;height:10px;border-radius:2px;background:var(--accent);opacity:.45"></i>lighter segment = contracts</span>':""}${np?"<span><i></i>median among peers funded there</span>":""}<span>Awards = distinct awards with obligations in ${yrsLabel()}</span>${hidden||agAll?`<button class="pmore" id="agAllBtn">${agAll?"Show fewer rows":`Show all agencies (${hidden} hidden)`}</button>`:""}<button class="pmore" id="agXBtn">${agx.size?"Collapse all":"Expand all"}</button></div>`;
   CSVS.ag=()=>({name:`${d.n} - federal by agency ${yrsLabel()}`,rows:[["Agency","Sub-agency",d.n+" ("+TYPLAB()+")","of which contracts","Awards","Peers funded","Peers","Median among funded peers","Rank","Earmarks (not counted)"],...rows.flatMap(r=>[[r.name,"(all)",r.v,r.c,r.n,r.np,np,r.pmf,canRank?rkTxt(r.rk):"",r.em],...r.kids.map(x=>[r.name,x.name,x.v,x.c,x.n,x.np,np,x.pmf,canRank?rkTxt(x.rk):""])])]});
   $("cardAg").innerHTML=h;
   $("cardAg").querySelectorAll(".grp").forEach(el=>{ const go=()=>{ const g=el.dataset.g; if(g==="a"){ agx.has(-1)?agx.delete(-1):agx.add(-1); } else { const k=+g.slice(1); agox.has(k)?agox.delete(k):agox.add(k); } agCard(curD,peers); };
@@ -474,14 +474,12 @@ function agCard(d,peers){
   $("cardAg").querySelectorAll(".dirrow:not(.grp)").forEach(el=>{ const go=()=>{ const k=+el.dataset.k.slice(1);
       if(isFlat(k)){ openAwards({scope:d.k==="carnegie"&&np?"peers":"inst",u:d.u,ag:k,yrs:agSel}); return; }   // no sub-agencies: straight to its awards
       agx.has(k)?agx.delete(k):agx.add(k); agCard(curD,peers); }; el.addEventListener("click",go); el.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();go();} }); });
-  const ab=$("agAllBtn"); if(ab) ab.addEventListener("click",()=>{ agAll=!agAll; agCard(curD,peers); });
   const awScope=d.k==="carnegie"&&np?"peers":"inst";
   $("cardAg").querySelectorAll("[data-awag]").forEach(x=>x.addEventListener("click",e=>{ e.stopPropagation(); openAwards({scope:awScope,u:d.u,ag:+x.dataset.awag,yrs:agSel}); }));
   $("cardAg").querySelectorAll(".divrow.go").forEach(el=>{ const go=()=>openAwards({scope:awScope,u:d.u,sb:+el.dataset.k.slice(1),yrs:agSel}); el.addEventListener("click",go); el.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();go();} }); });
   $("cardAg").querySelectorAll("[data-yr]").forEach(x=>x.addEventListener("click",()=>{ const v=x.dataset.yr;
     if(v==="all") agSel=ALLYRS; else { const bit=1<<+v; agSel=agSel===ALLYRS?bit:(agSel^bit); if(!agSel) agSel=ALLYRS; }
     agCard(curD,peers); writeHash(); }));
-  $("cardAg").querySelectorAll("[data-agall]").forEach(x=>x.addEventListener("click",e=>{ e.stopPropagation(); agAll=true; agCard(curD,peers); }));
   $("agXBtn").addEventListener("click",()=>{ if(agx.size)agx.clear(); else rows.forEach(r=>agx.add(r.a)); agCard(curD,peers); });
   const all=[...rows.map(r=>["a"+r.a,r]),...rows.flatMap(r=>r.kids.map(x=>["s"+x.s,x]))]; const M=Object.fromEntries(all);
   $("cardAg").querySelectorAll(".br[data-k]").forEach(el=>{ const r=M[el.dataset.k]; if(!r)return; el.addEventListener("mouseenter",e=>showTT(e,`<b>${esc(r.name)}</b><br>${money(r.v)} across ${r.n||0} award${r.n===1?"":"s"}${typ==="all"&&r.v>0?`<br>contracts ${money(r.c)} (${pctS(r.c/r.v)})`:""}${r.em?`<br>plus ${money(r.em)} congressionally directed (not counted)`:""}${np?`<br>${r.np} of ${np} peers funded here${r.np?` · median among them ${money(r.pmf)}`:""}`:""}`)); el.addEventListener("mousemove",moveTT); el.addEventListener("mouseleave",hideTT); });
