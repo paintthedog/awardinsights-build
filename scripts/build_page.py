@@ -4,7 +4,7 @@ Assemble the Federal Award Insights page.
 Preview: one self-contained page (inline script), for the Claude preview.
 Public:  index.html + minified app.js, strict Content-Security-Policy, copyright notices, robots.txt.
 """
-import argparse, re, subprocess, pathlib
+import argparse, hashlib, re, subprocess, pathlib
 ap = argparse.ArgumentParser()
 ap.add_argument("--head", required=True); ap.add_argument("--body", required=True)
 ap.add_argument("--preview"); ap.add_argument("--public")
@@ -34,7 +34,8 @@ if A.public:
            "base-uri 'none'; form-action 'none'")
     h = head.replace("<meta charset=utf8>", f'<meta charset=utf8>\n<meta http-equiv="Content-Security-Policy" content="{csp}">\n'
                      f'<meta name="referrer" content="strict-origin-when-cross-origin">\n<meta name="copyright" content="{COPY}">\n<!-- {COPY} -->', 1)
-    page = h + body[:m.start()] + '<script type="module" src="app.js"></script>' + body[m.end():]
+    v = hashlib.sha1(app.read_bytes()).hexdigest()[:10]   # content fingerprint: a new build is never served from a stale cache
+    page = h + body[:m.start()] + f'<script type="module" src="app.js?v={v}"></script>' + body[m.end():]
     (out / "index.html").write_text(page)
     (out / "robots.txt").write_text("User-agent: *\nDisallow: /data/\n")
     print("public page:", (out / "index.html").stat().st_size, "bytes; app.js:", (out / "app.js").stat().st_size, "bytes")

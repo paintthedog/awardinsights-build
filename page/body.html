@@ -152,8 +152,8 @@ h3.ctog:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-
     </div>
     <div id="prof" hidden>
       <div class="phead" id="phead"></div>
-      <div class="stack" style="margin-bottom:16px"><div class="card" id="cardBrief"></div></div>
       <div class="peersel" id="peersel"></div>
+      <div class="stack" style="margin-bottom:16px"><div class="card" id="cardBrief"></div></div>
       <div class="stack">
         <div class="card" id="cardLatestInst"></div>
         <div class="card" id="cardYear"></div>
@@ -419,12 +419,12 @@ function yearCard(d,peers){
   s+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--line)"/>`;
   const showA=typ!=="c", showC=typ!=="a";
   let tb=`<table class="tbl"><thead><tr><th>Fiscal year</th>${showA&&showC?"<th>Grants &amp; agreements</th><th>Contracts</th>":""}<th>Total</th><th>Peer median</th><th>Peers funded</th><th>Rank</th></tr></thead><tbody>`;
-  YEARS.forEach((y,i)=>{ const p=y>=PARTIAL?"acc":""; tb+=`<tr><td>FY${String(y).slice(2)}${y>=PARTIAL?' <small>partial</small>':''}</td>${showA&&showC?`<td class="${p}">${money(A[i])}</td><td class="${p}">${money(C[i])}</td>`:""}<td class="${p}">${money(mine[i])}</td><td class="${p}">${peers.length?money(pm[i]):"—"}</td><td class="pf">${peers.length?`${pctS(pf[i]/peers.length)} <small>(${pf[i]})</small>`:"—"}</td><td class="rk ${canRank?rkCls(rks[i]):''}">${canRank?rkTxt(rks[i]):"—"}</td></tr>`; });
+  YEARS.forEach((y,i)=>{ const p=y>=PARTIAL?"acc":""; tb+=`<tr><td>FY${String(y).slice(2)}${y>=PARTIAL?' <small>partial</small>':''}</td>${showA&&showC?`<td class="${p}">${money(A[i])}</td><td class="${p}">${money(C[i])}</td>`:""}<td class="${p}">${money(mine[i])}</td><td class="${p}">${peers.length?money(pm[i]):"—"}</td><td class="pf" title="${peers.length?`${pf[i]} of ${peers.length} peers`:""}">${peers.length?pctS(pf[i]/peers.length):"—"}</td><td class="rk ${canRank?rkCls(rks[i]):''}">${canRank?rkTxt(rks[i]):"—"}</td></tr>`; });
   const sA=A.reduce((a,b)=>a+b,0), sC=C.reduce((a,b)=>a+b,0), tot=sA+sC, ptot=median(peers.map(p=>p.fdol)), rkT=rankOf(peers.map(p=>p.fdol),tot);
-  tb+=`<tr class="tot"><td>FY22–26</td>${showA&&showC?`<td>${money(sA)}</td><td>${money(sC)}</td>`:""}<td>${money(tot)}</td><td>${peers.length?money(ptot):"—"}</td><td class="pf">${peers.length?`${pctS(peers.filter(p=>p.fed).length/peers.length)} <small>(${peers.filter(p=>p.fed).length})</small>`:"—"}</td><td class="rk">${canRank?rkTxt(rkT):"—"}</td></tr></tbody></table>`;
+  tb+=`<tr class="tot"><td>FY22–26</td>${showA&&showC?`<td>${money(sA)}</td><td>${money(sC)}</td>`:""}<td>${money(tot)}</td><td>${peers.length?money(ptot):"—"}</td><td class="pf" title="${peers.length?`${peers.filter(p=>p.fed).length} of ${peers.length} peers`:""}">${peers.length?pctS(peers.filter(p=>p.fed).length/peers.length):"—"}</td><td class="rk">${canRank?rkTxt(rkT):"—"}</td></tr></tbody></table>`;
   CSVS.year=()=>({name:`${d.n} - federal by year`,rows:[["Fiscal year","Grants & agreements","Contracts","Total ("+TYPLAB()+")","Peer median","Peers funded","Peers","Rank"],...YEARS.map((y,i)=>["FY"+y,A[i],C[i],mine[i],peers.length?pm[i]:"",pf[i],peers.length,canRank?rkTxt(rks[i]):""])]});
   const leg=showA&&showC?`<div class="leg2"><span><i style="background:var(--you)"></i>Grants &amp; cooperative agreements</span><span><i style="background:var(--you);opacity:.42"></i>Contracts</span>${peers.length?'<span>– – peer median (total)</span>':""}${tot?`<span>Contracts are <b style="color:var(--ink);font-weight:500">${pctS(sC/tot)}</b> of this institution's FY22–26 total</span>`:""}</div>`:"";
-  const emNote=g.em?`<p class="note" style="margin:10px 0 0">Not included above: <b>${money(g.em)}</b> in congressionally directed spending (earmarks) across ${g.emN} award${g.emN===1?"":"s"}, listed under Programs and Awards.</p>`:"";
+  const emNote=g.em?`<p class="note" style="margin:10px 0 0">Not included above: <b>${money(g.em)}</b> in congressionally directed spending (earmarks) across ${g.emN} award${g.emN===1?"":"s"}, listed under Programs.</p>`:"";
   $("cardYear").innerHTML=`<div class="chd"><h3>Federal obligations by year</h3>${csvBtn("year")}</div><div class="csub">${TYPLAB()[0].toUpperCase()+TYPLAB().slice(1)} obligated in each fiscal year, including continuing payments on earlier awards · bars are ${esc(d.n)}${peers.length?", dashed line is the peer median":""}${canRank||!peers.length?"":" · ranks need at least "+MINPEERS+" peers"} · FY2026 is a partial year</div>
     <div class="split"><div><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Federal dollars by fiscal year">${s}</svg>${leg}</div><div>${tb}</div></div>${emNote}`;
   $("cardYear").querySelectorAll(".hv").forEach(r=>{ r.addEventListener("mouseenter",e=>{ const i=+r.dataset.i; showTT(e,`<b>FY${String(YEARS[i]).slice(2)}</b> · ${money(mine[i])}${showA&&showC?`<br>grants &amp; agreements ${money(A[i])} · contracts ${money(C[i])}`:""}${peers.length?`<br>peer median ${money(pm[i])} · ${pf[i]} of ${peers.length} peers funded${canRank&&mine[i]?` · rank ${rkTxt(rks[i])}`:""}`:""}`); }); r.addEventListener("mousemove",moveTT); r.addEventListener("mouseleave",hideTT); });
@@ -1233,7 +1233,7 @@ async function briefCard(d,peers){
     st.push({id:"em",k:"Earmarks",big:money(g.em),ln:`in congressionally directed spending, equal to ${pct0(g.em/g.tot)} of competitive funding`,ft:"Shown apart; not counted in totals or ranks",me:g.em/g.tot,pm:pe,sc:"pct",go:"cardProg"}); }
   const asOf=fmtDate(new Date(META.t12[1]+"T12:00:00"));
   const draw=()=>{ el.innerHTML=`<div class="chd"><h3>At a glance</h3></div>
-    <div class="csub">${TYPLAB()[0].toUpperCase()+TYPLAB().slice(1)}${hasPeers?` · peer medians use <button class="linkbtn" id="brPeers">${peers.length} peers set below ↓</button>`:""} · data through ${asOf}</div>
+    <div class="csub">${TYPLAB()[0].toUpperCase()+TYPLAB().slice(1)}${hasPeers?` · peer medians use <button class="linkbtn" id="brPeers">${peers.length} peers set above ↑</button>`:""} · data through ${asOf}</div>
     <details class="binfo"><summary>How these are measured</summary><p><b>Current annual funding</b> is obligations in the 52 weeks ending ${asOf}. <b>New-award comparisons</b> use the latest settled 3 months and leave out the most recent ${PROVW} weeks, which agencies are still reporting. <b>Scheduled end</b> is each award's period-of-performance end date, which extensions and renewals move. ${hasPeers?`<b>Peer medians</b> use the ${peers.length} peers listed below.`:"No peer group applies to this institution."} Each tile opens the section with the detail.</p></details>
     <div class="brief">${st.map(x=>`<div class="bst" role="link" tabindex="0" data-to="${x.go}" aria-label="${esc(x.k)}: ${esc(x.big)}. Open details">
       <div class="k">${x.k}</div><div class="big">${x.big}</div><p class="ln">${x.ln}</p>
