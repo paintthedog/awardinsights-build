@@ -158,6 +158,7 @@ h3.ctog:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-
         <div class="card" id="cardYear"></div>
         <div class="card" id="cardCliff"></div>
         <div class="card" id="cardAg"></div>
+        <div class="card" id="cardSub"></div>
         <div class="card" id="cardProg"></div>
         <div class="card" id="cardAw"></div>
       </div>
@@ -534,6 +535,47 @@ async function awardCard(d){
   const m=$("awMore"); if(m) m.addEventListener("click",()=>{ awCap+=25; awardCard(curD); });
   wireCSV($("cardAw"));
 }
+/* ---- subawards: received as a subrecipient, passed through to others (data/sub.json, loaded on first use) ---- */
+let SUBA=null, SUBWAIT=null;
+function loadSub(){ if(!SUBWAIT) SUBWAIT=fetch("data/sub.json").then(r=>r.ok?r.json():{e:{}}).then(j=>{ SUBA=j.e||{}; }).catch(()=>{ SUBA={}; }); return SUBWAIT; }
+const agAbbr=a=>`<abbr class="agab" title="${esc(AGFULL[a]||a)}">${esc(a)}</abbr>`;
+function subCard(d,peers){
+  const card=$("cardSub");
+  if(!SUBA){ card.innerHTML=`<div class="chd"><h3>Subawards</h3></div><p class="note">Loading subawards…</p>`; applyMin(card); loadSub().then(()=>{ if(curD===d) subCard(d,peers); }); return; }
+  const Z=YEARS.map(()=>0), s=SUBA[d.u]||{r:Z,p:Z,ra:{},pa:{},rt:[],pt:[],rn:0,pn:0,re:0,pe:0};
+  const nm=esc(d.n), np=peers.length, sum=a=>a.reduce((x,y)=>x+y,0);
+  const ps=peers.map(p=>SUBA[p.u]||{r:Z,p:Z});
+  const pmR=YEARS.map((y,i)=>median(ps.map(x=>x.r[i]))), pmP=YEARS.map((y,i)=>median(ps.map(x=>x.p[i])));
+  const W=520,H=230,pl=56,pr=12,pt=14,pb=28,iw=W-pl-pr,ih=H-pt-pb;
+  const vmax=Math.max(...s.r,...s.p,...(np?pmR:[]),...(np?pmP:[]),1), step=niceStep(vmax);
+  const Y=v=>pt+ih-Math.max(0,v)/vmax*ih, bw=iw/YEARS.length, b2=bw*.3;
+  let g="";
+  for(let v=0;v<=vmax*1.001;v+=step) g+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line-soft)"/><text class="axlab" x="${pl-6}" y="${Y(v)+4}" text-anchor="end">${money(v)}</text>`;
+  YEARS.forEach((y,i)=>{ const x0=pl+bw*i+bw/2, op=y>=PARTIAL?' opacity=".45"':"";
+    if(y>=PARTIAL) g+=`<rect x="${pl+bw*i}" y="${pt}" width="${bw}" height="${ih}" fill="var(--line-soft)" opacity=".5"/>`;
+    g+=`<rect class="hv" data-i="${i}" x="${x0-b2-1}" y="${Y(s.r[i])}" width="${b2}" height="${Y(0)-Y(s.r[i])}" fill="var(--you)"${op}/>`;
+    g+=`<rect class="hv" data-i="${i}" x="${x0+1}" y="${Y(s.p[i])}" width="${b2}" height="${Y(0)-Y(s.p[i])}" fill="var(--accent)"${op}/>`;
+    g+=`<text class="axlab" x="${x0}" y="${H-8}" text-anchor="middle">FY${String(y).slice(2)}${y>=PARTIAL?" *":""}</text>`; });
+  g+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--line)"/>`;
+  let tb=`<table class="tbl"><thead><tr><th>Fiscal year</th><th>Received</th>${np?"<th>Peer median</th>":""}<th>Passed through</th>${np?"<th>Peer median</th>":""}</tr></thead><tbody>`;
+  YEARS.forEach((y,i)=>{ const c=y>=PARTIAL?"acc":""; tb+=`<tr><td>FY${String(y).slice(2)}${y>=PARTIAL?" <small>still being reported</small>":""}</td><td class="${c}">${money(s.r[i])}</td>${np?`<td class="${c}">${money(pmR[i])}</td>`:""}<td class="${c}">${money(s.p[i])}</td>${np?`<td class="${c}">${money(pmP[i])}</td>`:""}</tr>`; });
+  tb+=`</tbody></table>`;
+  const who=(list,empty)=>list.length?`<ol class="sublist">${list.map(([n,u,v])=>`<li><span class="sn">${u&&byU[u]?`<a href="#u=${encodeURIComponent(u)}" data-go="${esc(u)}">${esc(inert(n))}</a>`:esc(inert(n))}</span><span class="sv">${money(v)}</span></li>`).join("")}</ol>`:`<p class="note">${empty}</p>`;
+  const ags=o=>{ const e=Object.entries(o||{}); return e.length?`<p class="note" style="margin:4px 0 8px">By agency: ${e.slice(0,6).map(([a,v])=>`${agAbbr(a)} ${money(v)}`).join(" · ")}${e.length>6?" · …":""}</p>`:""; };
+  const none=!sum(s.r)&&!sum(s.p);
+  const em=s.re||s.pe?`<p class="note" style="margin:10px 0 0">Not included above: ${[s.re?`${money(s.re)} received`:"",s.pe?`${money(s.pe)} passed through`:""].filter(Boolean).join(" and ")} under congressionally directed spending (earmarks).</p>`:"";
+  CSVS.sub=()=>({name:`${d.n} - subawards by year`,rows:[["Fiscal year","Received as subrecipient","Peer median received","Passed through","Peer median passed through","Still being reported"],...YEARS.map((y,i)=>["FY"+y,s.r[i],np?pmR[i]:"",s.p[i],np?pmP[i]:"",y>=PARTIAL?"yes":""])]});
+  card.innerHTML=`<div class="chd"><h3>Subawards</h3>${none?"":csvBtn("sub")}</div>
+    <div class="csub"><b>Received</b>: money other organizations passed to ${nm} from their federal awards, not part of the totals above · <b>Passed through</b>: money ${nm} passed to others from its own awards, already part of the totals above · first-tier subawards, by fiscal year of the subaward${np?" · peer medians among the "+np+" peers":""} · FY2026 is still being reported</div>
+    ${none?`<p class="note">No first-tier subawards are reported for ${nm} in FY2022–26 under the programs counted here.</p>`:`<div class="split"><div><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Subawards received and passed through by fiscal year">${g}</svg>
+      <div class="leg2"><span><i style="background:var(--you)"></i>Received as subrecipient</span><span><i style="background:var(--accent)"></i>Passed through</span><span>* still being reported</span></div></div><div>${tb}</div></div>
+    <div class="split" style="margin-top:14px"><div><h4 class="subh">Largest sources <small>${s.rn.toLocaleString()} subaward${s.rn===1?"":"s"} received, FY22–26</small></h4>${ags(s.ra)}${who(s.rt,"None reported.")}</div>
+      <div><h4 class="subh">Largest subrecipients <small>${s.pn.toLocaleString()} subaward${s.pn===1?"":"s"} passed through, FY22–26</small></h4>${ags(s.pa)}${who(s.pt,"None reported.")}</div></div>`}${em}
+    <p class="note" style="margin:12px 0 0">Subaward amounts are as reported by prime recipients; duplicate filings are counted once, and no prime award's subawards are counted above the award's own value. Received counts only programs an institution could win through a proposal: formula and block grants passed through states (school meals, Title I, special education, disaster aid and similar) are left out. Recent years fill in as late reports arrive.</p>`;
+  card.querySelectorAll(".hv").forEach(r=>{ r.addEventListener("mouseenter",e=>{ const i=+r.dataset.i; showTT(e,`<b>FY${String(YEARS[i]).slice(2)}</b>${YEARS[i]>=PARTIAL?" · still being reported":""}<br>received ${money(s.r[i])}${np?` · peer median ${money(pmR[i])}`:""}<br>passed through ${money(s.p[i])}${np?` · peer median ${money(pmP[i])}`:""}`); }); r.addEventListener("mousemove",moveTT); r.addEventListener("mouseleave",hideTT); });
+  card.querySelectorAll("[data-go]").forEach(a=>a.addEventListener("click",e=>{ e.preventDefault(); select(a.dataset.go); }));
+  wireCSV(card); applyMin(card);
+}
 function render(d){
   curD=d; $("empty").hidden=true; $("prof").hidden=false;
   const flags=d.k==="carnegie"?[d.ep&&"EPSCoR",d.hbcu&&"HBCU",d.hsi&&"HSI",d.msi&&!d.hbcu&&!d.hsi&&"MSI",d.lg&&"Land-grant",d.md&&"Med school",d.aau&&"AAU",d.aplu&&"APLU"].filter(Boolean):[];
@@ -549,7 +591,7 @@ function render(d){
       <div class="kpi"><div class="k">Awards</div><div class="v">${d.naw.toLocaleString()}</div></div>
       ${d.em?`<div class="kpi" title="Congressionally directed spending (earmarks), FY22–26. Shown for context; not included in totals, ranks or peer program lists."><div class="k">Earmarks, not counted</div><div class="v" style="color:var(--muted)">${money(d.em)}</div></div>`:""}
       <div class="kpi"><div class="k">Rank among peers</div><div class="v">${rkV}</div></div></div>`;
-  yearCard(d,peers); agCard(d,peers); progCard(d,peers); awLinkCard(d,peers); latestInstCard(d,peers); briefCard(d,peers); cliffCard(d,peers);
+  yearCard(d,peers); agCard(d,peers); subCard(d,peers); progCard(d,peers); awLinkCard(d,peers); latestInstCard(d,peers); briefCard(d,peers); cliffCard(d,peers);
   writeHash();
 }
 const q=$("q"),results=$("results");

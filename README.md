@@ -9,6 +9,8 @@ Only the built site is published (see `deploy.sh`).
 | `scripts/usaspending_subaward_pull.py`, `usaspending_subaward_trim.py` | request, download and trim first-tier subawards (received and passed through) |
 | `scripts/build_fai.py` | trimmed files → site data (`--awards inst` writes one award file per institution) |
 | `scripts/verify.py` | recomputes three institutions from the raw files; non-zero exit stops a deploy |
+| `scripts/verify_sub.py` | recomputes subawards received and passed through for three institutions; non-zero exit stops a deploy |
+| `scripts/program_scope.py` | which programs count for money received as a subrecipient (from the full prime archive) → `inputs/ai-1-core/program_scope.json` |
 | `scripts/build_page.py` | assembles the page: minified `app.js`, Content-Security-Policy, copyright notices, robots.txt |
 | `scripts/build_shell.py`, `site/` | one site: site bar, landing page, clean URLs + redirects, cross-tool search (`site/shared/site.js`) |
 | `page/head.html`, `page/body.html` | Federal page source |
@@ -16,7 +18,7 @@ Only the built site is published (see `deploy.sh`).
 | `legacy/archive/` | the original one-off build scripts, kept for reference (they expect raw HERD files not in this repo) |
 | `inputs/nsf/` | built data for the original tools, plus the Carnegie universe |
 | `inputs/nsf-raw/` | all NSF awards FY2022–26 with UEI, for rebuilding `awards4.json` |
-| `inputs/subawards/` | trimmed subaward files (git-ignored) |
+| `inputs/subawards/` | trimmed subaward files (git-ignored); copy in the output of `usaspending_subaward_trim.py` |
 | `docs/` | the working spec and the original 3 Oct bundle README |
 | `inputs/ai-1-core/` | crosswalk v2, FFRDC exclusions, IPEDS HD2025, HERD crosswalk |
 | `inputs/nsf/universe3.json` | Carnegie universe with institutional factors |

@@ -27,6 +27,8 @@ DRY=0; [[ "${1:-}" == "--dry-run" ]] && DRY=1
 n=$(ls inputs/trimmed/*.csv.gz 2>/dev/null | wc -l | tr -d ' ')
 [[ "$n" -gt 0 ]] || { echo "No trimmed files in inputs/trimmed/. Run the pull and trim scripts first."; exit 1; }
 echo "→ $n trimmed files"
+SUBS=""; for f in inputs/subawards/*.csv.gz; do [[ -e "$f" ]] && SUBS=1; break; done
+if [[ -n "$SUBS" ]]; then echo "→ $(ls inputs/subawards/*.csv.gz | wc -l | tr -d ' ') trimmed subaward files"; else echo "→ no subaward files in inputs/subawards/: building without subawards"; fi
 
 rm -rf build && mkdir -p build/site
 echo "→ building the landing page, NSF, Designations and Portfolio"
@@ -34,12 +36,14 @@ python3 -I legacy/build_legacy.py --out build/site ${COMPARE_LIVE:+--compare "$C
 
 echo "→ building Federal data"
 python3 -I scripts/build_fai.py --core inputs/ai-1-core --nsf inputs/nsf \
-  --assistance inputs/trimmed --contracts inputs/trimmed --out "build/site/$SUBDIR" --awards inst
+  --assistance inputs/trimmed --contracts inputs/trimmed --out "build/site/$SUBDIR" --awards inst \
+  ${SUBS:+--subawards inputs/subawards --scope inputs/ai-1-core/program_scope.json}
 
 echo "→ checking dollars against the raw files"
 FAI_INPUTS=inputs FAI_SITE="build/site/$SUBDIR" python3 -I scripts/verify.py
 FAI_INPUTS=inputs FAI_SITE="build/site/$SUBDIR" python3 -I scripts/verify_cliff.py 214777
 FAI_INPUTS=inputs FAI_SITE="build/site/$SUBDIR" python3 -I scripts/verify_ic.py 198419 "ALLERGY|NIAID"
+[[ -n "$SUBS" ]] && FAI_INPUTS=inputs FAI_SITE="build/site/$SUBDIR" python3 -I scripts/verify_sub.py
 
 echo "→ building page"
 python3 scripts/build_page.py --head page/head.html --body page/body.html --public "build/site/$SUBDIR" \

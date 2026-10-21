@@ -81,7 +81,7 @@ NSF_CFDA_TITLE = {"47.041": "Engineering", "47.049": "Mathematical and Physical 
                   "47.083": "Integrative Activities", "47.084": "Technology, Innovation and Partnerships",
                   "47.079": "International Science and Engineering", "47.078": "Polar Programs"}
 SMALL = {"and", "of", "for", "the", "in", "on", "to", "a", "an", "or", "at", "by", "with", "from"}
-UPPER = {"STEM", "NIH", "NASA", "HIV", "AIDS", "USDA", "EPA", "NSF", "DOD", "II", "III", "IV", "TRIO", "GEAR", "UP", "K-12",
+UPPER = {"LLC", "STEM", "NIH", "NASA", "HIV", "AIDS", "USDA", "EPA", "NSF", "DOD", "II", "III", "IV", "TRIO", "GEAR", "UP", "K-12",
          "STTR", "SBIR", "USAID", "FIPSE", "IES", "NIFA", "NOAA", "NIST", "COVID-19", "EPSCOR", "MRI", "CAREER",
          "NIEHS", "NIOSH", "AHRQ", "SAMHSA", "HRSA", "CDC", "FDA", "DHS", "DARPA", "ONR", "AFOSR", "HBCU", "HBCUS", "MSI", "HSI",
          "BRAIN", "ARPA-H", "ARPA-E", "US", "U.S.", "NASA's", "STEM-C", "AI", "R&D", "NOFO", "EDA", "NIJ", "OVW", "BJA", "OJJDP", "FAA", "FHWA", "FTA", "NEH", "NEA", "IMLS", "PPHF", "STR", "HCOP", "ACA", "CMS", "MACRA", "PEPFAR", "SED", "CDC-RFA"}
@@ -168,6 +168,8 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--core", required=True); ap.add_argument("--nsf", required=True)
 ap.add_argument("--assistance"); ap.add_argument("--contracts"); ap.add_argument("--nsf-raw")
 ap.add_argument("--out", required=True)
+ap.add_argument("--subawards", help="trimmed subaward files (scripts/usaspending_subaward_trim.py)")
+ap.add_argument("--scope", help="program_scope.json: which programs count for money received as a subrecipient")
 ap.add_argument("--awards", choices=["shards", "inst"], default="shards",
                 help="award files: 64 bundles (preview hosting) or one file per institution (public site)")
 A = ap.parse_args()
@@ -509,6 +511,96 @@ out["meta"]["asof"] = asof
 json.dump(out, open(f"{A.out}/data/agg.json", "w"), separators=(",", ":"))
 print("recent.json bytes:", os.path.getsize(f"{A.out}/data/recent.json"), "feed rows:", sum(len(v) for v in FEED.values()), "asof", asof)
 
+# ---------- subawards: received as subrecipient, passed through to others (docs/SPEC.md, open item 2) ----------
+# (a) both sides resolve through the crosswalk; (b) "received" only under programs a university could win through a
+# proposal (program_scope.json), "passed through" only under prime awards counted above (AW); (c) the same amount on the
+# same action date counts once, and no prime's subawards count above the prime's own value (contract vehicles exempt);
+# each subaward's years are summed with a running balance floored at zero, like the awards; (d) FY2026 is shown as still
+# being reported (page); (e) a subaward with the same entity on both sides is left out. Earmarks: tagged, not in totals.
+SUBREP = collections.defaultdict(float); SUBN = collections.Counter()
+SUBOUT = {}
+if A.subawards:
+    scope = json.load(open(A.scope))["programs"] if A.scope else {}
+    in_aw = {}                                  # prime award key -> earmark? (only awards Federal counts)
+    for (k_, e_), a_ in AW.items(): in_aw[k_] = in_aw.get(k_, False) or a_["comp"] == 2
+    rows_ = {}; prime_val = {}; prime_name = {}
+    for f in sorted(glob.glob(f"{A.subawards}/*.csv.gz")):
+        for r in csv.DictReader(gzip.open(f, "rt", newline="")):
+            fy = int(r.get("subaward_action_date_fiscal_year") or 0)
+            if fy not in YEARS: continue
+            try: amt = float(r.get("subaward_amount") or 0); pv = float(r.get("prime_award_amount") or 0)
+            except ValueError: SUBN["rows with unreadable amounts"] += 1; continue
+            pk = r.get("prime_award_unique_key") or ""; su = (r.get("subawardee_uei") or "").strip()
+            d_ = (r.get("subaward_action_date") or "")[:10]
+            k = (pk, su, r.get("subaward_number") or "", d_, round(amt, 2))
+            if k in rows_: SUBREP["same-date duplicates counted once"] += amt; continue
+            rows_[k] = r; prime_val[pk] = max(prime_val.get(pk, 0.0), pv); prime_name[pk] = r.get("prime_awardee_name") or ""
+    # each subaward's years with a running balance floored at zero
+    per_sub = collections.defaultdict(lambda: collections.defaultdict(float)); sub_row = {}
+    newest = lambda r: (r.get("subaward_action_date") or "", r.get("subaward_sam_report_last_modified_date") or "", r.get("subaward_sam_report_id") or "")
+    for k, r in rows_.items():   # a subaward is classified by its most recent row (prime ids and programs can change mid-award)
+        sk = k[:3]; per_sub[sk][int(r["subaward_action_date_fiscal_year"])] += k[4]
+        if sk not in sub_row or newest(r) > newest(sub_row[sk]): sub_row[sk] = r
+    flo = {}
+    for sk, by in per_sub.items():
+        bal = 0.0; out_ = {}
+        for fy in sorted(by): nb = max(bal + by[fy], 0.0); out_[fy] = nb - bal; bal = nb
+        SUBREP["reductions below zero not counted"] += sum(out_.values()) - sum(by.values())
+        flo[sk] = out_
+    # ceiling: a prime award's subawards never count above the prime's own value
+    ptot = collections.defaultdict(float)
+    for sk, by in flo.items(): ptot[sk[0]] += sum(by.values())
+    factor = {}; capped = []; idv = []
+    for pk, t in ptot.items():
+        pv = prime_val.get(pk, 0.0)
+        if t <= pv * 1.001 or t <= 0: continue
+        if pk.startswith("CONT_IDV_"): idv.append((t, pk, pv)); continue
+        factor[pk] = pv / t; capped.append((t - pv, pk, pv, t)); SUBREP["above the prime award's value, not counted"] += t - pv
+    SUBN["prime awards capped at their own value"] = len(capped); SUBN["contract vehicles exempt from the cap"] = len(idv)
+    UNAME = {d["u"]: clean(d["n"]) for d in U}
+    def label(e, raw): return (E[e]["n"] if e in E else UNAME.get(e)) or nice(clean(raw))[:80]
+    S_ = collections.defaultdict(lambda: {"r": [0.0] * len(YEARS), "p": [0.0] * len(YEARS), "ra": collections.defaultdict(float),
+                                          "pa": collections.defaultdict(float), "rt": collections.defaultdict(float), "pt": collections.defaultdict(float),
+                                          "re": 0.0, "pe": 0.0, "rn": 0, "pn": 0})
+    for sk, by in flo.items():
+        r = sub_row[sk]; pk = sk[0]; f_ = factor.get(pk, 1.0)
+        se, _ = entity_for(sk[1]); pe_, _ = entity_for((r.get("prime_awardee_uei") or "").strip())
+        tot = sum(by.values()) * f_
+        if not any(by.values()): continue   # a subaward paid in one year and pulled back in another nets to 0 but still moves money between years
+        if se and se == pe_: SUBREP["same entity on both sides, left out"] += tot; continue
+        ag0 = agency_of(r.get("prime_award_awarding_agency_code"))
+        cfda = (r.get("prime_award_cfda_numbers_and_titles") or "").split(";")[0].strip()
+        cn, ct = (cfda.split(":", 1) + [""])[:2] if cfda else ("", "")
+        ag2 = route(ag0, r.get("prime_award_awarding_sub_agency_name") or "", r.get("prime_award_awarding_office_name"), 0.0,
+                    cn.strip(), ct.strip() if pk.startswith("ASST") else None)[0] if ag0 else None
+        ags = AGENCIES[ag2][0] if ag2 in AGENCIES else "Other"
+        if se:     # received as subrecipient
+            prog = scope.get(cn.strip())
+            if pk.startswith("ASST") and prog is not None and not prog["in"]: SUBREP["received under formula/block programs, left out"] += tot
+            elif cn.strip() in EARMARK_CFDA: S_[se]["re"] += tot; SUBREP["received under earmarks (tagged)"] += tot
+            else:
+                s = S_[se]; s["rn"] += 1
+                for fy, v in by.items(): s["r"][YEARS.index(fy)] += v * f_
+                s["ra"][ags] += tot; s["rt"][(pe_ or "", label(pe_, r.get("prime_awardee_name")))] += tot; SUBREP["received, counted"] += tot
+        if pe_ and pk in in_aw:      # passed through, under an award Federal counts
+            if in_aw[pk]: S_[pe_]["pe"] += tot; SUBREP["passed through under earmarks (tagged)"] += tot
+            else:
+                s = S_[pe_]; s["pn"] += 1
+                for fy, v in by.items(): s["p"][YEARS.index(fy)] += v * f_
+                s["pa"][ags] += tot; s["pt"][(se or "", label(se, r.get("subawardee_name")))] += tot; SUBREP["passed through, counted"] += tot
+        elif pe_: SUBREP["passed through under awards not counted above"] += tot
+    top = lambda d_: [[n, e, round(v)] for (e, n), v in sorted(d_.items(), key=lambda x: -x[1])[:10] if v >= 1]
+    SUBOUT = {"_c": COPY, "years": YEARS, "partial": 2026, "e": {
+        e: {"r": [round(x) for x in s["r"]], "p": [round(x) for x in s["p"]], "rn": s["rn"], "pn": s["pn"],
+            "ra": {a: round(v) for a, v in sorted(s["ra"].items(), key=lambda x: -x[1]) if v >= 1},
+            "pa": {a: round(v) for a, v in sorted(s["pa"].items(), key=lambda x: -x[1]) if v >= 1},
+            "rt": top(s["rt"]), "pt": top(s["pt"]), "re": round(s["re"]), "pe": round(s["pe"])}
+        for e, s in S_.items() if (e in inU or e in E) and re.fullmatch(ID_RE, e)}}   # only entities the page can show
+    json.dump(SUBOUT, open(f"{A.out}/data/sub.json", "w"), separators=(",", ":"), ensure_ascii=False)
+    SUBREP_TOP = {"capped_primes_top": [[pk, prime_name.get(pk, ""), round(pv), round(t)] for x, pk, pv, t in sorted(capped, reverse=True)[:150]],
+                  "idv_exempt_top": [[pk, prime_name.get(pk, ""), round(pv), round(t)] for t, pk, pv in sorted(idv, reverse=True)[:60]]}
+    print("sub.json bytes:", os.path.getsize(f"{A.out}/data/sub.json"), "entities:", len(SUBOUT["e"]))
+
 # ---------- report ----------
 camp = collections.defaultdict(lambda: [0.0] * len(YEARS))
 bykind = collections.defaultdict(float)
@@ -532,6 +624,8 @@ report = {
     "nih_offices_unmapped": {k: round(v) for k, v in nih_unmapped.most_common(40)},
     "by_kind": {f"{a} {k} {t}": round(v) for (a, k, t), v in sorted(bykind.items())},
 }
+if A.subawards:
+    report["subawards"] = {"money": {k: round(v) for k, v in sorted(SUBREP.items())}, "counts": dict(SUBN), **SUBREP_TOP}
 json.dump(report, open(f"{A.out}/data/build_report.json", "w"), indent=1)
 print(json.dumps({k: report[k] for k in ("money", "campus_by_agency")}, indent=1))
 print("entities with money:", len(R), "awards:", len(AW), "non-Carnegie entities:", len(E))
