@@ -60,6 +60,8 @@ Young Serif for headings and names; Readex Pro for everything else, numbers incl
 
 At a glance (decided 2026-10-21): one row per measure, each its own bordered card with space between; number (Readex Pro 600, 30px) in a left column centered top to bottom, label/sentence/details in the middle, the peer bar centered on the right; on phones the bar drops below. Sentence text muted so the number reads first.
 
+Emphasis (decided 2026-10-21): bigger agencies first, smaller ones folded away. Institution "By agency" card: an agency gets its own row if it is at least 1% of the institution's dollars, or at least a fifth of its peers get 1% or more of theirs from it; the rest fold into an expandable "Smaller agencies (N)" row. Inside an agency, sub-agencies with at least 5% of its dollars here (always the top three) get rows; the rest fold into "Other <agency> (N)". Site-wide views (Trends, Latest charts and tables, the By agency dropdown) lead with the seven largest grantmakers, NIH, NSF, DOD, ED, DOE, NASA and USDA (88% of the money; `BIGAG`); the others share one grey "Smaller agencies" band or row. CSVs keep every row.
+
 Institution page order: header + KPIs → At a glance (rows: number, sentence, peer bar) → peer controls → Latest → Obligations by year → Scheduled to end → By agency and sub-agency → Subawards → Programs (held by peers not here / held here by few peers / above the peer median / earmarks; the complete list is in the Programs CSV). Every card can be minimized by clicking its title (remembered per browser). No Awards tab or Awards card (removed 2026-10-21 as too much): award lists open from an agency, sub-agency or program row, with "← Back" to the view that opened them; old `#v=awards` links still open the list.
 
 ## Protection
