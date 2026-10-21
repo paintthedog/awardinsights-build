@@ -234,7 +234,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 .br.dirrow:hover,.br.dirrow:focus-visible{background:var(--accent-soft);outline:none}
 .br.divrow{padding-left:26px;color:var(--muted)}
 .br.divrow .bn{font-size:12px}
-.br .car{display:inline-block;width:14px;color:var(--faint);font-size:11px}
+.br .car{display:inline-block;width:14px;height:10px;position:relative;flex:none;vertical-align:middle}.car::before{content:"";position:absolute;left:2px;top:2px;width:5px;height:5px;border-right:1.5px solid var(--faint);border-bottom:1.5px solid var(--faint);transform:rotate(-45deg);transition:transform .15s}.car.open::before{transform:rotate(45deg);top:0}.car.none::before{display:none}[role="button"]:hover .car::before,tr:hover .car::before{border-color:var(--accent)}
 .br .swd{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:7px;vertical-align:-1px}
 .br .bv.pf{color:var(--muted)}
 @media(max-width:640px){.br{grid-template-columns:minmax(110px,1fr) 1fr 62px 60px;gap:8px}.br .bv:nth-child(4),.br .rk{display:none}.br.divrow{padding-left:14px}}
@@ -497,7 +497,7 @@ function divCard(d,peers){
   const mx=Math.max(...dirs.map(r=>Math.max(r.v,r.pmf)),1);
   const hdr=`<div class="br hdr"><div></div><div></div><div class="bv">FY22–26</div><div class="bv">Awards</div><div class="bv">Peers funded</div><div class="rk">Rank</div></div>`;
   const rowH=(r,isDir)=>`<div class="br ${isDir?"dirrow":"divrow"}" data-k="${isDir?r.dr:r.c}" ${isDir?`role="button" tabindex="0" aria-expanded="${dvx.has(r.dr)}"`:""}>
-      <div class="bn">${isDir?`<span class="car">${dvx.has(r.dr)?"▾":"▸"}</span><span class="swd" style="background:${r.col}"></span>${dirL(r.dr)}`:divL(r.c)}</div>
+      <div class="bn">${isDir?`<span class="car${dvx.has(r.dr)?" open":""}"></span><span class="swd" style="background:${r.col}"></span>${dirL(r.dr)}`:divL(r.c)}</div>
       <div class="bb"><div class="bf" style="width:${(r.v/mx*100).toFixed(1)}%;background:var(--accent);opacity:${isDir?1:.55}"></div>${np&&r.np?`<div class="bm" style="left:${(r.pmf/mx*100).toFixed(1)}%"></div>`:""}</div>
       <div class="bv">${money(r.v)}</div><div class="bv">${r.n||"—"}</div><div class="bv pf">${np?`${r.np} of ${np}`:"—"}</div><div class="rk ${canRank?rkCls(r.rk):''}">${canRank?rkTxt(r.rk):"—"}</div></div>`;
   h+=`<div class="bars">`+hdr+dirs.map(r=>rowH(r,true)+(dvx.has(r.dr)?(r.divs.length?r.divs.map(x=>rowH(x,false)).join(""):`<div class="br divrow"><div class="bn" style="color:var(--faint)">No division-level awards here for this institution or its peers</div></div>`):"")).join("")+`</div>`;

@@ -247,7 +247,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 .br.dirrow:hover,.br.dirrow:focus-visible{background:var(--accent-soft);outline:none}
 .br.divrow{padding-left:26px;color:var(--muted)}
 .br.divrow .bn{font-size:12px}
-.br .car{display:inline-block;width:14px;color:var(--faint);font-size:11px}
+.br .car{display:inline-block;width:14px;height:10px;position:relative;flex:none;vertical-align:middle}.car::before{content:"";position:absolute;left:2px;top:2px;width:5px;height:5px;border-right:1.5px solid var(--faint);border-bottom:1.5px solid var(--faint);transform:rotate(-45deg);transition:transform .15s}.car.open::before{transform:rotate(45deg);top:0}.car.none::before{display:none}[role="button"]:hover .car::before,tr:hover .car::before{border-color:var(--accent)}
 .br .swd{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:7px;vertical-align:-1px}
 .br .bv.pf{color:var(--muted)}
 @media(max-width:640px){.br{grid-template-columns:96px 1fr 62px 60px;gap:8px}.br.divrow.go>:nth-child(3){grid-column:3}.br.divrow.go>:nth-child(5){grid-column:4}.br .emtag{display:none}.br .bv:nth-child(4),.br .rk{display:none}.br.divrow{padding-left:14px}}
