@@ -1,7 +1,8 @@
 # independent recompute of subawards received and passed through, by fiscal year, straight from the trimmed files
 # (rules in docs/SPEC.md, open item 2): crosswalk on both sides; received only under programs in program_scope.json;
 # passed through only under prime awards the Federal build counts (re-derived here from the prime files, earmarks aside);
-# same amount on the same date once; each subaward floored at zero; no prime's subawards above its own value
+# same amount on the same date once; a pullback comes off the year the money was given (never below zero); no prime's
+# subawards above its own value
 # (contract vehicles exempt); same entity on both sides left out.  Non-zero exit stops a deploy.
 import csv, gzip, glob, json, collections, re, os, sys
 csv.field_size_limit(10**9)
@@ -49,8 +50,12 @@ for f in glob.glob(f"{D}/subawards/*.csv.gz"):
         if k[:3] not in ROW or n > ROW[k[:3]][0]: ROW[k[:3]] = (n, r)   # classify by the most recent row
 FLO = {}; PT = collections.defaultdict(float)
 for sk, by in SUB.items():
-    bal = 0.0; o = {}
-    for fy in sorted(by): nb = max(bal + by[fy], 0.0); o[fy] = nb - bal; bal = nb
+    o = {}
+    for fy in sorted(by):                       # pullbacks come off the latest earlier year that has money
+        o[fy] = max(by[fy], 0.0); need = -by[fy]
+        for p in sorted(o, reverse=True):
+            if need <= 0: break
+            if p != fy: t = min(o[p], need); o[p] -= t; need -= t
     FLO[sk] = o; PT[sk[0]] += sum(o.values())
 def factor(pk):
     t = PT[pk]

@@ -354,14 +354,23 @@ for (ad_, ent_, si_, pi_, kind_, flag_, amt_, new_, key_, t_) in RECENT:
     if ad_ >= T12_START:
         a_ = AW.get((key_, ent_))
         if a_ is not None: a_["t12"] = a_.get("t12", 0.0) + amt_
-# ---------- awards never count below zero ----------
-# A deobligation larger than what the award received inside FY2022-26 is returning money obligated before the window,
-# which this tool never counted. Walk each award's fiscal years in order with a running balance floored at zero:
-# pullbacks of in-window money stay in the year they happened; returns of pre-window money are excluded.
+# ---------- awards never count below zero, in total or in any year ----------
+# Money pulled back from an award comes off the year it was given (latest first): a year shows what was obligated in it
+# and not later pulled back. Pullbacks are mostly routine revisions and closeouts, not cancellations (docs/SPEC.md).
+# A pullback larger than everything the award received inside FY2022-26 is returning money obligated before the
+# window, which this tool never counted; that part is excluded. Totals equal the old running balance floored at zero.
+def kept_by_year(fys):
+    kept = {}
+    for fy in sorted(fys):
+        v = fys[fy]; kept[fy] = max(v, 0.0)
+        need = -v
+        for p in sorted(kept, reverse=True):
+            if need <= 0: break
+            if p == fy: continue
+            take = min(kept[p], need); kept[p] -= take; need -= take
+    return kept
 for a_ in AW.values():
-    raw = sum(a_["fy"].values()); bal = 0.0; fl = {}
-    for fy in sorted(a_["fy"]):
-        nb = max(bal + a_["fy"][fy], 0.0); fl[fy] = nb - bal; bal = nb
+    raw = sum(a_["fy"].values()); fl = kept_by_year(a_["fy"])
     if abs(sum(fl.values()) - raw) >= 0.5:
         a_["raw"] = raw; rep["pre-FY2022 returns excluded (awards floored at zero)"] += sum(fl.values()) - raw
         repn["awards floored at zero"] += 1
@@ -535,7 +544,7 @@ if A.subawards:
             k = (pk, su, r.get("subaward_number") or "", d_, round(amt, 2))
             if k in rows_: SUBREP["same-date duplicates counted once"] += amt; continue
             rows_[k] = r; prime_val[pk] = max(prime_val.get(pk, 0.0), pv); prime_name[pk] = r.get("prime_awardee_name") or ""
-    # each subaward's years with a running balance floored at zero
+    # each subaward's years: a pullback comes off the year the money was given, as for the awards
     per_sub = collections.defaultdict(lambda: collections.defaultdict(float)); sub_row = {}
     newest = lambda r: (r.get("subaward_action_date") or "", r.get("subaward_sam_report_last_modified_date") or "", r.get("subaward_sam_report_id") or "")
     for k, r in rows_.items():   # a subaward is classified by its most recent row (prime ids and programs can change mid-award)
@@ -543,8 +552,7 @@ if A.subawards:
         if sk not in sub_row or newest(r) > newest(sub_row[sk]): sub_row[sk] = r
     flo = {}
     for sk, by in per_sub.items():
-        bal = 0.0; out_ = {}
-        for fy in sorted(by): nb = max(bal + by[fy], 0.0); out_[fy] = nb - bal; bal = nb
+        out_ = kept_by_year(by)
         SUBREP["reductions below zero not counted"] += sum(out_.values()) - sum(by.values())
         flo[sk] = out_
     # ceiling: a prime award's subawards never count above the prime's own value
