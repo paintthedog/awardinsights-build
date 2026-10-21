@@ -250,6 +250,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 .tbl.aw th:nth-child(2),.tbl.aw th:nth-child(3),.tbl.aw th:nth-child(4){text-align:left}
 .irow .ia.up{color:var(--good)}.irow .ia.dn{color:var(--warn)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.agab{text-decoration:none;border-bottom:1px dotted var(--faint);cursor:help}
 </style></head><body>
 <div class="wrap">
   <div class="masthead">
@@ -326,6 +327,15 @@ const DIRS=[["MPS","Math & Physical Sciences","var(--c1)"],["ENG","Engineering",
 const DIRCOL=Object.fromEntries(DIRS.map(d=>[d[0],d[2]])), DIRNAME=Object.fromEntries(DIRS.map(d=>[d[0],d[1]]));
 const DIVINFO={AGS:["Atmospheric & Geospace Sciences","GEO"],AST:["Astronomical Sciences","MPS"],BCS:["Behavioral & Cognitive Sciences","SBE"],CBET:["Chemical, Bioengineering, Environmental & Transport","ENG"],CCF:["Computing & Communication Foundations","CSE"],CHE:["Chemistry","MPS"],CMMI:["Civil, Mechanical & Manufacturing Innovation","ENG"],CNS:["Computer & Network Systems","CSE"],CRSP:["Research Security Strategy & Policy","O/D"],DBI:["Biological Infrastructure","BIO"],DEB:["Environmental Biology","BIO"],DGE:["Graduate Education","EDU"],DMR:["Materials Research","MPS"],DMS:["Mathematical Sciences","MPS"],DRL:["Research on Learning","EDU"],DUE:["Undergraduate Education","EDU"],EAR:["Earth Sciences","GEO"],ECCS:["Electrical, Communications & Cyber Systems","ENG"],EEC:["Engineering Education & Centers","ENG"],EES:["Equity for Excellence in STEM","EDU"],EF:["Emerging Frontiers","BIO"],EFMA:["Emerging Frontiers in Research & Innovation","ENG"],IIS:["Information & Intelligent Systems","CSE"],IOS:["Integrative Organismal Systems","BIO"],ITE:["Innovation & Technology Ecosystems","TIP"],MCB:["Molecular & Cellular Biosciences","BIO"],NCSE:["Science & Engineering Statistics","SBE"],OAC:["Advanced Cyberinfrastructure","CSE"],OCE:["Ocean Sciences","GEO"],OIA:["Integrative Activities (EPSCoR, MRI…)","O/D"],OISE:["International Science & Engineering","O/D"],OPP:["Polar Programs","GEO"],OSI:["Strategic Initiatives","MPS"],PHY:["Physics","MPS"],RISE:["Integrative & Collaborative Education & Research","GEO"],SES:["Social & Economic Sciences","SBE"],SMA:["SBE Multidisciplinary Activities","SBE"],SPH:["Other","O/D"],TF:["Technology Frontiers","TIP"],TI:["Translational Impacts","TIP"]};
 const divName=dv=>(DIVINFO[dv]||[dv,"O/D"])[0], divDir=dv=>(DIVINFO[dv]||[dv,"O/D"])[1];
+// directorates and divisions show by acronym with the full name on hover (the site-wide convention); NSF's acronym for CSE is CISE
+const DIRAB=c=>c==="CSE"?"CISE":c==="O/D"?"OD":c;
+const dirL=c=>`<abbr class="agab" title="${esc(DIRNAME[c]||c)}">${esc(DIRAB(c))}</abbr>`;
+const divL=c=>`<abbr class="agab" title="${esc(divName(c))}">${esc(c)}</abbr>`;
+const PDIR={"Math & Physical Sci":"MPS","Geosciences":"GEO","Engineering":"ENG","Computer & Info Sci":"CSE","Bio Sciences":"BIO","Social/Behav/Econ":"SBE","Tech, Innov & Partnerships":"TIP","STEM Education":"EDU","Office of Director":"O/D"};
+const pdirL=n=>PDIR[n]?dirL(PDIR[n]):esc(n||"");
+// NSF program names; a program code NSF's list doesn't name shows as "Unnamed NSF program" (the code stays on hover only)
+const pgName=c=>(PROGINFO[c]&&PROGINFO[c][0])||"Unnamed NSF program";
+const pgL=c=>`<span title="NSF program ${esc(c)}">${esc(pgName(c))}</span>`;
 const NSFURL=id=>`https://www.nsf.gov/awardsearch/show-award?AWD_ID=${encodeURIComponent(id)}`;
 
 /* ---- dollar basis ---- */
@@ -487,7 +497,7 @@ function divCard(d,peers){
   const mx=Math.max(...dirs.map(r=>Math.max(r.v,r.pmf)),1);
   const hdr=`<div class="br hdr"><div></div><div></div><div class="bv">FY22–26</div><div class="bv">Awards</div><div class="bv">Peers funded</div><div class="rk">Rank</div></div>`;
   const rowH=(r,isDir)=>`<div class="br ${isDir?"dirrow":"divrow"}" data-k="${isDir?r.dr:r.c}" ${isDir?`role="button" tabindex="0" aria-expanded="${dvx.has(r.dr)}"`:""}>
-      <div class="bn">${isDir?`<span class="car">${dvx.has(r.dr)?"▾":"▸"}</span><span class="swd" style="background:${r.col}"></span>${esc(r.name)}<small>${r.dr}</small>`:`${esc(r.name)}<small>${r.c}</small>`}</div>
+      <div class="bn">${isDir?`<span class="car">${dvx.has(r.dr)?"▾":"▸"}</span><span class="swd" style="background:${r.col}"></span>${dirL(r.dr)}`:divL(r.c)}</div>
       <div class="bb"><div class="bf" style="width:${(r.v/mx*100).toFixed(1)}%;background:var(--accent);opacity:${isDir?1:.55}"></div>${np&&r.np?`<div class="bm" style="left:${(r.pmf/mx*100).toFixed(1)}%"></div>`:""}</div>
       <div class="bv">${money(r.v)}</div><div class="bv">${r.n||"—"}</div><div class="bv pf">${np?`${r.np} of ${np}`:"—"}</div><div class="rk ${canRank?rkCls(r.rk):''}">${canRank?rkTxt(r.rk):"—"}</div></div>`;
   h+=`<div class="bars">`+hdr+dirs.map(r=>rowH(r,true)+(dvx.has(r.dr)?(r.divs.length?r.divs.map(x=>rowH(x,false)).join(""):`<div class="br divrow"><div class="bn" style="color:var(--faint)">No division-level awards here for this institution or its peers</div></div>`):"")).join("")+`</div>`;
@@ -506,7 +516,7 @@ function awardCard(d){
   let h=`<div class="chd"><h3>Awards</h3>${aw.length?csvBtn("aw","CSV · all "+aw.length):""}</div><div class="csub">Largest NSF awards to ${esc(d.n)}, FY2022–26, by ${BASIS_LABEL()} · each links to the award record on nsf.gov</div>`;
   if(!aw.length){ h+=`<p class="note">No NSF awards on record for FY2022–26.</p>`; $("cardAw").innerHTML=h; return; }
   h+=`<div class="awwrap"><table class="tbl aw"><thead><tr><th>FY</th><th>Title</th><th>Division</th><th>Program</th><th>Intended</th><th>Obligated</th></tr></thead><tbody>`;
-  h+=show.map(a=>{ const pg=(a[4]||[]).map(c=>(PROGINFO[c]||[c])[0]); return `<tr><td>FY${String(a[1]).slice(2)}${a[1]>=PARTIAL?" <small>*</small>":""}</td><td class="ti"><a href="${NSFURL(a[6])}" target="_blank" rel="noopener">${esc(a[7]||a[6])}</a><small>${a[6]}</small></td><td class="dv">${esc(divName(a[3]||"SPH"))}<small>${a[3]||""}</small></td><td class="pg">${esc(pg.slice(0,2).join(" · "))}${pg.length>2?` <small>+${pg.length-2}</small>`:""}</td><td>${money(a[2])}</td><td class="acc">${money(a[5])}</td></tr>`; }).join("");
+  h+=show.map(a=>{ const pg=(a[4]||[]).map(pgName); return `<tr><td>FY${String(a[1]).slice(2)}${a[1]>=PARTIAL?" <small>*</small>":""}</td><td class="ti"><a href="${NSFURL(a[6])}" target="_blank" rel="noopener">${esc(a[7]||a[6])}</a><small>${a[6]}</small></td><td class="dv">${divL(a[3]||"SPH")}</td><td class="pg">${esc(pg.slice(0,2).join(" · "))}${pg.length>2?` <small>+${pg.length-2}</small>`:""}</td><td>${money(a[2])}</td><td class="acc">${money(a[5])}</td></tr>`; }).join("");
   h+=`</tbody></table></div>`;
   if(aw.length>show.length) h+=`<button class="more" id="awMore">Show ${Math.min(25,aw.length-show.length)} more of ${aw.length}</button>`;
   CSVS.aw=()=>({name:`${d.n} - NSF awards FY2022-26`,rows:[["Award ID","Fiscal year","Title","Directorate","Division","Programs","Full intended value","Obligated to date","URL"],...aw.map(a=>[a[6],a[1],a[7],divDir(a[3]||"SPH"),divName(a[3]||"SPH"),(a[4]||[]).map(c=>(PROGINFO[c]||[c])[0]).join("; "),a[2],a[5],NSFURL(a[6])])]});
@@ -519,7 +529,7 @@ function progCard(d,peers){
   const roll={}; funded.forEach(p=>{ const pg=agOf(p.u).pg; for(const c in pg){ const r=roll[c]||(roll[c]={d:0,np:0}); r.d+=pg[c].d; r.np++; } });
   const gap=Object.entries(roll).filter(([c])=>!g.pg[c]).map(([c,r])=>({c,...r})).sort((a,b)=>b.np-a.np||b.d-a.d).slice(0,12);
   const mine=Object.entries(g.pg).map(([c,p])=>({c,d:p.d,n:p.n,np:(roll[c]||{np:0}).np})).sort((a,b)=>b.d-a.d).slice(0,12);
-  const prow=(p,i,right)=>`<div class="prow"><div class="rk">${i+1}</div><div class="pn">${esc((PROGINFO[p.c]||[p.c])[0])}</div><div class="pd">${esc((PROGINFO[p.c]||["",""])[1]||"")}</div><div class="pv">${right}</div></div>`;
+  const prow=(p,i,right)=>`<div class="prow"><div class="rk">${i+1}</div><div class="pn">${pgL(p.c)}</div><div class="pd">${pdirL((PROGINFO[p.c]||["",""])[1])}</div><div class="pv">${right}</div></div>`;
   let h=`<h3>Programs</h3><div class="csub">NSF programs, FY2022–26 · ${funded.length} of ${peers.length} peers hold NSF awards · a program a peer holds is a place to look, not a requirement</div><div class="pgrid">`;
   h+=`<div class="pg"><h4>Programs held by peers, not yet by ${esc(d.n.length>30?"this institution":d.n)}</h4><div class="pgs">Ranked by how many peers hold the program</div>`;
   h+=gap.length?gap.map((p,i)=>prow(p,i,`${p.np}<small>of ${funded.length} peers</small>`)).join(""):`<p class="note">${peers.length?"Every program held by a peer is also held here.":"Pick peer factors to see this list."}</p>`;
@@ -613,13 +623,13 @@ function trendDivCard(set,label){
   const th=(key,lab,cls="")=>`<th class="${cls}" data-k="${key}" ${dvstate.sort===key?`aria-sort="${dvstate.dir>0?"ascending":"descending"}"`:""}>${lab}${dvstate.sort===key?(dvstate.dir>0?" ↑":" ↓"):""}</th>`;
   const chg=c=>c==null?'<td class="chg">—</td>':`<td class="chg ${c>=.05?"up":c<=-.05?"dn":""}">${c>=0?"+":""}${Math.round(c*100)}%</td>`;
   let tb=`<table class="dvtable"><thead><tr>${th("name","Division","l")}${th("dir","Dir.","l")}${YEARS.map((y,i)=>th("y"+i,"FY"+String(y).slice(2)+(y>=PARTIAL?" *":""),y>=PARTIAL?"acc":"")).join("")}${th("tot","FY22–26")}${th("chg","FY22→25")}</tr></thead><tbody>`;
-  tb+=rows.map(r=>`<tr><td class="l">${esc(r.name)}<small>${r.dv}</small></td><td class="dir"><span class="sw" style="background:${DIRCOL[r.dir]}"></span>${r.dir}</td>${r.ys.map((v,i)=>`<td class="${YEARS[i]>=PARTIAL?"acc":""}">${money(v)}</td>`).join("")}<td>${money(r.tot)}</td>${chg(r.chg)}</tr>`).join("");
+  tb+=rows.map(r=>`<tr><td class="l">${divL(r.dv)}</td><td class="dir"><span class="sw" style="background:${DIRCOL[r.dir]}"></span>${dirL(r.dir)}</td>${r.ys.map((v,i)=>`<td class="${YEARS[i]>=PARTIAL?"acc":""}">${money(v)}</td>`).join("")}<td>${money(r.tot)}</td>${chg(r.chg)}</tr>`).join("");
   const colT=YEARS.map((y,i)=>rows.reduce((s,r)=>s+r.ys[i],0)), gT=colT.reduce((a,b)=>a+b,0);
   tb+=`<tr class="tot"><td class="l">All shown divisions</td><td></td>${colT.map((v,i)=>`<td class="${YEARS[i]>=PARTIAL?"acc":""}">${money(v)}</td>`).join("")}<td>${money(gT)}</td>${chg(colT[0]>0?(colT[3]-colT[0])/colT[0]:null)}</tr></tbody></table>`;
   CSVS.tdiv=()=>({name:`NSF by division - ${label}`,rows:[["Division","Code","Directorate",...YEARS.map(y=>"FY"+y),"FY2022-26","FY22 to FY25 change"],...rows.map(r=>[r.name,r.dv,r.dir,...r.ys,r.tot,r.chg==null?"":Math.round(r.chg*1000)/1000])]});
   $("cardTDiv").innerHTML=`<div class="chd"><h3>NSF awards by year and division</h3>${csvBtn("tdiv")}</div><div class="csub">${esc(label)} · ${BASIS_LABEL()} of awards made each fiscal year, stacked by directorate · FY2026 is a partial year (data through Sept 19, 2026) · click a directorate to hide it, a column header to sort</div>
     <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="NSF dollars per fiscal year stacked by directorate">${s}</svg>
-    <div class="dvleg">${DIRS.filter(d=>byDir[d[0]]).map(d=>`<button data-d="${d[0]}" aria-pressed="${dvstate.dirs.has(d[0])}"><span class="sw" style="background:${d[2]}"></span>${d[0]} · ${d[1]}</button>`).join("")}</div>
+    <div class="dvleg">${DIRS.filter(d=>byDir[d[0]]).map(d=>`<button data-d="${d[0]}" aria-pressed="${dvstate.dirs.has(d[0])}"><span class="sw" style="background:${d[2]}"></span>${dirL(d[0])}</button>`).join("")}</div>
     <div class="dvtablewrap">${tb}</div>`;
   $("cardTDiv").querySelectorAll(".dvleg button").forEach(b=>b.addEventListener("click",()=>{ const kk=b.dataset.d; dvstate.dirs.has(kk)?dvstate.dirs.delete(kk):dvstate.dirs.add(kk); renderTrends(); }));
   $("cardTDiv").querySelectorAll("th[data-k]").forEach(x=>x.addEventListener("click",()=>{ const kk=x.dataset.k; if(dvstate.sort===kk)dvstate.dir*=-1; else{dvstate.sort=kk;dvstate.dir=(kk==="name"||kk==="dir")?1:-1;} renderTrends(); }));
@@ -644,7 +654,7 @@ function trendListCard(set){
   } else {
     const roll={}; funded.forEach(p=>{ const pg=agOf(p.u).pg; for(const c in pg){ const r=roll[c]||(roll[c]={d:0,np:0}); r.d+=pg[c].d; r.np++; } });
     const arr=Object.entries(roll).map(([c,r])=>({c,...r})).sort((a,b)=>b.np-a.np||b.d-a.d).slice(0,40);
-    h+=`<div class="pg" style="margin-top:6px">`+(arr.length?arr.map((p,i)=>`<div class="prow"><div class="rk">${i+1}</div><div class="pn">${esc((PROGINFO[p.c]||[p.c])[0])}</div><div class="pd">${esc((PROGINFO[p.c]||["",""])[1]||"")}</div><div class="pv">${p.np}<small>institutions · ${money(p.d)}</small></div></div>`).join(""):`<p class="note">No funded institutions in this set.</p>`)+`</div>`;
+    h+=`<div class="pg" style="margin-top:6px">`+(arr.length?arr.map((p,i)=>`<div class="prow"><div class="rk">${i+1}</div><div class="pn">${pgL(p.c)}</div><div class="pd">${pdirL((PROGINFO[p.c]||["",""])[1])}</div><div class="pv">${p.np}<small>institutions · ${money(p.d)}</small></div></div>`).join(""):`<p class="note">No funded institutions in this set.</p>`)+`</div>`;
   }
   $("cardTList").innerHTML=h;
   $("cardTList").querySelectorAll("[data-l]").forEach(b=>b.addEventListener("click",()=>{ xstate.list=b.dataset.l; renderTrends(); }));

@@ -145,6 +145,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 .foot{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);color:var(--faint);font-size:11.5px;line-height:1.65;max-width:82ch}
 .foot b{color:var(--muted)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.agab{text-decoration:none;border-bottom:1px dotted var(--faint);cursor:help}
 </style></head><body>
 <div class="wrap">
   <div class="masthead">
@@ -234,7 +235,10 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 const PROF=__PROF__;
 const $=id=>document.getElementById(id);
 const YEARS=["2020","2021","2022","2023","2024"];
-const AGN=[["NSF","NSF","var(--c1)"],["HHS","NIH / HHS","var(--c2)"],["DOD","DOD","var(--c3)"],["DOE","DOE","var(--c4)"],["NASA","NASA","var(--c5)"],["USDA","USDA","var(--c6)"],["Other agencies","Other federal","var(--c7)"]];
+const AGN=[["NSF","NSF","var(--c1)"],["HHS","HHS","var(--c2)"],["DOD","DOD","var(--c3)"],["DOE","DOE","var(--c4)"],["NASA","NASA","var(--c5)"],["USDA","USDA","var(--c6)"],["Other agencies","Other federal","var(--c7)"]];
+// agencies show by acronym with the full name on hover (the site-wide convention)
+const AGFULLP={NSF:"National Science Foundation",HHS:"Department of Health and Human Services (mostly NIH)",DOD:"Department of Defense",DOE:"Department of Energy",NASA:"National Aeronautics and Space Administration",USDA:"Department of Agriculture"};
+const labL=l=>AGFULLP[l]?`<abbr class="agab" title="${AGFULLP[l]}">${l}</abbr>`:l;
 const FCOL=["var(--c1)","var(--c2)","var(--c3)","var(--c4)","var(--c5)","var(--c6)","var(--c7)"];
 const SRC=[["__fed","Federal","var(--c1)"],["Institution funds","Institutional","var(--c3)"],["Business","Business / industry","var(--c2)"],["State and local government","State & local","var(--c4)"],["Nonprofit organziations","Nonprofit","var(--c5)"],["All other sources","Other","var(--other)"]];
 function agVal(row,k){ row=row||{}; if(k==="__fed")return AGN.reduce((s,a)=>s+(row[a[0]]||0),0); return row[k]||0; }
@@ -289,7 +293,7 @@ function stackChart(svg, series, valfn, leghost, isField, d, pcts){
     const ptxt=pr==null?'—':(pr>=0?'+'+pr+'%':pr+'%');
     const pv=pcts?pcts[se.key]:undefined;
     const pcell=pv==null?'<span class="pct"></span>':`<span class="pct ${pv.r<=Math.ceil(pv.n/4)?'hi':pv.r>pv.n-Math.floor(pv.n/4)?'lo':''}" title="Rank among this institution and its ${pv.n-1} peers, by FY2024 dollars">${pv.r} of ${pv.n}</span>`;
-    return `<div class="legrow"><span class="sw" style="background:${se.color}"></span><span class="nm">${se.label}</span><span class="amt">${money(last)}</span><span class="chg ${cls}">${ptxt}</span>${pcell}</div>`;
+    return `<div class="legrow"><span class="sw" style="background:${se.color}"></span><span class="nm">${labL(se.label)}</span><span class="amt">${money(last)}</span><span class="chg ${cls}">${ptxt}</span>${pcell}</div>`;
   }).join("");
 }
 function niceStep(max){ const raw=max/4; const p=Math.pow(10,Math.floor(Math.log10(raw))); const m=raw/p; const n=m<1.5?1:m<3?2:m<7?5:10; return n*p; }
@@ -423,7 +427,7 @@ const tstate={type:'ag',key:'HHS',dir:'grow',sort:'pct'};
 (function(){
   const sel=$("dimSel");
   const og1=document.createElement("optgroup"); og1.label="Federal agency";
-  AGN.forEach(a=>{ if(a[0]==='Other agencies')return; const o=document.createElement("option"); o.value='ag|'+a[0]; o.textContent=a[1]; og1.appendChild(o); });
+  AGN.forEach(a=>{ if(a[0]==='Other agencies')return; const o=document.createElement("option"); o.value='ag|'+a[0]; o.textContent=AGFULLP[a[1]]?a[1]+' · '+AGFULLP[a[1]]:a[1]; og1.appendChild(o); });
   const og2=document.createElement("optgroup"); og2.label="Field of science";
   FIELDS_L.forEach(f=>{ const o=document.createElement("option"); o.value='fld|'+f; o.textContent=f; og2.appendChild(o); });
   const og3=document.createElement("optgroup"); og3.label="Funding source";

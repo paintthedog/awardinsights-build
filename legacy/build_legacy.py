@@ -17,6 +17,9 @@ import argparse, json, os, pathlib, sys, filecmp
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 T = ROOT / "legacy" / "templates"
 N = ROOT / "inputs" / "nsf"
+# pages still byte-identical to the old live site; NSF and Portfolio were changed on purpose on 2026-10-21
+# (acronyms with hover, no program numbers), so the live comparison no longer applies to them
+SAME_AS_LIVE = ["designations.html", "index.html"]
 HOME_TAG = '<span class="tag">Prototype</span>'
 # the live pages differ slightly here (NSF's link was edited by hand later); kept as is so builds match live
 HOME_LINK = '<a class="tag" href="index.html" style="text-decoration:none">Award Insights</a>'
@@ -52,6 +55,6 @@ if __name__ == "__main__":
     a = ap.parse_args(); out = pathlib.Path(a.out)
     names = build(out)
     if a.compare:
-        bad = [p for p in names if not filecmp.cmp(out / p, pathlib.Path(a.compare) / p, shallow=False)]
+        bad = [p for p in SAME_AS_LIVE if not filecmp.cmp(out / p, pathlib.Path(a.compare) / p, shallow=False)]
         if bad: sys.exit(f"differs from live: {bad}")
-        print("  identical to the live pages")
+        print("  identical to the live pages:", ", ".join(SAME_AS_LIVE))
