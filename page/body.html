@@ -451,13 +451,8 @@ function agCard(d,peers){
       <div class="bn">${top?`<span class="car">${r.flat?"":agx.has(r.a)?"▾":"▸"}</span><span class="swd" style="background:${r.col}"></span>${agL(r.a)}`:subL(r.name)}</div>
       <div class="bb"><div class="bf" style="width:${(w-wc).toFixed(1)}%;background:var(--accent);opacity:${top?1:.55}"></div>${wc?`<div class="bf c" style="left:${(w-wc).toFixed(1)}%;width:${wc.toFixed(1)}%;background:var(--accent);border-radius:0 3px 3px 0"></div>`:""}${np&&r.np?`<div class="bm" style="left:${(r.pmf/mx*100).toFixed(1)}%"></div>`:""}${top&&r.em?`<span class="emtag" style="left:calc(${Math.min(w,62).toFixed(1)}% + 6px)" title="Congressionally directed spending, not counted in totals or ranks">+${money(r.em)} earmarked</span>`:""}</div>
       <div class="bv">${money(r.v)}</div><div class="bv">${r.n?r.n.toLocaleString():"—"}</div><div class="bv pf">${np?`${pctS(r.np/np)} <small>(${r.np})</small>`:"—"}</div><div class="rk ${canRank?rkCls(r.rk):''}">${canRank?rkTxt(r.rk):"—"}</div></div>`; };
-  // Emphasis (docs/SPEC.md): an agency gets its own row if it is at least 1% of this institution's dollars, or at least a fifth
-  // of the peers get 1% or more of theirs from it; the rest fold into "Smaller agencies". Inside an agency, sub-agencies with
-  // at least 5% of its dollars here (always the top three) get rows; the rest fold into "Other <agency>".
-  const T=rows.reduce((a,r)=>a+Math.max(0,r.v),0);
-  const ptot=peers.map(p=>{ const h=agOf(p.u); return AGS.reduce((a,A)=>a+Math.max(0,selV(h.ag[A.i]).d),0); });
-  const peerBig=a=>np>0&&peers.filter((p,j)=>ptot[j]>0&&selV(agOf(p.u).ag[a]).d>=.01*ptot[j]).length>=Math.ceil(np*.2);
-  const main=[], small=[]; rows.forEach(r=>(((T>0&&r.v>=.01*T)||peerBig(r.a))?main:small).push(r));
+  // Inside an agency, sub-agencies with at least 5% of its dollars here (always the top three) get rows;
+  // the rest fold into "Other <agency>" (docs/SPEC.md).
   const grpRow=(k,label,list,top)=>{ const v=list.reduce((a,r)=>a+r.v,0), n=list.reduce((a,r)=>a+(r.n||0),0), w=Math.min(100,Math.max(0,v)/mx*100), open=top?agx.has(-1):agox.has(k);
     return `<div class="br ${top?"dirrow":"divrow"} grp" data-g="${top?"a":"o"+k}" role="button" tabindex="0" aria-expanded="${open}"><div class="bn"><span class="car">${open?"▾":"▸"}</span>${top?'<span class="swd" style="background:var(--other)"></span>':""}${label}</div>
       <div class="bb"><div class="bf" style="width:${w.toFixed(1)}%;background:var(--other)"></div></div><div class="bv">${money(v)}</div><div class="bv">${n?n.toLocaleString():"—"}</div><div class="bv pf">—</div><div class="rk">—</div></div>`; };
@@ -466,7 +461,7 @@ function agCard(d,peers){
     return keep.map(x=>rowH(x,false)).join("")+grpRow(r.a,`Other ${esc(r.code)} <small>(${rest.length})</small>`,rest,false)+(agox.has(r.a)?`<div class="smallgrp">${rest.map(x=>rowH(x,false)).join("")}</div>`:""); };
   const block=r=>rowH(r,true)+(agx.has(r.a)?kidsH(r)+`<div class="br divrow"><div class="bn" style="grid-column:1/-1"><button class="pmore" data-awag="${r.a}">See ${esc(r.code)} awards to ${esc(shortN(d,30))}${np?" and its peers":""} →</button> <span style="color:var(--faint);font-size:11px">or click any row above</span></div></div>`:"");
   h+=`<div class="bleg top">${typ==="all"?'<span><i style="width:10px;height:10px;border-radius:2px;background:var(--accent);opacity:.45"></i>contracts</span>':""}${np?"<span><i></i>peer median</span>":""}<button class="pmore" id="agXBtn">${agx.size?"Collapse all":"Expand all"}</button></div>`;
-  h+=`<div class="bars">`+hdr+main.map(block).join("")+(small.length>=2?grpRow(-1,`Smaller agencies <small>(${small.length})</small>`,small,true)+(agx.has(-1)?`<div class="smallgrp">${small.map(block).join("")}</div>`:""):small.map(block).join(""))+`</div>`;
+  h+=`<div class="bars">`+hdr+rows.map(block).join("")+`</div>`;
   CSVS.ag=()=>({name:`${d.n} - federal by agency ${yrsLabel()}`,rows:[["Agency","Sub-agency",d.n+" ("+TYPLAB()+")","of which contracts","Awards","Peers funded","Peers","Median among funded peers","Rank","Earmarks (not counted)"],...rows.flatMap(r=>[[r.name,"(all)",r.v,r.c,r.n,r.np,np,r.pmf,canRank?rkTxt(r.rk):"",r.em],...r.kids.map(x=>[r.name,x.name,x.v,x.c,x.n,x.np,np,x.pmf,canRank?rkTxt(x.rk):""])])]});
   $("cardAg").innerHTML=h;
   $("cardAg").querySelectorAll(".grp").forEach(el=>{ const go=()=>{ const g=el.dataset.g; if(g==="a"){ agx.has(-1)?agx.delete(-1):agx.add(-1); } else { const k=+g.slice(1); agox.has(k)?agox.delete(k):agox.add(k); } agCard(curD,peers); };
