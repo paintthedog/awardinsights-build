@@ -9,6 +9,7 @@ A free, public, static site (GitHub Pages, custom domain awardinsights.org) show
 | Tool | Path | Source | Data |
 |---|---|---|---|
 | Landing page | `/` | `site/landing.html` | `/shared/inst.json` |
+| About | `/about/` | `site/about.html` | — |
 | Federal Award Insights | `/federal/` | `page/head.html`, `page/body.html`, `scripts/build_fai.py` | USAspending trimmed files (`inputs/trimmed/`, `inputs/subawards/`, not in git), `inputs/ai-1-core/program_scope.json` |
 | NSF Award Insights | `/nsf/` | `legacy/templates/tpl.html` | `inputs/nsf/{universe3,awards4,proginfo,coverage}.json` |
 | Research Activity Designations | `/designations/` | `legacy/templates/dash_tpl.html` | `inputs/nsf/{rad5,climbers3}.json` |
@@ -53,6 +54,7 @@ Owner preferences: no personal name on the public site; footer reads "© 2026 Aw
 - Deobligations do not track the 2025 grant terminations; do not use them as a termination signal.
 
 ## Explanations (decided 2026-10-21)
+Tool titles stand alone: the explainer line under each title is removed (build_shell.py); "Sources (i)" sits under the title. `/about/` (`site/about.html`) covers the tools and their sources, how Federal counts money, peers, and terms of use; every page ends with an "About Award Insights" link. Keep the About page in step with this spec when a counting rule changes.
 Keep explainer text out of the main view. Card subtitles (`.csub`), notes marked `.expl` and At a glance's "How these are measured" sit in a popover behind a small "i" after the card title (Federal: `infoize` in body.html; NSF and Portfolio: site.js). Each tool's source line is a "Sources (i)" disclosure under the title. What stays visible is what's needed to read the data: legends, short labels like "still being reported", and data notes such as earmarks not counted.
 
 ## Wording rules

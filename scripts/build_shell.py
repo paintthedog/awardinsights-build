@@ -9,7 +9,7 @@ Runs last, on the finished pages in build/site; the tool templates themselves ar
 - federal/index.html gets the site bar in place; index.html is replaced by the new landing page (site/landing.html)
 - /shared/: site.js, site.css, redirect.js, and inst.json (every institution in any tool, with which tools cover it)
 """
-import argparse, hashlib, json, pathlib, shutil, sys
+import argparse, hashlib, json, pathlib, re, shutil, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "site"
@@ -98,8 +98,17 @@ def inject(html, tool, name):
     for h in HOME_LINKS: html = html.replace(h, "")
     i = html.index('<div class="masthead">'); j = html.index("</div>", i) + len("</div>")
     if "<div" in html[i + 5:j]: sys.exit(f"{name}: masthead has a nested div")
-    html = html[:j] + f'\n  <details class="ai-src"><summary>Sources</summary><div>{SOURCES[tool]}</div></details>' + html[j:]
+    # the title stands alone: its explainer line goes (the About page and "Sources" carry the detail)
+    mast = re.sub(r'\s*<span class="sub">.*?</span>', "", html[i:j], count=1, flags=re.S)
+    html = html[:i] + mast + f'\n  <details class="ai-src"><summary>Sources</summary><div>{SOURCES[tool]}</div></details>' + html[j:]
+    html = about_link(html)
     return html.replace('<div class="masthead">', sitebar(tool) + '\n  <div class="masthead">', 1).replace("</head>", head(), 1)
+
+FOOT = ('<footer class="ai-foot"><a href="/about/">About Award Insights</a><span>Sources, methods and terms of use</span></footer>\n')
+def about_link(html):
+    k = html.rfind("</body>")   # the last one: Designations has another inside its print template
+    if k < 0: sys.exit("no </body>")
+    return html[:k] + FOOT + html[k:]
 
 def stub(tool):
     full = dict((t, f) for t, _, f in TOOLS)[tool]
@@ -122,7 +131,11 @@ def build(site):
     f.write_text(inject(f.read_text(encoding="utf-8"), "federal", "federal/index.html"), encoding="utf-8")
     land = (SRC / "landing.html").read_text(encoding="utf-8").replace("__SITEBAR__", sitebar("home"))
     land = land.replace('<meta charset="utf-8">', f'<meta charset="utf-8">\n<meta http-equiv="Content-Security-Policy" content="{CSP}">\n<!-- {COPY} -->', 1)
-    (site / "index.html").write_text(land.replace("</head>", head(), 1), encoding="utf-8")
+    (site / "index.html").write_text(about_link(land.replace("</head>", head(), 1)), encoding="utf-8")
+    ab = (SRC / "about.html").read_text(encoding="utf-8").replace("__SITEBAR__", sitebar("about"))
+    ab = ab.replace('<meta charset="utf-8">', f'<meta charset="utf-8">\n<meta http-equiv="Content-Security-Policy" content="{CSP}">\n<!-- {COPY} -->', 1)
+    (site / "about").mkdir(exist_ok=True)
+    (site / "about" / "index.html").write_text(ab.replace("</head>", head(), 1), encoding="utf-8")
     print("  site bar on 5 pages; redirects:", ", ".join(OLD.values()))
 
 if __name__ == "__main__":

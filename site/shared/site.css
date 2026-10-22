@@ -17,6 +17,11 @@
 :root[data-theme="dark"] .sitebar .i-sun{display:block}:root[data-theme="dark"] .sitebar .i-moon{display:none}
 @media(max-width:620px){.sitebar .theme{order:1;margin-left:auto}.sitebar nav{order:2;flex-basis:100%;margin-left:-11px}}
 
+/* bottom of every page: link to the About page */
+.ai-foot{max-width:1120px;margin:28px auto 36px;padding:14px 20px 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;font:400 13px/1.5 "Readex Pro",system-ui,sans-serif;color:var(--faint)}
+.ai-foot a{color:var(--accent-ink,var(--accent));text-decoration:none;font-weight:500}
+.ai-foot a:hover,.ai-foot a:focus-visible{text-decoration:underline}
+
 /* where each tool's numbers come from */
 .ai-src{position:relative;margin:-10px 0 14px;font:400 12.5px/1.5 "Readex Pro",system-ui,sans-serif;color:var(--faint)}
 .ai-src>summary{display:inline-flex;align-items:center;gap:6px;cursor:pointer;list-style:none;color:var(--muted)}
