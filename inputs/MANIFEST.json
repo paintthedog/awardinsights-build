@@ -12,7 +12,7 @@
    "lines": 711400
   },
   "reference": {
-   "files": 7,
+   "files": 8,
    "lines": 0
   }
  },
@@ -2723,8 +2723,8 @@
   },
   "reference": {
    "ai-1-core/crosswalk/crosswalk_uei_v2.json": {
-    "bytes": 698508,
-    "sha256": "fa3c564f73c406a23ba68e2b4a836dc4a192e1cb54b5ec32b96b2918a0ad0599"
+    "bytes": 698520,
+    "sha256": "072c713fae8c50e060555a059a13f3a2bb36949452075ddc18afd366ae59a465"
    },
    "ai-1-core/crosswalk/entities_v2.json": {
     "bytes": 110829,
@@ -2749,6 +2749,10 @@
    "nsf/universe3.json": {
     "bytes": 1972018,
     "sha256": "53a49565ee569b07331ac9167790d0255c088ce886f8a7bc22c449f94b679a82"
+   },
+   "nsf-raw/nsf_raw_rows.json": {
+    "bytes": 18947777,
+    "sha256": "d9d2098f27010633024af17c976c48f78d056b8c0c7da52b7b4a61c5462ffd8e"
    }
   }
  }

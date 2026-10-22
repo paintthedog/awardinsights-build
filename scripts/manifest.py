@@ -14,7 +14,7 @@ IN = ROOT / "inputs"; OUT = IN / "MANIFEST.json"
 GROUPS = {"trimmed": "trimmed/*.csv.gz", "subawards": "subawards/*.csv.gz",
           "reference": ["ai-1-core/crosswalk/crosswalk_uei_v2.json", "ai-1-core/crosswalk/entities_v2.json",
                         "ai-1-core/crosswalk/ffrdc_exclusions.json", "ai-1-core/crosswalk/known_ueis.txt",
-                        "ai-1-core/program_scope.json", "ai-1-core/earmark_awards.json", "nsf/universe3.json"]}
+                        "ai-1-core/program_scope.json", "ai-1-core/earmark_awards.json", "nsf/universe3.json", "nsf-raw/nsf_raw_rows.json"]}
 
 def describe(p):
     h = hashlib.sha256(p.read_bytes()).hexdigest()

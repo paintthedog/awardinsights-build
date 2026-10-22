@@ -32,6 +32,7 @@ if [[ -n "$SUBS" ]]; then echo "→ $(ls inputs/subawards/*.csv.gz | wc -l | tr 
 
 rm -rf build && mkdir -p build/site
 python3 -I scripts/manifest.py --check || echo "   (warning: inputs differ from inputs/MANIFEST.json; after a refresh, run scripts/manifest.py and commit it)"
+python3 -I scripts/build_nsf_awards.py --check   # NSF Award Insights must follow the same crosswalk as Federal
 echo "→ building the landing page, NSF, Designations and Portfolio"
 python3 -I legacy/build_legacy.py --out build/site ${COMPARE_LIVE:+--compare "$COMPARE_LIVE"}
 
