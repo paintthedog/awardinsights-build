@@ -15,7 +15,8 @@ ff = json.load(open(f"{D}/ai-1-core/crosswalk/ffrdc_exclusions.json"))
 scope = json.load(open(f"{D}/ai-1-core/program_scope.json"))["programs"]
 EARMARK_CFDA = {"93.493", "11.617", "11.469", "11.071", "14.251", "17.289", "16.753", "43.014", "66.202",
                 "10.730", "10.723", "10.741", "20.534", "12.599"}
-EARMARK_TEXT = re.compile(r"CONGRESSIONALLY (DIRECTED|IDENTIFIED|RECOMMENDED|MANDATED)|COMMUNITY PROJECT FUNDING|DIRECTED SPENDING", re.I)
+EARMARK_TEXT = re.compile(r"CONGRESSIONALLY (DIRECTED|IDENTIFIED|RECOMMENDED|MANDATED|DELEGATED)|COMMUNITY PROJECT (FUNDING|GRANT)|COMMUNITY SPECIAL PROJECT|DIRECTED SPENDING|\bEARMARK", re.I)
+EARMARK_KEYS = {x["key"] for x in json.load(open(f"{D}/ai-1-core/earmark_awards.json"))["awards"]}
 def ent(u):
     c = cw.get((u or "").strip())
     return c["id"] if c and c["type"] not in ("hospital", "exclude") else None
@@ -32,7 +33,7 @@ for f in glob.glob(f"{D}/trimmed/*.csv.gz"):
         if c and (r["award_id_piid"] in ff["piids"] or r.get("parent_award_id_piid") in ff["piids"]): continue
         k = r["contract_award_unique_key"] if c else r["assistance_award_unique_key"]
         inscope.add(k)
-        if not c and (r["cfda_number"] in EARMARK_CFDA or (r["award_id_fain"] or "")[:5] in ("P116Z", "S215K")
+        if not c and (r["cfda_number"] in EARMARK_CFDA or (r["award_id_fain"] or "")[:5] in ("P116Z", "S215K") or (r["award_id_fain"] or "").startswith("DECR") or k in EARMARK_KEYS
                       or EARMARK_TEXT.search(r.get("prime_award_base_transaction_description") or "")): earmark.add(k)
 
 # every subaward row once per (prime, subawardee, number, date, amount); per-subaward years; per-prime totals

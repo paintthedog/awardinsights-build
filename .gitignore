@@ -8,3 +8,4 @@ node_modules/
 inputs/subawards/*
 !inputs/subawards/.keep
 __pycache__/
+earmark_candidates.json

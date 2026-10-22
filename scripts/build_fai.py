@@ -52,7 +52,7 @@ AGENCIES = {  # treasury code -> (short, name)
 EARMARK_CFDA = {"93.493", "11.617", "11.469", "11.071", "14.251", "17.289", "16.753", "43.014", "66.202",
                 "10.730", "10.723", "10.741", "20.534", "12.599"}
 EARMARK_FAIN = {"P116Z": "FIPSE Community Project Funding", "S215K": "ED elementary/secondary Community Project Funding"}
-EARMARK_TEXT = re.compile(r"CONGRESSIONALLY (DIRECTED|IDENTIFIED|RECOMMENDED|MANDATED)|COMMUNITY PROJECT FUNDING|DIRECTED SPENDING", re.I)
+EARMARK_TEXT = re.compile(r"CONGRESSIONALLY (DIRECTED|IDENTIFIED|RECOMMENDED|MANDATED|DELEGATED)|COMMUNITY PROJECT (FUNDING|GRANT)|COMMUNITY SPECIAL PROJECT|DIRECTED SPENDING|\bEARMARK", re.I)
 # Formula / mandatory money coded as project grants: dropped (not winnable through a proposal).
 FORMULA_FAIN = {"P031B": "Strengthening HBCUs (Title III Part B)", "P031E": "HBCU FUTURE Act mandatory",
                 "P031K": "Strengthening Historically Black Graduate Institutions", "P031D": "Tribal Colleges Part F mandatory",
@@ -177,6 +177,8 @@ A = ap.parse_args()
 cw = json.load(open(f"{A.core}/crosswalk/crosswalk_uei_v2.json"))
 ents_v2 = json.load(open(f"{A.core}/crosswalk/entities_v2.json"))
 ff = json.load(open(f"{A.core}/crosswalk/ffrdc_exclusions.json"))
+# awards confirmed as earmarks against the enacted CPF/CDS tables (matched institution, amount and project wording; reviewed)
+EARMARK_KEYS = {x["key"] for x in json.load(open(f"{A.core}/earmark_awards.json"))["awards"]}
 U = json.load(open(f"{A.nsf}/universe3.json"))
 inU = {d["u"] for d in U}
 hd = {r["UNITID"]: r for r in csv.DictReader(open(f"{A.core}/ipeds/hd2025.csv", encoding="utf-8-sig"))}
@@ -264,6 +266,8 @@ if A.assistance:
             if fwhy: rep[f"assist formula dropped: {fwhy}"] += amt; continue
             desc0 = r.get("prime_award_base_transaction_description") or ""
             earmark = cfda in EARMARK_CFDA or fp in EARMARK_FAIN or bool(EARMARK_TEXT.search(desc0))
+            # DOE numbers its congressionally directed (community project) awards DE-CR...
+            if not earmark and ((r.get("award_id_fain") or "").startswith("DECR") or (r.get("assistance_award_unique_key") or "") in EARMARK_KEYS): earmark = True
             uei = (r.get("recipient_uei") or "").strip()
             ent, kind = entity_for(uei)
             if not ent:

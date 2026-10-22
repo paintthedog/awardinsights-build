@@ -1,0 +1,146 @@
+{
+ "_c": "\u00a9 2026 Award Insights",
+ "note": "Awards confirmed as congressionally directed by matching the enacted CPF/CDS tables (institution, amount within 5%, and the award's title repeating the project's wording); reviewed 2026-10-22. scripts/earmark_lists.py regenerates candidates at each refresh.",
+ "awards": [
+  {
+   "key": "ASST_NON_DECR0000033_089",
+   "institution": "100858",
+   "amount": 10000000,
+   "fy_list": 2023,
+   "subcommittee": "ew",
+   "cfda": "81.008",
+   "award": "MODEL REGIONAL OPERATIONS CENTER TO ENHANCE THE CYBER SECURITY OF THE U.S. ELECTRICITY SECTOR\nTHIS P",
+   "listed_as": "f Energy Energy Projects Model Regional Operations Center to Enhance the Cyber Security of the U.S. Electricity Sector; Auburn University \u2014 "
+  },
+  {
+   "key": "ASST_NON_AP24VSD&B000G003_012",
+   "institution": "217882",
+   "amount": 7000000,
+   "fy_list": 2024,
+   "subcommittee": "ag",
+   "cfda": "10.025",
+   "award": "THE FUNDING WILL BE USED TO REMODEL AND ENLARGE THE CLEMSON VETERINARY DIAGNOSTIC CENTER (CVDC) ENHA",
+   "listed_as": "nimal and Plant Health Inspection Service Salaries and Expenses Veterinary Diagnostic Center Clemson University Livestock Poultry Health SC "
+  },
+  {
+   "key": "ASST_NON_DEEE0011439_089",
+   "institution": "217882",
+   "amount": 2900000,
+   "fy_list": 2024,
+   "subcommittee": "ew",
+   "cfda": "81.087",
+   "award": "HYDROGEN HAS BEEN IDENTIFIED AS A KEY COMPONENT OF A COMPREHENSIVE PORTFOLIO OF ENERGY TECHNOLOGIES ",
+   "listed_as": "ersity 2,000,000 Graham S Department of Energy Energy Projects Clemson University Next-Generation Hydrogen Technologies; Clemson University "
+  },
+  {
+   "key": "ASST_NON_AP23WSER0000G002_012",
+   "institution": "161253",
+   "amount": 2500000,
+   "fy_list": 2023,
+   "subcommittee": "ag",
+   "cfda": "10.028",
+   "award": "THE PURPOSE OF THIS AWARD IS TO EXPAND TICK AND TICK-BORNE PATHOGEN SURVEILLANCE IN NORTHERN NEW ENG",
+   "listed_as": "partment of Wildlife and Fisheries LA 500,000 Cassidy S Tick-Borne Disease Prevention in Northern New England University of Maine System ME "
+  },
+  {
+   "key": "ASST_NON_DECR0000037_089",
+   "institution": "228501",
+   "amount": 2500000,
+   "fy_list": 2023,
+   "subcommittee": "ew",
+   "cfda": "81.008",
+   "award": "MIDSTREAM CRITICAL MANUFACTURING INDUSTRY CYBERSECURITY HUB\n\nTHIS PROJECT AIMS AT ENHANCING CYBERSEC",
+   "listed_as": ", Schumer H/S Department of Energy Energy Projects Midstream Critical Manufacturing Industry Cybersecurity Hub; Sul Ross State University \u2014 "
+  },
+  {
+   "key": "ASST_NON_DECR0000035_089",
+   "institution": "226091",
+   "amount": 2000000,
+   "fy_list": 2023,
+   "subcommittee": "ew",
+   "cfda": "81.008",
+   "award": "SOUTHEAST TEXAS DATA ANALYTICS AND CYBERSECURITY FOR ENERGY SUPPLY CHAIN RESILIENCE\n\nTHE PROJECT AIM",
+   "listed_as": "t of Energy Energy Projects Southeast Texas Data Analytics and Cybersecurity for Energy Supply Chain Resilience Project; Lamar University \u2014 "
+  },
+  {
+   "key": "ASST_NON_693JJ32540148_069",
+   "institution": "196088",
+   "amount": 2000000,
+   "fy_list": 2023,
+   "subcommittee": "thud",
+   "cfda": "20.200",
+   "award": "SMART TRANSPORTATION INNOVATION FOR CONNECTIVITY, AUTOMATION, RESILIENCY AND EQUITY (TI-CARE)",
+   "listed_as": "rch and Development Smart Transportation Innovation for Connectivity, Automation, Resiliency and Equity (TI\u2013 CARE) University at Buffalo NY "
+  },
+  {
+   "key": "ASST_NON_DECR0000032_089",
+   "institution": "207971",
+   "amount": 1500000,
+   "fy_list": 2023,
+   "subcommittee": "ew",
+   "cfda": "81.008",
+   "award": "ELECTRIC POWER TESTBED TO SECURE THE U.S. POWER GRID AGAINST CYBER ATTACKS\nTHE OBJECTIVE OF THIS PRO",
+   "listed_as": "r H Department of Energy Energy Projects Electric Power Testbed to Secure the U.S. Power Grid against Cyber Attacks ; University of Tulsa \u2014 "
+  },
+  {
+   "key": "ASST_NON_DEEE0010797_089",
+   "institution": "207971",
+   "amount": 1500000,
+   "fy_list": 2023,
+   "subcommittee": "ew",
+   "cfda": "81.086",
+   "award": "UNIVERSITY OF TULSA PRODUCED WATER TREATMENT USING COMPACT SEPARATOR SYSTEM",
+   "listed_as": "e S Department of Energy Energy Projects University of Tulsa Produced Water Treatment using Compact Separator System; University of Tulsa \u2014 "
+  },
+  {
+   "key": "ASST_NON_DEEE0010972_089",
+   "institution": "159647",
+   "amount": 1100000,
+   "fy_list": 2023,
+   "subcommittee": "ew",
+   "cfda": "81.086",
+   "award": "HYDROGEN INFUSED ACTIVE ENERGY EMISSION TECHNOLOGY\n\nTHIS OBJECTIVE OF THIS PROJECT IS TO TEST AND EV",
+   "listed_as": "000 1,080,000 Curtis H Department of Energy Energy Projects Hydrogen Infused Active Energy Emission Technology; Louisiana Tech University \u2014 "
+  },
+  {
+   "key": "ASST_NON_80NSSC24K0987_080",
+   "institution": "226152",
+   "amount": 963000,
+   "fy_list": 2024,
+   "subcommittee": "cjs",
+   "cfda": "43.009",
+   "award": "TEXAS AM INTERNATIONAL UNIVERSITY-LAREDO COLLEGE STEM CONNECTOR",
+   "listed_as": "ect 225,000 Crow H NASA SSMS Texas A&M International University Laredo, TX Texas A&M International University\u2014Laredo College STEM Connector "
+  },
+  {
+   "key": "ASST_NON_80NSSC24K1006_080",
+   "institution": "238032",
+   "amount": 465000,
+   "fy_list": 2024,
+   "subcommittee": "cjs",
+   "cfda": "43.009",
+   "award": "LASER-INDUCED FLUORESCENCE DIAGNOSTIC",
+   "listed_as": "rch and Education in WV 1,500,000 Capito, Manchin S NASA SSMS West Virginia University Morgantown, WV Laser-Induced Fluorescence Diagnostic "
+  },
+  {
+   "key": "ASST_NON_DEFE0032519_089",
+   "institution": "238032",
+   "amount": 280000,
+   "fy_list": 2024,
+   "subcommittee": "ew",
+   "cfda": "81.089",
+   "award": "REMOTE-SENSING TOOLS FOR OPTIMIZING COOPERATIVE CLIMATE CHANGE ABATEMENT RESEARCH AND LEGACY ENERGY ",
+   "listed_as": "to, Manchin S Department of Energy Energy Projects WVU Remote Sensing Tools for Climate Change Abatement Research; West Virginia University "
+  },
+  {
+   "key": "ASST_NON_DEEE0010117_089",
+   "institution": "188100",
+   "amount": 49807,
+   "fy_list": 2022,
+   "subcommittee": "ew",
+   "cfda": "81.117",
+   "award": "DE-EE0010117\nSAN JUAN COLLEGE\nPROJECT TITLED SAN JUAN COLLEGE ELECTRIC VEHICLE TECHNICIAN CERTIFICAT",
+   "listed_as": "tment of Energy Energy Efficiency and Renewable Energy San Juan College Electric Vehicle Technician Certification Program; San Juan College "
+  }
+ ]
+}

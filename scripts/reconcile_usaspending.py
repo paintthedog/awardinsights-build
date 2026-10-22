@@ -35,7 +35,8 @@ FORMULA_CFDA = {"84.425"}; FORMULA_FAIN = {"P031B", "P031E", "P031K", "P031D", "
 STUDENT_LOAN = {"93.342", "93.364", "93.264"}; TITLE_IV = {"84.063", "84.268", "84.033", "84.007", "84.379", "84.038", "84.032", "84.408"}
 EARMARK_CFDA = {"93.493", "11.617", "11.469", "11.071", "14.251", "17.289", "16.753", "43.014", "66.202", "10.730", "10.723", "10.741", "20.534", "12.599"}
 EARMARK_FAIN = {"P116Z", "S215K"}
-EARMARK_TEXT = re.compile(r"CONGRESSIONALLY (DIRECTED|IDENTIFIED|RECOMMENDED|MANDATED)|COMMUNITY PROJECT FUNDING|DIRECTED SPENDING", re.I)
+EARMARK_TEXT = re.compile(r"CONGRESSIONALLY (DIRECTED|IDENTIFIED|RECOMMENDED|MANDATED|DELEGATED)|COMMUNITY PROJECT (FUNDING|GRANT)|COMMUNITY SPECIAL PROJECT|DIRECTED SPENDING|\bEARMARK", re.I)
+EARMARK_KEYS = {x["key"] for x in json.load(open(f"{D}/ai-1-core/earmark_awards.json"))["awards"]}
 FFRDC_DESC = re.compile(r"\bFFRDC\b|FEDERALLY FUNDED RESEARCH AND DEVELOPMENT CENTER|\bM&O CONTRACT|"
                         r"MANAGEMENT AND OPERATIONS? OF (THE )?[A-Z .,&-]*(NATIONAL LAB|LABORATORY)", re.I)
 
@@ -102,7 +103,7 @@ for f in glob.glob(f"{D}/trimmed/*.csv.gz"):
             c = (r.get("cfda_number") or "").strip(); fp = (r.get("award_id_fain") or "")[:5]
             if c in TITLE_IV or c in STUDENT_LOAN: BR[e]["student aid / loan funds dropped"] += amt; continue
             if c in FORMULA_CFDA or fp in FORMULA_FAIN: BR[e]["formula programs dropped"] += amt; continue
-            em = c in EARMARK_CFDA or fp in EARMARK_FAIN or bool(EARMARK_TEXT.search(r.get("prime_award_base_transaction_description") or ""))
+            em = c in EARMARK_CFDA or fp in EARMARK_FAIN or bool(EARMARK_TEXT.search(r.get("prime_award_base_transaction_description") or "")) or fp.startswith("DECR") or (r.get("assistance_award_unique_key") or "") in EARMARK_KEYS
             AW[(e, r.get("assistance_award_unique_key"), 2 if em else 1)][fy] += amt
 for (e, k, em), fys in AW.items():
     kept = {}
