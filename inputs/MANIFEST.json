@@ -1,0 +1,2751 @@
+{
+ "_c": "\u00a9 2026 Award Insights",
+ "written": "2026-10-22",
+ "archive_date": "2026-09-06",
+ "summary": {
+  "trimmed": {
+   "files": 210,
+   "lines": 1282312
+  },
+  "subawards": {
+   "files": 330,
+   "lines": 711400
+  },
+  "reference": {
+   "files": 6,
+   "lines": 0
+  }
+ },
+ "files": {
+  "trimmed": {
+   "trimmed/FY2022_012_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 820913,
+    "sha256": "3f8979279e7b1ec083aea98ece8777817ff1f663cbeb8214bd58e1b83587fbda",
+    "lines": 6177
+   },
+   "trimmed/FY2022_012_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 62717,
+    "sha256": "a04e3d1239f478b4e1bc74094da21b25b9e277ac05516d037f11ced747aa18c7",
+    "lines": 672
+   },
+   "trimmed/FY2022_013_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 334843,
+    "sha256": "9d0674ae16b28a450965d7987c9c99e901fd60ddf4ed68762bacf29699303f3e",
+    "lines": 2861
+   },
+   "trimmed/FY2022_013_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 43216,
+    "sha256": "e0395c670db857cdf08363fe1aefb845ecffe9ab45c444354e3bee6d40ad3ee5",
+    "lines": 449
+   },
+   "trimmed/FY2022_014_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 582408,
+    "sha256": "291c3c45e11fad340e5e23ec5b3a296711c45e3aa20e9bf7efa521278c96e90a",
+    "lines": 5549
+   },
+   "trimmed/FY2022_014_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 72958,
+    "sha256": "c4c9eb34490af2d0a22d597cfe1d78df0d41cbd767dc20fab851c315ff56b743",
+    "lines": 799
+   },
+   "trimmed/FY2022_015_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 59064,
+    "sha256": "3c15c07cc1700a600787872834f9dad92a0142a1b2d51e779ca0acf0f05ba838",
+    "lines": 476
+   },
+   "trimmed/FY2022_015_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 74857,
+    "sha256": "22f8953b508f7fa6d294573bc43826b53f79c6d157ab2e7a1ff8c9a22cafb94f",
+    "lines": 1078
+   },
+   "trimmed/FY2022_019_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 391105,
+    "sha256": "3d26dcfcb76674df7b815feb5e1c4d2d7bda0cadc90212d5327dca05867d4e17",
+    "lines": 4073
+   },
+   "trimmed/FY2022_019_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1606088,
+    "sha256": "ba6fdeaade561b051383930e3c576d020b31ec8401917a34849d1f9c0ff5a885",
+    "lines": 22755
+   },
+   "trimmed/FY2022_036_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 3633,
+    "sha256": "be5711331af18e3b65280ab2dfa639289e5a3ada00d743b680ac73ee0eb52294",
+    "lines": 26
+   },
+   "trimmed/FY2022_036_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 198823,
+    "sha256": "46d06495bb0336d0f71d9b7f502cb0b5b36a98a838953d9aa573b0e3302ac78e",
+    "lines": 2595
+   },
+   "trimmed/FY2022_049_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 3580117,
+    "sha256": "aa2cf730ea1c03ca5e1069592c35eb44a0e6d372432d7630f9a15a28bbce2a94",
+    "lines": 26515
+   },
+   "trimmed/FY2022_049_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 5025,
+    "sha256": "233a6298c3213633a5691f494c54f473f1bb43e4bfcd41bf21ad00b83326c967",
+    "lines": 59
+   },
+   "trimmed/FY2022_068_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 95998,
+    "sha256": "8d145eaefa35398fae3099b5af71eb92434d2b3c99b85a986c03291b7a8818cd",
+    "lines": 668
+   },
+   "trimmed/FY2022_068_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 46846,
+    "sha256": "5f8f4837e4bf4da4fdefaa021e62d545cd4340183f312bb1242d92c211a0cac5",
+    "lines": 622
+   },
+   "trimmed/FY2022_069_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 46680,
+    "sha256": "a549ec23002185ec673f87d5d7b6cba52253508ae4a052d1759a21b4587f8bfc",
+    "lines": 650
+   },
+   "trimmed/FY2022_069_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 76677,
+    "sha256": "ef4cf1b820036536c6106ef6e42c98d9aa6b8c404fe5625d78824e788aa7450d",
+    "lines": 649
+   },
+   "trimmed/FY2022_070_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 13360,
+    "sha256": "9c2e1cd3560b8a1daac37ba289a1d489d72844b86dc4fe376e55a41aa7f646c8",
+    "lines": 181
+   },
+   "trimmed/FY2022_070_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 70166,
+    "sha256": "6c748e61ae0883862c6b9c3d2a0f9e4377f68c63d87df988da578058ee382655",
+    "lines": 666
+   },
+   "trimmed/FY2022_072_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 96231,
+    "sha256": "fb248d1b47c99e07539b6959b894505aa9f514cc09df57a47dbb2a6f9a5c3d1e",
+    "lines": 1135
+   },
+   "trimmed/FY2022_072_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 80242,
+    "sha256": "41abf0af1732d4f74c75a11a7ce0546c0a078600e164df1dd3dad943414cf729",
+    "lines": 847
+   },
+   "trimmed/FY2022_075_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 18335849,
+    "sha256": "bbf626d313b4da46d29fbdbe9e2b306dc8ccab0fe5fd52183952952fbcd19c4b",
+    "lines": 132390
+   },
+   "trimmed/FY2022_075_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 482451,
+    "sha256": "f42efd883706db79ac9fffaeb4642056f990a7318b64c91faf1b65e57e126384",
+    "lines": 4746
+   },
+   "trimmed/FY2022_080_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1456626,
+    "sha256": "a66b705f148ea65ceb76f6cbd70536f42d882818b8d2321a43a9f12ff5100073",
+    "lines": 9515
+   },
+   "trimmed/FY2022_080_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 283437,
+    "sha256": "a00883a090825ebafeed2059daf991a78158780b1dcc41550a7bc3fee4097e5e",
+    "lines": 2974
+   },
+   "trimmed/FY2022_086_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 4459,
+    "sha256": "483ec8fe349eed72d57ce02edd79dec4eb161105a42c27e8a0c9d3516b0d702a",
+    "lines": 57
+   },
+   "trimmed/FY2022_086_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1546,
+    "sha256": "437c28f112bc6ebcfceb58affb8ea96dec29cefe2500468042c5c079f7748fb7",
+    "lines": 8
+   },
+   "trimmed/FY2022_089_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 611318,
+    "sha256": "4b59326c6d944e432aa2599e37b9fdc44e3a8a013688bb28f5c9aacb5a05948e",
+    "lines": 8582
+   },
+   "trimmed/FY2022_089_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 19139,
+    "sha256": "867edd0a12b25c21a885dd68b6cdef5ca47f21b258d98b81525e24fda3535326",
+    "lines": 370
+   },
+   "trimmed/FY2022_091_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 661110,
+    "sha256": "e4aa647dde700387acdf8f658b5846c81c6e6fa3fdcc9837689aad1f0ef9dbc3",
+    "lines": 8711
+   },
+   "trimmed/FY2022_091_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 8864,
+    "sha256": "088947273cdb87ab9c48c72ff6214f941dfd9f98fddd04b87b990a43fdf29a63",
+    "lines": 99
+   },
+   "trimmed/FY2022_097_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1385712,
+    "sha256": "3af22d8783d65c204bc1dfe84e7b1d28e6e843412c01efb54f06eb2b30ccdc5f",
+    "lines": 13708
+   },
+   "trimmed/FY2022_097_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1237002,
+    "sha256": "dd5ad6a9714f1e37d832db9f32c688bc794445cde4215dfdb13c24773a6d9ad1",
+    "lines": 13715
+   },
+   "trimmed/FY2022_1601_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 26440,
+    "sha256": "cc97b8f46fa5063b27ce614862043e2a5c50d86b2bec5059b6610dda41835683",
+    "lines": 680
+   },
+   "trimmed/FY2022_1601_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 4139,
+    "sha256": "3c322caba3ca8bab62cf22d39a3ceddcdd89fe31ddd16e4da4fb0416cbad38c1",
+    "lines": 33
+   },
+   "trimmed/FY2022_417_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 27406,
+    "sha256": "03ff86a4d31657acc4e4017d6272d404730131ea3b4ef8a5fff638da4d8ad1a7",
+    "lines": 472
+   },
+   "trimmed/FY2022_417_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 421,
+    "sha256": "70666eb5e0ae7b8b869110c12461a5ed2a3cf7482326716008c413541d575e57",
+    "lines": 1
+   },
+   "trimmed/FY2022_418_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 121191,
+    "sha256": "0e03c62f3d719e2e9daa4938e52ec08cc4dbf4737a27b45ba77b749bec355e32",
+    "lines": 818
+   },
+   "trimmed/FY2022_418_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 421,
+    "sha256": "714ed6328109b8c6345e02a62bbd68e60d639a59f6ac5cce9daa32a6c6aea963",
+    "lines": 1
+   },
+   "trimmed/FY2022_474_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 54755,
+    "sha256": "891eca1ab75f9e5081a434044f91ebb83b378f05ec4caac8f89207464845132c",
+    "lines": 276
+   },
+   "trimmed/FY2022_474_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 801,
+    "sha256": "6f5a3833e41cb7309a4d0c47f72bd3179bd58fe469a783b29d8c6457107fb95e",
+    "lines": 3
+   },
+   "trimmed/FY2023_012_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 986742,
+    "sha256": "7791edb387f3df74a29388c4936a3bc6249b33715d4ceb697a6ed74770168d21",
+    "lines": 6585
+   },
+   "trimmed/FY2023_012_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 53780,
+    "sha256": "c00d5cf0c6540c4ec60919ff3bccc4bbcf8d2244f363496eafe416605639198e",
+    "lines": 573
+   },
+   "trimmed/FY2023_013_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 413481,
+    "sha256": "db286c2a859774dc1999360c300c431ccf3e35425ef663b3f704f6de2a2c369b",
+    "lines": 3130
+   },
+   "trimmed/FY2023_013_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 41900,
+    "sha256": "035f239b82cac9ec0be0ddd9f02b18f95c79300aca49db09da6ebf596be6a610",
+    "lines": 434
+   },
+   "trimmed/FY2023_014_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 698210,
+    "sha256": "f38bed1a9cbfedfad3d481182b0e28ade805a5a2699f9e2de584f87af2900c9f",
+    "lines": 5970
+   },
+   "trimmed/FY2023_014_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 69769,
+    "sha256": "144a982b6ddce79b0ea23bbe9106a37e7203458ed8c122e725d487b49c6cf06f",
+    "lines": 758
+   },
+   "trimmed/FY2023_015_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 69490,
+    "sha256": "030b453293395b13dd734db73df2d086d344c758168f004584acb17838c7286c",
+    "lines": 536
+   },
+   "trimmed/FY2023_015_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 80523,
+    "sha256": "8e54a4c2b409a4f05b18aaa04e021f9863477321283fc28051fd2e7c8c5f6994",
+    "lines": 1161
+   },
+   "trimmed/FY2023_019_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 371561,
+    "sha256": "8c5483ce9f2fdfa5c6fa88ae7497471782bd4a49927eb9f65fee8171b8961e30",
+    "lines": 3749
+   },
+   "trimmed/FY2023_019_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1677921,
+    "sha256": "affbdcc0fbdcdcee5cd5f2ec6647a3e62a83231853f3ccb8b254372ca038034a",
+    "lines": 23946
+   },
+   "trimmed/FY2023_036_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 4071,
+    "sha256": "5c80c046c17a74ba3caa71cae7201b30e5f5fea094cd1591e5de8bdd9fcd26e9",
+    "lines": 35
+   },
+   "trimmed/FY2023_036_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 184391,
+    "sha256": "e455eb66476fa68c3915fea54596665c2e95c99a2af9477a9882c0f72305d39c",
+    "lines": 2351
+   },
+   "trimmed/FY2023_049_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 4117594,
+    "sha256": "bbcfa03cf54a359c0fb05688e4f8d2a76f34db0f4f510fe906442248a61ff0c4",
+    "lines": 27088
+   },
+   "trimmed/FY2023_049_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 5197,
+    "sha256": "8573d6bd988e1fee9fe2266ec8832338c5a5ab5c4d8d9ca660e0c57c9dd129b5",
+    "lines": 64
+   },
+   "trimmed/FY2023_068_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 85093,
+    "sha256": "674d89e3a33c676430e8c2775d99811aae97cc7b2fdf166423b0ef77590b333d",
+    "lines": 553
+   },
+   "trimmed/FY2023_068_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 45825,
+    "sha256": "46c2242244a8f6373195f372653cb1cefff28a9a33a7b3ff2b236e998b16cbea",
+    "lines": 614
+   },
+   "trimmed/FY2023_069_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 54697,
+    "sha256": "8500dc24025ec0c509960168ae026509c49a3447c31f113c957498bcfa648227",
+    "lines": 779
+   },
+   "trimmed/FY2023_069_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 70891,
+    "sha256": "f7642b511ee5e0b63b5257fc8255ad76b019dcf11584f284b0189eb8b0f18d24",
+    "lines": 593
+   },
+   "trimmed/FY2023_070_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 14291,
+    "sha256": "fe6fc1f6bb71751fb44f645f2dd3e5333e416c4df0f3f835b05be58029263f7a",
+    "lines": 176
+   },
+   "trimmed/FY2023_070_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 57254,
+    "sha256": "4b5d8115b0b1b11f3526016c4f375957255316740e5976dfae66625ef3384618",
+    "lines": 554
+   },
+   "trimmed/FY2023_072_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 100645,
+    "sha256": "42ec1354644a00fd07c6536af7223d4200e34f2370dda298acf11f4d32669165",
+    "lines": 1150
+   },
+   "trimmed/FY2023_072_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 80522,
+    "sha256": "4b06c710db6da7302bb49df5bc36766fb196cc98ba8aa4349136c34cfa619820",
+    "lines": 821
+   },
+   "trimmed/FY2023_075_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 19337725,
+    "sha256": "f85358c6d2c0b83e86e1f68cecceecf589b267b1a561b7d8fed477c79283d912",
+    "lines": 125782
+   },
+   "trimmed/FY2023_075_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 398099,
+    "sha256": "ff49f958992cb76c0bbf2900828879a7adcd346c9bb8997b30607378e50738f1",
+    "lines": 3750
+   },
+   "trimmed/FY2023_080_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1206429,
+    "sha256": "fcdc70733cd3125931846d4c53e04f4a4d2c017fe42014ced629c033079527d4",
+    "lines": 8500
+   },
+   "trimmed/FY2023_080_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 254277,
+    "sha256": "695f28f21eee0e779d36763adafd7ef3d7da0d3a3369fbc1910a85470c8fc465",
+    "lines": 2708
+   },
+   "trimmed/FY2023_086_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 7650,
+    "sha256": "a1584cf5fe840f1fd3f2495fa16a86c7f920f6b631a85c246bfa4990a8fed5a8",
+    "lines": 105
+   },
+   "trimmed/FY2023_086_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1323,
+    "sha256": "68d3674ece4c71504c2a5b88f81692dac1c8d02edcc2c04160ebee714b737f67",
+    "lines": 4
+   },
+   "trimmed/FY2023_089_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 652226,
+    "sha256": "f9b866b558c9d538ab400917c9bdcacfaac9fc2f4ad9e64eef5d6610c3449880",
+    "lines": 8998
+   },
+   "trimmed/FY2023_089_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 17552,
+    "sha256": "bd21cde1217a99f2be1aa32013fc423dcccea0c37b9137f1ac2ba8698f9386c6",
+    "lines": 375
+   },
+   "trimmed/FY2023_091_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 638722,
+    "sha256": "c76eb142efcf3b714464b0a4386fa14fb8aa02b048e5261d2eef816d37aefe5d",
+    "lines": 8592
+   },
+   "trimmed/FY2023_091_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 6193,
+    "sha256": "426cb1967b0c8e5ef9e332b882718562ee76efc5d9feaa058f41de02b1fee694",
+    "lines": 62
+   },
+   "trimmed/FY2023_097_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1406728,
+    "sha256": "3ad9ca495a112a3c275039d95a28f279b0eecabf2f061e870d021f938e4e2219",
+    "lines": 13954
+   },
+   "trimmed/FY2023_097_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1205367,
+    "sha256": "f11ae57dcaa4b2ac178fbe5cc312d47824f4e96aee9da652cd9c2a7664d39e4b",
+    "lines": 13286
+   },
+   "trimmed/FY2023_1601_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 49308,
+    "sha256": "2411d3fdaa1a21f29eddba18953515fac674d60439119ff9c0ad027be402a42f",
+    "lines": 1467
+   },
+   "trimmed/FY2023_1601_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 4080,
+    "sha256": "d131d936fcaffa2ec062c47c3cf2c13979fb74152bf11217eca24c567a7e8a6b",
+    "lines": 26
+   },
+   "trimmed/FY2023_417_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 26667,
+    "sha256": "d6da7fdf1e299a91ab903cf7e9b341bf344e464663fea67e3548f7ee4746ba1b",
+    "lines": 487
+   },
+   "trimmed/FY2023_417_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 421,
+    "sha256": "ca3a0f7c1196b86c0182ae59aaf10dc4e901a4eab8285f07ec1b900fab400b05",
+    "lines": 1
+   },
+   "trimmed/FY2023_418_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 127484,
+    "sha256": "799018ab4ea9725394bf17b405acf4bd1af8c8202eca3ca73996c4607b9f82d3",
+    "lines": 824
+   },
+   "trimmed/FY2023_418_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 421,
+    "sha256": "a329f4befd3f9ca8c0e925693d1acd5db962208b56682a364bd61e4cb8aacbd4",
+    "lines": 1
+   },
+   "trimmed/FY2023_474_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 52410,
+    "sha256": "b178a28dcbc751ae5ac987080174945b91b5a3e41044c621fba43127618a91b0",
+    "lines": 263
+   },
+   "trimmed/FY2023_474_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 830,
+    "sha256": "9eee07529f89cb3ee42352f3ed9d2e06f45098bb354fae1e3262e65188afe7ce",
+    "lines": 4
+   },
+   "trimmed/FY2024_012_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 990564,
+    "sha256": "ca2ea04b853b756b465c063db3eabfb6d9b4ebf220d85ee3a4ead2770918240b",
+    "lines": 6370
+   },
+   "trimmed/FY2024_012_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 69241,
+    "sha256": "d61e09e794a60f73d8a8097723cdccc30150e9a1e49eac66cbb85f33a0a666a3",
+    "lines": 812
+   },
+   "trimmed/FY2024_013_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 486255,
+    "sha256": "8c9d445ff6236b6c8e61e48e57f12d9a96888fdac87162c5e0e13cdead743aed",
+    "lines": 3273
+   },
+   "trimmed/FY2024_013_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 31326,
+    "sha256": "cc506135d319cd456630bf287b8ed4437fc03d07ce2f175fc88508c28c48944d",
+    "lines": 309
+   },
+   "trimmed/FY2024_014_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 804517,
+    "sha256": "596506de9e293b8a940c33b7824385f504c3776f6f062dbc4ef6e8cc3fdd1b96",
+    "lines": 6187
+   },
+   "trimmed/FY2024_014_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 67603,
+    "sha256": "aadbf80bc233b4f484f1a0bb0974b4628c3d6a829b67065ed36c13ff919c78e1",
+    "lines": 769
+   },
+   "trimmed/FY2024_015_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 117446,
+    "sha256": "14f187e39533d19599b5bd8057601c489d2d482d5cce6fb878923304ac36bf2e",
+    "lines": 918
+   },
+   "trimmed/FY2024_015_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 90838,
+    "sha256": "b038b845c063a9ee1d2932f19dadaedaa9a27e698c648e970e291d6608f86df7",
+    "lines": 1359
+   },
+   "trimmed/FY2024_019_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 361716,
+    "sha256": "d396bbd2b00fc183b62ac8d7eb19433a22d2f1695df18444bef9040beae6f241",
+    "lines": 3499
+   },
+   "trimmed/FY2024_019_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1446568,
+    "sha256": "70473624bbccec0a56f26960cd289806c764cdb9fb785c76c4609044a150574f",
+    "lines": 20596
+   },
+   "trimmed/FY2024_036_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 5113,
+    "sha256": "5fbaf802cde25653d383f66d86fb4fbc40af035818ea3fdb8b4b9406d808bd74",
+    "lines": 31
+   },
+   "trimmed/FY2024_036_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 199871,
+    "sha256": "23ea460ce72c29f37657547f3f383cb58f5c9c56bedcf9ff19550db65ee41d10",
+    "lines": 2620
+   },
+   "trimmed/FY2024_049_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 4301124,
+    "sha256": "278d500d8497441e821259037e11cee431e2fadb11e27b4843040449b7a9f4f1",
+    "lines": 26278
+   },
+   "trimmed/FY2024_049_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 4928,
+    "sha256": "39b23d32b210befa1fed1ebe8d249917b3e52a90fa39f7353e0bafd361eb24a9",
+    "lines": 67
+   },
+   "trimmed/FY2024_068_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 89793,
+    "sha256": "dc60a852c62cbb97b73f0c12a8c09ddab9e3e17025f51ac5004953e0a1c569de",
+    "lines": 622
+   },
+   "trimmed/FY2024_068_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 45333,
+    "sha256": "31406426987cc434b1d4e936854a9954282c1ec19fe344113ef84e8fc0e027a3",
+    "lines": 613
+   },
+   "trimmed/FY2024_069_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 61571,
+    "sha256": "197de8a117ccc96d9dca776888b3371d2830dd0fcb152d94efef23783a24b453",
+    "lines": 818
+   },
+   "trimmed/FY2024_069_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 77225,
+    "sha256": "c765a67b30953b91f46a7b35a6f22cd1dec923b71806105d6ef85abcd1ce21c1",
+    "lines": 634
+   },
+   "trimmed/FY2024_070_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 14191,
+    "sha256": "1a956cd732aed2fcae1365e131ede20ac8099c306e51f76c40f716e602e32877",
+    "lines": 187
+   },
+   "trimmed/FY2024_070_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 54933,
+    "sha256": "56a53ea18d8ffbfd35d51dd7761ca8f6609163b62b088d5ef315c9aedac5a1d5",
+    "lines": 531
+   },
+   "trimmed/FY2024_072_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 89132,
+    "sha256": "bb9d6ac9b186734e16e2da81639c779d10179900d3b59b2dba6b11062135984b",
+    "lines": 952
+   },
+   "trimmed/FY2024_072_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 71868,
+    "sha256": "8d684735d55fd97d7a2733f3664ae389965f7457245431d5ea7cb5bed96815bd",
+    "lines": 744
+   },
+   "trimmed/FY2024_075_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 23849689,
+    "sha256": "b02261873fad016a275091a311408fd58711c48ea177f4cb22b581783f623c89",
+    "lines": 142327
+   },
+   "trimmed/FY2024_075_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 380342,
+    "sha256": "3cf510b0c16b029f58c2f3fa1e17b3873a2f3334e66a5b2bf7eb9707259952a3",
+    "lines": 3681
+   },
+   "trimmed/FY2024_080_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1076776,
+    "sha256": "3fe3330e541a15ffbc03be4f0d2050fe06b7a444bea9c056582309159e294938",
+    "lines": 8696
+   },
+   "trimmed/FY2024_080_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 231451,
+    "sha256": "2c11a414a67be4e392e8999ddf9cf9f1904a03b9a36e10c99fae1425abb7f321",
+    "lines": 2532
+   },
+   "trimmed/FY2024_086_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 13569,
+    "sha256": "073bca56f0f87994cf6497520a2bf5031e6134ee83e6bee426e74bb71d4904fb",
+    "lines": 185
+   },
+   "trimmed/FY2024_086_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1254,
+    "sha256": "80979e38f8891f96cb8113a5ca9ad5ee85075403fae41cb3511f1109570aa84e",
+    "lines": 5
+   },
+   "trimmed/FY2024_089_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 704610,
+    "sha256": "37927ca4c62e5462d0fb7161db92b93198a24cf67f67960693b07711f77e192c",
+    "lines": 9507
+   },
+   "trimmed/FY2024_089_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 17855,
+    "sha256": "79d146d5fd832354ab09ec2a1df3fb96b46dc5009d6acf9e209cf2d34562ab20",
+    "lines": 376
+   },
+   "trimmed/FY2024_091_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 661474,
+    "sha256": "7469e9722eebd68882891034b71ea442ad9c62f7efe4cc2d6fd06ee457eac799",
+    "lines": 8843
+   },
+   "trimmed/FY2024_091_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 5127,
+    "sha256": "ea780c572072fb8574bd209b7ed5887233d0ceda58695b5e0313a2c9437e014f",
+    "lines": 54
+   },
+   "trimmed/FY2024_097_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1411472,
+    "sha256": "67b0a2907980f062189c46da359d22c71862791bc9c196ae2f0dfb259598e43d",
+    "lines": 14277
+   },
+   "trimmed/FY2024_097_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1206461,
+    "sha256": "c3fba3ef5d125c88c21113e7d891cc0af5167fb347d5081b7d28c7aa3c45f785",
+    "lines": 13705
+   },
+   "trimmed/FY2024_1601_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 78717,
+    "sha256": "53da6c08b056947ac873b2d757319b586c33e0959b110689e6b6c65b229a17d1",
+    "lines": 1038
+   },
+   "trimmed/FY2024_1601_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 3316,
+    "sha256": "38e8876e1de03e1140adb86e91657d88280cb66f2b54d14594c5f364b7e4b74e",
+    "lines": 19
+   },
+   "trimmed/FY2024_417_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 22369,
+    "sha256": "4be00b70999f83f2b836ca3a3ed9c25ae294fa23797d56ba347d20b3c1448f4d",
+    "lines": 495
+   },
+   "trimmed/FY2024_417_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 859,
+    "sha256": "c5ca0b86c5cd80a679e9e09e7e1fba7e99936ceafe05dc54a79899e301214c60",
+    "lines": 3
+   },
+   "trimmed/FY2024_418_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 126400,
+    "sha256": "f93dcbe64939a99ecf7cd16b2638fce3363893fc65c3f5fc1ef80d61c7249a24",
+    "lines": 755
+   },
+   "trimmed/FY2024_418_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 421,
+    "sha256": "dafdbfcf3d0546869b3220d11b48e7dab07f9e95eca2fbde68a13dfaeea4c285",
+    "lines": 1
+   },
+   "trimmed/FY2024_474_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 59221,
+    "sha256": "f9226a9fb4bc699c951e97db1dff6a5b033743a586ab8c07ba84c9e41b4c71eb",
+    "lines": 304
+   },
+   "trimmed/FY2024_474_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 849,
+    "sha256": "d6254d116bb2625af48d5eb555229419797d420ed79e53f9ee05c226a06efa4d",
+    "lines": 5
+   },
+   "trimmed/FY2025_012_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 906256,
+    "sha256": "787a4cd3ff2e0e706e3ce6eae1a2c8c0f64c8c3af7a2c1145b2f85a260837edb",
+    "lines": 5387
+   },
+   "trimmed/FY2025_012_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 49321,
+    "sha256": "a508e25074b2dfa28081ba968f500649c55d78f28532788c1012964a9d5d6886",
+    "lines": 636
+   },
+   "trimmed/FY2025_013_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 421661,
+    "sha256": "b688f88b1dea19ce06960454c8e089a7a7645922a8165335ab7727098e3c0354",
+    "lines": 2717
+   },
+   "trimmed/FY2025_013_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 32297,
+    "sha256": "3cb2f60a0bd27a400fbf1b0370c57626c24a4d74570025857441203d8f1f0dad",
+    "lines": 332
+   },
+   "trimmed/FY2025_014_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 670170,
+    "sha256": "7445c3ab84518fac6e5904076d470ed9c5b55db49273663a428944ca1c66585e",
+    "lines": 4811
+   },
+   "trimmed/FY2025_014_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 45819,
+    "sha256": "0b61876914d9e6de2e68f924274e1fccf85e77bd1ec9fec3832dfa05e0fcd4f7",
+    "lines": 496
+   },
+   "trimmed/FY2025_015_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 90312,
+    "sha256": "1a858ef6cfd637ba0d7bf9f6fc5e8e3223b183a9c0c128e355d51166500feb61",
+    "lines": 671
+   },
+   "trimmed/FY2025_015_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 82767,
+    "sha256": "871ea91c7f5260f48fd6c6d42815e83cb8e1e3519cf1823c94d71d86dae1d26f",
+    "lines": 1201
+   },
+   "trimmed/FY2025_019_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 391504,
+    "sha256": "1634785b22e965d3730620af99079e47522d8f842fa6ec382e50f1900471ffb3",
+    "lines": 3871
+   },
+   "trimmed/FY2025_019_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1306963,
+    "sha256": "2c7a6a21d1abbb6bac825df9eb65d885e8459eb81dda45a7ff4f7648df7a9b2b",
+    "lines": 19025
+   },
+   "trimmed/FY2025_036_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 6456,
+    "sha256": "c6c6b582954c392acdf37249cd5f68cdadbc9f8a08b0a6f89b1a0cbad12df010",
+    "lines": 57
+   },
+   "trimmed/FY2025_036_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 191853,
+    "sha256": "b7deb985e78f4210352b6aba6b61ea6eb3f04be175f3768d8eeae644a91b24b1",
+    "lines": 2594
+   },
+   "trimmed/FY2025_049_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 4200410,
+    "sha256": "fb395c9b1bcbb266659ce63e5f2f3a4f0f9f8cb3fd3cff37825e31b1949b9c5d",
+    "lines": 24082
+   },
+   "trimmed/FY2025_049_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 4332,
+    "sha256": "b219b1945e620f00b24f9944a3848774e3b4f37672bf94b49a2f7e6579fa460a",
+    "lines": 48
+   },
+   "trimmed/FY2025_068_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 109432,
+    "sha256": "3084248e1037b4e40684f28fb86ed94ebb1aa77614997421db565dd4ba5a6ea9",
+    "lines": 787
+   },
+   "trimmed/FY2025_068_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 43236,
+    "sha256": "be7e6185d6b770da2c5a96b246de625620e6654a7bded2b2f499218044d3374d",
+    "lines": 600
+   },
+   "trimmed/FY2025_069_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 45869,
+    "sha256": "be794cae9711a4059ec676e73a72122f3e9f9ae45bd7039208041c5e4e30b40a",
+    "lines": 674
+   },
+   "trimmed/FY2025_069_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 72598,
+    "sha256": "78391030b056bf6cd654e1fd7ac7ce910ca51697f4e34f9e157681162ac46b53",
+    "lines": 636
+   },
+   "trimmed/FY2025_070_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 7447,
+    "sha256": "6bd7eeeba7f7db06c858cc9f926f03979331361c0f50508562c552494b0c53e1",
+    "lines": 116
+   },
+   "trimmed/FY2025_070_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 56111,
+    "sha256": "80f477ebfd2c01dd033be254f65736816cf21d9218239218a074b9472383ded6",
+    "lines": 566
+   },
+   "trimmed/FY2025_072_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 30095,
+    "sha256": "89a9368c7e9df4a3e2a5d0cf73678a5f2283cf64a622a6afefcc3225f19adffd",
+    "lines": 304
+   },
+   "trimmed/FY2025_072_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 44419,
+    "sha256": "ced277a2936128ac15172276b194d782f92d90b1b34e5c3cbac9ebff29c29047",
+    "lines": 482
+   },
+   "trimmed/FY2025_075_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 22677076,
+    "sha256": "598bf7c1f9bc1a3d0447cb0991bdeea5c9227694ffba6f8297446825c38910e1",
+    "lines": 126896
+   },
+   "trimmed/FY2025_075_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 294488,
+    "sha256": "1f46c8344dc0fe5828c9f14b534731cb862230949cc86145f11f32014fa43a36",
+    "lines": 2834
+   },
+   "trimmed/FY2025_080_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1060690,
+    "sha256": "9af1b6e94d993a6e69be7735e3585062dbf9d16aa77ec662eae8f1e069fa3b99",
+    "lines": 9235
+   },
+   "trimmed/FY2025_080_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 282873,
+    "sha256": "d243dfa6753f8e0ff50fb2e1745ecf687d98907d35d987a9b4d37d04ad7bbbd9",
+    "lines": 3208
+   },
+   "trimmed/FY2025_086_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 7503,
+    "sha256": "673960c3bb9ddcf3785860898f2bd5858791c0329397db87910cb7dfc6116123",
+    "lines": 73
+   },
+   "trimmed/FY2025_086_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1325,
+    "sha256": "5aa4613deb6c569d114b1ac22a85c05ccfc00b108ebe65acf2abaa19a0347128",
+    "lines": 7
+   },
+   "trimmed/FY2025_089_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 653089,
+    "sha256": "8136c7e7e0d39adbca41d00d5240b5a96605102d92361cb13cda1475d2bb4db4",
+    "lines": 8541
+   },
+   "trimmed/FY2025_089_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 17977,
+    "sha256": "775a81427aa2f66c2870fdac696bb80a124b154e65aeca76b98629f62584702e",
+    "lines": 386
+   },
+   "trimmed/FY2025_091_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 538961,
+    "sha256": "cbf98b92c54a401e314b8288c2421cfa499b180de69ad8f6fae40c6c5562c0a1",
+    "lines": 7203
+   },
+   "trimmed/FY2025_091_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 5272,
+    "sha256": "6f6aefeddcac6d5cb0ccee912c1d1d90c04085a70324ddfffb674b391ecb02e4",
+    "lines": 74
+   },
+   "trimmed/FY2025_097_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1355069,
+    "sha256": "cbe7e299d792e26b9ee40b05ddc8c4c63eea22cf32883196a659c1c11ffcf9c4",
+    "lines": 13762
+   },
+   "trimmed/FY2025_097_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1251762,
+    "sha256": "461fa001685e034a6d561382a94597e0fbe4a2b53352830061600db3f8df1ecd",
+    "lines": 13873
+   },
+   "trimmed/FY2025_1601_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 55353,
+    "sha256": "76cc2017489f6fcc0deb247c3198553fc3f1a5e83a5a881e5c6d942aa5039f5b",
+    "lines": 743
+   },
+   "trimmed/FY2025_1601_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 2560,
+    "sha256": "a195216b4b4681cec572f6aac04ecebdf3e1a2c6f25602035e3cdb3b0a843904",
+    "lines": 17
+   },
+   "trimmed/FY2025_417_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 15569,
+    "sha256": "ed83fe7ce9687b7dedbf6b532939783eea60cae693e4265b940d3709dce2b326",
+    "lines": 281
+   },
+   "trimmed/FY2025_417_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 842,
+    "sha256": "ec4fd3985cc1ac2236f28e342c9276da6715c8d5b06be777ced693e8906cb5c6",
+    "lines": 2
+   },
+   "trimmed/FY2025_418_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 76909,
+    "sha256": "423f143e22313a84936e7a9845a96bb1630b791cd3909521c54251b80a61fe48",
+    "lines": 480
+   },
+   "trimmed/FY2025_418_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1090,
+    "sha256": "ac31ba846a4fc12dd8e5765cb92784861bac3659e152fe9008e64d96e8cfeb84",
+    "lines": 8
+   },
+   "trimmed/FY2025_474_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 33564,
+    "sha256": "68efea1a9648a87b97e1fd8a03ca26b44517477b6ab2d0a359f018161916c6a7",
+    "lines": 170
+   },
+   "trimmed/FY2025_474_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 780,
+    "sha256": "dc4bfd7bb78a7854b7d15b1e593f14e9307b45f252c7fdc9f291bdcc73dc3ef1",
+    "lines": 2
+   },
+   "trimmed/FY2026_012_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 847929,
+    "sha256": "6b8f8eb3f1f7a9817e210189ed11305fe08893b61e4b994f34d8bfc911d98fb6",
+    "lines": 5095
+   },
+   "trimmed/FY2026_012_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 30643,
+    "sha256": "02604ca41f6904bbf2e5585898363010adefaa5d0ad7219744e713a8c723d092",
+    "lines": 400
+   },
+   "trimmed/FY2026_013_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 242951,
+    "sha256": "95ceb82630b6234b738239c0740f410b64f843b484651ede9d7d46b37d524f24",
+    "lines": 1547
+   },
+   "trimmed/FY2026_013_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 22285,
+    "sha256": "ed3b754e0645ba75d3e25c4c1ccf303e48b66b232f0db3626defeed641a6b5cf",
+    "lines": 211
+   },
+   "trimmed/FY2026_014_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 147413,
+    "sha256": "d97987e4c605b0b8157fc5484e0550678efd545962d67f1d6f56f69929dc4c33",
+    "lines": 1119
+   },
+   "trimmed/FY2026_014_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 43549,
+    "sha256": "34130207d41b746b5e8190908b85486cb5c10090d46712ca122fa4bcf0c7a6a7",
+    "lines": 461
+   },
+   "trimmed/FY2026_015_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 81980,
+    "sha256": "97f8dc0e5fb1f85f4716c83cb727b3b73835673c85008ee29326b5309bca50f8",
+    "lines": 587
+   },
+   "trimmed/FY2026_015_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 65878,
+    "sha256": "6d21107dfcd459bf56799f2756a328ef5c0c6674e231699159ee71f0ddaf7c6e",
+    "lines": 1031
+   },
+   "trimmed/FY2026_019_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 104175,
+    "sha256": "c75cdbb06a6c7b06fe52e3058c6e13adb1668a846a5dc41622af0b397f90d3a1",
+    "lines": 986
+   },
+   "trimmed/FY2026_019_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 806612,
+    "sha256": "5a452e01a1d8f880e2b7cac23c90062d3b81112d6f77bcba0c19acb1eedae40c",
+    "lines": 11920
+   },
+   "trimmed/FY2026_036_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 3825,
+    "sha256": "db560b20fe048f1a91fd9b8c4677e8eda00a4169ea4359722932635a67aeed85",
+    "lines": 17
+   },
+   "trimmed/FY2026_036_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 176456,
+    "sha256": "85a5ddf03498213acbe73f940ebcd23a8644cba9f9c6c15c41f62eacebff9ae2",
+    "lines": 2414
+   },
+   "trimmed/FY2026_049_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 2060146,
+    "sha256": "862dd1536745d57677e60a9159ac76c6c894519ca263b31e03b529543865027d",
+    "lines": 11783
+   },
+   "trimmed/FY2026_049_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 3332,
+    "sha256": "d47345b85a486e0d3a1681194dfd30de6309ad889d6deb526edaa949a7730233",
+    "lines": 33
+   },
+   "trimmed/FY2026_068_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 22266,
+    "sha256": "99db2dbf915df38b26382bb51f1bc2e8e8244806276ac6d879a904337705a8ca",
+    "lines": 163
+   },
+   "trimmed/FY2026_068_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 25466,
+    "sha256": "d0efc472b0e9b5f9f7f7068b62b90c58eca64a545006c8d6d77f7ffbcdf0106c",
+    "lines": 339
+   },
+   "trimmed/FY2026_069_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 38663,
+    "sha256": "0c47cff5a099a66f2c4384efd2c3430b632278bd726f0029ac93532379e6bc05",
+    "lines": 416
+   },
+   "trimmed/FY2026_069_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 50727,
+    "sha256": "890f843db158f703f3e68c51cfbd92f76aba3d8a5e97a1b17d922308f6524f9e",
+    "lines": 447
+   },
+   "trimmed/FY2026_070_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 2504,
+    "sha256": "3f09d4347d228dea08b5476cca19be1a8c09771c6704dda605832a00b0f739c4",
+    "lines": 39
+   },
+   "trimmed/FY2026_070_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 31208,
+    "sha256": "6d4a5aa4485a8d2afc176687c6299da2dae7bb1fd6b8f9d3fc87b3172802fefa",
+    "lines": 318
+   },
+   "trimmed/FY2026_072_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 3559,
+    "sha256": "7338325f9c4ca13058fee1a08df06d968e90ae0d4702f77cb400ba169366aacb",
+    "lines": 38
+   },
+   "trimmed/FY2026_072_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 3626,
+    "sha256": "d3d9ee1b683d7056dfc004b493af179793042b9481d88a872487158cc6b0b970",
+    "lines": 26
+   },
+   "trimmed/FY2026_075_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 20815645,
+    "sha256": "71e61f57a4e36e92284ac633fe447b01b95c7130657c1199b8f0143e846d1e50",
+    "lines": 110699
+   },
+   "trimmed/FY2026_075_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 213298,
+    "sha256": "08be42f60154601f3cb3be82eff67a03f97c41306e2b412f489ff0521677fced",
+    "lines": 2088
+   },
+   "trimmed/FY2026_080_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 676494,
+    "sha256": "a5b748e93016f3ca5c30526e4a817c8bbb4e03883eef8305d699deb175286c5f",
+    "lines": 6272
+   },
+   "trimmed/FY2026_080_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 189261,
+    "sha256": "1e02dab876754040a5ad5a38a5a46a7c3ec988b7ec8bf2a452cd69845ef62540",
+    "lines": 2024
+   },
+   "trimmed/FY2026_086_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 2961,
+    "sha256": "9306708bf62fdc84a01835d5198cc4a42c2c8cd442d2e847fc33ff66743de2bf",
+    "lines": 18
+   },
+   "trimmed/FY2026_086_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 780,
+    "sha256": "ddaf31c4e69917d1e1aaddc33669828a4975a22ceb11551b300f1bc244885cdd",
+    "lines": 2
+   },
+   "trimmed/FY2026_089_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 572555,
+    "sha256": "eefe4a7da52852263b9046c655b8470a9098342bff8c6cd17c3ffb23be9c89fc",
+    "lines": 7927
+   },
+   "trimmed/FY2026_089_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 15706,
+    "sha256": "c0197c5b872abd7aa81f793fb226de1a1b478c529be5d3b64e4c35cf32cbbf8a",
+    "lines": 344
+   },
+   "trimmed/FY2026_091_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 237003,
+    "sha256": "9834ce164c1c9def609a3d9021fbca76ec338f98f50a60017ce898a0fd7fb0b3",
+    "lines": 3208
+   },
+   "trimmed/FY2026_091_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 4507,
+    "sha256": "11b7054ebbec583fc1fd103658b892744313fe552d85eb9e3e254fbfbbb39fef",
+    "lines": 47
+   },
+   "trimmed/FY2026_097_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 1016433,
+    "sha256": "221eaa2d98bca011bf884345023e1e5d0933ecc5a2022a120b68bb44a1898553",
+    "lines": 10195
+   },
+   "trimmed/FY2026_097_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 724551,
+    "sha256": "d47031650b6d2f46ea3bbc14296cf03654035dbbc1fa781ce05f5f761b529b84",
+    "lines": 8363
+   },
+   "trimmed/FY2026_1601_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 13278,
+    "sha256": "ecebc22bd66234539b40efbdfff1ce2668d20429f389a2553acfc16fe3983ca6",
+    "lines": 132
+   },
+   "trimmed/FY2026_1601_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 3131,
+    "sha256": "8f44e58441ba20b7c5a8149ab656dc9d44c4a0d257586e750d954d34076bb7e2",
+    "lines": 23
+   },
+   "trimmed/FY2026_417_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 12280,
+    "sha256": "ae0886978ff9aabf56f69c7a10048430eebe41c4ec7a542d5a8c413e5918061f",
+    "lines": 165
+   },
+   "trimmed/FY2026_417_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 866,
+    "sha256": "87cedf000b93b8bc35c9970c7bfa11e0a214d21286661ec591d765459e3bb462",
+    "lines": 4
+   },
+   "trimmed/FY2026_418_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 114138,
+    "sha256": "b42fcc85428df5f79df0730662370e36c6eac60879591b7f9fecfef3cf4b4bb1",
+    "lines": 727
+   },
+   "trimmed/FY2026_418_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 421,
+    "sha256": "dc9a59b1b5908bae00f46b89e434f0988cf27c530e1633b57aa32546779b058b",
+    "lines": 1
+   },
+   "trimmed/FY2026_474_Assistance_Full_20260906_trimmed.csv.gz": {
+    "bytes": 61526,
+    "sha256": "26d1178f71618c6b5d6eaaf83eb8b8aa28c699e8c9ee8551333b1155c8eb4484",
+    "lines": 326
+   },
+   "trimmed/FY2026_474_Contracts_Full_20260906_trimmed.csv.gz": {
+    "bytes": 785,
+    "sha256": "ca998ed6eb87ed8c8b826c289b7bb3e8d6e3f9f5b6252407c7550d43642ccdea",
+    "lines": 2
+   }
+  },
+  "subawards": {
+   "subawards/FY2022Q1_012_Subawards_All_Assistance_Subawards_2026-10-20_H01M15S50_1_trimmed.csv.gz": {
+    "bytes": 199382,
+    "sha256": "50c33450e6753b49df933558c9d8d59278ee5855b5236d1b8ea33ec66ddd63c1",
+    "lines": 3046
+   },
+   "subawards/FY2022Q1_012_Subawards_All_Contracts_Subawards_2026-10-20_H01M13S55_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "dd37861664081ad56a0457ddd33fd25f12cb92b5ec8f1ee89b128a806af13589",
+    "lines": 1
+   },
+   "subawards/FY2022Q1_075_Subawards_All_Assistance_Subawards_2026-10-19_H11M44S56_1_trimmed.csv.gz": {
+    "bytes": 1845751,
+    "sha256": "c3bb52320b919579c2af673ca31959f6057a158957200d48b5dc4efc00aa136c",
+    "lines": 26904
+   },
+   "subawards/FY2022Q1_075_Subawards_All_Contracts_Subawards_2026-10-19_H11M43S57_1_trimmed.csv.gz": {
+    "bytes": 41250,
+    "sha256": "dda09e5f711545b77704c2f01e44027b9af37a005c80eb460e7ade26a63996cb",
+    "lines": 802
+   },
+   "subawards/FY2022Q1_091_Subawards_All_Assistance_Subawards_2026-10-20_H10M48S00_1_trimmed.csv.gz": {
+    "bytes": 300532,
+    "sha256": "a4c13190d14d9b83b434ab0a66c2dc81136aba6a47fe466321f4dbf79aad75ca",
+    "lines": 5089
+   },
+   "subawards/FY2022Q1_091_Subawards_All_Contracts_Subawards_2026-10-20_H10M46S37_1_trimmed.csv.gz": {
+    "bytes": 2433,
+    "sha256": "dfd544c5e2a193e381433904173b4b0e7354d6c3c68d53fef3220ca35654d042",
+    "lines": 14
+   },
+   "subawards/FY2022Q1_097_Subawards_All_Assistance_Subawards_2026-10-19_H15M16S36_1_trimmed.csv.gz": {
+    "bytes": 137305,
+    "sha256": "8d50dab7bde8da90becaded05bb7049c06cd247f97e29feadbb2bb9d3dff1782",
+    "lines": 2659
+   },
+   "subawards/FY2022Q1_097_Subawards_All_Contracts_Subawards_2026-10-19_H15M07S34_1_trimmed.csv.gz": {
+    "bytes": 67571,
+    "sha256": "96bf54d0026302e9b0d5dd163802fef97262fb0fce14ba5d689ba6983d1f7fdf",
+    "lines": 711
+   },
+   "subawards/FY2022Q2_012_Subawards_All_Assistance_Subawards_2026-10-20_H02M00S24_1_trimmed.csv.gz": {
+    "bytes": 110262,
+    "sha256": "22bd32c357a40c86d8718597ccf16e24bcf3df1bb1f2121dd319b61c53ecaf92",
+    "lines": 1284
+   },
+   "subawards/FY2022Q2_012_Subawards_All_Contracts_Subawards_2026-10-20_H01M59S40_1_trimmed.csv.gz": {
+    "bytes": 1295,
+    "sha256": "d0083783a449a8a8106817ece4748a9b0f5bf759c43071c43c5da94f14abeaee",
+    "lines": 4
+   },
+   "subawards/FY2022Q2_075_Subawards_All_Assistance_Subawards_2026-10-19_H11M52S17_1_trimmed.csv.gz": {
+    "bytes": 1535357,
+    "sha256": "7421ae5b77596cca0d6bae6c897f848b778c41a98902232db29e91a47016a7e1",
+    "lines": 21191
+   },
+   "subawards/FY2022Q2_075_Subawards_All_Contracts_Subawards_2026-10-19_H11M51S33_1_trimmed.csv.gz": {
+    "bytes": 35055,
+    "sha256": "25c04dabc224a10931aecaa2cba936223b67fd4e9ddb3e1354892c15d581de77",
+    "lines": 453
+   },
+   "subawards/FY2022Q2_091_Subawards_All_Assistance_Subawards_2026-10-20_H11M13S47_1_trimmed.csv.gz": {
+    "bytes": 184512,
+    "sha256": "bf069b9621d3d6db516c3e34a472046dd40686d35b44fdae5c69b0479691731c",
+    "lines": 3132
+   },
+   "subawards/FY2022Q2_091_Subawards_All_Contracts_Subawards_2026-10-20_H11M12S58_1_trimmed.csv.gz": {
+    "bytes": 4824,
+    "sha256": "0787953d500dcc2caa698f0e6e28e61179bbada6aac5e3430348f1ba5e21ac30",
+    "lines": 41
+   },
+   "subawards/FY2022Q2_097_Subawards_All_Assistance_Subawards_2026-10-19_H15M26S58_1_trimmed.csv.gz": {
+    "bytes": 128832,
+    "sha256": "5c2e891c951ab40c1fd20038a13166df955759ee960777142a6c8281e5aee754",
+    "lines": 1863
+   },
+   "subawards/FY2022Q2_097_Subawards_All_Contracts_Subawards_2026-10-19_H15M18S59_1_trimmed.csv.gz": {
+    "bytes": 82840,
+    "sha256": "53214b14c32ccd43f77d34a5ff55e7a008815de5ba974ecdaefde11d7d6ad8c7",
+    "lines": 946
+   },
+   "subawards/FY2022Q3_012_Subawards_All_Assistance_Subawards_2026-10-20_H02M09S34_1_trimmed.csv.gz": {
+    "bytes": 109774,
+    "sha256": "e7941389482c4cd093769effaf0987813c3b5151fdd556c63ebeafc0df4d5d56",
+    "lines": 1804
+   },
+   "subawards/FY2022Q3_012_Subawards_All_Contracts_Subawards_2026-10-20_H02M08S29_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "ef4243e95a492fe5c811d2252b209fe53a80e6f2109f9176a79f974143af853e",
+    "lines": 1
+   },
+   "subawards/FY2022Q3_075_Subawards_All_Assistance_Subawards_2026-10-19_H12M13S52_1_trimmed.csv.gz": {
+    "bytes": 1370094,
+    "sha256": "cb07571e5a89695c1d1af4cb3252df4b40365eaba70351176e5ce98a0e52f888",
+    "lines": 19306
+   },
+   "subawards/FY2022Q3_075_Subawards_All_Contracts_Subawards_2026-10-19_H12M12S47_1_trimmed.csv.gz": {
+    "bytes": 27365,
+    "sha256": "b12c1ac7357bd5a4f8f963afd40ecf50c2885776c6edc37aaa5abb9e0a091427",
+    "lines": 362
+   },
+   "subawards/FY2022Q3_091_Subawards_All_Assistance_Subawards_2026-10-20_H11M18S06_1_trimmed.csv.gz": {
+    "bytes": 222122,
+    "sha256": "0f24bfc1630a3b6f09f715a96727bd1dee5e83834f6b8d57043a311429e467d3",
+    "lines": 5305
+   },
+   "subawards/FY2022Q3_091_Subawards_All_Contracts_Subawards_2026-10-20_H11M17S08_1_trimmed.csv.gz": {
+    "bytes": 3098,
+    "sha256": "67fecaa8e341aabc54116a7c9863a448f31f4fb5d4334d4a20b7281bd0e2cb0d",
+    "lines": 26
+   },
+   "subawards/FY2022Q3_097_Subawards_All_Assistance_Subawards_2026-10-19_H15M37S10_1_trimmed.csv.gz": {
+    "bytes": 116836,
+    "sha256": "3f177b9b682e5e9b1779241b2b2d7259c5f233062ea561fbfe35c15b39a9986b",
+    "lines": 2224
+   },
+   "subawards/FY2022Q3_097_Subawards_All_Contracts_Subawards_2026-10-19_H15M28S42_1_trimmed.csv.gz": {
+    "bytes": 102267,
+    "sha256": "5ec6aded01d1e5b0e8eed41eab510e78b0bb3f6faaf7d1386aa494d58c1b032e",
+    "lines": 1322
+   },
+   "subawards/FY2022Q4_012_Subawards_All_Assistance_Subawards_2026-10-20_H02M44S58_1_trimmed.csv.gz": {
+    "bytes": 182526,
+    "sha256": "e04a452cf6afab37cc5033349b977f5b0bbbed17835290a89413b8baca285c00",
+    "lines": 3407
+   },
+   "subawards/FY2022Q4_012_Subawards_All_Contracts_Subawards_2026-10-20_H02M44S23_1_trimmed.csv.gz": {
+    "bytes": 961,
+    "sha256": "65d34517210871c02a2545dcae9e6fe54687c40f2cca04e0f8504102d1444fcf",
+    "lines": 3
+   },
+   "subawards/FY2022Q4_075_Subawards_All_Assistance_Subawards_2026-10-19_H12M24S09_1_trimmed.csv.gz": {
+    "bytes": 1956492,
+    "sha256": "b1447884217ab739c40bf2dc510e98739b91eb54c7a9ed6e58fd8c0a91725c9d",
+    "lines": 26339
+   },
+   "subawards/FY2022Q4_075_Subawards_All_Contracts_Subawards_2026-10-19_H12M22S05_1_trimmed.csv.gz": {
+    "bytes": 26369,
+    "sha256": "713a4a7c6cc14f927a07bee55c09a252753659853797bd7878774184189185c2",
+    "lines": 246
+   },
+   "subawards/FY2022Q4_091_Subawards_All_Assistance_Subawards_2026-10-20_H11M22S58_1_trimmed.csv.gz": {
+    "bytes": 340912,
+    "sha256": "ab423877f7f9e568cc16be833b06ad624615305d57b14e38c0c7bb033935f43f",
+    "lines": 8099
+   },
+   "subawards/FY2022Q4_091_Subawards_All_Contracts_Subawards_2026-10-20_H11M21S31_1_trimmed.csv.gz": {
+    "bytes": 3753,
+    "sha256": "3846ec81a957e9106836929bea9f494d4ec1a0577c932795dc18864ced1fb93a",
+    "lines": 32
+   },
+   "subawards/FY2022Q4_097_Subawards_All_Assistance_Subawards_2026-10-19_H15M46S54_1_trimmed.csv.gz": {
+    "bytes": 149664,
+    "sha256": "ccfae823fe24cfaf2cc914c1fe904bd0eb6a09835a40bd931c2e39abe9f5d85f",
+    "lines": 2007
+   },
+   "subawards/FY2022Q4_097_Subawards_All_Contracts_Subawards_2026-10-19_H15M39S55_1_trimmed.csv.gz": {
+    "bytes": 113965,
+    "sha256": "9dd30a59b7f509aeccd588ec5852e343fdb4ae8582ad71dd15a693677ad1e6ad",
+    "lines": 1278
+   },
+   "subawards/FY2022_013_Subawards_All_Assistance_Subawards_2026-10-20_H10M27S53_1_trimmed.csv.gz": {
+    "bytes": 159855,
+    "sha256": "05a2c42751a662a3f6cdec80492459fd2b388c4b63ff535eea324015c537d780",
+    "lines": 2954
+   },
+   "subawards/FY2022_013_Subawards_All_Contracts_Subawards_2026-10-20_H10M27S35_1_trimmed.csv.gz": {
+    "bytes": 2834,
+    "sha256": "7920e8c2c8f25c9b821a01b194d392b72a52be221e1598bd8d1747420a3cabfa",
+    "lines": 13
+   },
+   "subawards/FY2022_014_Subawards_All_Assistance_Subawards_2026-10-20_H10M37S59_1_trimmed.csv.gz": {
+    "bytes": 85926,
+    "sha256": "a361657eeb7c1aff7f2b66d53524fbabdab58fc134ccff878e6e889b47dc02fe",
+    "lines": 858
+   },
+   "subawards/FY2022_014_Subawards_All_Contracts_Subawards_2026-10-20_H10M37S40_1_trimmed.csv.gz": {
+    "bytes": 4721,
+    "sha256": "f85d5fc01fcb06180e70ce9fd00eec5338881910330deb52c25b52c500a97e60",
+    "lines": 27
+   },
+   "subawards/FY2022_015_Subawards_All_Assistance_Subawards_2026-10-20_H18M44S10_1_trimmed.csv.gz": {
+    "bytes": 81993,
+    "sha256": "5957a2f90096578d587c457fbe6b90882f1c4662666cb87c9cb7d9b764e6f4b5",
+    "lines": 782
+   },
+   "subawards/FY2022_015_Subawards_All_Contracts_Subawards_2026-10-20_H18M43S11_1_trimmed.csv.gz": {
+    "bytes": 2348,
+    "sha256": "524fb314254ec86bc51da0f8ee1eae01b4bb33c9444e7918110cf04c293e19b7",
+    "lines": 20
+   },
+   "subawards/FY2022_019_Subawards_All_Assistance_Subawards_2026-10-20_H19M07S16_1_trimmed.csv.gz": {
+    "bytes": 34391,
+    "sha256": "788290c63c8f7fc33ba0cc8dbcbf4a4ea143ec6615a7703529ee2309b7ee9cdf",
+    "lines": 432
+   },
+   "subawards/FY2022_019_Subawards_All_Contracts_Subawards_2026-10-20_H19M06S12_1_trimmed.csv.gz": {
+    "bytes": 3676,
+    "sha256": "bdf621992ea6fff12a80793dd905e6995c280e2353dd4e99fae539264f4f0b58",
+    "lines": 31
+   },
+   "subawards/FY2022_036_Subawards_All_Assistance_Subawards_2026-10-20_H18M59S12_1_trimmed.csv.gz": {
+    "bytes": 803,
+    "sha256": "fc259b19a5b81ceaa99b6c1daa949156a0a77f548e8f32cef54865bc1d025903",
+    "lines": 2
+   },
+   "subawards/FY2022_036_Subawards_All_Contracts_Subawards_2026-10-20_H18M58S44_1_trimmed.csv.gz": {
+    "bytes": 1412,
+    "sha256": "0d999a904735cb2cc72f102d821842d9ac45af521de07d842a96f42cb977b132",
+    "lines": 7
+   },
+   "subawards/FY2022_049_Subawards_All_Assistance_Subawards_2026-10-19_H11M33S15_1_trimmed.csv.gz": {
+    "bytes": 693586,
+    "sha256": "572e1d47ea98a0754950b885ac6a03f1ef5e1f2837f50bbf7ca371dd665b800b",
+    "lines": 10974
+   },
+   "subawards/FY2022_049_Subawards_All_Contracts_Subawards_2026-10-19_H11M32S53_1_trimmed.csv.gz": {
+    "bytes": 8227,
+    "sha256": "e3d8d2dd24f1b23b1d45bd49dfc39a9eefa42d513fe8d787e40c141a4a5c62f7",
+    "lines": 95
+   },
+   "subawards/FY2022_068_Subawards_All_Assistance_Subawards_2026-10-20_H12M38S46_1_trimmed.csv.gz": {
+    "bytes": 54817,
+    "sha256": "ab317f33790347e79fa388d4ff47b32cbd0b2fd843de0e83f67d7fb6febf2494",
+    "lines": 506
+   },
+   "subawards/FY2022_068_Subawards_All_Contracts_Subawards_2026-10-20_H12M38S27_1_trimmed.csv.gz": {
+    "bytes": 9856,
+    "sha256": "f43168dcbb783b4b02d2f726467d960c3b0fdf7eab78da3f48e9dc93a3623498",
+    "lines": 114
+   },
+   "subawards/FY2022_069_Subawards_All_Assistance_Subawards_2026-10-20_H13M30S47_1_trimmed.csv.gz": {
+    "bytes": 68900,
+    "sha256": "cdc633f51eea92d602211a0185adc30332e041ff2e3a6c3484d402609d17c57a",
+    "lines": 703
+   },
+   "subawards/FY2022_069_Subawards_All_Contracts_Subawards_2026-10-20_H13M29S57_1_trimmed.csv.gz": {
+    "bytes": 13077,
+    "sha256": "a0017e82e6a899b3b0cfa070df92efd147b077e83037d61f5a1aeaf5a9968a1e",
+    "lines": 123
+   },
+   "subawards/FY2022_070_Subawards_All_Assistance_Subawards_2026-10-20_H14M01S42_1_trimmed.csv.gz": {
+    "bytes": 85080,
+    "sha256": "3621387f6f4e4d21ea970881d7b5c22ad4d49480530a757de43c588e0c2b83c0",
+    "lines": 1399
+   },
+   "subawards/FY2022_070_Subawards_All_Contracts_Subawards_2026-10-20_H13M56S50_1_trimmed.csv.gz": {
+    "bytes": 7917,
+    "sha256": "bf9adefcd9c68f313cf814daac00b92e85222b137c578a9bccf453365276a1b5",
+    "lines": 81
+   },
+   "subawards/FY2022_072_Subawards_All_Assistance_Subawards_2026-10-20_H19M19S19_1_trimmed.csv.gz": {
+    "bytes": 122900,
+    "sha256": "1c89ac29d1f12250026d96d85257054f74fde45c2ff827d01140c6c1df95cf79",
+    "lines": 1611
+   },
+   "subawards/FY2022_072_Subawards_All_Contracts_Subawards_2026-10-20_H19M17S00_1_trimmed.csv.gz": {
+    "bytes": 34505,
+    "sha256": "f424b1af10a4fe52036be2fcf7b335560a23b302379ecb132737c30da6028441",
+    "lines": 420
+   },
+   "subawards/FY2022_080_Subawards_All_Assistance_Subawards_2026-10-19_H22M54S26_1_trimmed.csv.gz": {
+    "bytes": 274494,
+    "sha256": "cab90532b56e689680180d05814307b733fc0e9e0fb1dff73b5a754bf4534f17",
+    "lines": 4887
+   },
+   "subawards/FY2022_080_Subawards_All_Contracts_Subawards_2026-10-19_H22M31S24_1_trimmed.csv.gz": {
+    "bytes": 48035,
+    "sha256": "0bf3248b41741b234cabee4192647f4e895ca2dd2d4a6b08222a49e4d4dd3b29",
+    "lines": 751
+   },
+   "subawards/FY2022_086_Subawards_All_Assistance_Subawards_2026-10-20_H19M52S28_1_trimmed.csv.gz": {
+    "bytes": 16082,
+    "sha256": "31c8fea05a0185eb846ac01d292dde72531859ba68f29de83af21a9c7f11f6a0",
+    "lines": 218
+   },
+   "subawards/FY2022_086_Subawards_All_Contracts_Subawards_2026-10-20_H19M52S08_1_trimmed.csv.gz": {
+    "bytes": 1530,
+    "sha256": "201ede01dee325597fc9da1338bdbbe4e5c094e262b4d45f28b3779fe1d35de7",
+    "lines": 5
+   },
+   "subawards/FY2022_089_Subawards_All_Assistance_Subawards_2026-10-19_H18M59S40_1_trimmed.csv.gz": {
+    "bytes": 283147,
+    "sha256": "29de0cc09f815d5b3995d5f03794e9cde8bdb70fd7173daead33f0b4365cce1b",
+    "lines": 4635
+   },
+   "subawards/FY2022_089_Subawards_All_Contracts_Subawards_2026-10-19_H17M45S59_1_trimmed.csv.gz": {
+    "bytes": 19215,
+    "sha256": "59e2aa012066f1080c40032e104afc24654444b1c9c2355f4191c0c1996abab9",
+    "lines": 343
+   },
+   "subawards/FY2022_1601_Subawards_All_Assistance_Subawards_2026-10-20_H19M40S08_1_trimmed.csv.gz": {
+    "bytes": 38578,
+    "sha256": "61a54afa594a0e6d6c3a6398b55ab39355170817ea5465eda10b73304a1843f4",
+    "lines": 586
+   },
+   "subawards/FY2022_1601_Subawards_All_Contracts_Subawards_2026-10-20_H19M39S37_1_trimmed.csv.gz": {
+    "bytes": 1304,
+    "sha256": "408ff33cfe119d19bdbf2cfb006675337b8013fc2782218676163f66f11d846e",
+    "lines": 4
+   },
+   "subawards/FY2022_417_Subawards_All_Assistance_Subawards_2026-10-20_H20M25S52_1_trimmed.csv.gz": {
+    "bytes": 2601,
+    "sha256": "6012b94dd925cb69b3d9c0487ec951186a64f1d8f10e73e02d8c76f97513f6e3",
+    "lines": 20
+   },
+   "subawards/FY2022_417_Subawards_All_Contracts_Subawards_2026-10-20_H20M25S42_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "7442b43d334e0ce24d505ab09e49734d23756a23342dbf009a2c23e6ff0f4c12",
+    "lines": 1
+   },
+   "subawards/FY2022_418_Subawards_All_Assistance_Subawards_2026-10-20_H20M17S42_1_trimmed.csv.gz": {
+    "bytes": 18738,
+    "sha256": "44f2e1b43c039a058397e471b8a51321164b2d0abeb77ba80ec0ccc60701bd94",
+    "lines": 204
+   },
+   "subawards/FY2022_418_Subawards_All_Contracts_Subawards_2026-10-20_H20M17S14_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "605198762aca4b6a1436ae8f4034e55a6584b6710e34f667440a6c8a2c5812d5",
+    "lines": 1
+   },
+   "subawards/FY2022_474_Subawards_All_Assistance_Subawards_2026-10-20_H20M33S08_1_trimmed.csv.gz": {
+    "bytes": 11409,
+    "sha256": "2be270af6564940ecc356aee6da005b4c2fe64dcca4569f0f7bffc415cbbce85",
+    "lines": 127
+   },
+   "subawards/FY2022_474_Subawards_All_Contracts_Subawards_2026-10-20_H20M32S29_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "5e88f6facfd9cfcdeb78d9dc4188d0ffdde46b0c31ba8fbeead78ba5e64ddf16",
+    "lines": 1
+   },
+   "subawards/FY2023Q1_012_Subawards_All_Assistance_Subawards_2026-10-20_H03M00S44_1_trimmed.csv.gz": {
+    "bytes": 214170,
+    "sha256": "a897bd06dcb1b8e57d9487e79f35add123ea9324b5f026b79e695bfdaa56ae40",
+    "lines": 3959
+   },
+   "subawards/FY2023Q1_012_Subawards_All_Contracts_Subawards_2026-10-20_H02M59S52_1_trimmed.csv.gz": {
+    "bytes": 817,
+    "sha256": "e0183c890b3fbde25e541ef97d5ce5873946396ad62220d7820bdad3b4b265a7",
+    "lines": 2
+   },
+   "subawards/FY2023Q1_075_Subawards_All_Assistance_Subawards_2026-10-19_H12M47S44_1_trimmed.csv.gz": {
+    "bytes": 1965285,
+    "sha256": "e56ef8195c3db4e5c307e32d302a61b0c4eb65922c1ec8d5edb125fea2138f07",
+    "lines": 28457
+   },
+   "subawards/FY2023Q1_075_Subawards_All_Contracts_Subawards_2026-10-19_H12M44S34_1_trimmed.csv.gz": {
+    "bytes": 43511,
+    "sha256": "639238e30d6e8a6687be55744e15534c4491001e5fa64c38190bdebe28bb3b45",
+    "lines": 435
+   },
+   "subawards/FY2023Q1_091_Subawards_All_Assistance_Subawards_2026-10-20_H11M29S39_1_trimmed.csv.gz": {
+    "bytes": 287558,
+    "sha256": "9472216a50ad4f69032778d114df4d5fb9cceafaa815861b94e71e553351cf38",
+    "lines": 6292
+   },
+   "subawards/FY2023Q1_091_Subawards_All_Contracts_Subawards_2026-10-20_H11M28S41_1_trimmed.csv.gz": {
+    "bytes": 2058,
+    "sha256": "d2aeaa24ff3b0f49da0e6d9ad8e51081ff95184a4106edeb743ce6f362608303",
+    "lines": 10
+   },
+   "subawards/FY2023Q1_097_Subawards_All_Assistance_Subawards_2026-10-19_H16M00S19_1_trimmed.csv.gz": {
+    "bytes": 145076,
+    "sha256": "f6d37b6c2f994904df92e72fba4d4163cc34b5692939df51eed91f6cf38ded9b",
+    "lines": 2895
+   },
+   "subawards/FY2023Q1_097_Subawards_All_Contracts_Subawards_2026-10-19_H15M50S56_1_trimmed.csv.gz": {
+    "bytes": 105376,
+    "sha256": "27a6eef386d98f772d7e1897eee256610d6301453d7d0efd5bce80580933e049",
+    "lines": 1223
+   },
+   "subawards/FY2023Q2_012_Subawards_All_Assistance_Subawards_2026-10-20_H03M11S13_1_trimmed.csv.gz": {
+    "bytes": 119706,
+    "sha256": "a346365026177f946fcd9b184dfbc6890bffc57a7490f394f6bc217a3038c2af",
+    "lines": 1645
+   },
+   "subawards/FY2023Q2_012_Subawards_All_Contracts_Subawards_2026-10-20_H03M10S06_1_trimmed.csv.gz": {
+    "bytes": 1090,
+    "sha256": "83780ddfb52835fde4cc2f7087f01584850e365b2b68b1be4fe6693aa7dff791",
+    "lines": 4
+   },
+   "subawards/FY2023Q2_075_Subawards_All_Assistance_Subawards_2026-10-19_H13M06S20_1_trimmed.csv.gz": {
+    "bytes": 1653657,
+    "sha256": "9f718578a59115fef3353ac0c86e9290fcf9398a2b013d665c4b44fb2fb085a9",
+    "lines": 20151
+   },
+   "subawards/FY2023Q2_075_Subawards_All_Contracts_Subawards_2026-10-19_H13M05S11_1_trimmed.csv.gz": {
+    "bytes": 37292,
+    "sha256": "9ad735f9241f0f9c48adaed0ae1d0b28f7b7219b6f1bfd60a8d479e34cb0b271",
+    "lines": 325
+   },
+   "subawards/FY2023Q2_091_Subawards_All_Assistance_Subawards_2026-10-20_H11M33S57_1_trimmed.csv.gz": {
+    "bytes": 245649,
+    "sha256": "a0f9215914c0a588b5db98b1e3ed1fc3200ed0a296237d0405611b27ada08c73",
+    "lines": 5095
+   },
+   "subawards/FY2023Q2_091_Subawards_All_Contracts_Subawards_2026-10-20_H11M33S04_1_trimmed.csv.gz": {
+    "bytes": 2932,
+    "sha256": "fff01264f19963f17b10998e156367474612846e20bb3733aad176bc7de1ef9f",
+    "lines": 24
+   },
+   "subawards/FY2023Q2_097_Subawards_All_Assistance_Subawards_2026-10-19_H16M13S39_1_trimmed.csv.gz": {
+    "bytes": 148794,
+    "sha256": "b6522d775600885993464f21a2ad57ff84f713cfab96cca8f763618c8ecb56bb",
+    "lines": 1976
+   },
+   "subawards/FY2023Q2_097_Subawards_All_Contracts_Subawards_2026-10-19_H16M01S59_1_trimmed.csv.gz": {
+    "bytes": 94748,
+    "sha256": "08b32bf27c1ac37379c2856a63bf40deb5e31c0b69fea12b193985cbca97bb96",
+    "lines": 1116
+   },
+   "subawards/FY2023Q3_012_Subawards_All_Assistance_Subawards_2026-10-20_H03M17S31_1_trimmed.csv.gz": {
+    "bytes": 129009,
+    "sha256": "302093bd38faf028311bc1003310aa7cfd8d6e87e0324e7a7cd4d23d697e3bfd",
+    "lines": 1848
+   },
+   "subawards/FY2023Q3_012_Subawards_All_Contracts_Subawards_2026-10-20_H03M16S21_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "be1a85aa05e5812127d6c523e4d119ca5720da8169bd7875370a412df29d67ef",
+    "lines": 1
+   },
+   "subawards/FY2023Q3_075_Subawards_All_Assistance_Subawards_2026-10-19_H13M16S04_1_trimmed.csv.gz": {
+    "bytes": 1542482,
+    "sha256": "1429ec02c659854338e0ede1ae60db6af04feb82fa67eb015277f0955755eba8",
+    "lines": 18769
+   },
+   "subawards/FY2023Q3_075_Subawards_All_Contracts_Subawards_2026-10-19_H13M14S21_1_trimmed.csv.gz": {
+    "bytes": 29006,
+    "sha256": "70227b821435b0fc1ce93f0e4758de59282eb19a1d09ecd5ddc277930ee94dd4",
+    "lines": 281
+   },
+   "subawards/FY2023Q3_091_Subawards_All_Assistance_Subawards_2026-10-20_H11M37S49_1_trimmed.csv.gz": {
+    "bytes": 221855,
+    "sha256": "e387eab56bc87c36731fcd7284a6cb1fb548970c14a04a883cc07802fbd1a769",
+    "lines": 5444
+   },
+   "subawards/FY2023Q3_091_Subawards_All_Contracts_Subawards_2026-10-20_H11M36S50_1_trimmed.csv.gz": {
+    "bytes": 3495,
+    "sha256": "bf529175df89a36654af2bbbe75a05f8be2e4a774af1e8d6e561d07a5f39cb4b",
+    "lines": 30
+   },
+   "subawards/FY2023Q3_097_Subawards_All_Assistance_Subawards_2026-10-19_H16M28S31_1_trimmed.csv.gz": {
+    "bytes": 156327,
+    "sha256": "4fcfaac7cb48bc5a31503d2a59e74b60f19ca23555d6f1f7cd1716e080fe8a1d",
+    "lines": 2110
+   },
+   "subawards/FY2023Q3_097_Subawards_All_Contracts_Subawards_2026-10-19_H16M16S37_1_trimmed.csv.gz": {
+    "bytes": 102251,
+    "sha256": "41b1c12f97f38240e6ce92cc2cbff2f5520ad7f96ddadf9c0cda6ddee63ab6ff",
+    "lines": 1121
+   },
+   "subawards/FY2023Q4_012_Subawards_All_Assistance_Subawards_2026-10-20_H03M32S34_1_trimmed.csv.gz": {
+    "bytes": 157347,
+    "sha256": "30c42efed98d608f38da09962b912214759e1b6cc2ded24e6e8848e3cb7a5c72",
+    "lines": 1873
+   },
+   "subawards/FY2023Q4_012_Subawards_All_Contracts_Subawards_2026-10-20_H03M31S54_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "82e308410c104dda47b3f617015132f9427381273f226c6ac1df0fad2a30ca7e",
+    "lines": 1
+   },
+   "subawards/FY2023Q4_075_Subawards_All_Assistance_Subawards_2026-10-19_H13M25S54_1_trimmed.csv.gz": {
+    "bytes": 2053899,
+    "sha256": "7dd87c50f39dc585dfeda7a17a5583f4cd40c4c6b3457eeadb7bef9e491eb064",
+    "lines": 27313
+   },
+   "subawards/FY2023Q4_075_Subawards_All_Contracts_Subawards_2026-10-19_H13M24S15_1_trimmed.csv.gz": {
+    "bytes": 30572,
+    "sha256": "4fe80d07a303096ee016c66c226069d850e6056e3b9ec81a03570669ee43120e",
+    "lines": 265
+   },
+   "subawards/FY2023Q4_091_Subawards_All_Assistance_Subawards_2026-10-20_H11M42S31_1_trimmed.csv.gz": {
+    "bytes": 288079,
+    "sha256": "e7a4c47b9c9d41aeded69d1a1e6d72b9cc95e0fa1d9a31c10a152cc3d22e27bf",
+    "lines": 4951
+   },
+   "subawards/FY2023Q4_091_Subawards_All_Contracts_Subawards_2026-10-20_H11M41S25_1_trimmed.csv.gz": {
+    "bytes": 2242,
+    "sha256": "3207380cff15bbffb93b9e9403ac0ebccc67dbb0a4d7a80794b0321f98119740",
+    "lines": 10
+   },
+   "subawards/FY2023Q4_097_Subawards_All_Assistance_Subawards_2026-10-19_H16M38S43_1_trimmed.csv.gz": {
+    "bytes": 150799,
+    "sha256": "8dc159a1dd28d1b48ab78863df76e6bfbea06c8cb9e5af7558c4ac017aedb90a",
+    "lines": 2096
+   },
+   "subawards/FY2023Q4_097_Subawards_All_Contracts_Subawards_2026-10-19_H16M31S50_1_trimmed.csv.gz": {
+    "bytes": 116856,
+    "sha256": "1ed6fed31791eff6f280dd0aa073a4f8c1e8ea592b3dcb94ef2f9c5e9c6fc364",
+    "lines": 1298
+   },
+   "subawards/FY2023_013_Subawards_All_Assistance_Subawards_2026-10-20_H10M29S34_1_trimmed.csv.gz": {
+    "bytes": 186213,
+    "sha256": "f83bd74038c048f3ba39fb4a50ce0c7fa398a52fd79e0dc5d65619ea977e2186",
+    "lines": 2685
+   },
+   "subawards/FY2023_013_Subawards_All_Contracts_Subawards_2026-10-20_H10M29S21_1_trimmed.csv.gz": {
+    "bytes": 2499,
+    "sha256": "6f0b2534ed8b891955dac113d5764638552a0e4e66696b7781b7aa310bcdaf65",
+    "lines": 14
+   },
+   "subawards/FY2023_014_Subawards_All_Assistance_Subawards_2026-10-20_H10M39S49_1_trimmed.csv.gz": {
+    "bytes": 92529,
+    "sha256": "f67190e44616fe24a05ab56f0ee2febd5580a5408ffb7fce9e74a8a6811dd6cb",
+    "lines": 926
+   },
+   "subawards/FY2023_014_Subawards_All_Contracts_Subawards_2026-10-20_H10M39S24_1_trimmed.csv.gz": {
+    "bytes": 5240,
+    "sha256": "262439f12eec3312505c42fbeef6fd1a50879fc73dc1c724afa2b2cad60b2a08",
+    "lines": 38
+   },
+   "subawards/FY2023_015_Subawards_All_Assistance_Subawards_2026-10-20_H18M47S44_1_trimmed.csv.gz": {
+    "bytes": 87595,
+    "sha256": "9dc26108d6057c1b230343e3d2334211e13818a3d6b921accea4ebd3d298e446",
+    "lines": 780
+   },
+   "subawards/FY2023_015_Subawards_All_Contracts_Subawards_2026-10-20_H18M46S43_1_trimmed.csv.gz": {
+    "bytes": 2215,
+    "sha256": "6840c4ac826e83b6e75895aeeab8ec0948029c893a0fe440f991ea243fad064c",
+    "lines": 10
+   },
+   "subawards/FY2023_019_Subawards_All_Assistance_Subawards_2026-10-20_H19M09S48_1_trimmed.csv.gz": {
+    "bytes": 42585,
+    "sha256": "19138beb430f5caecde08508fc7f582027518851a5811cbad64a09df5f1add51",
+    "lines": 847
+   },
+   "subawards/FY2023_019_Subawards_All_Contracts_Subawards_2026-10-20_H19M08S59_1_trimmed.csv.gz": {
+    "bytes": 3567,
+    "sha256": "e6513bd0822f53347ed48cb48f1971d8af681e91a64f7b17dd5611f58a423684",
+    "lines": 26
+   },
+   "subawards/FY2023_036_Subawards_All_Assistance_Subawards_2026-10-20_H19M01S06_1_trimmed.csv.gz": {
+    "bytes": 1688,
+    "sha256": "15b1c0db975a76cb5798087b7f2083e150ad48eeb66b70ff96fed5a5d3a0a357",
+    "lines": 7
+   },
+   "subawards/FY2023_036_Subawards_All_Contracts_Subawards_2026-10-20_H19M00S26_1_trimmed.csv.gz": {
+    "bytes": 1458,
+    "sha256": "a10ded91370364f1e19e9f4bda69dfb65968a30802d2b07516dbc9786a86d0fe",
+    "lines": 4
+   },
+   "subawards/FY2023_049_Subawards_All_Assistance_Subawards_2026-10-19_H11M35S45_1_trimmed.csv.gz": {
+    "bytes": 773696,
+    "sha256": "6dad99cf3e442e195fae60b2b3eab3cc036979a0cbfca6cf7a48faa5995a98e6",
+    "lines": 11556
+   },
+   "subawards/FY2023_049_Subawards_All_Contracts_Subawards_2026-10-19_H11M35S12_1_trimmed.csv.gz": {
+    "bytes": 10200,
+    "sha256": "9135f3bd6b377288cb90cbfd020d539e7c1cc530a941ece7484bbf2bd1495a80",
+    "lines": 152
+   },
+   "subawards/FY2023_068_Subawards_All_Assistance_Subawards_2026-10-20_H12M48S56_1_trimmed.csv.gz": {
+    "bytes": 65938,
+    "sha256": "c1d28e735cf708997c3c301ab16a7d31f832dd1443590c96033acd22710df325",
+    "lines": 581
+   },
+   "subawards/FY2023_068_Subawards_All_Contracts_Subawards_2026-10-20_H12M48S17_1_trimmed.csv.gz": {
+    "bytes": 11056,
+    "sha256": "d850d661cb1d18af8eba69d95ee457234d9abaf634bd66058f363f2806469e3e",
+    "lines": 133
+   },
+   "subawards/FY2023_069_Subawards_All_Assistance_Subawards_2026-10-20_H13M35S23_1_trimmed.csv.gz": {
+    "bytes": 64663,
+    "sha256": "8c79814c464be3afdef7cb9c82c0e94014e4c4ebe4da0cee966308c7f3ee29fc",
+    "lines": 785
+   },
+   "subawards/FY2023_069_Subawards_All_Contracts_Subawards_2026-10-20_H13M33S59_1_trimmed.csv.gz": {
+    "bytes": 14165,
+    "sha256": "1fec42216a08e7ae93840d815173f14b74df4124c854763d5ff805ec58452754",
+    "lines": 149
+   },
+   "subawards/FY2023_070_Subawards_All_Assistance_Subawards_2026-10-20_H14M53S34_1_trimmed.csv.gz": {
+    "bytes": 95211,
+    "sha256": "8fd4509b82c9570de8677e242b7de9ffd887e4f364c49ff1319079c871f314d3",
+    "lines": 1467
+   },
+   "subawards/FY2023_070_Subawards_All_Contracts_Subawards_2026-10-20_H14M49S46_1_trimmed.csv.gz": {
+    "bytes": 9615,
+    "sha256": "0a9ef1ab4f569cd95d563992e851db3a1c3995d213419ae9eca702f56c1b8cb5",
+    "lines": 92
+   },
+   "subawards/FY2023_072_Subawards_All_Assistance_Subawards_2026-10-20_H19M25S23_1_trimmed.csv.gz": {
+    "bytes": 137445,
+    "sha256": "1df9ecaa6c901999be54d0b5f680fb325d10127888228e5ef0b44a20b3854c48",
+    "lines": 1904
+   },
+   "subawards/FY2023_072_Subawards_All_Contracts_Subawards_2026-10-20_H19M23S14_1_trimmed.csv.gz": {
+    "bytes": 32353,
+    "sha256": "d563103c7676006312f94cf48f08a2d4675d3c038b005fd2e87a065b58566e81",
+    "lines": 453
+   },
+   "subawards/FY2023_080_Subawards_All_Assistance_Subawards_2026-10-20_H11M11S11_1_trimmed.csv.gz": {
+    "bytes": 308672,
+    "sha256": "22b1bbd4ea8cc5086362d46f6744e4d94c9b027d750f9a05e9e943841a5597a2",
+    "lines": 4758
+   },
+   "subawards/FY2023_080_Subawards_All_Contracts_Subawards_2026-10-20_H10M49S08_1_trimmed.csv.gz": {
+    "bytes": 50625,
+    "sha256": "a33fd5aff78af3969559490f3d879104b7c4334cd30b0530b1ab58bb747bb40e",
+    "lines": 821
+   },
+   "subawards/FY2023_086_Subawards_All_Assistance_Subawards_2026-10-20_H19M55S40_1_trimmed.csv.gz": {
+    "bytes": 12045,
+    "sha256": "79facf190e45d502e7c6d6980d5c17314efffbc981373984f27fa8126ef436e1",
+    "lines": 122
+   },
+   "subawards/FY2023_086_Subawards_All_Contracts_Subawards_2026-10-20_H19M55S17_1_trimmed.csv.gz": {
+    "bytes": 1076,
+    "sha256": "aa6223d07d181b820592fdefa1925f291d07259ca37789d8e1073106f770c64b",
+    "lines": 13
+   },
+   "subawards/FY2023_089_Subawards_All_Assistance_Subawards_2026-10-19_H20M00S49_1_trimmed.csv.gz": {
+    "bytes": 315510,
+    "sha256": "54fe8a726102d22a4a7a90d3250c7f50f2b994913e79e96ab5c1e32cdb0416cf",
+    "lines": 5019
+   },
+   "subawards/FY2023_089_Subawards_All_Contracts_Subawards_2026-10-19_H19M01S18_1_trimmed.csv.gz": {
+    "bytes": 16887,
+    "sha256": "1877caa92a791f843a9e24e0eea03fb1486db844af6af4633c14c02cc8c81ac4",
+    "lines": 310
+   },
+   "subawards/FY2023_1601_Subawards_All_Assistance_Subawards_2026-10-20_H19M42S32_1_trimmed.csv.gz": {
+    "bytes": 35873,
+    "sha256": "4da90aae32d87cb177462a15fc5fd181775b3c0e3a73cd0e394fe9247213b0a3",
+    "lines": 534
+   },
+   "subawards/FY2023_1601_Subawards_All_Contracts_Subawards_2026-10-20_H19M41S53_1_trimmed.csv.gz": {
+    "bytes": 1534,
+    "sha256": "b451c9d1c8fe698b6af56e2a10745a7f6a7bf4e7e8a5943e6f03433ad2351675",
+    "lines": 6
+   },
+   "subawards/FY2023_417_Subawards_All_Assistance_Subawards_2026-10-20_H20M27S14_1_trimmed.csv.gz": {
+    "bytes": 2547,
+    "sha256": "37f0fc65ad6aec1d0ac1c12b3d6a5bf9c7ac596321faef9f58fc3dea28f6240b",
+    "lines": 19
+   },
+   "subawards/FY2023_417_Subawards_All_Contracts_Subawards_2026-10-20_H20M27S06_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "b9262889dddd514f46e2d37364235139d6fa734cc530e869be6c14702a9593d0",
+    "lines": 1
+   },
+   "subawards/FY2023_418_Subawards_All_Assistance_Subawards_2026-10-20_H20M20S20_1_trimmed.csv.gz": {
+    "bytes": 5178,
+    "sha256": "4167c6ca60e35f80943c166f323eac098023d1dae48b09c9eb0c29eb28241ff3",
+    "lines": 30
+   },
+   "subawards/FY2023_418_Subawards_All_Contracts_Subawards_2026-10-20_H20M19S54_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "d1f3994cce8116d5de1543db106315d88015b956b3108de0cfb9eb2cb13bbadf",
+    "lines": 1
+   },
+   "subawards/FY2023_474_Subawards_All_Assistance_Subawards_2026-10-20_H20M35S07_1_trimmed.csv.gz": {
+    "bytes": 12385,
+    "sha256": "83eac07e6082db498bf8ceb5a3869c2b20d035867a4b8b939181a888e23e6082",
+    "lines": 135
+   },
+   "subawards/FY2023_474_Subawards_All_Contracts_Subawards_2026-10-20_H20M34S52_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "d282dc5c856432c6143225e88ab1c8ffe4f1144e3bdb044b1b7b0a205a0d83c2",
+    "lines": 1
+   },
+   "subawards/FY2024Q1_012_Subawards_All_Assistance_Subawards_2026-10-20_H07M25S43_1_trimmed.csv.gz": {
+    "bytes": 195255,
+    "sha256": "8cf64543dc037784ecd80d0855b76db1b3435c4b85f49529c4ac4173f5b5da9a",
+    "lines": 2760
+   },
+   "subawards/FY2024Q1_012_Subawards_All_Contracts_Subawards_2026-10-20_H07M24S45_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "360f9450d7d8a920582d05930f2ccb82a3711bd5fa5f46e1cbf869873e320265",
+    "lines": 1
+   },
+   "subawards/FY2024Q1_075_Subawards_All_Assistance_Subawards_2026-10-19_H13M39S18_1_trimmed.csv.gz": {
+    "bytes": 2035012,
+    "sha256": "7161319aa612a4a0ef87cad5808f4cfea185a6779a349893e44ca4424cde1559",
+    "lines": 25792
+   },
+   "subawards/FY2024Q1_075_Subawards_All_Contracts_Subawards_2026-10-19_H13M38S04_1_trimmed.csv.gz": {
+    "bytes": 41875,
+    "sha256": "c0225e6bccee16e0856d22b4e82b8682e369ed7d58ea2421a1511436c4adc22e",
+    "lines": 444
+   },
+   "subawards/FY2024Q1_091_Subawards_All_Assistance_Subawards_2026-10-20_H11M48S46_1_trimmed.csv.gz": {
+    "bytes": 132123,
+    "sha256": "e8e77eee80b8042a75c421b8304d82485acefbe9006340173696f67b371061ac",
+    "lines": 1790
+   },
+   "subawards/FY2024Q1_091_Subawards_All_Contracts_Subawards_2026-10-20_H11M47S59_1_trimmed.csv.gz": {
+    "bytes": 1850,
+    "sha256": "e970431f6a4474f4c1ea8c9060b8df0c7cb63d62746854d49f3cb5c0799a1aca",
+    "lines": 9
+   },
+   "subawards/FY2024Q1_097_Subawards_All_Assistance_Subawards_2026-10-19_H16M47S31_1_trimmed.csv.gz": {
+    "bytes": 156335,
+    "sha256": "13ec0d40140cbb4bff205f81084b96ba3e4bd0789a6e469efae87e996095271a",
+    "lines": 2406
+   },
+   "subawards/FY2024Q1_097_Subawards_All_Contracts_Subawards_2026-10-19_H16M40S36_1_trimmed.csv.gz": {
+    "bytes": 104452,
+    "sha256": "44841a91268c24b1dcd980d044583076ea92052a251d2e44318c63e3aa39a67c",
+    "lines": 1101
+   },
+   "subawards/FY2024Q2_012_Subawards_All_Assistance_Subawards_2026-10-20_H09M40S09_1_trimmed.csv.gz": {
+    "bytes": 143283,
+    "sha256": "25901e8a92053be28c36cf69447e5b9ad235810e063488cc3f8ac0969be2a398",
+    "lines": 1933
+   },
+   "subawards/FY2024Q2_012_Subawards_All_Contracts_Subawards_2026-10-20_H09M39S30_1_trimmed.csv.gz": {
+    "bytes": 1676,
+    "sha256": "2befff1e9020b78db619beedc6855d6d0d81af4750c6b2e2d253f3dde4a3e8d0",
+    "lines": 8
+   },
+   "subawards/FY2024Q2_075_Subawards_All_Assistance_Subawards_2026-10-19_H13M54S34_1_trimmed.csv.gz": {
+    "bytes": 1528562,
+    "sha256": "89412d65c1981315ba900802e51d3556df582a932252a95be91d0ab689635d28",
+    "lines": 17652
+   },
+   "subawards/FY2024Q2_075_Subawards_All_Contracts_Subawards_2026-10-19_H13M53S38_1_trimmed.csv.gz": {
+    "bytes": 36670,
+    "sha256": "d6c511f98b7859bf92e16e7f9edad4d10e7e86c2b4b71743c7374f34792bf5fc",
+    "lines": 473
+   },
+   "subawards/FY2024Q2_091_Subawards_All_Assistance_Subawards_2026-10-20_H11M52S34_1_trimmed.csv.gz": {
+    "bytes": 119197,
+    "sha256": "0ea01db08d9308e569ca28c12f9b0b25ca90d927881cfe3423bd4980308c8d37",
+    "lines": 1923
+   },
+   "subawards/FY2024Q2_091_Subawards_All_Contracts_Subawards_2026-10-20_H11M51S46_1_trimmed.csv.gz": {
+    "bytes": 3985,
+    "sha256": "3e75715174091e5717f17865fe4ae10d9cb1f5ec9045aeb429666a5e50cafadc",
+    "lines": 31
+   },
+   "subawards/FY2024Q2_097_Subawards_All_Assistance_Subawards_2026-10-19_H16M56S59_1_trimmed.csv.gz": {
+    "bytes": 131884,
+    "sha256": "3264e5ed6f4f0ca55b0209e858938a4e785d449341e838c9e6bee2a193d54019",
+    "lines": 1738
+   },
+   "subawards/FY2024Q2_097_Subawards_All_Contracts_Subawards_2026-10-19_H16M49S19_1_trimmed.csv.gz": {
+    "bytes": 102190,
+    "sha256": "f4c283b9c513ad8d7ae27fef7fb4436ffb754a92e5c38f4977f97c61b20e8208",
+    "lines": 1110
+   },
+   "subawards/FY2024Q3_012_Subawards_All_Assistance_Subawards_2026-10-20_H09M45S41_1_trimmed.csv.gz": {
+    "bytes": 114691,
+    "sha256": "bec7ba39c67b6ed004e35e787b8176874e54dea8b1ccf4777d212e04bcff7039",
+    "lines": 1713
+   },
+   "subawards/FY2024Q3_012_Subawards_All_Contracts_Subawards_2026-10-20_H09M45S16_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "99042b62b58bf0f77625b8ff7905f11169ba8216cb9c7dbe49a994dbbfacfd3a",
+    "lines": 1
+   },
+   "subawards/FY2024Q3_075_Subawards_All_Assistance_Subawards_2026-10-19_H14M02S06_1_trimmed.csv.gz": {
+    "bytes": 1517082,
+    "sha256": "06b775650d4d8e2c37c8460253b683d315ba22352a0564e1daddbcf3960d5d78",
+    "lines": 19998
+   },
+   "subawards/FY2024Q3_075_Subawards_All_Contracts_Subawards_2026-10-19_H14M01S25_1_trimmed.csv.gz": {
+    "bytes": 31450,
+    "sha256": "2f9b1962186cd624bf139f619f1a82968ae2d6c4d9da10cc383a67cbfc54db3e",
+    "lines": 413
+   },
+   "subawards/FY2024Q3_091_Subawards_All_Assistance_Subawards_2026-10-20_H11M56S30_1_trimmed.csv.gz": {
+    "bytes": 111716,
+    "sha256": "c89a0aedcb88783316386bea7fc78846fd57ce9fc67a3682a446a31227f00eb7",
+    "lines": 1981
+   },
+   "subawards/FY2024Q3_091_Subawards_All_Contracts_Subawards_2026-10-20_H11M55S38_1_trimmed.csv.gz": {
+    "bytes": 1806,
+    "sha256": "ed087dbd63b3b2e4e40a66cc99e2e1f6fe26ba8cad0a2c717bf9183b21aa56e5",
+    "lines": 11
+   },
+   "subawards/FY2024Q3_097_Subawards_All_Assistance_Subawards_2026-10-19_H17M04S54_1_trimmed.csv.gz": {
+    "bytes": 118565,
+    "sha256": "c812d356c273f3d19318597c65c79b1c38ab098dd3171c9ccccc8171aa87c3a4",
+    "lines": 1566
+   },
+   "subawards/FY2024Q3_097_Subawards_All_Contracts_Subawards_2026-10-19_H16M58S41_1_trimmed.csv.gz": {
+    "bytes": 107204,
+    "sha256": "eada808efc50e006e9c6870d065e44fde92f97e38bd803aaf44081c2d75272bd",
+    "lines": 1222
+   },
+   "subawards/FY2024Q4_012_Subawards_All_Assistance_Subawards_2026-10-20_H09M50S36_1_trimmed.csv.gz": {
+    "bytes": 169205,
+    "sha256": "67d1d7eaef52eaaf14f005bbec88ae0ae15be4b189ca8b9d3b2589e314db4f85",
+    "lines": 2033
+   },
+   "subawards/FY2024Q4_012_Subawards_All_Contracts_Subawards_2026-10-20_H09M50S00_1_trimmed.csv.gz": {
+    "bytes": 1192,
+    "sha256": "4ef8a3ae04c4f4ace4422c0fb8cba9e0932819ab214c6ca510c0eb0cc32420d4",
+    "lines": 3
+   },
+   "subawards/FY2024Q4_075_Subawards_All_Assistance_Subawards_2026-10-19_H14M09S09_1_trimmed.csv.gz": {
+    "bytes": 2034397,
+    "sha256": "eae3f285c0537bec644e05c496981d8ef9776fe6256e6b5940551e30cacb8646",
+    "lines": 23020
+   },
+   "subawards/FY2024Q4_075_Subawards_All_Contracts_Subawards_2026-10-19_H14M07S50_1_trimmed.csv.gz": {
+    "bytes": 35616,
+    "sha256": "6ffad171b21c9ea26da3401b52b7df5f3dd270213977718e65466a2fcd3266c9",
+    "lines": 387
+   },
+   "subawards/FY2024Q4_091_Subawards_All_Assistance_Subawards_2026-10-20_H11M59S20_1_trimmed.csv.gz": {
+    "bytes": 236318,
+    "sha256": "e0413a87e40fbb93ad945330baaa47befa425b450fd812548d8e52da169b9f08",
+    "lines": 3925
+   },
+   "subawards/FY2024Q4_091_Subawards_All_Contracts_Subawards_2026-10-20_H11M58S45_1_trimmed.csv.gz": {
+    "bytes": 2200,
+    "sha256": "779ad99c7a1ef6594346264f7640003e21ff3c7d2347e91b5b8be0bccce077cb",
+    "lines": 17
+   },
+   "subawards/FY2024Q4_097_Subawards_All_Assistance_Subawards_2026-10-19_H17M13S00_1_trimmed.csv.gz": {
+    "bytes": 148225,
+    "sha256": "e236088861a87f1434c0e2c27d7682372cd9a7d86b2af69706d309d3921f9963",
+    "lines": 1883
+   },
+   "subawards/FY2024Q4_097_Subawards_All_Contracts_Subawards_2026-10-19_H17M07S36_1_trimmed.csv.gz": {
+    "bytes": 94844,
+    "sha256": "557b8ee724f85fc7758812278503a14f39315d52473f8ce475085c180362dfe6",
+    "lines": 1044
+   },
+   "subawards/FY2024_013_Subawards_All_Assistance_Subawards_2026-10-20_H10M31S51_1_trimmed.csv.gz": {
+    "bytes": 175451,
+    "sha256": "025e2250fea531a01dc634531ecf751f43898467b1649e236e7279cccaa5210e",
+    "lines": 2118
+   },
+   "subawards/FY2024_013_Subawards_All_Contracts_Subawards_2026-10-20_H10M31S31_1_trimmed.csv.gz": {
+    "bytes": 4093,
+    "sha256": "8ccaf1b3f4dcd63a5564cf47b2109b5cab5e43847a436d1f7ac4674e002a6c50",
+    "lines": 33
+   },
+   "subawards/FY2024_014_Subawards_All_Assistance_Subawards_2026-10-20_H10M41S42_1_trimmed.csv.gz": {
+    "bytes": 107690,
+    "sha256": "37289c1f2925fb104fd73baf8de365b3601b7253b714a93c73279671b5fa8a01",
+    "lines": 1113
+   },
+   "subawards/FY2024_014_Subawards_All_Contracts_Subawards_2026-10-20_H10M41S05_1_trimmed.csv.gz": {
+    "bytes": 4841,
+    "sha256": "30f949f6b1de5d7dec61237a012f81681fad86d5cf81fcbdc69f71928dad1a14",
+    "lines": 36
+   },
+   "subawards/FY2024_015_Subawards_All_Assistance_Subawards_2026-10-20_H18M51S25_1_trimmed.csv.gz": {
+    "bytes": 87192,
+    "sha256": "1e6a3f3018d271bdb922fa235f7792f18aafb5babd8232d341d49c7311133620",
+    "lines": 833
+   },
+   "subawards/FY2024_015_Subawards_All_Contracts_Subawards_2026-10-20_H18M50S55_1_trimmed.csv.gz": {
+    "bytes": 2495,
+    "sha256": "90a44bf99d204f08bd616528770c46c8d535e300f38b352380ac2c637c0fdd3a",
+    "lines": 24
+   },
+   "subawards/FY2024_019_Subawards_All_Assistance_Subawards_2026-10-20_H19M12S20_1_trimmed.csv.gz": {
+    "bytes": 39621,
+    "sha256": "98a4e406252a93123fd0e73028da148b1854ca6de005d5da41d5335c61fccff7",
+    "lines": 686
+   },
+   "subawards/FY2024_019_Subawards_All_Contracts_Subawards_2026-10-20_H19M11S16_1_trimmed.csv.gz": {
+    "bytes": 3851,
+    "sha256": "d11a3376f48a54209f33ad73c14835e5cdf588abd0c3ce485b3acae6aec6f5bf",
+    "lines": 32
+   },
+   "subawards/FY2024_036_Subawards_All_Assistance_Subawards_2026-10-20_H19M02S36_1_trimmed.csv.gz": {
+    "bytes": 894,
+    "sha256": "294e5b86e26372998765c5d22b666e0b24368ab803a95e286bfdce455ef2fb46",
+    "lines": 2
+   },
+   "subawards/FY2024_036_Subawards_All_Contracts_Subawards_2026-10-20_H19M01S42_1_trimmed.csv.gz": {
+    "bytes": 2069,
+    "sha256": "0545d678fc0efd0b159578ae5c9ef24fd8896c9daa0f0cd4f8826ab5cba61ad1",
+    "lines": 6
+   },
+   "subawards/FY2024_049_Subawards_All_Assistance_Subawards_2026-10-19_H11M38S25_1_trimmed.csv.gz": {
+    "bytes": 740367,
+    "sha256": "be97c9f14e0553e79a16e09acf8dee5d2822407cb57ccb3cf0be36ce6891229e",
+    "lines": 9972
+   },
+   "subawards/FY2024_049_Subawards_All_Contracts_Subawards_2026-10-19_H11M37S53_1_trimmed.csv.gz": {
+    "bytes": 9125,
+    "sha256": "12b91402e8da14ca335059ee05919428773cce20002b392db61b396d7e7139fe",
+    "lines": 109
+   },
+   "subawards/FY2024_068_Subawards_All_Assistance_Subawards_2026-10-20_H13M04S15_1_trimmed.csv.gz": {
+    "bytes": 87269,
+    "sha256": "a160add5b1a79fe56cbe618715661b7c0af6f060e2fc742254018698426220cc",
+    "lines": 929
+   },
+   "subawards/FY2024_068_Subawards_All_Contracts_Subawards_2026-10-20_H13M03S46_1_trimmed.csv.gz": {
+    "bytes": 11574,
+    "sha256": "5a779269151e3573c883d6ef61b4d9a353e363aaf7dc8a972e61c807720021bd",
+    "lines": 133
+   },
+   "subawards/FY2024_069_Subawards_All_Assistance_Subawards_2026-10-20_H13M42S46_1_trimmed.csv.gz": {
+    "bytes": 73145,
+    "sha256": "d2088cea366a86e20e7987ae23b28b2c010c21b7f9fb912fcf52b51645d83d6f",
+    "lines": 953
+   },
+   "subawards/FY2024_069_Subawards_All_Contracts_Subawards_2026-10-20_H13M39S48_1_trimmed.csv.gz": {
+    "bytes": 12219,
+    "sha256": "0c97190c83fb0c8a76563a6a357f836503eddbba3a915119b15d904eb3c35c26",
+    "lines": 133
+   },
+   "subawards/FY2024_070_Subawards_All_Assistance_Subawards_2026-10-20_H15M42S51_1_trimmed.csv.gz": {
+    "bytes": 84837,
+    "sha256": "b0d506151cf395ab338bb16bcd99bfef6c5969671724fadfec54fa2c2411091c",
+    "lines": 1386
+   },
+   "subawards/FY2024_070_Subawards_All_Contracts_Subawards_2026-10-20_H15M40S43_1_trimmed.csv.gz": {
+    "bytes": 6521,
+    "sha256": "5835207ad6bb79d3ca5868091217c312806581df51a9618e3b47f208b51b576b",
+    "lines": 70
+   },
+   "subawards/FY2024_072_Subawards_All_Assistance_Subawards_2026-10-20_H19M30S51_1_trimmed.csv.gz": {
+    "bytes": 148236,
+    "sha256": "05033deb88f0ff72ffe6cecc594695fc16d5f583714dc3f92730e7e201e51fdd",
+    "lines": 2441
+   },
+   "subawards/FY2024_072_Subawards_All_Contracts_Subawards_2026-10-20_H19M29S22_1_trimmed.csv.gz": {
+    "bytes": 29613,
+    "sha256": "3f2da08ab2131450f39983899e9d55bf2bac7ebd6f53953a2c6db5583b01ece0",
+    "lines": 380
+   },
+   "subawards/FY2024_080_Subawards_All_Assistance_Subawards_2026-10-20_H00M22S45_1_trimmed.csv.gz": {
+    "bytes": 294323,
+    "sha256": "0f72b78f0512d0eb94c28d8a0868a3e703887cbab18ae72a19ccd85a8cc5afa5",
+    "lines": 4229
+   },
+   "subawards/FY2024_080_Subawards_All_Contracts_Subawards_2026-10-20_H00M08S54_1_trimmed.csv.gz": {
+    "bytes": 45132,
+    "sha256": "2dd89a1367d7a1d771b0069bf42bcf4490334a5079a851fb5e59d797529afdc7",
+    "lines": 662
+   },
+   "subawards/FY2024_086_Subawards_All_Assistance_Subawards_2026-10-20_H20M01S43_1_trimmed.csv.gz": {
+    "bytes": 14578,
+    "sha256": "531c2cb41bb537fce1e18f2f4727bdf0b0ec408d9697b7b969943cec97f1bbbe",
+    "lines": 131
+   },
+   "subawards/FY2024_086_Subawards_All_Contracts_Subawards_2026-10-20_H20M00S41_1_trimmed.csv.gz": {
+    "bytes": 878,
+    "sha256": "85fde49029e81e8ce6062976774fcad39894ecab1a91e50724948ae88fe64eca",
+    "lines": 2
+   },
+   "subawards/FY2024_089_Subawards_All_Assistance_Subawards_2026-10-19_H21M04S29_1_trimmed.csv.gz": {
+    "bytes": 344450,
+    "sha256": "13d797408ad88f6776a9f6d26fd9a5243526925b45dd76fdf3189e967508ea93",
+    "lines": 5086
+   },
+   "subawards/FY2024_089_Subawards_All_Contracts_Subawards_2026-10-19_H20M03S25_1_trimmed.csv.gz": {
+    "bytes": 18737,
+    "sha256": "89a7de6f3c19ce4de56a3240b60c82cb94e376cdd561dc807cf98bb331826b0a",
+    "lines": 317
+   },
+   "subawards/FY2024_1601_Subawards_All_Assistance_Subawards_2026-10-20_H19M45S43_1_trimmed.csv.gz": {
+    "bytes": 45863,
+    "sha256": "cd79e17d09019a0dab3813a996ae88c497628e438a964751804669add5c317d2",
+    "lines": 634
+   },
+   "subawards/FY2024_1601_Subawards_All_Contracts_Subawards_2026-10-20_H19M45S14_1_trimmed.csv.gz": {
+    "bytes": 2261,
+    "sha256": "41c7ae37791efacf86405b65bfa01161581f5891f21dfc1df8f1e954385f8e01",
+    "lines": 18
+   },
+   "subawards/FY2024_417_Subawards_All_Assistance_Subawards_2026-10-20_H20M28S28_1_trimmed.csv.gz": {
+    "bytes": 1862,
+    "sha256": "1656dd71bd7361755407268ad3d5e41a7167372b16b90f76960c1dde05664d43",
+    "lines": 9
+   },
+   "subawards/FY2024_417_Subawards_All_Contracts_Subawards_2026-10-20_H20M28S11_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "4c6fce8200c2c0995a4542e65075261889c16dcbab9d09613ec0137635fa8a04",
+    "lines": 1
+   },
+   "subawards/FY2024_418_Subawards_All_Assistance_Subawards_2026-10-20_H20M21S38_1_trimmed.csv.gz": {
+    "bytes": 9006,
+    "sha256": "f9cff15b007450fa037ea18f7411aa0a5fb15ef4e415fe2408ca2d722fe57b00",
+    "lines": 76
+   },
+   "subawards/FY2024_418_Subawards_All_Contracts_Subawards_2026-10-20_H20M21S30_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "11b3c0b5a62034bca41ab6c718f9a894ab8332262d936cd0134efd87290ea2ec",
+    "lines": 1
+   },
+   "subawards/FY2024_474_Subawards_All_Assistance_Subawards_2026-10-20_H20M36S08_1_trimmed.csv.gz": {
+    "bytes": 10256,
+    "sha256": "81593ef04d92ba99d24c83430f6310df7bd58ad94359181e3a7f0bf2d21be2ec",
+    "lines": 94
+   },
+   "subawards/FY2024_474_Subawards_All_Contracts_Subawards_2026-10-20_H20M35S58_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "9e7aded9df16e2d86e9d3192b8586abcfd1f9ecc4e45d0df47eb495b1994e49b",
+    "lines": 1
+   },
+   "subawards/FY2025Q1_012_Subawards_All_Assistance_Subawards_2026-10-20_H09M55S46_1_trimmed.csv.gz": {
+    "bytes": 259131,
+    "sha256": "dea405897f1a4e078b241cdd01aa53b57038941b92f314fb6e4c353ae148a48c",
+    "lines": 3028
+   },
+   "subawards/FY2025Q1_012_Subawards_All_Contracts_Subawards_2026-10-20_H09M54S53_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "b5a0fef080057d4ac53e670a4e3fce05562c43344768eb3ebc4ea73b03891dbf",
+    "lines": 1
+   },
+   "subawards/FY2025Q1_075_Subawards_All_Assistance_Subawards_2026-10-19_H14M20S04_1_trimmed.csv.gz": {
+    "bytes": 2020584,
+    "sha256": "5f54549da966b86496b9e0dfbc6ddfd720a520f3f765661f323c70f824dffaf5",
+    "lines": 21807
+   },
+   "subawards/FY2025Q1_075_Subawards_All_Contracts_Subawards_2026-10-19_H14M19S18_1_trimmed.csv.gz": {
+    "bytes": 46125,
+    "sha256": "b0940adafc5090b305abdf4ab320a155751350ad23d1afc881392c1e73d11570",
+    "lines": 493
+   },
+   "subawards/FY2025Q1_091_Subawards_All_Assistance_Subawards_2026-10-20_H12M06S52_1_trimmed.csv.gz": {
+    "bytes": 235573,
+    "sha256": "658440d3182144a37f1f29bf41056169efcc176bcafb5251462f966858303aec",
+    "lines": 3906
+   },
+   "subawards/FY2025Q1_091_Subawards_All_Contracts_Subawards_2026-10-20_H12M06S02_1_trimmed.csv.gz": {
+    "bytes": 2909,
+    "sha256": "457b8998272a525f06b002a844efc9aa3142e5a55fe9c73fd23a02ff6d1bdc78",
+    "lines": 20
+   },
+   "subawards/FY2025Q1_097_Subawards_All_Assistance_Subawards_2026-10-19_H17M21S38_1_trimmed.csv.gz": {
+    "bytes": 167140,
+    "sha256": "13b64fe303ab51b0c675ba8d2f11b64b1e8c82874f85cc82582f69dda22a707a",
+    "lines": 2252
+   },
+   "subawards/FY2025Q1_097_Subawards_All_Contracts_Subawards_2026-10-19_H17M14S48_1_trimmed.csv.gz": {
+    "bytes": 103840,
+    "sha256": "ff2a300be6de186b0c6eb8afc3b3a994da9870b5e8f1015b441448486c4fb8b5",
+    "lines": 1190
+   },
+   "subawards/FY2025Q2_012_Subawards_All_Assistance_Subawards_2026-10-20_H10M02S52_1_trimmed.csv.gz": {
+    "bytes": 150920,
+    "sha256": "4d77ea91ea4021bdcf2c2cb1dd2c2e057106ca496a04a1c57db589f935be38eb",
+    "lines": 1594
+   },
+   "subawards/FY2025Q2_012_Subawards_All_Contracts_Subawards_2026-10-20_H10M02S23_1_trimmed.csv.gz": {
+    "bytes": 811,
+    "sha256": "2b6ab0dadb07ebdde15d3496aac8860beebe801de65b32c115b5f4cc21548f42",
+    "lines": 2
+   },
+   "subawards/FY2025Q2_075_Subawards_All_Assistance_Subawards_2026-10-19_H14M28S37_1_trimmed.csv.gz": {
+    "bytes": 1453991,
+    "sha256": "2d70d041d79881e30772040055ffff1addfd3cdda9624ad4f449895685be10bc",
+    "lines": 14682
+   },
+   "subawards/FY2025Q2_075_Subawards_All_Contracts_Subawards_2026-10-19_H14M27S44_1_trimmed.csv.gz": {
+    "bytes": 37358,
+    "sha256": "47ed48f12c2fd0904d8e3edbc7d814ae399426ed584c2166e30bb71b4741f38b",
+    "lines": 278
+   },
+   "subawards/FY2025Q2_091_Subawards_All_Assistance_Subawards_2026-10-20_H12M10S20_1_trimmed.csv.gz": {
+    "bytes": 103760,
+    "sha256": "77b8591506f1d26bc39ada4bb455a50b5fac514cdf116770d3592d577cfb6559",
+    "lines": 1412
+   },
+   "subawards/FY2025Q2_091_Subawards_All_Contracts_Subawards_2026-10-20_H12M09S35_1_trimmed.csv.gz": {
+    "bytes": 3159,
+    "sha256": "f365d07c2f55e81469f6c9bf19b0b7495a858ad8278b75ff77c5271f538584f5",
+    "lines": 46
+   },
+   "subawards/FY2025Q2_097_Subawards_All_Assistance_Subawards_2026-10-19_H17M25S31_1_trimmed.csv.gz": {
+    "bytes": 140870,
+    "sha256": "a53cda69f69566a1d033540a8740fc0f3c54e8c2b0e2d65e003bcf0a3e964d10",
+    "lines": 1479
+   },
+   "subawards/FY2025Q2_097_Subawards_All_Contracts_Subawards_2026-10-19_H17M23S02_1_trimmed.csv.gz": {
+    "bytes": 107513,
+    "sha256": "fbd1b2cae7ed51cd2f647d2a259bc2f543710d6e0426f4b0636f2f28e34fc60e",
+    "lines": 1110
+   },
+   "subawards/FY2025Q3_012_Subawards_All_Assistance_Subawards_2026-10-20_H10M06S41_1_trimmed.csv.gz": {
+    "bytes": 136552,
+    "sha256": "5f64494cc7784cdd1527d829eb4ea57c9200f69c7736365270e0b059f1e79609",
+    "lines": 1348
+   },
+   "subawards/FY2025Q3_012_Subawards_All_Contracts_Subawards_2026-10-20_H10M06S17_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "bc330721024b7f2d43d1273876a39555cad5f41cfb684e74ba5591640b6bace5",
+    "lines": 1
+   },
+   "subawards/FY2025Q3_075_Subawards_All_Assistance_Subawards_2026-10-19_H14M34S27_1_trimmed.csv.gz": {
+    "bytes": 1244741,
+    "sha256": "ed0fe78dd5f526007ccac8afffadc11c401c1b1b92c627ec693ad59842aa3224",
+    "lines": 11173
+   },
+   "subawards/FY2025Q3_075_Subawards_All_Contracts_Subawards_2026-10-19_H14M33S53_1_trimmed.csv.gz": {
+    "bytes": 34362,
+    "sha256": "487ddf2ac8285d220c5e6436d9a0aa12be5197c3f0fda99beba0c01158a2879a",
+    "lines": 357
+   },
+   "subawards/FY2025Q3_091_Subawards_All_Assistance_Subawards_2026-10-20_H12M14S36_1_trimmed.csv.gz": {
+    "bytes": 58614,
+    "sha256": "63c70d417c99067ce5631dccb78a2178f7a01bc69b5fb97d4512e04eb11cfd12",
+    "lines": 662
+   },
+   "subawards/FY2025Q3_091_Subawards_All_Contracts_Subawards_2026-10-20_H12M13S59_1_trimmed.csv.gz": {
+    "bytes": 1005,
+    "sha256": "114760509e1c20b59e3db8d2e47f8b47bc0496cbe19d8123bb5d46373ccaa44a",
+    "lines": 2
+   },
+   "subawards/FY2025Q3_097_Subawards_All_Assistance_Subawards_2026-10-19_H17M29S30_1_trimmed.csv.gz": {
+    "bytes": 110196,
+    "sha256": "8d7312e5f5409dac2c34033eb725acf339a0587d8e34dec9144b0049aded4a4f",
+    "lines": 1035
+   },
+   "subawards/FY2025Q3_097_Subawards_All_Contracts_Subawards_2026-10-19_H17M27S17_1_trimmed.csv.gz": {
+    "bytes": 75177,
+    "sha256": "0755895f3272524a2a2e337f1ab8d60651a5ab791f040457bbe428ae5831f3ff",
+    "lines": 659
+   },
+   "subawards/FY2025Q4_012_Subawards_All_Assistance_Subawards_2026-10-20_H10M10S55_1_trimmed.csv.gz": {
+    "bytes": 166266,
+    "sha256": "c5fc89a7b997c9898e1f4df635bfba69af5fa25d9130fe022f605597c55b5493",
+    "lines": 1744
+   },
+   "subawards/FY2025Q4_012_Subawards_All_Contracts_Subawards_2026-10-20_H10M10S32_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "e25a26367cc8a95351fd225924a1844dda1a2588028717e97b71cea891c57838",
+    "lines": 1
+   },
+   "subawards/FY2025Q4_075_Subawards_All_Assistance_Subawards_2026-10-19_H14M39S34_1_trimmed.csv.gz": {
+    "bytes": 1484824,
+    "sha256": "42c35626034bc9c2e894c12334c7f477c2e68c0548e68bdff7a75754fb27e13b",
+    "lines": 13013
+   },
+   "subawards/FY2025Q4_075_Subawards_All_Contracts_Subawards_2026-10-19_H14M38S00_1_trimmed.csv.gz": {
+    "bytes": 22820,
+    "sha256": "3907a9d9d8c70f9d5878dd379027cc5dc22cff500c94662f9ac77eb16b5a1bce",
+    "lines": 190
+   },
+   "subawards/FY2025Q4_091_Subawards_All_Assistance_Subawards_2026-10-20_H12M17S44_1_trimmed.csv.gz": {
+    "bytes": 359940,
+    "sha256": "643bd7ca4b4705aa0201848a79b20bb549ea5560cc30e741448965936ddc9b20",
+    "lines": 5524
+   },
+   "subawards/FY2025Q4_091_Subawards_All_Contracts_Subawards_2026-10-20_H12M16S40_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "d282dd1068156fbed41bb2cabe612b7f01c5ec5591465a253a35a53bfa4d7c42",
+    "lines": 1
+   },
+   "subawards/FY2025Q4_097_Subawards_All_Assistance_Subawards_2026-10-19_H17M32S17_1_trimmed.csv.gz": {
+    "bytes": 119398,
+    "sha256": "ea2c6b5fa67aaae35a596f754609adcd809ea7ac784da28a2d4d227a2db4ad39",
+    "lines": 1220
+   },
+   "subawards/FY2025Q4_097_Subawards_All_Contracts_Subawards_2026-10-19_H17M30S56_1_trimmed.csv.gz": {
+    "bytes": 44966,
+    "sha256": "e4b58341e927009716ebccd67c7460a3d76794e6eb6482b84572ed767a078f92",
+    "lines": 368
+   },
+   "subawards/FY2025_013_Subawards_All_Assistance_Subawards_2026-10-20_H10M34S05_1_trimmed.csv.gz": {
+    "bytes": 187113,
+    "sha256": "aef868e1b0dd99a34d3dc510a708dfa9c59415687c80817471b37257da55f899",
+    "lines": 2064
+   },
+   "subawards/FY2025_013_Subawards_All_Contracts_Subawards_2026-10-20_H10M33S43_1_trimmed.csv.gz": {
+    "bytes": 1770,
+    "sha256": "3ee14d2b4e3deb3aa38fff801b79874ec2d7eede75c62e1821a5267984947e44",
+    "lines": 7
+   },
+   "subawards/FY2025_014_Subawards_All_Assistance_Subawards_2026-10-20_H10M43S30_1_trimmed.csv.gz": {
+    "bytes": 112741,
+    "sha256": "e801cb9f50e1dbc3620fc55ce56019c0b3f3fe59c22d27313f35f522ac87636b",
+    "lines": 1041
+   },
+   "subawards/FY2025_014_Subawards_All_Contracts_Subawards_2026-10-20_H10M43S11_1_trimmed.csv.gz": {
+    "bytes": 3912,
+    "sha256": "2606fac4620f406db13bcb441843747fac48515d0a715c8ab3620ca61e10eadf",
+    "lines": 17
+   },
+   "subawards/FY2025_015_Subawards_All_Assistance_Subawards_2026-10-20_H18M54S16_1_trimmed.csv.gz": {
+    "bytes": 85900,
+    "sha256": "9607d7d36bfbf5542d71c77d5ed38ffc9045c600a86437d3d7edc2feea01d4df",
+    "lines": 681
+   },
+   "subawards/FY2025_015_Subawards_All_Contracts_Subawards_2026-10-20_H18M53S41_1_trimmed.csv.gz": {
+    "bytes": 1765,
+    "sha256": "a02d354f92c169646a62473005fa2c3ff400112953698a55638711b54812e914",
+    "lines": 9
+   },
+   "subawards/FY2025_019_Subawards_All_Assistance_Subawards_2026-10-20_H19M14S22_1_trimmed.csv.gz": {
+    "bytes": 29259,
+    "sha256": "12d516295b9fa40ede8e0445ec16f87ecd0077e1fa7d45c9cafa7f867b743428",
+    "lines": 404
+   },
+   "subawards/FY2025_019_Subawards_All_Contracts_Subawards_2026-10-20_H19M13S57_1_trimmed.csv.gz": {
+    "bytes": 2680,
+    "sha256": "b402fb2d689ef2ddcf1bdbd73c85108b4d229935b02ff98bcc34d69276e70590",
+    "lines": 17
+   },
+   "subawards/FY2025_036_Subawards_All_Assistance_Subawards_2026-10-20_H19M04S03_1_trimmed.csv.gz": {
+    "bytes": 1033,
+    "sha256": "bc672bd372f590d188266f1bfbaf80a96efc089272970878f440f47a4e6610fc",
+    "lines": 2
+   },
+   "subawards/FY2025_036_Subawards_All_Contracts_Subawards_2026-10-20_H19M03S24_1_trimmed.csv.gz": {
+    "bytes": 2921,
+    "sha256": "b7a7396049ee6449648f5be65abd09f01caa4816a182d74be61ac6db3be21697",
+    "lines": 9
+   },
+   "subawards/FY2025_049_Subawards_All_Assistance_Subawards_2026-10-19_H11M40S38_1_trimmed.csv.gz": {
+    "bytes": 718434,
+    "sha256": "15345e6e88bfd4da40347a44935f18cdd937b752ab2a35b69818af654a25112f",
+    "lines": 8065
+   },
+   "subawards/FY2025_049_Subawards_All_Contracts_Subawards_2026-10-19_H11M40S11_1_trimmed.csv.gz": {
+    "bytes": 6185,
+    "sha256": "5d9d52be0aa77f93375080f4d64aa09e0846c7ca21b6e7b8e84830e944f0cc79",
+    "lines": 60
+   },
+   "subawards/FY2025_068_Subawards_All_Assistance_Subawards_2026-10-20_H13M19S40_1_trimmed.csv.gz": {
+    "bytes": 81619,
+    "sha256": "9f2448128622696913034f99ef1b7d736dcda2085a27d5e97632813203dbb943",
+    "lines": 752
+   },
+   "subawards/FY2025_068_Subawards_All_Contracts_Subawards_2026-10-20_H13M19S22_1_trimmed.csv.gz": {
+    "bytes": 6061,
+    "sha256": "46b506852c81964164bcc8a796279555a08c6010db7ac0d694ce149bd71883ec",
+    "lines": 52
+   },
+   "subawards/FY2025_069_Subawards_All_Assistance_Subawards_2026-10-20_H13M51S03_1_trimmed.csv.gz": {
+    "bytes": 66305,
+    "sha256": "140be5d7ed8387c96d8afe846146f18c4ae54bc1fdad84cc8b50301efa8c7456",
+    "lines": 663
+   },
+   "subawards/FY2025_069_Subawards_All_Contracts_Subawards_2026-10-20_H13M49S44_1_trimmed.csv.gz": {
+    "bytes": 12392,
+    "sha256": "f69b821d46ea5a0b146e3e7ada1ab056a3bd7e479a09a8af1b146f742af00da2",
+    "lines": 107
+   },
+   "subawards/FY2025_070_Subawards_All_Assistance_Subawards_2026-10-20_H16M58S38_1_trimmed.csv.gz": {
+    "bytes": 102207,
+    "sha256": "1b83f47891b7ff6340cd00e8e124ad3386bd57729301ad462b1a4f0f0d1c81b6",
+    "lines": 1082
+   },
+   "subawards/FY2025_070_Subawards_All_Contracts_Subawards_2026-10-20_H16M56S11_1_trimmed.csv.gz": {
+    "bytes": 6660,
+    "sha256": "c7f632f9910dde2d5fc4d4fe0661fd0cbb61b96e310381d7ef050471bc616ebd",
+    "lines": 44
+   },
+   "subawards/FY2025_072_Subawards_All_Assistance_Subawards_2026-10-20_H19M34S54_1_trimmed.csv.gz": {
+    "bytes": 74996,
+    "sha256": "902667655a5371309184469e9f9588b51d9d985fa9cbe0550106b9f31c1a8cbf",
+    "lines": 969
+   },
+   "subawards/FY2025_072_Subawards_All_Contracts_Subawards_2026-10-20_H19M34S15_1_trimmed.csv.gz": {
+    "bytes": 10979,
+    "sha256": "1f9382c3e4f527d1e90133e0efbcb954524e580abcc25aa203fdb9f32b7992b5",
+    "lines": 120
+   },
+   "subawards/FY2025_080_Subawards_All_Assistance_Subawards_2026-10-20_H00M42S59_1_trimmed.csv.gz": {
+    "bytes": 273551,
+    "sha256": "f073ce06af40cf115ccd1c6f9ab728e38150259b81ab60efb69a3dfd6d3ed600",
+    "lines": 3131
+   },
+   "subawards/FY2025_080_Subawards_All_Contracts_Subawards_2026-10-20_H00M29S14_1_trimmed.csv.gz": {
+    "bytes": 60217,
+    "sha256": "5980de582e91e37025c69d6682bd9235681562cd9ca091793cf9768cc2f9b681",
+    "lines": 665
+   },
+   "subawards/FY2025_086_Subawards_All_Assistance_Subawards_2026-10-20_H20M07S22_1_trimmed.csv.gz": {
+    "bytes": 20009,
+    "sha256": "3354513c3a31a16d7188953fa53ef543803d0c4964fd163b7b9bf6e64500f155",
+    "lines": 165
+   },
+   "subawards/FY2025_086_Subawards_All_Contracts_Subawards_2026-10-20_H20M06S21_1_trimmed.csv.gz": {
+    "bytes": 909,
+    "sha256": "49eae5186f6b4fffb6539f9d42776dbd67626359529168571380cbfa853c1bc9",
+    "lines": 2
+   },
+   "subawards/FY2025_089_Subawards_All_Assistance_Subawards_2026-10-19_H21M50S15_1_trimmed.csv.gz": {
+    "bytes": 327443,
+    "sha256": "d79de4c625c7c804cca098d6f446982d134de1fc5fe01f80305eeaa22614398b",
+    "lines": 3565
+   },
+   "subawards/FY2025_089_Subawards_All_Contracts_Subawards_2026-10-19_H21M06S37_1_trimmed.csv.gz": {
+    "bytes": 16589,
+    "sha256": "fda9a00673221547ee2bfe6d528692a06acfb32d42cd88cf27ace72ab741a645",
+    "lines": 209
+   },
+   "subawards/FY2025_1601_Subawards_All_Assistance_Subawards_2026-10-20_H19M48S13_1_trimmed.csv.gz": {
+    "bytes": 61510,
+    "sha256": "efbd0df92752e62f0463eee943a9afc2ec48f24aaa2056fbb6ab59ac7d4d138b",
+    "lines": 904
+   },
+   "subawards/FY2025_1601_Subawards_All_Contracts_Subawards_2026-10-20_H19M47S45_1_trimmed.csv.gz": {
+    "bytes": 2306,
+    "sha256": "4b40cdb0d67959ad5aed923420b73d2c1ba9c9fc161bac6d94092ae34fe7c58a",
+    "lines": 14
+   },
+   "subawards/FY2025_417_Subawards_All_Assistance_Subawards_2026-10-20_H20M30S03_1_trimmed.csv.gz": {
+    "bytes": 2787,
+    "sha256": "6d03c73fa1f6eb7214ae0e1a510c9d9a4398960092cd295181de90b64fbe8405",
+    "lines": 17
+   },
+   "subawards/FY2025_417_Subawards_All_Contracts_Subawards_2026-10-20_H20M29S55_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "6642fb23cbaa1fd317e7a68d814a452dedb0b985462939dbb06f5b7efdabd916",
+    "lines": 1
+   },
+   "subawards/FY2025_418_Subawards_All_Assistance_Subawards_2026-10-20_H20M23S09_1_trimmed.csv.gz": {
+    "bytes": 5210,
+    "sha256": "c724979e51bf629f08e1b2c21cc4a634ec0b02e4d030a476f57a341dd600be4b",
+    "lines": 37
+   },
+   "subawards/FY2025_418_Subawards_All_Contracts_Subawards_2026-10-20_H20M22S46_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "6d3f2592c44918fcb06450f874b74d1ea8a19cc7d9af6b561d2b420ad2c22d4e",
+    "lines": 1
+   },
+   "subawards/FY2025_474_Subawards_All_Assistance_Subawards_2026-10-20_H20M37S09_1_trimmed.csv.gz": {
+    "bytes": 8380,
+    "sha256": "d1d21a8c59dd89a45736c395def2c286c1b8a73f3de525c4eb0ef26e3b564517",
+    "lines": 70
+   },
+   "subawards/FY2025_474_Subawards_All_Contracts_Subawards_2026-10-20_H20M37S01_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "dc2dcfd4a9d0aaedb968e8ee3defcaa68bd9e0bcc01894672dd7d3127cda53f7",
+    "lines": 1
+   },
+   "subawards/FY2026Q1_012_Subawards_All_Assistance_Subawards_2026-10-20_H10M14S37_1_trimmed.csv.gz": {
+    "bytes": 188428,
+    "sha256": "eeb026d61f3cef6f0b1a4dd80d6a719c7452c1ad42b3cbff24f233adbe47d4fd",
+    "lines": 1954
+   },
+   "subawards/FY2026Q1_012_Subawards_All_Contracts_Subawards_2026-10-20_H10M14S17_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "e4c9a0392449f967fb178c45342f6b612338b3d4402edd5f4d2711e1a95cf82e",
+    "lines": 1
+   },
+   "subawards/FY2026Q1_075_Subawards_All_Assistance_Subawards_2026-10-19_H14M46S34_1_trimmed.csv.gz": {
+    "bytes": 1890947,
+    "sha256": "71d68e74e5cce792afae6f8cb2369ef68aff4c5daa08e5c6e70d1fbed6d52840",
+    "lines": 17749
+   },
+   "subawards/FY2026Q1_075_Subawards_All_Contracts_Subawards_2026-10-19_H14M45S53_1_trimmed.csv.gz": {
+    "bytes": 24171,
+    "sha256": "d066086165e238db007e6a8721c74bb2eafa41dcc1acdd613ebd3e3fb2a3211c",
+    "lines": 290
+   },
+   "subawards/FY2026Q1_091_Subawards_All_Assistance_Subawards_2026-10-20_H12M22S03_1_trimmed.csv.gz": {
+    "bytes": 123078,
+    "sha256": "5e8ec794c61a30c217ceae77b562562cdeed1a9bad243ddfaec7651cbafca993",
+    "lines": 1574
+   },
+   "subawards/FY2026Q1_091_Subawards_All_Contracts_Subawards_2026-10-20_H12M21S33_1_trimmed.csv.gz": {
+    "bytes": 1527,
+    "sha256": "94ab9afa5744e8b89aa3b271d5d47fb2634ec8bbf8b4ee03ebd9dc465866962e",
+    "lines": 9
+   },
+   "subawards/FY2026Q1_097_Subawards_All_Assistance_Subawards_2026-10-19_H17M36S21_1_trimmed.csv.gz": {
+    "bytes": 117580,
+    "sha256": "06aa61a2f993c67d50e9ee516530699310e15804bc8f8fab4e8b239d7ddf4ce1",
+    "lines": 1108
+   },
+   "subawards/FY2026Q1_097_Subawards_All_Contracts_Subawards_2026-10-19_H17M34S36_1_trimmed.csv.gz": {
+    "bytes": 46830,
+    "sha256": "e92fdc620bc187ac481b18cb35c89c0bdf8c9e994ea737c70fd3f9ad4141561a",
+    "lines": 384
+   },
+   "subawards/FY2026Q2_012_Subawards_All_Assistance_Subawards_2026-10-20_H10M18S17_1_trimmed.csv.gz": {
+    "bytes": 193652,
+    "sha256": "f76690a99d89820f92a832765de541ad2b5a28527bff8bccaa031de01f5b19ab",
+    "lines": 2318
+   },
+   "subawards/FY2026Q2_012_Subawards_All_Contracts_Subawards_2026-10-20_H10M17S37_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "18f8846ff81db5b7a799c4d9a26e4829c7dff7465e0c71cfb8cfcbad5ee79774",
+    "lines": 1
+   },
+   "subawards/FY2026Q2_075_Subawards_All_Assistance_Subawards_2026-10-19_H14M52S11_1_trimmed.csv.gz": {
+    "bytes": 1301070,
+    "sha256": "46a3fde5d0ded67d39e11f0dfc9cf1eb14bde2427852bf1dcf1d8d5cc5230a98",
+    "lines": 11964
+   },
+   "subawards/FY2026Q2_075_Subawards_All_Contracts_Subawards_2026-10-19_H14M51S40_1_trimmed.csv.gz": {
+    "bytes": 18451,
+    "sha256": "2d378fcd8e31b5be051b80fbba180b87b337ce3639b2503952580c36ab729d69",
+    "lines": 147
+   },
+   "subawards/FY2026Q2_091_Subawards_All_Assistance_Subawards_2026-10-20_H12M30S00_1_trimmed.csv.gz": {
+    "bytes": 107320,
+    "sha256": "edd9873193b0e7a50c7a8b91e1d9bacbe59df985dfae4aee4f0c89b103d8b7d8",
+    "lines": 1335
+   },
+   "subawards/FY2026Q2_091_Subawards_All_Contracts_Subawards_2026-10-20_H12M29S36_1_trimmed.csv.gz": {
+    "bytes": 2065,
+    "sha256": "0f949a619d357eab11dfb50453d2512b2878d7c7a71e5f9f4f1857c3eb7b3e97",
+    "lines": 11
+   },
+   "subawards/FY2026Q2_097_Subawards_All_Assistance_Subawards_2026-10-19_H17M40S25_1_trimmed.csv.gz": {
+    "bytes": 104896,
+    "sha256": "ad468201599a69bc27f104e6389ff86b40a70e47cbadb6f1461f7a869869a0d6",
+    "lines": 980
+   },
+   "subawards/FY2026Q2_097_Subawards_All_Contracts_Subawards_2026-10-19_H17M38S44_1_trimmed.csv.gz": {
+    "bytes": 29216,
+    "sha256": "ed8951617dacc008291bc5e8babf0d2ec12b642345491896818044f87a5a4e9f",
+    "lines": 257
+   },
+   "subawards/FY2026Q3_012_Subawards_All_Assistance_Subawards_2026-10-20_H10M22S09_1_trimmed.csv.gz": {
+    "bytes": 207093,
+    "sha256": "8cfcb04c4a599aaef7ffb6bba0e59d8bf0d4da6109501d0658d3d4ba2df83673",
+    "lines": 2400
+   },
+   "subawards/FY2026Q3_012_Subawards_All_Contracts_Subawards_2026-10-20_H10M21S29_1_trimmed.csv.gz": {
+    "bytes": 892,
+    "sha256": "c7e8b7e196bb4c316b1cea6a7ce6eb67a7fa4683e497730c0704796962cba95a",
+    "lines": 2
+   },
+   "subawards/FY2026Q3_075_Subawards_All_Assistance_Subawards_2026-10-19_H14M56S36_1_trimmed.csv.gz": {
+    "bytes": 1138255,
+    "sha256": "5d9aad19294f53cb2d2b68ed197555e6852bef3f7d93f3a63bcf98b10b90ab40",
+    "lines": 10485
+   },
+   "subawards/FY2026Q3_075_Subawards_All_Contracts_Subawards_2026-10-19_H14M56S02_1_trimmed.csv.gz": {
+    "bytes": 26313,
+    "sha256": "a81bb86b8dbbf69fc604353f773f9cc45b366a2fd8440adc652264d27541c0da",
+    "lines": 305
+   },
+   "subawards/FY2026Q3_091_Subawards_All_Assistance_Subawards_2026-10-20_H12M35S01_1_trimmed.csv.gz": {
+    "bytes": 318209,
+    "sha256": "bcb5d2a6c3c1909dc6953b142aade6fd1f7d315246b2ce26293cfb88c678c00f",
+    "lines": 4973
+   },
+   "subawards/FY2026Q3_091_Subawards_All_Contracts_Subawards_2026-10-20_H12M34S31_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "90582a8a46fe469d81547ad54d86eff6f0f078efec4dc5cc3b83529c332f37a3",
+    "lines": 1
+   },
+   "subawards/FY2026Q3_097_Subawards_All_Assistance_Subawards_2026-10-19_H17M42S54_1_trimmed.csv.gz": {
+    "bytes": 105152,
+    "sha256": "81d2c941527a027c86710c0c93888179efa0cb590df48ed87a21d1385a3bbc9c",
+    "lines": 951
+   },
+   "subawards/FY2026Q3_097_Subawards_All_Contracts_Subawards_2026-10-19_H17M42S18_1_trimmed.csv.gz": {
+    "bytes": 17720,
+    "sha256": "9bb4ec19c843c459ffe9d155679860ec8bc80cf9e6dcc3196754bdef26b651d2",
+    "lines": 126
+   },
+   "subawards/FY2026Q4_012_Subawards_All_Assistance_Subawards_2026-10-20_H10M25S14_1_trimmed.csv.gz": {
+    "bytes": 292790,
+    "sha256": "5a044a56300ec9f5c4f57817c39dfd97cc1c5249022a31466cfa6a62b32a3d36",
+    "lines": 4419
+   },
+   "subawards/FY2026Q4_012_Subawards_All_Contracts_Subawards_2026-10-20_H10M24S49_1_trimmed.csv.gz": {
+    "bytes": 365,
+    "sha256": "11e13e598fd8036cfea22c6ce814e65898a43fb73f41c4a918471308d9842cdc",
+    "lines": 1
+   },
+   "subawards/FY2026Q4_075_Subawards_All_Assistance_Subawards_2026-10-19_H15M00S49_1_trimmed.csv.gz": {
+    "bytes": 1271012,
+    "sha256": "85968399c565624a6e72ad1472dc824e941f9af6a6e66be2c2f712ddaf3cd467",
+    "lines": 10897
+   },
+   "subawards/FY2026Q4_075_Subawards_All_Contracts_Subawards_2026-10-19_H15M00S31_1_trimmed.csv.gz": {
+    "bytes": 14143,
+    "sha256": "7ce0bbd7d97fa9793eeeb59bc7e731ed753117ffcc4363e5ccec5e4ca4479f57",
+    "lines": 153
+   },
+   "subawards/FY2026Q4_091_Subawards_All_Assistance_Subawards_2026-10-20_H12M36S57_1_trimmed.csv.gz": {
+    "bytes": 242473,
+    "sha256": "87a5c4372473ab1968356913565908bc249d8f833678523be373c53539ad0a13",
+    "lines": 3488
+   },
+   "subawards/FY2026Q4_091_Subawards_All_Contracts_Subawards_2026-10-20_H12M36S33_1_trimmed.csv.gz": {
+    "bytes": 955,
+    "sha256": "0d620e2dc6938fba2965b9b970e2211e84728cbb86819e599fbc5145e88ea840",
+    "lines": 3
+   },
+   "subawards/FY2026Q4_097_Subawards_All_Assistance_Subawards_2026-10-19_H17M44S32_1_trimmed.csv.gz": {
+    "bytes": 84432,
+    "sha256": "5985b72d5a6ac70d484e628b686760b4c14e403e0b2405abd1066a91cf0f3a19",
+    "lines": 778
+   },
+   "subawards/FY2026Q4_097_Subawards_All_Contracts_Subawards_2026-10-19_H17M43S55_1_trimmed.csv.gz": {
+    "bytes": 14977,
+    "sha256": "d2b71fd58ffc730bee910374c03491c39ac8c7e4651f042d5b5d46e327783c08",
+    "lines": 95
+   },
+   "subawards/FY2026_013_Subawards_All_Assistance_Subawards_2026-10-20_H10M36S00_1_trimmed.csv.gz": {
+    "bytes": 139712,
+    "sha256": "9cb6919a2d5ce330de98814f4540a2b844b6fbeb5e28cb272743a32a2558e5cd",
+    "lines": 1240
+   },
+   "subawards/FY2026_013_Subawards_All_Contracts_Subawards_2026-10-20_H10M35S47_1_trimmed.csv.gz": {
+    "bytes": 2300,
+    "sha256": "0181b3a023a8691964dab52ca1826aec6397ce9244d5656f0196d7d5ee9a4c4b",
+    "lines": 8
+   },
+   "subawards/FY2026_014_Subawards_All_Assistance_Subawards_2026-10-20_H10M45S28_1_trimmed.csv.gz": {
+    "bytes": 76795,
+    "sha256": "47ff391f8a344291a239248a2d0de8afdbe28bbaeb98c6be71df8cf41ec9b747",
+    "lines": 562
+   },
+   "subawards/FY2026_014_Subawards_All_Contracts_Subawards_2026-10-20_H10M45S05_1_trimmed.csv.gz": {
+    "bytes": 1958,
+    "sha256": "42930dfda0677f64562983703ebcba61ccc0779a702e52126a4d6ed478d37d1b",
+    "lines": 8
+   },
+   "subawards/FY2026_015_Subawards_All_Assistance_Subawards_2026-10-20_H18M57S13_1_trimmed.csv.gz": {
+    "bytes": 48597,
+    "sha256": "43fe07b05093ce448e9c9e113490b6dc52351c2064a8351c02704b238fe83c18",
+    "lines": 377
+   },
+   "subawards/FY2026_015_Subawards_All_Contracts_Subawards_2026-10-20_H18M56S44_1_trimmed.csv.gz": {
+    "bytes": 987,
+    "sha256": "ee18ece41a0673748a5d7fed7e3f1c661d13e5edc448ee97755ffd7f8cca665c",
+    "lines": 3
+   },
+   "subawards/FY2026_019_Subawards_All_Assistance_Subawards_2026-10-20_H19M15S49_1_trimmed.csv.gz": {
+    "bytes": 13841,
+    "sha256": "424cf75ed83c104734c4d9fe902633dd24c84c091d69abbcd59cf34e45b5af5c",
+    "lines": 176
+   },
+   "subawards/FY2026_019_Subawards_All_Contracts_Subawards_2026-10-20_H19M15S35_1_trimmed.csv.gz": {
+    "bytes": 2247,
+    "sha256": "78356564c47fa2d610ae8825bc87f1d70d979ab482c02cf56203022584d83a39",
+    "lines": 9
+   },
+   "subawards/FY2026_036_Subawards_All_Assistance_Subawards_2026-10-20_H19M05S28_1_trimmed.csv.gz": {
+    "bytes": 373,
+    "sha256": "fa80477c6cac6d8aa33135a237ed3324dc0c15eedfc5d0dccace01402da78748",
+    "lines": 1
+   },
+   "subawards/FY2026_036_Subawards_All_Contracts_Subawards_2026-10-20_H19M05S10_1_trimmed.csv.gz": {
+    "bytes": 972,
+    "sha256": "95023d542de35a4ef34e7df8bed2465c74bc0848f86c181ba6a60d7e423842ec",
+    "lines": 2
+   },
+   "subawards/FY2026_049_Subawards_All_Assistance_Subawards_2026-10-19_H11M42S45_1_trimmed.csv.gz": {
+    "bytes": 567008,
+    "sha256": "29130015061a7fec019d49cdb66463ee5d373874f274b2eceeae2cafd7e118a8",
+    "lines": 5630
+   },
+   "subawards/FY2026_049_Subawards_All_Contracts_Subawards_2026-10-19_H11M42S23_1_trimmed.csv.gz": {
+    "bytes": 5960,
+    "sha256": "2d4cc4ca74f47809ffd54bc9a92278e22312c79fad66e87f23b427c1327e2c9f",
+    "lines": 55
+   },
+   "subawards/FY2026_068_Subawards_All_Assistance_Subawards_2026-10-20_H13M24S44_1_trimmed.csv.gz": {
+    "bytes": 67346,
+    "sha256": "f734ead737c2c687c9f9b48db1532371413f3d0660389462e2ffbb5d04d56b1c",
+    "lines": 614
+   },
+   "subawards/FY2026_068_Subawards_All_Contracts_Subawards_2026-10-20_H13M24S25_1_trimmed.csv.gz": {
+    "bytes": 4522,
+    "sha256": "c19669fda7347b622c1a355f27a9a34bf9982c43ce9470dbda45f95e9939872e",
+    "lines": 33
+   },
+   "subawards/FY2026_069_Subawards_All_Assistance_Subawards_2026-10-20_H13M54S43_1_trimmed.csv.gz": {
+    "bytes": 65829,
+    "sha256": "9de0f269c49bdd9bf6227946f97736743b0b7e3d352c5911d3f4a3fc5cbbb88c",
+    "lines": 683
+   },
+   "subawards/FY2026_069_Subawards_All_Contracts_Subawards_2026-10-20_H13M53S59_1_trimmed.csv.gz": {
+    "bytes": 8512,
+    "sha256": "3e8eb01670f6399be1ab621e886e5e47879d0403df68629e887cac42bd9b7cbd",
+    "lines": 69
+   },
+   "subawards/FY2026_070_Subawards_All_Assistance_Subawards_2026-10-20_H18M04S19_1_trimmed.csv.gz": {
+    "bytes": 75626,
+    "sha256": "771ce215296fa3dd35221c4e76e145982ea8d21cbf179e40dd7a006c2cc024c0",
+    "lines": 715
+   },
+   "subawards/FY2026_070_Subawards_All_Contracts_Subawards_2026-10-20_H18M02S18_1_trimmed.csv.gz": {
+    "bytes": 3265,
+    "sha256": "5e951dbbf220b7157dabba90e4c27557c5691c2ca9c8529399efdc21c0d24605",
+    "lines": 18
+   },
+   "subawards/FY2026_072_Subawards_All_Assistance_Subawards_2026-10-20_H19M37S24_1_trimmed.csv.gz": {
+    "bytes": 23510,
+    "sha256": "4dab700f5b3f4f5bca87aae247f503cacd6134c580cfe366ce62767b4fe6051a",
+    "lines": 290
+   },
+   "subawards/FY2026_072_Subawards_All_Contracts_Subawards_2026-10-20_H19M37S05_1_trimmed.csv.gz": {
+    "bytes": 1656,
+    "sha256": "645cb639e5548e85b36d6c7ce014940769be35aa3af55ebad3402b6762549e42",
+    "lines": 5
+   },
+   "subawards/FY2026_080_Subawards_All_Assistance_Subawards_2026-10-20_H01M07S14_1_trimmed.csv.gz": {
+    "bytes": 221034,
+    "sha256": "196dd800fb6d9e0252422d5a00779c4be4ea48754d4b3c48e8c5b0e804714cea",
+    "lines": 2136
+   },
+   "subawards/FY2026_080_Subawards_All_Contracts_Subawards_2026-10-20_H00M58S36_1_trimmed.csv.gz": {
+    "bytes": 50804,
+    "sha256": "4610b38ef0322e08676cddca8203ef214b50643ed7970735485a40d991e7bfc9",
+    "lines": 422
+   },
+   "subawards/FY2026_086_Subawards_All_Assistance_Subawards_2026-10-20_H20M13S05_1_trimmed.csv.gz": {
+    "bytes": 10547,
+    "sha256": "f7583e8fb9dda0f24be8d8432a3e2062c13693a84f9ac22b4e02b9b01d7b7e26",
+    "lines": 67
+   },
+   "subawards/FY2026_086_Subawards_All_Contracts_Subawards_2026-10-20_H20M12S09_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "ee34740fc01696d2865b04a7b2946a6519a55fc38a86e3b1b820b2724ea267b2",
+    "lines": 1
+   },
+   "subawards/FY2026_089_Subawards_All_Assistance_Subawards_2026-10-19_H22M25S31_1_trimmed.csv.gz": {
+    "bytes": 181854,
+    "sha256": "4d8e064a02a884d5b18982d0091107457f9b5c32cf398460e49973809473fe29",
+    "lines": 1648
+   },
+   "subawards/FY2026_089_Subawards_All_Contracts_Subawards_2026-10-19_H21M51S44_1_trimmed.csv.gz": {
+    "bytes": 18210,
+    "sha256": "cc61f029dd2add309ca42b72e1a69bee16401d62db4fcb9b1a6bb516e6ce9415",
+    "lines": 208
+   },
+   "subawards/FY2026_1601_Subawards_All_Assistance_Subawards_2026-10-20_H19M50S15_1_trimmed.csv.gz": {
+    "bytes": 158901,
+    "sha256": "60b0e646ebf10e43a680f30f4b16939cde2cef017be7b06bded963356a3a018b",
+    "lines": 2302
+   },
+   "subawards/FY2026_1601_Subawards_All_Contracts_Subawards_2026-10-20_H19M49S51_1_trimmed.csv.gz": {
+    "bytes": 1668,
+    "sha256": "85730468a1d00d289230ad35cf4064f0c4f62f4223ebfb447574726586e42766",
+    "lines": 8
+   },
+   "subawards/FY2026_417_Subawards_All_Assistance_Subawards_2026-10-20_H20M31S21_1_trimmed.csv.gz": {
+    "bytes": 1311,
+    "sha256": "901906351ccaad58d7178282b1996a5907fcec746375648f0a3c4ec5092362f0",
+    "lines": 4
+   },
+   "subawards/FY2026_417_Subawards_All_Contracts_Subawards_2026-10-20_H20M31S09_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "11ca1b7ad0793781be8a99813d59113f3aa9a2a5fa1d4671db208d7ee51608db",
+    "lines": 1
+   },
+   "subawards/FY2026_418_Subawards_All_Assistance_Subawards_2026-10-20_H20M24S45_1_trimmed.csv.gz": {
+    "bytes": 5367,
+    "sha256": "fbda67dabe4aca0959f9ce4a07280b498d525682d5fdbdafe5ccd2b962324581",
+    "lines": 72
+   },
+   "subawards/FY2026_418_Subawards_All_Contracts_Subawards_2026-10-20_H20M24S33_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "2fc588791608fc9944b26f66e818835f969fd8880602cbfe8ea984a87aeb009f",
+    "lines": 1
+   },
+   "subawards/FY2026_474_Subawards_All_Assistance_Subawards_2026-10-20_H20M38S36_1_trimmed.csv.gz": {
+    "bytes": 6986,
+    "sha256": "328865d2edea796bbf14db8ce7053ab7d10916992e37cb60565b352cbcddcf68",
+    "lines": 54
+   },
+   "subawards/FY2026_474_Subawards_All_Contracts_Subawards_2026-10-20_H20M38S24_1_trimmed.csv.gz": {
+    "bytes": 363,
+    "sha256": "62b1f5dbc06ac173d36e5d3ebfc0e83fdced0714b04f54c20cd7a4a1af492874",
+    "lines": 1
+   }
+  },
+  "reference": {
+   "ai-1-core/crosswalk/crosswalk_uei_v2.json": {
+    "bytes": 698508,
+    "sha256": "fa3c564f73c406a23ba68e2b4a836dc4a192e1cb54b5ec32b96b2918a0ad0599"
+   },
+   "ai-1-core/crosswalk/entities_v2.json": {
+    "bytes": 110829,
+    "sha256": "280a858f0d73b797bbad175815d804d193a8c27b3f5e6ba99074979f5aac6a37"
+   },
+   "ai-1-core/crosswalk/ffrdc_exclusions.json": {
+    "bytes": 657,
+    "sha256": "9fec53a81316b1b13928f7267b6a7aeba4f3f3e2dd3346d4af5fba37f75a73d4"
+   },
+   "ai-1-core/crosswalk/known_ueis.txt": {
+    "bytes": 76682,
+    "sha256": "eafe47384db71bb0379930a39183088df6ad7d83a228c3bbffc931b0696e024d"
+   },
+   "ai-1-core/program_scope.json": {
+    "bytes": 234778,
+    "sha256": "0b829e19310cdae3f420b37dcf9c8886287228f426918095405009ffdb64c376"
+   },
+   "nsf/universe3.json": {
+    "bytes": 1972018,
+    "sha256": "53a49565ee569b07331ac9167790d0255c088ce886f8a7bc22c449f94b679a82"
+   }
+  }
+ }
+}

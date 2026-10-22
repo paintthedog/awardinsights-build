@@ -31,6 +31,7 @@ SUBS=""; for f in inputs/subawards/*.csv.gz; do [[ -e "$f" ]] && SUBS=1; break; 
 if [[ -n "$SUBS" ]]; then echo "→ $(ls inputs/subawards/*.csv.gz | wc -l | tr -d ' ') trimmed subaward files"; else echo "→ no subaward files in inputs/subawards/: building without subawards"; fi
 
 rm -rf build && mkdir -p build/site
+python3 -I scripts/manifest.py --check || echo "   (warning: inputs differ from inputs/MANIFEST.json; after a refresh, run scripts/manifest.py and commit it)"
 echo "→ building the landing page, NSF, Designations and Portfolio"
 python3 -I legacy/build_legacy.py --out build/site ${COMPARE_LIVE:+--compare "$COMPARE_LIVE"}
 

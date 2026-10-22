@@ -1803,7 +1803,8 @@
   "state": "AK",
   "unitid": "103529",
   "ueis": [
-   "KNP1HA2B9BF8"
+   "KNP1HA2B9BF8",
+   "D35FG746LPZ3"
   ]
  },
  "X-136491": {
@@ -2405,7 +2406,8 @@
   "ueis": [
    "NDGJNKX6HVV4",
    "JF4FD4NNU8G8",
-   "RF7GC7TQVDP5"
+   "RF7GC7TQVDP5",
+   "D6YBFP5KRC37"
   ]
  },
  "X-138372": {
@@ -5440,7 +5442,10 @@
   "city": "MADISON",
   "state": "WI",
   "unitid": null,
-  "ueis": []
+  "ueis": [
+   "UBCGS2J98RK4",
+   "CS5DGASZDJM3"
+  ]
  },
  "I-RAND-CORPORATION": {
   "type": "institute",
