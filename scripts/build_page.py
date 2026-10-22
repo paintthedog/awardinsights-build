@@ -14,7 +14,7 @@ COPY = "© 2026 Award Insights · awardinsights.org · All rights reserved."
 head = open(A.head).read()
 head = head.replace("<title>NSF Award Insights</title>", "<title>Federal Award Insights</title>")
 head = re.sub(r'<meta name="description" content="[^"]*">',
-              '<meta name="description" content="What institutions like yours receive from 21 federal agencies in competitive grants, agreements and contracts, by year, agency and program, against peers you choose.">', head)
+              '<meta name="description" content="What institutions like yours receive from 21 federal agencies in project grants, cooperative agreements and contracts, by year, agency and program, against peers you choose.">', head)
 body = open(A.body).read()
 if A.preview:
     page = head + body
