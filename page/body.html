@@ -1238,9 +1238,7 @@ async function briefCard(d,peers){
   const sgn=v=>(v>0?"+":"")+money(v);
   const moveTile=(x,id,k)=>({id,k,big:sgn(x.d/2),ln:`${agL(x.a)} · ${money(x.n/2)} a year in FY2024–25, against ${money(x.b/2)} in FY2022–23${x.p!=null?` (${chgTxt(x.p)})`:""}`,
     me:x.p, pm:hasPeers?medOrNull(peers.map(p=>{ const y=two(agOf(p.u),x.a); return y&&y.b>0?y.p:null; })):null, sc:"chg", go:"cardAg"});
-  if(up) st.push(moveTile(up,"up","Largest increase, by agency"));
-  if(dn) st.push(moveTile(dn,"dn","Largest decrease, by agency"));
-  const nMove=st.length;
+  const moveT=[up&&moveTile(up,"up","Largest increase, by agency"), dn&&moveTile(dn,"dn","Largest decrease, by agency")].filter(Boolean);   // shown last
   // concentration
   const C=AGG.conc[d.u];
   if(C&&C[1]>0){ const pc=hasPeers?medOrNull(peers.map(p=>{ const x=AGG.conc[p.u]; return x&&x[1]>0?x[0]/x[1]:null; })):null;
@@ -1257,7 +1255,7 @@ async function briefCard(d,peers){
   const draw=()=>{ el.innerHTML=`<div class="chd"><h3>At a glance</h3></div>
     <div class="csub">${TYPLAB()[0].toUpperCase()+TYPLAB().slice(1)}${hasPeers?` · peer medians use <button class="linkbtn" id="brPeers">${peers.length} peers set above ↑</button>`:""} · data through ${asOf}</div>
     <details class="binfo"><summary>How these are measured</summary><p><b>Current annual funding</b> is obligations in the 52 weeks ending ${asOf}. <b>New-award comparisons</b> use the latest settled 3 months and leave out the most recent ${PROVW} weeks, which agencies are still reporting. <b>Scheduled end</b> is each award's period-of-performance end date, which extensions and renewals move. ${hasPeers?`<b>Peer medians</b> use the ${peers.length} peers listed below.`:"No peer group applies to this institution."} Each tile opens the section with the detail.</p></details>
-    <div class="brief">${st.map(x=>`<div class="bst" role="link" tabindex="0" data-to="${x.go}" aria-label="${esc(x.k)}: ${esc(x.big)}. Open details">
+    <div class="brief">${[...st,...moveT].map(x=>`<div class="bst" role="link" tabindex="0" data-to="${x.go}" aria-label="${esc(x.k)}: ${esc(x.big)}. Open details">
       <div class="k">${x.k}</div><div class="big">${x.big}</div><p class="ln">${x.ln}</p>
       ${x.chips&&x.chips.length?`<div class="chips">${x.chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div>`:""}
       ${x.ft?`<div class="ft">${x.ft}</div>`:""}${peerBar(x,d.n)}</div>`).join("")}</div>`;
@@ -1271,11 +1269,11 @@ async function briefCard(d,peers){
   const ex=exposureOf(d.u,down);
   if(ex!=null){ const pex=hasPeers?medOrNull(peers.map(p=>exposureOf(p.u,down))):null;
     const mine=down.filter(a=>(g.ag[a]||{d:0}).d>0).sort((p,q)=>g.ag[q].d-g.ag[p].d).slice(0,5);
-    st.splice(nMove,0,{id:"exp",k:"Exposure to falling new awards",big:pct0(ex),ln:"of FY2022–26 funding is with agencies whose new awards nationally are down 10% or more",chips:mine.map(a=>`${agL(a)} ${chgTxt(nat[a])}`),me:ex,pm:pex,sc:"pct",go:"cardAg"}); }
+    st.splice(0,0,{id:"exp",k:"Exposure to falling new awards",big:pct0(ex),ln:"of FY2022–26 funding is with agencies whose new awards nationally are down 10% or more",chips:mine.map(a=>`${agL(a)} ${chgTxt(nat[a])}`),me:ex,pm:pex,sc:"pct",go:"cardAg"}); }
   const w=lstate.w, o=lstate.off; lstate.w=13; lstate.off=PROVW; const L=latestAgg([d]); const pl=hasPeers?medOrNull(peers.map(p=>{ const x=latestAgg([p]); return x.nP>=3?pctChg(x.n,x.nP):null; })):null; lstate.w=w; lstate.off=o;
   const sEnd=weekEnd(PROVW), sStart=weekEnd(PROVW+12); sStart.setDate(sStart.getDate()-6); const settled=`${fmtDate(sStart,{month:"short",day:"numeric"})} – ${fmtDate(sEnd,{month:"short",day:"numeric",year:"numeric"})}`;
   const lc=pctChg(L.n,L.nP);
-  st.splice(nMove+(ex!=null?1:0),0,{id:"new",k:"New awards, latest settled 3 months",big:lc==null?L.n.toLocaleString():chgTxt(lc),ln:lc==null?`new awards, ${settled}`:`${L.n.toLocaleString()} new awards against ${L.nP.toLocaleString()} in the same weeks a year earlier`,ft:settled,me:lc,pm:pl,sc:"chg",go:"cardLatestInst"});
+  st.splice(ex!=null?1:0,0,{id:"new",k:"New awards, latest settled 3 months",big:lc==null?L.n.toLocaleString():chgTxt(lc),ln:lc==null?`new awards, ${settled}`:`${L.n.toLocaleString()} new awards against ${L.nP.toLocaleString()} in the same weeks a year earlier`,ft:settled,me:lc,pm:pl,sc:"chg",go:"cardLatestInst"});
   if(el.dataset.tok===tok) draw();
 }
 async function cliffCard(d,peers){
