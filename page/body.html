@@ -56,14 +56,14 @@ h3.ctog:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-
 .smallgrp .br .bn,.smallgrp .br .bv{color:var(--muted)}.br.divrow.go:hover{background:var(--accent-soft)}
 .modeswitch{flex-wrap:wrap}
 .brief{display:grid;grid-template-columns:1fr;gap:6px;margin-top:12px}
-.bst{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 2px rgba(20,20,18,.04);padding:14px 18px;display:grid;grid-template-columns:76px minmax(0,1.25fr) minmax(220px,1fr);column-gap:24px;row-gap:4px;align-items:start;min-width:0;position:relative;cursor:pointer;transition:background .15s}
+.bst{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 2px rgba(20,20,18,.04);padding:14px 18px;display:grid;grid-template-columns:104px minmax(0,1.25fr) minmax(220px,1fr);column-gap:24px;row-gap:4px;align-items:start;min-width:0;position:relative;cursor:pointer;transition:background .15s}
 .bst>*{grid-column:2}
 .bst:hover,.bst:focus-visible{background:var(--ground);outline:none}
 .bst:focus-visible{box-shadow:inset 0 0 0 2px var(--accent)}
 .bst::after{content:"→";position:absolute;top:12px;right:12px;color:var(--accent);font-size:14px;opacity:0;transition:opacity .15s,transform .15s;transform:translateX(-3px)}
 .bst:hover::after,.bst:focus-visible::after{opacity:1;transform:none}
 .bst .k{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--you-ink);padding-right:18px;line-height:1.35}
-.bst>.big{grid-column:1;grid-row:1/span 4;align-self:center;font-family:"Readex Pro",system-ui,sans-serif;font-weight:600;font-size:30px;line-height:1;margin:0;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:lining-nums tabular-nums}
+.bst>.big{grid-column:1;grid-row:1/span 4;align-self:center;white-space:nowrap;font-family:"Readex Pro",system-ui,sans-serif;font-weight:600;font-size:30px;line-height:1;margin:0;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:lining-nums tabular-nums}
 .bst .ln{margin:0;font-size:13px;line-height:1.4;color:var(--muted)}
 .bst .ln b{font-weight:500;color:var(--ink)}
 .bst .ft{font-size:12px;line-height:1.45;color:var(--muted)}
@@ -86,8 +86,8 @@ h3.ctog:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-
 .binfo summary::before{content:"ⓘ ";}
 .binfo p{margin:6px 0 0;line-height:1.5;max-width:76ch}
 @media (max-width:720px){
- .bst{grid-template-columns:58px minmax(0,1fr);column-gap:14px;padding:12px 14px}
- .bst>.big{font-size:24px;grid-row:1/span 3}
+ .bst{grid-template-columns:76px minmax(0,1fr);column-gap:10px;padding:12px 12px}
+ .bst>.big{font-size:21px;grid-row:1/span 3}
  .bst>.pbar{grid-column:1/-1;grid-row:auto;margin-top:6px}
  .pbar .trk{margin:6px 5px 7px}}
 .tl{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line-soft)}
@@ -1215,23 +1215,32 @@ function nationalAgencyChange(){ // new-award change by agency, last 13 weeks vs
 }
 function exposureOf(u,down){ const g=agOf(u); if(!(g.tot>0))return null; let s=0; for(const a of down) s+=Math.max(0,(g.ag[a]||{d:0}).d); return s/g.tot; }
 // one tile = {k: label, big: headline figure, ln: one plain line, chips, ft: footnote, me/pm: values for the peer bar, sc: "pct" (0-100%) or "chg" (-100%..+100%), go: card to jump to}
-function peerBar(x,peerN){
+// a short form of an institution's name for tight labels; the full name goes in a title
+const shortName=n=>{ let s=n.replace(/[-–,]\s*Main Campus$/i,"").replace(/\s+Main Campus$/i,"").trim(); if(s.length>26) s=s.replace(/\bUniversity\b/g,"Univ."); return s.length>26?s.slice(0,25).trim()+"…":s; };
+function peerBar(x,nm){
   if(x.me==null) return "";
   const pos=v=>{ const t=x.sc==="chg"?(Math.max(-1,Math.min(1,v))+1)/2:Math.max(0,Math.min(1,v)); return (t*100).toFixed(1)+"%"; };
   const f=x.sc==="chg"?chgTxt:pct0;
   return `<div class="pbar"><div class="trk">${x.sc==="chg"?`<span class="zero"></span>`:""}${x.pm!=null?`<span class="pmk" style="left:${pos(x.pm)}"></span>`:""}<span class="me" style="left:${pos(x.me)}"></span></div>
-    <div class="plab"><span><i class="dme"></i>This institution ${f(x.me)}</span>${x.pm!=null?`<span><i class="dpm"></i>Peer median ${f(x.pm)}</span>`:""}</div></div>`;
+    <div class="plab"><span title="${esc(nm||"This institution")}"><i class="dme"></i>${esc(nm?shortName(nm):"This institution")} ${f(x.me)}</span>${x.pm!=null?`<span><i class="dpm"></i>Peer median ${f(x.pm)}</span>`:""}</div></div>`;
 }
 async function briefCard(d,peers){
   const el=$("cardBrief"), tok=d.u+typ+compOnly+peers.length; el.dataset.tok=tok;
   const g=agOf(d.u), hasPeers=d.k==="carnegie"&&peers.length>0;
   if(!(g.tot>0)&&!g.em){ el.innerHTML=`<h3>At a glance</h3><p class="note" style="margin-top:8px">No ${TYPLAB()} on record for FY2022–26.</p>`; return; }
   const st=[];
-  // sources
-  const ags=Object.entries(g.ag).map(([a,x])=>({a:+a,d:x.d})).filter(x=>x.d>0).sort((p,q)=>q.d-p.d);
-  const topSh=ags.length?ags[0].d/g.tot:null, top3=ags.slice(0,3).reduce((s,x)=>s+x.d,0)/g.tot;
-  const pTop=hasPeers?medOrNull(peers.map(p=>{ const h=agOf(p.u); const m=Math.max(0,...Object.values(h.ag).map(x=>x.d)); return h.tot>0?m/h.tot:null; })):null;
-  if(ags.length) st.push({id:"src",k:"Largest funding source",big:pct0(topSh),ln:`of FY2022–26 federal funding comes from <b>${agL(ags[0].a)}</b>`,ft:ags.length>2?`Top three (${ags.slice(0,3).map(x=>agL(x.a)).join(", ")}): ${pct0(top3)}`:"",me:topSh,pm:pTop,sc:"pct",go:"cardAg"});
+  // largest increase and largest decrease by agency: FY2024-25 against FY2022-23 (two settled years each; FY2026 is partial).
+  // Picked by dollar change, so a small agency's big percentage doesn't win; the peer bar compares percent change for that agency.
+  const two=(h,a)=>{ const x=h.ag[a]; if(!x) return null; const b=x.y[0]+x.y[1], n=x.y[2]+x.y[3]; return {a,b,n,d:n-b,p:b>0?(n-b)/b:null}; };
+  const span4=g.yr[0]+g.yr[1]+g.yr[2]+g.yr[3];
+  const moves=Object.keys(g.ag).map(Number).map(a=>two(g,a)).filter(x=>x&&x.d!==0&&(x.b+x.n)>=.02*span4);
+  const up=moves.filter(x=>x.d>0).sort((p,q)=>q.d-p.d)[0], dn=moves.filter(x=>x.d<0).sort((p,q)=>p.d-q.d)[0];
+  const sgn=v=>(v>0?"+":"")+money(v);
+  const moveTile=(x,id,k)=>({id,k,big:sgn(x.d/2),ln:`${agL(x.a)} · ${money(x.n/2)} a year in FY2024–25, against ${money(x.b/2)} in FY2022–23${x.p!=null?` (${chgTxt(x.p)})`:""}`,
+    me:x.p, pm:hasPeers?medOrNull(peers.map(p=>{ const y=two(agOf(p.u),x.a); return y&&y.b>0?y.p:null; })):null, sc:"chg", go:"cardAg"});
+  if(up) st.push(moveTile(up,"up","Largest increase, by agency"));
+  if(dn) st.push(moveTile(dn,"dn","Largest decrease, by agency"));
+  const nMove=st.length;
   // concentration
   const C=AGG.conc[d.u];
   if(C&&C[1]>0){ const pc=hasPeers?medOrNull(peers.map(p=>{ const x=AGG.conc[p.u]; return x&&x[1]>0?x[0]/x[1]:null; })):null;
@@ -1241,9 +1250,6 @@ async function briefCard(d,peers){
   if(cl.tot>0){ const s12=cl.b[1]/cl.tot, s24=(cl.b[1]+cl.b[2])/cl.tot;
     const p12=hasPeers?medOrNull(peers.map(p=>{ const c=cliffOf(p.u); return c.tot>0?c.b[1]/c.tot:null; })):null;
     st.push({id:"end",k:"Scheduled to end within 12 months",big:pct0(s12),ln:`of current annual funding (${money(cl.b[1])}) · ${pct0(s24)} within 24 months`,ft:cl.b[0]>0?`Another ${money(cl.b[0])} is past its end date, usually an extension not yet recorded`:"",me:s12,pm:p12,sc:"pct",go:"cardCliff"}); }
-  // contracts
-  if(typ==="all"&&g.tot>0&&d.csh!=null){ const c22=g.yr[0]>0?g.yC[0]/g.yr[0]:null, c25=g.yr[3]>0?g.yC[3]/g.yr[3]:null, pcs=hasPeers?medOrNull(peers.map(p=>p.csh)):null;
-    st.push({id:"con",k:"Contracts",big:pct0(d.csh),ln:"of FY2022–26 federal funding is contracts; the rest is grants and agreements",ft:c22!=null&&c25!=null?`FY22 ${pct0(c22)} → FY25 ${pct0(c25)}`:"",me:d.csh,pm:pcs,sc:"pct",go:"cardYear"}); }
   // earmarks
   if(g.em>0&&g.tot>0&&g.em/g.tot>=0.01){ const pe=hasPeers?medOrNull(peers.map(p=>{ const h=agOf(p.u); return h.tot>0?h.em/h.tot:null; })):null;
     st.push({id:"em",k:"Earmarks",big:money(g.em),ln:`in congressionally directed spending, equal to ${pct0(g.em/g.tot)} of competitive funding`,ft:"Shown apart; not counted in totals or ranks",me:g.em/g.tot,pm:pe,sc:"pct",go:"cardProg"}); }
@@ -1254,7 +1260,7 @@ async function briefCard(d,peers){
     <div class="brief">${st.map(x=>`<div class="bst" role="link" tabindex="0" data-to="${x.go}" aria-label="${esc(x.k)}: ${esc(x.big)}. Open details">
       <div class="k">${x.k}</div><div class="big">${x.big}</div><p class="ln">${x.ln}</p>
       ${x.chips&&x.chips.length?`<div class="chips">${x.chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div>`:""}
-      ${x.ft?`<div class="ft">${x.ft}</div>`:""}${peerBar(x)}</div>`).join("")}</div>`;
+      ${x.ft?`<div class="ft">${x.ft}</div>`:""}${peerBar(x,d.n)}</div>`).join("")}</div>`;
     const bp=$("brPeers"); if(bp) bp.addEventListener("click",()=>$("peersel").scrollIntoView({behavior:"smooth",block:"start"}));
     el.querySelectorAll(".bst[data-to]").forEach(b=>{ const go=()=>{ const t=$(b.dataset.to); if(t) t.scrollIntoView({behavior:"smooth",block:"start"}); };
       b.addEventListener("click",go); b.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } }); }); };
@@ -1265,11 +1271,11 @@ async function briefCard(d,peers){
   const ex=exposureOf(d.u,down);
   if(ex!=null){ const pex=hasPeers?medOrNull(peers.map(p=>exposureOf(p.u,down))):null;
     const mine=down.filter(a=>(g.ag[a]||{d:0}).d>0).sort((p,q)=>g.ag[q].d-g.ag[p].d).slice(0,5);
-    st.splice(1,0,{id:"exp",k:"Exposure to falling new awards",big:pct0(ex),ln:"of FY2022–26 funding is with agencies whose new awards nationally are down 10% or more",chips:mine.map(a=>`${agL(a)} ${chgTxt(nat[a])}`),me:ex,pm:pex,sc:"pct",go:"cardAg"}); }
+    st.splice(nMove,0,{id:"exp",k:"Exposure to falling new awards",big:pct0(ex),ln:"of FY2022–26 funding is with agencies whose new awards nationally are down 10% or more",chips:mine.map(a=>`${agL(a)} ${chgTxt(nat[a])}`),me:ex,pm:pex,sc:"pct",go:"cardAg"}); }
   const w=lstate.w, o=lstate.off; lstate.w=13; lstate.off=PROVW; const L=latestAgg([d]); const pl=hasPeers?medOrNull(peers.map(p=>{ const x=latestAgg([p]); return x.nP>=3?pctChg(x.n,x.nP):null; })):null; lstate.w=w; lstate.off=o;
   const sEnd=weekEnd(PROVW), sStart=weekEnd(PROVW+12); sStart.setDate(sStart.getDate()-6); const settled=`${fmtDate(sStart,{month:"short",day:"numeric"})} – ${fmtDate(sEnd,{month:"short",day:"numeric",year:"numeric"})}`;
   const lc=pctChg(L.n,L.nP);
-  st.splice(ex!=null?2:1,0,{id:"new",k:"New awards, latest settled 3 months",big:lc==null?L.n.toLocaleString():chgTxt(lc),ln:lc==null?`new awards, ${settled}`:`${L.n.toLocaleString()} new awards against ${L.nP.toLocaleString()} in the same weeks a year earlier`,ft:settled,me:lc,pm:pl,sc:"chg",go:"cardLatestInst"});
+  st.splice(nMove+(ex!=null?1:0),0,{id:"new",k:"New awards, latest settled 3 months",big:lc==null?L.n.toLocaleString():chgTxt(lc),ln:lc==null?`new awards, ${settled}`:`${L.n.toLocaleString()} new awards against ${L.nP.toLocaleString()} in the same weeks a year earlier`,ft:settled,me:lc,pm:pl,sc:"chg",go:"cardLatestInst"});
   if(el.dataset.tok===tok) draw();
 }
 async function cliffCard(d,peers){
