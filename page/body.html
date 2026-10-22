@@ -23,16 +23,16 @@
 .card.min>:not(.chd):not(h3){display:none!important}
 .card.min{padding-bottom:14px}
 .card.min>.chd>:not(h3){display:none}
-h3.ctog{cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:7px}
-h3.ctog::before{content:"";width:7px;height:7px;border-right:1.5px solid var(--faint);border-bottom:1.5px solid var(--faint);transform:rotate(45deg) translate(-2px,-2px);transition:transform .15s;flex:none}
+h3.ctog{cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:9px}
+h3.ctog::before{content:"";width:5px;height:5px;border-right:1.25px solid var(--faint);border-bottom:1.25px solid var(--faint);transform:rotate(45deg) translate(-1px,-1px);transition:transform .15s;flex:none}
 .card.min h3.ctog::before{transform:rotate(-45deg)}
 h3.ctog:hover{color:var(--accent-ink)}h3.ctog:hover::before{border-color:var(--accent)}
 h3.ctog:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
 .psec{border-top:1px solid var(--line-soft);margin-top:12px;padding-top:10px}
 .psec>summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:auto auto auto 1fr;align-items:baseline;column-gap:8px;row-gap:2px}
 .psec>summary::-webkit-details-marker{display:none}
-.psec>summary::before{content:"";width:6px;height:6px;border-right:1.5px solid var(--faint);border-bottom:1.5px solid var(--faint);transform:rotate(-45deg);margin-right:2px;align-self:center;grid-row:1}
-.psec[open]>summary::before{transform:rotate(45deg) translate(-2px,-2px)}
+.psec>summary::before{content:"";width:5px;height:5px;border-right:1.25px solid var(--faint);border-bottom:1.25px solid var(--faint);transform:rotate(-45deg);margin-right:2px;align-self:center;grid-row:1;transition:transform .15s}
+.psec[open]>summary::before{transform:rotate(45deg) translate(-1px,-1px)}
 .psec>summary .pt{font-size:13.5px;font-weight:600;color:var(--ink)}
 .psec>summary .pc{justify-self:start;font-size:11px;color:var(--muted);background:var(--ground);border-radius:100px;padding:1px 7px}
 .psec>summary .ps{grid-column:1/-1;font-size:11.5px;color:var(--faint);padding-left:16px}
