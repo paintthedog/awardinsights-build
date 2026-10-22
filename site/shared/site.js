@@ -156,6 +156,32 @@ if (here === "nsf" || here === "portfolio") {
   document.addEventListener("click", () => closePops()); document.addEventListener("keydown", e => { if (e.key === "Escape") closePops(); });
 }
 
+/* long explanations read as bullets: split at bold labels ("<b>Dollars</b> …"), else at " · ", else at sentences.
+   Applied when a "Methods and notes" section or an "i" popover opens, so text a tool fills in later is included. */
+function bullets(el) {
+  const html = el.innerHTML.trim(); if (!html || el.dataset.bul === String(html.length)) return;
+  // a bold label starts a bullet only where a sentence starts (bold phrases inside a sentence stay put)
+  let parts = html.split(/(?<=^|[.;:)]\s+)(?=<b>)/).map(s => s.trim()).filter(Boolean);
+  if (parts.length < 3) parts = html.split(/\s+·\s+/).map(s => s.trim()).filter(Boolean);
+  if (parts.length < 3) parts = html.split(/(?<=[.;])\s+(?=[A-Z<“"(])/).map(s => s.trim()).filter(Boolean);
+  if (parts.length < 3) return;
+  // a very long bullet (several topics with no labels) becomes one bullet per sentence; a bare "Prototype." is dropped
+  const plain = h => h.replace(/<[^>]+>/g, "");
+  parts = parts.flatMap(p => plain(p).length > 500 ? p.split(/(?<=[.;])\s+(?=[A-Z<“"(])/) : [p]).filter(p => plain(p).trim() && !/^Prototype\.?$/.test(plain(p).trim()));
+  const ul = document.createElement("ul"); ul.className = "ai-bul";
+  ul.innerHTML = parts.map(p => `<li>${p.replace(/^[·;\s]+|[·;\s]+$/g, "")}</li>`).join("");
+  if (el.tagName === "P" || el.classList.contains("csub")) { el.replaceWith(ul); return; }
+  el.innerHTML = ""; el.append(ul); el.dataset.bul = String(el.innerHTML.length);
+}
+function bulletsIn(root) {
+  root.querySelectorAll(".foot, .infopop .csub, .infopop p, .ai-src > div").forEach(el => {
+    const ps = el.matches(".foot") ? el.querySelectorAll(":scope > p") : [];
+    if (ps.length) ps.forEach(bullets); else bullets(el);
+  });
+}
+document.addEventListener("toggle", e => { if (e.target.matches && e.target.matches(".ai-methods, .ai-src") && e.target.open) bulletsIn(e.target); }, true);
+document.addEventListener("click", e => { const b = e.target.closest && e.target.closest(".infobtn"); if (b) setTimeout(() => bulletsIn(b.closest(".card") || document), 0); }, true);
+
 /* the long methods paragraph at the bottom of each tool is tucked into a closed "Methods and notes" line
    (the element is moved, not copied, so a tool that fills it later still can) */
 document.querySelectorAll(".foot").forEach(f => {
