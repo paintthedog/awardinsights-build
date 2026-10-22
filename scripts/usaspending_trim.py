@@ -12,11 +12,13 @@ Education Title IV student aid with them. Keeps only the columns the build uses,
 and caps the award description at 400 characters.
 """
 import warnings; warnings.filterwarnings("ignore")
-import pathlib, zipfile, io, csv, gzip, sys
+import argparse, pathlib, zipfile, io, csv, gzip, sys
 csv.field_size_limit(sys.maxsize)
-
-SRC = pathlib.Path("usaspending_downloads"); OUT = pathlib.Path("trimmed"); OUT.mkdir(exist_ok=True)
-known = set(l.strip() for l in open("known_ueis.txt") if l.strip())
+# defaults as before; --out lets a re-trim write a fresh set next to the old one
+ap = argparse.ArgumentParser(); ap.add_argument("--src", default="usaspending_downloads"); ap.add_argument("--out", default="trimmed")
+ap.add_argument("--known", default="known_ueis.txt"); args = ap.parse_args()
+SRC = pathlib.Path(args.src); OUT = pathlib.Path(args.out); OUT.mkdir(exist_ok=True)
+known = set(l.strip() for l in open(args.known) if l.strip())
 
 IHE_TEXT = ("CONTROLLED INSTITUTION OF HIGHER EDUCATION", "PRIVATE INSTITUTION OF HIGHER EDUCATION")
 IHE_FLAGS = ("educational_institution", "private_university_or_college", "state_controlled_institution_of_higher_learning")

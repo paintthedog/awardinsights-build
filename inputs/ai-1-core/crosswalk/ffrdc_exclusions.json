@@ -1,9 +1,7 @@
 {
  "ueis": {
   "YC1YP79BFD19": "JPL (Caltech)",
-  "SN5KKUDR9LY8": "MIT Lincoln Laboratory",
   "G4P3TF8PFH73": "CMU Software Engineering Institute",
-  "C1HBCJ9RMBV3": "JHU Applied Physics Laboratory",
   "ZLHJJ57QA2H8": "Oak Ridge National Laboratory (UT-Battelle)"
  },
  "piids": {
@@ -11,7 +9,9 @@
   "DEAC0205CH11231": "LBNL (UC)",
   "DEAC0209CH11466": "PPPL (Princeton)",
   "DEAC0207CH11358": "Ames Laboratory (Iowa State)",
-  "DEAC0343SF00048": "LLNL legacy (UC)"
+  "DEAC0343SF00048": "LLNL legacy (UC)",
+  "FA870215D0001": "MIT Lincoln Laboratory",
+  "FA870225DB002": "MIT Lincoln Laboratory (successor contract)"
  },
  "note": "contracts matching these, or whose description names an FFRDC / M&O contract, are excluded as lab-management money (HERD excludes FFRDCs)"
 }

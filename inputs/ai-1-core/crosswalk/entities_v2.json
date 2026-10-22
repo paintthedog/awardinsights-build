@@ -627,7 +627,6 @@
   "unitid": "182519",
   "ueis": [
    "F995DBS4SRN3",
-   "MV1JFXA4S621",
    "ZBSLB5G5DST4"
   ]
  },
@@ -5882,6 +5881,47 @@
   "unitid": null,
   "ueis": [
    "DAASENEJ1FA3"
+  ]
+ },
+ "I-SCRIPPS": {
+  "type": "institute",
+  "name": "Scripps Research",
+  "city": "LA JOLLA",
+  "state": "CA",
+  "unitid": null,
+  "ueis": [
+   "PHZJFZ32NKH4",
+   "MGUCX773RNJ8"
+  ]
+ },
+ "I-CSHL": {
+  "type": "institute",
+  "name": "Cold Spring Harbor Laboratory",
+  "city": "COLD SPRING HARBOR",
+  "state": "NY",
+  "unitid": null,
+  "ueis": [
+   "GV31TMFLPY88"
+  ]
+ },
+ "I-DRI": {
+  "type": "institute",
+  "name": "Desert Research Institute",
+  "city": "RENO",
+  "state": "NV",
+  "unitid": null,
+  "ueis": [
+   "MV1JFXA4S621"
+  ]
+ },
+ "I-WISTAR": {
+  "type": "institute",
+  "name": "The Wistar Institute",
+  "city": "PHILADELPHIA",
+  "state": "PA",
+  "unitid": null,
+  "ueis": [
+   "DW1XZMGNFBL4"
   ]
  }
 }
