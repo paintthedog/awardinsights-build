@@ -18,9 +18,22 @@
 @media(max-width:620px){.sitebar .theme{order:1;margin-left:auto}.sitebar nav{order:2;flex-basis:100%;margin-left:-11px}}
 
 /* where each tool's numbers come from */
-.ai-src{margin:-8px 0 18px;max-width:96ch;font:400 12.5px/1.5 "Readex Pro",system-ui,sans-serif;color:var(--faint)}
+.ai-src{position:relative;margin:-10px 0 14px;font:400 12.5px/1.5 "Readex Pro",system-ui,sans-serif;color:var(--faint)}
+.ai-src>summary{display:inline-flex;align-items:center;gap:6px;cursor:pointer;list-style:none;color:var(--muted)}
+.ai-src>summary::-webkit-details-marker{display:none}
+.ai-src>summary::before{content:none!important}
+.ai-src>summary::after{content:"i";display:inline-grid;place-items:center;width:15px;height:15px;border-radius:50%;border:1px solid var(--line);font:600 9.5px/1 "Readex Pro",system-ui,sans-serif;font-style:italic;color:var(--faint)}
+.ai-src>summary:hover,.ai-src[open]>summary{color:var(--accent-ink)}
+.ai-src>div{position:absolute;z-index:40;top:24px;left:0;width:min(560px,calc(100vw - 32px));background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 10px 30px -14px rgba(20,20,18,.3);padding:10px 13px;color:var(--muted)}
 .ai-src a{color:var(--muted);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px}
 .ai-src a:hover,.ai-src a:focus-visible{color:var(--accent);text-decoration-color:currentColor}
+
+/* "i" popovers holding card explanations (NSF, Portfolio; Federal styles its own) */
+.card{position:relative}
+.infobtn{display:inline-grid;place-items:center;width:17px;height:17px;margin-left:6px;padding:0;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--faint);font:italic 600 10.5px/1 "Readex Pro",system-ui,sans-serif;cursor:pointer;vertical-align:middle}
+.infobtn:hover,.infobtn:focus-visible,.infobtn[aria-expanded="true"]{color:var(--accent-ink,var(--accent));border-color:var(--accent);outline:none}
+.infopop{position:absolute;left:14px;right:14px;max-width:560px;z-index:40;background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 10px 30px -14px rgba(20,20,18,.3);padding:10px 13px;font:400 12.5px/1.5 "Readex Pro",system-ui,sans-serif;color:var(--muted)}
+.infopop .csub{margin:0;font-size:12.5px;color:var(--muted)}
 
 /* search hits from other tools, and the note shown when this tool doesn't cover the chosen institution */
 .results .ai-sep{padding:8px 12px 4px;font:600 10.5px/1.2 "Readex Pro",system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);border-top:1px solid var(--line)}

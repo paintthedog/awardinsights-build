@@ -98,7 +98,7 @@ def inject(html, tool, name):
     for h in HOME_LINKS: html = html.replace(h, "")
     i = html.index('<div class="masthead">'); j = html.index("</div>", i) + len("</div>")
     if "<div" in html[i + 5:j]: sys.exit(f"{name}: masthead has a nested div")
-    html = html[:j] + f'\n  <p class="ai-src">{SOURCES[tool]}</p>' + html[j:]
+    html = html[:j] + f'\n  <details class="ai-src"><summary>Sources</summary><div>{SOURCES[tool]}</div></details>' + html[j:]
     return html.replace('<div class="masthead">', sitebar(tool) + '\n  <div class="masthead">', 1).replace("</head>", head(), 1)
 
 def stub(tool):

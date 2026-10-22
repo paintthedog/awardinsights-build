@@ -137,6 +137,25 @@ if (sw) sw.addEventListener("click", () => {
 });
 dark.addEventListener("change", label); label();
 
+/* NSF and Portfolio: card subtitles move into a popover behind a small "i" after the card title, as on Federal
+   (Federal does this in its own script) */
+if (here === "nsf" || here === "portfolio") {
+  const closePops = except => document.querySelectorAll(".infopop").forEach(p => { if (p !== except && !p.hidden) { p.hidden = true; const b = p.parentElement.querySelector(".infobtn"); if (b) b.setAttribute("aria-expanded", "false"); } });
+  const infoize = card => {
+    const items = [...card.querySelectorAll(":scope > .csub")]; if (!items.length) return;
+    const h3 = card.querySelector(":scope > .chd > h3, :scope > h3"); if (!h3) return;
+    let btn = card.querySelector(".infobtn"), pop = card.querySelector(":scope > .infopop");
+    if (!btn) { btn = document.createElement("button"); btn.type = "button"; btn.className = "infobtn"; btn.textContent = "i"; btn.setAttribute("aria-label", "About this section"); btn.setAttribute("aria-expanded", "false"); h3.after(btn); }
+    if (!pop) { pop = document.createElement("div"); pop.className = "infopop"; pop.hidden = true; card.append(pop); }
+    items.forEach(x => pop.append(x));
+    btn.onclick = e => { e.stopPropagation(); const open = pop.hidden; closePops(pop); pop.hidden = !open; btn.setAttribute("aria-expanded", String(open)); if (open) pop.style.top = (btn.offsetTop + btn.offsetHeight + 6) + "px"; };
+    pop.onclick = e => e.stopPropagation();
+  };
+  document.querySelectorAll(".card").forEach(infoize);
+  new MutationObserver(ms => { for (const m of ms) { const c = m.target.closest && m.target.closest(".card"); if (c) infoize(c); } }).observe(document.body, { childList: true, subtree: true });
+  document.addEventListener("click", () => closePops()); document.addEventListener("keydown", e => { if (e.key === "Escape") closePops(); });
+}
+
 try { readUrl(location.href); } catch (e) {}
 links();
 fetch(INST).then(r => r.json()).then(d => {

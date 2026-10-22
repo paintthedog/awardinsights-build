@@ -52,6 +52,9 @@ Owner preferences: no personal name on the public site; footer reads "© 2026 Aw
 - Current annual funding = obligations in the last 52 weeks. Scheduled end = period-of-performance end on the most recent action (exposure, not expected loss).
 - Deobligations do not track the 2025 grant terminations; do not use them as a termination signal.
 
+## Explanations (decided 2026-10-21)
+Keep explainer text out of the main view. Card subtitles (`.csub`), notes marked `.expl` and At a glance's "How these are measured" sit in a popover behind a small "i" after the card title (Federal: `infoize` in body.html; NSF and Portfolio: site.js). Each tool's source line is a "Sources (i)" disclosure under the title. What stays visible is what's needed to read the data: legends, short labels like "still being reported", and data notes such as earmarks not counted.
+
 ## Wording rules
 Describe the data, never judge the institution: "Programs held by peers, not by X — a place to look, not a requirement"; "below/above", not "short/cushion"; no red/green verdict coloring. Peer comparisons are stated as medians.
 

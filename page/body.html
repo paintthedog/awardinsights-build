@@ -489,7 +489,23 @@ function saveMin(){ try{ localStorage.setItem("fai.min",JSON.stringify({c:[...MI
 function applyMin(card){ const on=MIN.has(card.id); card.classList.toggle("min",on); const t=card.querySelector(":scope > .chd > h3, :scope > h3"); if(t){ t.classList.add("ctog"); t.setAttribute("role","button"); t.tabIndex=0; t.setAttribute("aria-expanded",String(!on)); t.title=on?"Show this section":"Minimize this section"; } }
 document.addEventListener("click",e=>{ const t=e.target.closest(".card > .chd > h3.ctog, .card > h3.ctog"); if(!t)return; const c=t.closest(".card"); if(MIN.has(c.id))MIN.delete(c.id); else MIN.add(c.id); saveMin(); applyMin(c); });
 document.addEventListener("keydown",e=>{ if((e.key==="Enter"||e.key===" ")&&e.target.matches&&e.target.matches("h3.ctog")){ e.preventDefault(); e.target.click(); } });
-new MutationObserver(ms=>{ for(const m of ms){ if(m.target.classList&&m.target.classList.contains("card")&&m.target.id) applyMin(m.target); } }).observe(document.body,{childList:true,subtree:true});
+// Explanations stay out of the main view: a card's subtitle (.csub), notes marked .expl and the At a glance
+// "How these are measured" text move into a popover opened by a small "i" after the card title.
+function closePops(except){ document.querySelectorAll(".infopop").forEach(p=>{ if(p!==except&&!p.hidden){ p.hidden=true; const b=p.parentElement.querySelector(".infobtn"); if(b)b.setAttribute("aria-expanded","false"); } }); }
+function infoize(card){
+  const items=[...card.querySelectorAll(":scope > .csub, .expl, .binfo")].filter(x=>!x.closest(".infopop"));
+  if(!items.length) return;
+  const h3=card.querySelector(":scope > .chd > h3, :scope > h3"); if(!h3) return;
+  let btn=card.querySelector(".infobtn"), pop=card.querySelector(":scope > .infopop");
+  if(!btn){ btn=document.createElement("button"); btn.type="button"; btn.className="infobtn"; btn.textContent="i"; btn.setAttribute("aria-label","About this section"); btn.setAttribute("aria-expanded","false"); h3.after(btn); }
+  if(!pop){ pop=document.createElement("div"); pop.className="infopop"; pop.hidden=true; pop.setAttribute("role","note"); card.append(pop); }
+  for(const x of items){ if(x.classList.contains("binfo")){ x.querySelectorAll("p").forEach(p=>pop.append(p)); x.remove(); } else pop.append(x); }
+  btn.onclick=e=>{ e.stopPropagation(); const open=pop.hidden; closePops(pop); pop.hidden=!open; btn.setAttribute("aria-expanded",String(open));
+    if(open){ pop.style.top=(btn.offsetTop+btn.offsetHeight+6)+"px"; } };
+  pop.onclick=e=>e.stopPropagation();
+}
+document.addEventListener("click",()=>closePops()); document.addEventListener("keydown",e=>{ if(e.key==="Escape") closePops(); });
+new MutationObserver(ms=>{ for(const m of ms){ if(m.target.classList&&m.target.classList.contains("card")&&m.target.id){ applyMin(m.target); infoize(m.target); } } }).observe(document.body,{childList:true,subtree:true});
 function progCard(d,peers){
   if(typ==="c"){ $("cardProg").innerHTML=`<h3>Programs</h3><p class="note" style="margin-top:8px">Programs are Assistance Listings (CFDA numbers), which only grants and cooperative agreements carry. Switch Dollars to <b>All</b> or <b>Grants &amp; agreements</b> to see them.</p>`; return; }
   const g=agOf(d.u); const funded=peers.filter(p=>p.fed), F=funded.length;
@@ -567,7 +583,7 @@ function subCard(d,peers){
       <div class="leg2"><span><i style="background:var(--you)"></i>Received as subrecipient</span><span><i style="background:var(--accent)"></i>Passed through</span><span>* still being reported</span></div></div><div>${tb}</div></div>
     <div class="split" style="margin-top:14px"><div><h4 class="subh">Largest sources <small>${s.rn.toLocaleString()} subaward${s.rn===1?"":"s"} received, FY22–26</small></h4>${ags(s.ra)}${who(s.rt,"None reported.")}</div>
       <div><h4 class="subh">Largest subrecipients <small>${s.pn.toLocaleString()} subaward${s.pn===1?"":"s"} passed through, FY22–26</small></h4>${ags(s.pa)}${who(s.pt,"None reported.")}</div></div>`}${em}
-    <p class="note" style="margin:12px 0 0">Subaward amounts are as reported by prime recipients; duplicate filings are counted once, and no prime award's subawards are counted above the award's own value. Received counts only programs an institution could win through a proposal: formula and block grants passed through states (school meals, Title I, special education, disaster aid and similar) are left out. Recent years fill in as late reports arrive.</p>`;
+    <p class="note expl">Subaward amounts are as reported by prime recipients; duplicate filings are counted once, and no prime award's subawards are counted above the award's own value. Received counts only programs an institution could win through a proposal: formula and block grants passed through states (school meals, Title I, special education, disaster aid and similar) are left out. Recent years fill in as late reports arrive.</p>`;
   card.querySelectorAll(".hv").forEach(r=>{ r.addEventListener("mouseenter",e=>{ const i=+r.dataset.i; showTT(e,`<b>FY${String(YEARS[i]).slice(2)}</b>${YEARS[i]>=PARTIAL?" · still being reported":""}<br>received ${money(s.r[i])}${np?` · peer median ${money(pmR[i])}`:""}<br>passed through ${money(s.p[i])}${np?` · peer median ${money(pmP[i])}`:""}`); }); r.addEventListener("mousemove",moveTT); r.addEventListener("mouseleave",hideTT); });
   card.querySelectorAll("[data-go]").forEach(a=>a.addEventListener("click",e=>{ e.preventDefault(); select(a.dataset.go); }));
   wireCSV(card); applyMin(card);
