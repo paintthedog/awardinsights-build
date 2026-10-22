@@ -19,8 +19,18 @@
 
 /* bottom of every page: link to the About page */
 .ai-foot{max-width:1120px;margin:28px auto 36px;padding:14px 20px 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;font:400 13px/1.5 "Readex Pro",system-ui,sans-serif;color:var(--faint)}
+.ai-foot .c{margin-left:auto}
 .ai-foot a{color:var(--accent-ink,var(--accent));text-decoration:none;font-weight:500}
 .ai-foot a:hover,.ai-foot a:focus-visible{text-decoration:underline}
+
+/* the tools' long methods paragraphs, closed by default */
+.ai-methods{max-width:1120px;margin:24px auto 0;font:400 13px/1.5 "Readex Pro",system-ui,sans-serif}
+.ai-methods>summary{display:inline-flex;align-items:center;gap:9px;cursor:pointer;list-style:none;color:var(--muted)}
+.ai-methods>summary::-webkit-details-marker{display:none}
+.ai-methods>summary::before{content:"";width:5px;height:5px;border-right:1.25px solid var(--faint);border-bottom:1.25px solid var(--faint);transform:rotate(-45deg);transition:transform .15s}
+.ai-methods[open]>summary::before{transform:rotate(45deg) translate(-1px,-1px)}
+.ai-methods>summary:hover{color:var(--accent-ink,var(--accent))}
+.ai-methods>.foot{margin-top:10px}
 
 /* where each tool's numbers come from */
 .ai-src{position:relative;margin:-10px 0 14px;font:400 12.5px/1.5 "Readex Pro",system-ui,sans-serif;color:var(--faint)}

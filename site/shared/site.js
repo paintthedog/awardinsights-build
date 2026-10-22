@@ -156,6 +156,15 @@ if (here === "nsf" || here === "portfolio") {
   document.addEventListener("click", () => closePops()); document.addEventListener("keydown", e => { if (e.key === "Escape") closePops(); });
 }
 
+/* the long methods paragraph at the bottom of each tool is tucked into a closed "Methods and notes" line
+   (the element is moved, not copied, so a tool that fills it later still can) */
+document.querySelectorAll(".foot").forEach(f => {
+  if (f.closest(".ai-methods")) return;
+  const d = document.createElement("details"); d.className = "ai-methods";
+  const s = document.createElement("summary"); s.textContent = "Methods and notes";
+  f.before(d); d.append(s, f);
+});
+
 try { readUrl(location.href); } catch (e) {}
 links();
 fetch(INST).then(r => r.json()).then(d => {

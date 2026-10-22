@@ -104,7 +104,8 @@ def inject(html, tool, name):
     html = about_link(html)
     return html.replace('<div class="masthead">', sitebar(tool) + '\n  <div class="masthead">', 1).replace("</head>", head(), 1)
 
-FOOT = ('<footer class="ai-foot"><a href="/about/">About Award Insights</a><span>Sources, methods and terms of use</span></footer>\n')
+FOOT = ('<footer class="ai-foot"><a href="/about/">About Award Insights</a><span>Sources, methods and terms of use</span>'
+        '<span class="c">© 2026 Award Insights. All rights reserved.</span></footer>\n')
 def about_link(html):
     k = html.rfind("</body>")   # the last one: Designations has another inside its print template
     if k < 0: sys.exit("no </body>")
