@@ -15,6 +15,19 @@
 .br .bf.c{opacity:.45}
 .bhead{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 14px;margin:2px 0 14px}
 .bhead.awf{align-items:center;padding:10px 12px;background:var(--paper);border:1px solid var(--line);border-radius:8px}
+.agpick{margin-bottom:18px}
+.agpick>label{display:block;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.agchips{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.agc{font-family:inherit;font-size:14.5px;font-weight:500;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:9px 15px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.agc i{width:9px;height:9px;border-radius:2px;flex:none}
+.agc:hover{border-color:var(--accent)}
+.agc[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.agc[aria-pressed="true"] i{outline:1.5px solid #fff}
+.agmore{font-family:inherit;font-size:14px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:9px 10px;cursor:pointer;max-width:260px}
+.agmore.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.agttl{flex:1 1 300px;min-width:0;align-self:center}
+.agttl .nm{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:23px;line-height:1.15;letter-spacing:-.01em}
+.agttl .loc{color:var(--muted);font-size:13px;margin-top:4px}
 .bsel{display:flex;flex-direction:column;gap:4px;min-width:0;width:min(340px,100%)}
 .bsel span{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
 .bsel select{font-family:inherit;font-size:13.5px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:7px 9px;width:100%;text-overflow:ellipsis}
@@ -165,6 +178,7 @@ h3.ctog:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-
     </div>
   </div>
 
+  <div id="agpick" class="agpick" hidden></div>
   <div id="filters" hidden>
     <div class="kindrow" id="kindrow"></div>
     <div class="tfilters" id="tfilters"></div>
@@ -945,11 +959,17 @@ function unitVals(e){
 const sumA=a=>a.reduce((x,y)=>x+y,0);
 function unitSubs(){ const s=new Set(); for(const e in AGG.rows) for(const r of AGG.rows[e]) if(SUB[r[0]].ag===bstate.ag) s.add(r[0]); return [...s]; }
 function unitProgs(){ const s=new Set(); for(const e in AGG.progs) for(const p of AGG.progs[e]) if(!p[3]&&PROG[p[0]].ag===bstate.ag) s.add(p[0]); return [...s]; }
+function agpickHTML(){
+  const big=AGS.filter(a=>isBig(a.i)), small=AGS.filter(a=>!isBig(a.i)), onSmall=!isBig(bstate.ag);
+  return `<label for="bAgMore">Choose an agency</label><div class="agchips" role="group" aria-label="Agency">${big.map(a=>`<button class="agc" data-ag="${a.i}" aria-pressed="${a.i===bstate.ag}" title="${esc(a.name)}"><i style="background:${a.col}"></i>${esc(a.short)}</button>`).join("")}
+    <select id="bAgMore" class="agmore${onSmall?" on":""}" aria-label="Other agencies"><option value="">${onSmall?"":"More agencies…"}</option>${small.map(a=>`<option value="${a.i}" ${a.i===bstate.ag?"selected":""}>${esc(a.short)} · ${esc(a.name)}</option>`).join("")}</select></div>`;
+}
 function bheadHTML(){
   const subs=unitSubs().sort((a,b)=>SUB[a].name.localeCompare(SUB[b].name));
   const progs=unitProgs().sort((a,b)=>PROG[a].title.localeCompare(PROG[b].title));
   const cur=bstate.sb>=0?"s"+bstate.sb:bstate.pg>=0?"p"+bstate.pg:"";
-  return `<label class="bsel"><span>Agency</span><select id="bAg">${[["Largest grantmakers",AGS.filter(a=>isBig(a.i))],["Smaller agencies",AGS.filter(a=>!isBig(a.i))]].map(([g,L])=>`<optgroup label="${g}">${L.map(a=>`<option value="${a.i}" ${a.i===bstate.ag?"selected":""}>${esc(a.short)} · ${esc(a.name)}</option>`).join("")}</optgroup>`).join("")}</select></label>
+  const unitNm=bstate.sb>=0?SUB[bstate.sb].name:bstate.pg>=0?PROG[bstate.pg].title:"";
+  return `<div class="agttl"><div class="nm">${esc(unitNm||AGS[bstate.ag].name)}</div>${unitNm?`<div class="loc">${agL(bstate.ag)} · ${esc(AGS[bstate.ag].name)}</div>`:""}</div>
     <label class="bsel"><span>Within it</span><select id="bUnit"><option value="">All of ${esc(AGS[bstate.ag].short)}</option>
       ${subs.length>1&&!isFlat(bstate.ag)?`<optgroup label="Sub-agencies">${subs.map(s=>`<option value="s${s}" ${cur==="s"+s?"selected":""}>${esc(SUB[s].name)}</option>`).join("")}</optgroup>`:""}
       ${progs.length?`<optgroup label="Programs (Assistance Listings)">${progs.map(p=>`<option value="p${p}" ${cur==="p"+p?"selected":""}>${esc(PROG[p].title.length>70?PROG[p].title.slice(0,68)+"…":PROG[p].title)}</option>`).join("")}</optgroup>`:""}
@@ -958,8 +978,10 @@ function bheadHTML(){
 }
 async function renderAgency(){
   renderFilters();
-  $("bhead").innerHTML=bheadHTML();
-  $("bAg").addEventListener("change",e=>{ bstate.ag=+e.target.value; bstate.sb=-1; bstate.pg=-1; bstate.cap=25; renderAgency(); });
+  $("agpick").innerHTML=agpickHTML(); $("bhead").innerHTML=bheadHTML();
+  const pickAg=a=>{ bstate.ag=a; bstate.sb=-1; bstate.pg=-1; bstate.cap=25; renderAgency(); };
+  $("agpick").querySelectorAll(".agc").forEach(b=>b.addEventListener("click",()=>pickAg(+b.dataset.ag)));
+  $("bAgMore").addEventListener("change",e=>{ if(e.target.value!=="") pickAg(+e.target.value); });
   $("bUnit").addEventListener("change",e=>{ const v=e.target.value; bstate.sb=v[0]==="s"?+v.slice(1):-1; bstate.pg=v[0]==="p"?+v.slice(1):-1; bstate.cap=25; renderAgency(); });
   const up=$("bUp"); if(up) up.addEventListener("click",()=>{ bstate.sb=-1; bstate.pg=-1; renderAgency(); });
   const set=exploreFilter();
@@ -1323,6 +1345,7 @@ function setMode(m){
   mode=m;
   document.querySelectorAll(".modeswitch button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.mode===m));
   for(const k of ["inst","agency","trends","latest","awards"]) $("mode-"+k).hidden=m!==k;
+  $("agpick").hidden=m!=="agency";
   $("filters").hidden=m==="inst"||(m==="awards"&&astate.scope!=="all");
   if(m==="trends") renderTrends(); else if(m==="latest") renderLatest(); else if(m==="agency") renderAgency(); else if(m==="awards") renderAwards(); else writeHash();
 }
