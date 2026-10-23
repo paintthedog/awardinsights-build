@@ -17,14 +17,16 @@ head = re.sub(r'<meta name="description" content="[^"]*">',
               '<meta name="description" content="What institutions like yours receive from 21 federal agencies in project grants, cooperative agreements and contracts, by year, agency and program, against peers you choose.">', head)
 body = open(A.body).read()
 if A.preview:
-    page = head + body
+    page = head + body.replace("__DATAV__", "dev")
     page = page.replace('<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">\n', "")
     page = page.replace("</style></head><body>", "</style>", 1).replace("</body></html>", "")
     open(A.preview, "w").write(page)
 if A.public:
     out = pathlib.Path(A.public); out.mkdir(parents=True, exist_ok=True)
     m = re.search(r'<script type="module">(.*?)</script>', body, re.S)
-    js = m.group(1)
+    dv = hashlib.sha1()   # data version: every data file's bytes, so a refresh changes it
+    for f in sorted((out / "data").rglob("*.json")): dv.update(f.read_bytes())
+    js = m.group(1).replace("__DATAV__", dv.hexdigest()[:10])
     src = out / "app.src.js"; src.write_text(js)
     subprocess.run([A.terser, str(src), "--module", "--compress", "--mangle", "-o", str(out / "app.js")], check=True)
     src.unlink()

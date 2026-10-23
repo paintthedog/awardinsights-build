@@ -17,6 +17,7 @@ EARMARK_CFDA = {"93.493", "11.617", "11.469", "11.071", "14.251", "17.289", "16.
                 "10.730", "10.723", "10.741", "20.534", "12.599"}
 EARMARK_TEXT = re.compile(r"CONGRESSIONALLY (DIRECTED|IDENTIFIED|RECOMMENDED|MANDATED|DELEGATED)|COMMUNITY PROJECT (FUNDING|GRANT)|COMMUNITY SPECIAL PROJECT|DIRECTED SPENDING|\bEARMARK", re.I)
 EARMARK_KEYS = {x["key"] for x in json.load(open(f"{D}/ai-1-core/earmark_awards.json"))["awards"]}
+PX = json.load(open(f"{D}/ai-1-core/program_exclusions.json")); OPS, FAC = set(PX["operations"]), set(PX["facilities"])
 def ent(u):
     c = cw.get((u or "").strip())
     return c["id"] if c and c["type"] not in ("hospital", "exclude") else None
@@ -29,7 +30,7 @@ for f in glob.glob(f"{D}/trimmed/*.csv.gz"):
         if ent(r["recipient_uei"]) not in targets: continue
         if not 2022 <= int(r["action_date_fiscal_year"] or 0) <= 2026: continue
         if not c and r["assistance_type_code"] not in ("04", "05"): continue
-        if not c and (r["cfda_number"] in ("84.425", "93.342", "93.364", "93.264") or re.match(r"P031[BEKDP]", r["award_id_fain"] or "")): continue
+        if not c and (r["cfda_number"] in ("84.425", "93.342", "93.364", "93.264") or r["cfda_number"] in OPS or r["cfda_number"] in FAC or re.match(r"P031[BEKDP]", r["award_id_fain"] or "")): continue
         if c and (r["award_id_piid"] in ff["piids"] or r.get("parent_award_id_piid") in ff["piids"]): continue
         k = r["contract_award_unique_key"] if c else r["assistance_award_unique_key"]
         inscope.add(k)
@@ -69,7 +70,7 @@ for sk, by in FLO.items():
     f_ = factor(sk[0]); cn = (r.get("prime_award_cfda_numbers_and_titles") or "").split(";")[0].split(":")[0].strip()
     if se in targets:
         prog = scope.get(cn)
-        if not (sk[0].startswith("ASST") and prog is not None and not prog["in"]) and cn not in EARMARK_CFDA:
+        if not (sk[0].startswith("ASST") and prog is not None and not prog["in"]) and cn not in EARMARK_CFDA and cn not in OPS and cn not in FAC:
             for fy, v in by.items(): R[se][YEARS.index(fy)] += v * f_
     if pe in targets and sk[0] in inscope and sk[0] not in earmark:
         for fy, v in by.items(): P[pe][YEARS.index(fy)] += v * f_

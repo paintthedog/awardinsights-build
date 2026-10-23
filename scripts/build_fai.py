@@ -179,6 +179,8 @@ ents_v2 = json.load(open(f"{A.core}/crosswalk/entities_v2.json"))
 ff = json.load(open(f"{A.core}/crosswalk/ffrdc_exclusions.json"))
 # awards confirmed as earmarks against the enacted CPF/CDS tables (matched institution, amount and project wording; reviewed)
 EARMARK_KEYS = {x["key"] for x in json.load(open(f"{A.core}/earmark_awards.json"))["awards"]}
+# programs for running an institution (left out) or for buildings (listed, not counted): see program_exclusions.json
+PX = json.load(open(f"{A.core}/program_exclusions.json")); OPERATIONS_CFDA, FACILITIES_CFDA = PX["operations"], PX["facilities"]
 U = json.load(open(f"{A.nsf}/universe3.json"))
 inU = {d["u"] for d in U}
 hd = {r["UNITID"]: r for r in csv.DictReader(open(f"{A.core}/ipeds/hd2025.csv", encoding="utf-8-sig"))}
@@ -227,7 +229,7 @@ def add(key, ent, kind, ag, sub, prog, comp, title, fy, amt, url, ad="", isnew=F
     a = AW.get((key, ent))
     if not a:
         a = AW[(key, ent)] = dict(ent=ent, kind=kind, ag=ag, sub=sub, prog=prog, comp=comp, title=title, fy={}, url=url, iss="", pop="")
-    elif comp == 2: a["comp"] = 2
+    elif comp in (2, 3) and a["comp"] != 2: a["comp"] = comp
     a["fy"][fy] = a["fy"].get(fy, 0.0) + amt
     # issue date: the award's new-award action if it falls in the window; otherwise its period-of-performance start
     if isnew and ad and (not a["iss"] or ad < a["iss"]): a["iss"] = ad
@@ -264,10 +266,12 @@ if A.assistance:
             fp = fain_prefix(r.get("award_id_fain"))
             fwhy = FORMULA_CFDA.get(cfda) or FORMULA_FAIN.get(fp)
             if fwhy: rep[f"assist formula dropped: {fwhy}"] += amt; continue
+            if cfda in OPERATIONS_CFDA: rep[f"assist operations dropped: {OPERATIONS_CFDA[cfda]}"] += amt; continue
             desc0 = r.get("prime_award_base_transaction_description") or ""
             earmark = cfda in EARMARK_CFDA or fp in EARMARK_FAIN or bool(EARMARK_TEXT.search(desc0))
             # DOE numbers its congressionally directed (community project) awards DE-CR...
             if not earmark and ((r.get("award_id_fain") or "").startswith("DECR") or (r.get("assistance_award_unique_key") or "") in EARMARK_KEYS): earmark = True
+            facility = not earmark and cfda in FACILITIES_CFDA      # comp 3: listed, not counted
             uei = (r.get("recipient_uei") or "").strip()
             ent, kind = entity_for(uei)
             if not ent:
@@ -282,16 +286,17 @@ if A.assistance:
             key = r.get("assistance_award_unique_key") or ("A:" + (r.get("award_id_fain") or ""))
             ag2, subn = route(ag, subn, r.get("awarding_office_name"), amt, cfda, r.get("cfda_title", ""))
             si = sub_idx(ag2, nice(subn)); pi = prog_idx(cfda, nice(r.get("cfda_title", "")), ag2)
-            add(key, ent, 0, ag2, si, pi, 2 if earmark else 1,
+            add(key, ent, 0, ag2, si, pi, 2 if earmark else 3 if facility else 1,
                 (r.get("prime_award_base_transaction_description") or "")[:400], fy, amt, None,
                 ad=(r.get("action_date") or "")[:10], isnew=(r.get("action_type_code") or "").strip() == "A" and amt >= 0,
                 ps=(r.get("period_of_performance_start_date") or "")[:10],
                 pe=(r.get("period_of_performance_current_end_date") or "")[:10])
             ad = (r.get("action_date") or "")[:10]
             if ad >= RECENT_START:
-                RECENT.append((ad, ent, si, pi, 0, 2 if earmark else 1, amt, (r.get("action_type_code") or "").strip() == "A" and amt >= 0, key, desc0))
+                RECENT.append((ad, ent, si, pi, 0, 2 if earmark else 3 if facility else 1, amt, (r.get("action_type_code") or "").strip() == "A" and amt >= 0, key, desc0))
             rep[f"kept assist {ag2}"] += amt
             if earmark: rep[f"kept assist EARMARK {ag2}"] += amt
+            if facility: rep[f"kept assist FACILITIES {ag2}"] += amt
 
 # ---------- contracts ----------
 if A.contracts:
@@ -423,7 +428,7 @@ for (key, _e), a in AW.items():
     mask = sum(1 << YEARS.index(fy) for fy, v in a["fy"].items() if abs(v) >= 0.5)   # years this award was active
     MASKS[(a["ent"], a["sub"], a["kind"], a["comp"])][mask] += 1
     if a["prog"] >= 0:
-        p = P[a["ent"]][(a["prog"], 1 if a["comp"] == 2 else 0)]; p[0] += tot; p[1] += 1
+        p = P[a["ent"]][(a["prog"], {2: 1, 3: 2}.get(a["comp"], 0))]; p[0] += tot; p[1] += 1
         for fy, v in a["fy"].items(): p[2 + YEARS.index(fy)] += v
     fys = sorted(a["fy"])
     shards[shard_of(a["ent"])][a["ent"]].append(
@@ -432,7 +437,7 @@ for (key, _e), a in AW.items():
          a["iss"] or a["pop"], 1 if a["iss"] else 0,                                # [10] issue date, [11] 1 = exact (new-award action), 0 = from period-of-performance start
          code(a.get("pe", ""), r"\d{4}-\d{2}-\d{2}"), round(a.get("t12", 0.0))]     # [12] current end date, [13] obligations in the last 52 weeks
         + ([round(a["raw"])] if "raw" in a else []))                                 # [14] actual net FY22-26 obligations, only when the award was floored at zero
-    if a["comp"] != 2 and a.get("t12", 0) > 0:     # cliff + concentration: active awards, earmarks aside
+    if a["comp"] < 2 and a.get("t12", 0) > 0:     # cliff + concentration: active awards, earmarks and facilities aside
         c_ = CL[a["ent"]][(a["kind"], end_bucket(a.get("pe", "")))]; c_[0] += a["t12"]; c_[1] += 1
         CONC[a["ent"]].append(a["t12"])
 
@@ -455,7 +460,7 @@ out = {
     # row = [sub, kind, comp, nAwards, $FY22..$FY26, [[yearMask, nAwards], ...]]
     "rows": {e: [[s, k, c, v[0]] + [round(x) for x in v[1:]] + [sorted([m, n] for m, n in MASKS[(e, s, k, c)].items())]
                  for (s, k, c), v in d.items()] for e, d in R.items()},
-    # prog row = [prog, $FY22-26, nAwards, earmark, $FY22..$FY26]
+    # prog row = [prog, $FY22-26, nAwards, apart (1 earmark, 2 facilities), $FY22..$FY26]
     "progs": {e: [[p, round(v[0]), v[1], em] + [round(x) for x in v[2:]] for (p, em), v in d.items()] for e, d in P.items()},
 }
 agi = {c: i for i, c in enumerate(agcodes)}
@@ -535,7 +540,9 @@ SUBOUT = {}
 if A.subawards:
     scope = json.load(open(A.scope))["programs"] if A.scope else {}
     in_aw = {}                                  # prime award key -> earmark? (only awards Federal counts)
-    for (k_, e_), a_ in AW.items(): in_aw[k_] = in_aw.get(k_, False) or a_["comp"] == 2
+    for (k_, e_), a_ in AW.items():
+        if a_["comp"] == 3: continue            # facilities: not counted, so their subawards aren't either
+        in_aw[k_] = in_aw.get(k_, False) or a_["comp"] == 2
     rows_ = {}; prime_val = {}; prime_name = {}
     for f in sorted(glob.glob(f"{A.subawards}/*.csv.gz")):
         for r in csv.DictReader(gzip.open(f, "rt", newline="")):
@@ -589,6 +596,7 @@ if A.subawards:
         if se:     # received as subrecipient
             prog = scope.get(cn.strip())
             if pk.startswith("ASST") and prog is not None and not prog["in"]: SUBREP["received under formula/block programs, left out"] += tot
+            elif cn.strip() in OPERATIONS_CFDA or cn.strip() in FACILITIES_CFDA: SUBREP["received under operations/facilities programs, left out"] += tot
             elif cn.strip() in EARMARK_CFDA: S_[se]["re"] += tot; SUBREP["received under earmarks (tagged)"] += tot
             else:
                 s = S_[se]; s["rn"] += 1

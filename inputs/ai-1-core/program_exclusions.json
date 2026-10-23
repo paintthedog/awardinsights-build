@@ -1,0 +1,26 @@
+{
+ "_c": "© 2026 Award Insights",
+ "note": "Programs that pay for running an institution or for buildings, not for projects (research, training, instruction, service). Decided 2026-10-22 (docs/SPEC.md). operations: left out entirely, like formula grants. facilities: listed under Programs as 'Facilities and construction', not counted in totals, ranks or peer comparisons (HERD leaves construction out). Read by build_fai.py and the verify scripts.",
+ "operations": {
+  "20.106": "Airport Improvement Program (university-owned airports)",
+  "20.116": "Airport Improvement Program",
+  "20.117": "Airport Infrastructure Grants",
+  "20.526": "Buses and Bus Facilities (campus transit)",
+  "20.507": "Federal Transit Formula Grants (campus transit)",
+  "20.509": "Formula Grants for Rural Areas and Tribal Transit",
+  "20.525": "Transit State of Good Repair",
+  "66.045": "Clean School Bus Program",
+  "14.867": "Indian Housing Block Grants",
+  "81.042": "Weatherization Assistance for Low-Income Persons"
+ },
+ "facilities": {
+  "93.352": "NIH Construction Support (C06 research facilities)",
+  "11.300": "EDA Public Works and Economic Development Facilities",
+  "10.766": "USDA Community Facilities Loans and Grants",
+  "11.031": "Broadband Infrastructure Program",
+  "11.029": "Tribal Broadband Connectivity Program",
+  "10.246": "USDA Research Facilities Act",
+  "10.308": "USDA Resident Instruction Facilities and Equipment Grants (insular areas)",
+  "93.526": "HRSA Capital Development in Health Centers"
+ }
+}

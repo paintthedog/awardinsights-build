@@ -37,6 +37,7 @@ EARMARK_CFDA = {"93.493", "11.617", "11.469", "11.071", "14.251", "17.289", "16.
 EARMARK_FAIN = {"P116Z", "S215K"}
 EARMARK_TEXT = re.compile(r"CONGRESSIONALLY (DIRECTED|IDENTIFIED|RECOMMENDED|MANDATED|DELEGATED)|COMMUNITY PROJECT (FUNDING|GRANT)|COMMUNITY SPECIAL PROJECT|DIRECTED SPENDING|\bEARMARK", re.I)
 EARMARK_KEYS = {x["key"] for x in json.load(open(f"{D}/ai-1-core/earmark_awards.json"))["awards"]}
+PX = json.load(open(f"{D}/ai-1-core/program_exclusions.json"))
 FFRDC_DESC = re.compile(r"\bFFRDC\b|FEDERALLY FUNDED RESEARCH AND DEVELOPMENT CENTER|\bM&O CONTRACT|"
                         r"MANAGEMENT AND OPERATIONS? OF (THE )?[A-Z .,&-]*(NATIONAL LAB|LABORATORY)", re.I)
 
@@ -51,7 +52,7 @@ SAMPLE = ["214777", "170976", "166027", "243744", "228778", "215293", "221759", 
           "131520", "199102", "175856", "100654",                                          # HBCUs
           "126818", "142115",                                                              # R2 / regional
           "S-190035", "S-124557", "I-WOODS-HOLE-OCEANOGRAPHIC-INSTITUTION"]               # system offices, institute
-tot = {e: sum(sum(r[4:9]) for r in rows if r[2] != 2) for e, rows in agg["rows"].items()}   # site totals leave earmarks out
+tot = {e: sum(sum(r[4:9]) for r in rows if r[2] < 2) for e, rows in agg["rows"].items()}   # site totals leave earmarks and facilities out
 for kind, n in (("Associate's", 2), ("Baccalaureate", 1)):
     SAMPLE += [u for u, d in sorted(U.items(), key=lambda kv: -tot.get(kv[0], 0)) if d.get("ctype") == kind and tot.get(u, 0) > 0][:n]
 SAMPLE = [e for e in SAMPLE if e in agg["rows"]]
@@ -103,8 +104,9 @@ for f in glob.glob(f"{D}/trimmed/*.csv.gz"):
             c = (r.get("cfda_number") or "").strip(); fp = (r.get("award_id_fain") or "")[:5]
             if c in TITLE_IV or c in STUDENT_LOAN: BR[e]["student aid / loan funds dropped"] += amt; continue
             if c in FORMULA_CFDA or fp in FORMULA_FAIN: BR[e]["formula programs dropped"] += amt; continue
+            if c in PX["operations"]: BR[e]["operations programs (airports, transit…) dropped"] += amt; continue
             em = c in EARMARK_CFDA or fp in EARMARK_FAIN or bool(EARMARK_TEXT.search(r.get("prime_award_base_transaction_description") or "")) or fp.startswith("DECR") or (r.get("assistance_award_unique_key") or "") in EARMARK_KEYS
-            AW[(e, r.get("assistance_award_unique_key"), 2 if em else 1)][fy] += amt
+            AW[(e, r.get("assistance_award_unique_key"), 2 if em else 3 if c in PX["facilities"] else 1)][fy] += amt
 for (e, k, em), fys in AW.items():
     kept = {}
     for fy in sorted(fys):
@@ -114,6 +116,7 @@ for (e, k, em), fys in AW.items():
             if p != fy: t = min(kept[p], need); kept[p] -= t; need -= t
     BR[e]["pullbacks of pre-FY2022 money not counted"] -= sum(kept.values()) - sum(fys.values())
     if em == 2: BR[e]["earmarks shown apart"] += sum(kept.values())
+    if em == 3: BR[e]["facilities and construction shown apart"] += sum(kept.values())
 
 # ---- report
 lines = ["# Reconciliation with USAspending (live API)", "",

@@ -3,6 +3,7 @@ import csv,gzip,glob,json,os,re,sys,collections
 csv.field_size_limit(10**9)
 D=os.environ.get('FAI_INPUTS','/home/claude/data'); SITE=os.environ.get('FAI_SITE','site'); uid=sys.argv[1]
 cw=json.load(open(f'{D}/ai-1-core/crosswalk/crosswalk_uei_v2.json')); ff=json.load(open(f'{D}/ai-1-core/crosswalk/ffrdc_exclusions.json'))
+PX = json.load(open(f'{D}/ai-1-core/program_exclusions.json')); OPS = set(PX['operations']); FAC = set(PX['facilities'])
 ueis={u for u,v in cw.items() if v.get('id')==uid and v['type']=='campus'}
 a=json.load(open(f'{SITE}/data/agg.json')); t0,asof=a['meta']['t12']; e12,e24=a['meta']['end12'],a['meta']['end24']
 t12=collections.Counter(); end={}
@@ -10,7 +11,7 @@ for f in glob.glob(f'{D}/trimmed/*.csv.gz'):
     con='Contract' in f
     for r in csv.DictReader(gzip.open(f,'rt')):
         if r['recipient_uei'] not in ueis: continue
-        if not con and (r['assistance_type_code'] not in ('04','05') or r['cfda_number'] in ('84.425','93.342','93.364','93.264') or re.match(r'P031[BEKDP]',r['award_id_fain'] or '')): continue
+        if not con and (r['assistance_type_code'] not in ('04','05') or r['cfda_number'] in ('84.425','93.342','93.364','93.264') or r['cfda_number'] in OPS or r['cfda_number'] in FAC or re.match(r'P031[BEKDP]',r['award_id_fain'] or '')): continue
         if con and (r['award_id_piid'] in ff['piids'] or r.get('parent_award_id_piid') in ff['piids']): continue
         k=r['contract_award_unique_key'] if con else r['assistance_award_unique_key']; ad=r['action_date'][:10]
         if ad>=t0: t12[k]+=float(r['federal_action_obligation'] or 0)

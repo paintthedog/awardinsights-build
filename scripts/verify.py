@@ -7,6 +7,7 @@ import os
 D=os.environ.get('FAI_INPUTS','/home/claude/data')   # folder holding ai-1-core/ and trimmed/
 cw=json.load(open(f'{D}/ai-1-core/crosswalk/crosswalk_uei_v2.json'))
 ff=json.load(open(f'{D}/ai-1-core/crosswalk/ffrdc_exclusions.json'))
+PX = json.load(open(f'{D}/ai-1-core/program_exclusions.json')); OPS = set(PX['operations']); FAC = set(PX['facilities'])
 targets={'214777','131520','199102','187985'}   # Penn State, Howard, NC A&T, New Mexico (largest floored award)
 ueis={u:v['id'] for u,v in cw.items() if v.get('id') in targets and v['type']=='campus'}
 T=collections.defaultdict(float); TY=collections.defaultdict(lambda:[0.0]*5); AWD=collections.defaultdict(lambda: collections.defaultdict(float))
@@ -18,7 +19,7 @@ for f in glob.glob(f'{D}/trimmed/*.csv.gz'):
         fy=int(r['action_date_fiscal_year'] or 0)
         if not 2022<=fy<=2026: continue
         if not c and r['assistance_type_code'] not in ('04','05'): continue
-        if not c and (r['cfda_number'] in ('84.425','93.342','93.364','93.264') or re.match(r'P031[BEKDP]',r['award_id_fain'] or '')): continue
+        if not c and (r['cfda_number'] in ('84.425','93.342','93.364','93.264') or r['cfda_number'] in OPS or re.match(r'P031[BEKDP]',r['award_id_fain'] or '')): continue
         if c and (r['award_id_piid'] in ff['piids'] or r.get('parent_award_id_piid') in ff['piids']): continue
         k=r['contract_award_unique_key'] if c else r['assistance_award_unique_key']
         AWD[(ueis[u],k)][fy]+=float(r['federal_action_obligation'] or 0)

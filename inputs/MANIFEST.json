@@ -12,7 +12,7 @@
    "lines": 711400
   },
   "reference": {
-   "files": 8,
+   "files": 9,
    "lines": 0
   }
  },
@@ -2745,6 +2745,10 @@
    "ai-1-core/earmark_awards.json": {
     "bytes": 6391,
     "sha256": "68754401b68a227c01cd4847c677d58a6b36794cc1702a344c722919c99c0a43"
+   },
+   "ai-1-core/program_exclusions.json": {
+    "bytes": 1512,
+    "sha256": "51609af5b6c76b7fad7545b18a3be0e699d4518475c81496c74576f3dde38a75"
    },
    "nsf/universe3.json": {
     "bytes": 1972018,
