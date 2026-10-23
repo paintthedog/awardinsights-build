@@ -115,8 +115,8 @@ h3.ctog:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-
 .lhead .asof{font-size:12.5px;color:var(--muted)}
 .lhead .asof b{color:var(--ink);font-weight:500}
 .lhead .seg{margin-left:0}
-.up{color:var(--good)}.dn{color:var(--warn)}
-.stile .v small.up{color:var(--good)}.stile .v small.dn{color:var(--warn)}
+.up,.dn{color:inherit}
+.stile .v small.up,.stile .v small.dn{color:inherit}
 .feed td.dt{color:var(--muted);white-space:nowrap}
 .feed td.in{text-align:left;white-space:normal;font-family:"Readex Pro",sans-serif;min-width:150px}
 .tbl td .sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px;vertical-align:-1px}
@@ -432,10 +432,10 @@ function yearCard(d,peers){
     YEARS.forEach((y,i)=>{ s+=`<circle cx="${pl+bw*i+bw/2}" cy="${Y(pm[i])}" r="3.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>`; }); }
   s+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--line)"/>`;
   const showA=typ!=="c", showC=typ!=="a";
-  let tb=`<table class="tbl"><thead><tr><th>Fiscal year</th>${showA&&showC?"<th>Grants &amp; agreements</th><th>Contracts</th>":""}<th>Total</th><th>Peer median</th><th>Peers funded</th><th>Rank</th></tr></thead><tbody>`;
-  YEARS.forEach((y,i)=>{ const p=y>=PARTIAL?"acc":""; tb+=`<tr><td>FY${String(y).slice(2)}${y>=PARTIAL?' <small>partial</small>':''}</td>${showA&&showC?`<td class="${p}">${money(A[i])}</td><td class="${p}">${money(C[i])}</td>`:""}<td class="${p}">${money(mine[i])}</td><td class="${p}">${peers.length?money(pm[i]):"—"}</td><td class="pf" title="${peers.length?`${pf[i]} of ${peers.length} peers`:""}">${peers.length?pctS(pf[i]/peers.length):"—"}</td><td class="rk ${canRank?rkCls(rks[i]):''}">${canRank?rkTxt(rks[i]):"—"}</td></tr>`; });
+  let tb=`<table class="tbl"><thead><tr><th>Fiscal year</th>${showA&&showC?"<th>Grants &amp; agreements</th><th>Contracts</th>":""}<th>Total</th><th>Peer median</th><th>Rank</th></tr></thead><tbody>`;
+  YEARS.forEach((y,i)=>{ const p=y>=PARTIAL?"acc":""; tb+=`<tr><td>FY${String(y).slice(2)}${y>=PARTIAL?' <small>partial</small>':''}</td>${showA&&showC?`<td class="${p}">${money(A[i])}</td><td class="${p}">${money(C[i])}</td>`:""}<td class="${p}">${money(mine[i])}</td><td class="${p}">${peers.length?money(pm[i]):"—"}</td><td class="rk ${canRank?rkCls(rks[i]):''}">${canRank?rkTxt(rks[i]):"—"}</td></tr>`; });
   const sA=A.reduce((a,b)=>a+b,0), sC=C.reduce((a,b)=>a+b,0), tot=sA+sC, ptot=median(peers.map(p=>p.fdol)), rkT=rankOf(peers.map(p=>p.fdol),tot);
-  tb+=`<tr class="tot"><td>FY22–26</td>${showA&&showC?`<td>${money(sA)}</td><td>${money(sC)}</td>`:""}<td>${money(tot)}</td><td>${peers.length?money(ptot):"—"}</td><td class="pf" title="${peers.length?`${peers.filter(p=>p.fed).length} of ${peers.length} peers`:""}">${peers.length?pctS(peers.filter(p=>p.fed).length/peers.length):"—"}</td><td class="rk">${canRank?rkTxt(rkT):"—"}</td></tr></tbody></table>`;
+  tb+=`<tr class="tot"><td>FY22–26</td>${showA&&showC?`<td>${money(sA)}</td><td>${money(sC)}</td>`:""}<td>${money(tot)}</td><td>${peers.length?money(ptot):"—"}</td><td class="rk">${canRank?rkTxt(rkT):"—"}</td></tr></tbody></table>`;
   CSVS.year=()=>({name:`${d.n} - federal by year`,rows:[["Fiscal year","Grants & agreements","Contracts","Total ("+TYPLAB()+")","Peer median","Peers funded","Peers","Rank"],...YEARS.map((y,i)=>["FY"+y,A[i],C[i],mine[i],peers.length?pm[i]:"",pf[i],peers.length,canRank?rkTxt(rks[i]):""])]});
   const leg=showA&&showC?`<div class="leg2"><span><i style="background:var(--you)"></i>Grants &amp; cooperative agreements</span><span><i style="background:var(--you);opacity:.42"></i>Contracts</span>${peers.length?'<span>– – peer median (total)</span>':""}${tot?`<span>Contracts are <b style="color:var(--ink);font-weight:500">${pctS(sC/tot)}</b> of this institution's FY22–26 total</span>`:""}</div>`:"";
   const emNote=g.em?`<p class="note" style="margin:10px 0 0">Not included above: <b>${money(g.em)}</b> in congressionally directed spending (earmarks) across ${g.emN} award${g.emN===1?"":"s"}, listed under Programs.</p>`:"";
@@ -615,7 +615,6 @@ function render(d){
     <div class="kpis"><div class="kpi"><div class="k">${KPI()} FY22–26</div><div class="v">${money(d.fdol)}</div></div>
       ${typ==="all"?`<div class="kpi"><div class="k">Contracts share</div><div class="v">${pctS(d.csh)}</div></div>`:""}
       <div class="kpi"><div class="k">Awards</div><div class="v">${d.naw.toLocaleString()}</div></div>
-      ${d.em?`<div class="kpi" title="Congressionally directed spending (earmarks), FY22–26. Shown for context; not included in totals, ranks or peer program lists."><div class="k">Earmarks, not counted</div><div class="v" style="color:var(--muted)">${money(d.em)}</div></div>`:""}
       <div class="kpi"><div class="k">Rank among peers</div><div class="v">${rkV}</div></div></div>`;
   yearCard(d,peers); agCard(d,peers); subCard(d,peers); progCard(d,peers); latestInstCard(d,peers); briefCard(d,peers); cliffCard(d,peers);
   writeHash();
