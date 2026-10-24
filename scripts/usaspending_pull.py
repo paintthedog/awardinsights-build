@@ -1,18 +1,23 @@
 """
 Pull USAspending award data without the website.
 
-Run:   python3 usaspending_pull.py
+Run:   python3 usaspending_pull.py [--out DIR] [--years 2025 2026] [--agency "Small Business Administration" ...]
 Needs: Python 3.8+ and `python3 -m pip install requests`
 
 Fetches the pre-built full-year Award Data Archive files (one zip per agency
-per fiscal year) into ./usaspending_downloads. Retries every request, so it
-survives USAspending's dropped connections; just rerun if it gives up.
+per fiscal year) into --out (default ./usaspending_downloads). A file is skipped
+only when that exact archive (same date in the name) is already there, so a newer
+monthly archive is fetched. Retries every request, so it survives USAspending's
+dropped connections; just rerun if it gives up.
 """
 import warnings; warnings.filterwarnings("ignore")
-import pathlib, json, time, requests
+import argparse, pathlib, json, time, requests
 
 API = "https://api.usaspending.gov/api/v2/"
-OUT = pathlib.Path("usaspending_downloads"); OUT.mkdir(exist_ok=True)
+ap = argparse.ArgumentParser(); ap.add_argument("--out", default="usaspending_downloads")
+ap.add_argument("--years", type=int, nargs="*"); ap.add_argument("--agency", nargs="*", help="only these agencies (names as below)")
+ARGS = ap.parse_args()
+OUT = pathlib.Path(ARGS.out); OUT.mkdir(parents=True, exist_ok=True)
 
 # Agencies by name (matched case-insensitively against USAspending's list; the file
 # name carries the Treasury code). Order = rough priority for university research.
@@ -24,8 +29,13 @@ AGENCIES = [
     "Department of Justice", "Department of Veterans Affairs", "Department of State",
     "Agency for International Development", "Department of Labor", "Department of Housing and Urban Development",
     "National Endowment for the Humanities", "National Endowment for the Arts", "Institute of Museum and Library Services",
+    # added 2026-10-24: agencies paying colleges that the first pull missed (~$1.4B over FY2022-25)
+    "Small Business Administration", "General Services Administration", "Executive Office of the President",
+    "Appalachian Regional Commission", "Corporation for National and Community Service", "Social Security Administration",
+    "National Archives and Records Administration", "Department of the Treasury", "Nuclear Regulatory Commission",
+    "Smithsonian Institution",
 ]
-YEARS = [2022, 2023, 2024, 2025, 2026]
+YEARS = ARGS.years or [2022, 2023, 2024, 2025, 2026]
 TYPES = ["assistance", "contracts"]   # grants/coop agreements, and procurement contracts
 TRIES = 5
 
@@ -76,7 +86,7 @@ def agency_table():
 
 def main():
     table = agency_table()
-    for name in AGENCIES:
+    for name in (ARGS.agency or AGENCIES):
         hits = [a for a in table if a["name"].lower() == name.lower()] or [a for a in table if name.lower() in a["name"].lower()]
         if not hits:
             print(f"{name}: not found in USAspending's agency list; skipping"); continue
@@ -85,9 +95,6 @@ def main():
         for TYPE in TYPES:
           tag = "Assistance" if TYPE == "assistance" else "Contracts"
           for fy in YEARS:
-            have = list(OUT.glob(f"FY{fy}_{code}_{tag}_Full_*.zip"))
-            if have:
-                print(f"  {tag} FY{fy}: already have {have[0].name}"); continue
             r = call("post", API + "bulk_download/list_monthly_files/", json={"agency": str(aid), "fiscal_year": fy, "type": TYPE})
             if r is None:
                 print(f"  {tag} FY{fy}: could not list files; rerun later"); continue
@@ -97,6 +104,8 @@ def main():
             if not full:
                 print(f"  {tag} FY{fy}: no full-year file listed"); continue
             f = full[0]
+            if (OUT / f["file_name"]).exists():
+                print(f"  {tag} FY{fy}: already have {f['file_name']}"); continue
             if f["agency_name"].lower() != a["name"].lower():
                 print(f"  {tag} FY{fy}: API returned {f['agency_name']!r}, not {a['name']!r}; skipping"); continue
             print(f"  {tag} FY{fy}: {f['file_name']} (updated {f['updated_date']})")

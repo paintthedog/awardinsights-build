@@ -47,6 +47,12 @@ AGENCIES = {  # treasury code -> (short, name)
     "070": ("DHS", "Homeland Security"), "072": ("USAID", "USAID"), "086": ("HUD", "Housing and Urban Development"),
     "091": ("ED", "Education"), "1601": ("DOL", "Labor"), "417": ("NEA", "National Endowment for the Arts"),
     "418": ("NEH", "National Endowment for the Humanities"), "474": ("IMLS", "Institute of Museum and Library Services"),
+    # added 2026-10-24 (see docs/SPEC.md, refresh)
+    "073": ("SBA", "Small Business Administration"), "047": ("GSA", "General Services Administration"),
+    "1100": ("EOP", "Executive Office of the President"), "309": ("ARC", "Appalachian Regional Commission"),
+    "485": ("AmeriCorps", "AmeriCorps (Corporation for National and Community Service)"), "028": ("SSA", "Social Security Administration"),
+    "088": ("NARA", "National Archives and Records Administration"), "020": ("Treasury", "Treasury"),
+    "031": ("NRC", "Nuclear Regulatory Commission"), "3300": ("SI", "Smithsonian Institution"),
 }
 # Congressionally directed spending (earmarks): kept, tagged, shown apart from competitive totals.
 EARMARK_CFDA = {"93.493", "11.617", "11.469", "11.071", "14.251", "17.289", "16.753", "43.014", "66.202",
@@ -526,6 +532,11 @@ for p_, rows in FEED.items():
     rows.sort(key=lambda r: r[0], reverse=True)
     json.dump(rows, open(f"{A.out}/data/feed/{p_:02d}.json", "w"), separators=(",", ":"))
 out["meta"]["asof"] = asof
+# the archive date (from the file names) and how many agencies have money here, for the page's source lines
+dates = sorted({m.group(1) for v in files_used.values() for f in v if (m := re.search(r"_Full_(\d{8})", f))})
+if len(dates) > 1: print("WARNING: trimmed files come from more than one archive date:", dates)
+out["meta"]["archive"] = f"{dates[-1][:4]}-{dates[-1][4:6]}-{dates[-1][6:]}" if dates else ""
+out["meta"]["n_agencies"] = len({c[:3] if c.startswith("075") else c for c in agcodes})
 json.dump(out, open(f"{A.out}/data/agg.json", "w"), separators=(",", ":"))
 print("recent.json bytes:", os.path.getsize(f"{A.out}/data/recent.json"), "feed rows:", sum(len(v) for v in FEED.values()), "asof", asof)
 

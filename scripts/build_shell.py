@@ -130,10 +130,15 @@ def build(site):
         (site / old).write_text(stub(tool), encoding="utf-8")
     f = site / "federal" / "index.html"
     f.write_text(inject(f.read_text(encoding="utf-8"), "federal", "federal/index.html"), encoding="utf-8")
-    land = (SRC / "landing.html").read_text(encoding="utf-8").replace("__SITEBAR__", sitebar("home"))
+    # source lines follow the Federal data: agency count, archive date, data-through date
+    import datetime
+    m = json.load(open(site / "federal" / "data" / "agg.json"))["meta"]
+    long = lambda iso: (lambda d: f"{d:%B} {d.day}, {d.year}")(datetime.date.fromisoformat(iso)) if iso else ""
+    fill = lambda t: t.replace("__NAG__", str(m.get("n_agencies", ""))).replace("__ARCHL__", long(m.get("archive"))).replace("__THRUL__", long(m.get("asof")))
+    land = fill((SRC / "landing.html").read_text(encoding="utf-8")).replace("__SITEBAR__", sitebar("home"))
     land = land.replace('<meta charset="utf-8">', f'<meta charset="utf-8">\n<meta http-equiv="Content-Security-Policy" content="{CSP}">\n<!-- {COPY} -->', 1)
     (site / "index.html").write_text(about_link(land.replace("</head>", head(), 1)), encoding="utf-8")
-    ab = (SRC / "about.html").read_text(encoding="utf-8").replace("__SITEBAR__", sitebar("about"))
+    ab = fill((SRC / "about.html").read_text(encoding="utf-8")).replace("__SITEBAR__", sitebar("about"))
     ab = ab.replace('<meta charset="utf-8">', f'<meta charset="utf-8">\n<meta http-equiv="Content-Security-Policy" content="{CSP}">\n<!-- {COPY} -->', 1)
     (site / "about").mkdir(exist_ok=True)
     (site / "about" / "index.html").write_text(ab.replace("</head>", head(), 1), encoding="utf-8")

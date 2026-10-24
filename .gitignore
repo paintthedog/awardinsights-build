@@ -9,3 +9,5 @@ inputs/subawards/*
 !inputs/subawards/.keep
 __pycache__/
 earmark_candidates.json
+inputs/trimmed_prev/
+inputs/trimmed_*/

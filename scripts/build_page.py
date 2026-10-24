@@ -14,8 +14,14 @@ COPY = "© 2026 Award Insights · awardinsights.org · All rights reserved."
 head = open(A.head).read()
 head = head.replace("<title>NSF Award Insights</title>", "<title>Federal Award Insights</title>")
 head = re.sub(r'<meta name="description" content="[^"]*">',
-              '<meta name="description" content="What institutions like yours receive from 21 federal agencies in project grants, cooperative agreements and contracts, by year, agency and program, against peers you choose.">', head)
+              '<meta name="description" content="What institutions like yours receive from __NAG__ federal agencies in project grants, cooperative agreements and contracts, by year, agency and program, against peers you choose.">', head)
 body = open(A.body).read()
+# source lines follow the data: agency count and archive date from the Federal build's agg.json
+import json, datetime
+_m = json.load(open(pathlib.Path(A.public) / "data" / "agg.json"))["meta"] if A.public and (pathlib.Path(A.public) / "data" / "agg.json").exists() else {}
+_d = datetime.date.fromisoformat(_m["archive"]) if _m.get("archive") else None
+for t_, v_ in {"__NAG__": str(_m.get("n_agencies", "")), "__ARCH__": _d.strftime("%b %-d, %Y") if _d else ""}.items():
+    head = head.replace(t_, v_); body = body.replace(t_, v_)
 if A.preview:
     page = head + body.replace("__DATAV__", "dev")
     page = page.replace('<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">\n', "")

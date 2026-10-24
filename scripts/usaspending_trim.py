@@ -10,9 +10,13 @@ competitive award types: project grants (04) and cooperative agreements (05) --
 formula and block grants, direct payments, loans and insurance are dropped, and
 Education Title IV student aid with them. Keeps only the columns the build uses,
 and caps the award description at 400 characters.
+
+Also records, in <out>/_months.json, how many rows each file holds per month across ALL recipients
+(before any filter): the refresh uses it to tell an agency that stopped reporting from one that
+stopped funding colleges.
 """
 import warnings; warnings.filterwarnings("ignore")
-import argparse, pathlib, zipfile, io, csv, gzip, sys
+import argparse, pathlib, zipfile, io, csv, gzip, sys, json, collections
 csv.field_size_limit(sys.maxsize)
 # defaults as before; --out lets a re-trim write a fresh set next to the old one
 ap = argparse.ArgumentParser(); ap.add_argument("--src", default="usaspending_downloads"); ap.add_argument("--out", default="trimmed")
@@ -48,11 +52,13 @@ KEEP = [
 ]
 
 def truthy(v): return (v or "").strip().lower() in ("t", "true", "1", "y")
+MONTHS = OUT / "_months.json"
+months = json.load(open(MONTHS)) if MONTHS.exists() else {}
 
 for z in sorted(SRC.glob("*.zip")):
     dest = OUT / (z.stem + "_trimmed.csv.gz")
-    if dest.exists(): print("have", dest.name); continue
-    kept = total = t4 = nc = 0
+    if dest.exists() and z.stem in months: print("have", dest.name); continue
+    kept = total = t4 = nc = 0; mon = collections.Counter()
     zf = zipfile.ZipFile(z)
     with gzip.open(dest, "wt", newline="") as out:
         w = None; cols = None
@@ -64,12 +70,13 @@ for z in sorted(SRC.glob("*.zip")):
                 if w is None:
                     cols = [c for c in KEEP if c in ix]
                     w = csv.writer(out); w.writerow(cols)
-                iu = ix.get("recipient_uei"); ib = ix.get("business_types_description"); ic = ix.get("cfda_number")
+                iad = ix.get("action_date"); iu = ix.get("recipient_uei"); ib = ix.get("business_types_description"); ic = ix.get("cfda_number")
                 it = ix.get("assistance_type_code"); idesc = cols.index("prime_award_base_transaction_description") if "prime_award_base_transaction_description" in cols else None
                 fl = [ix[c] for c in IHE_FLAGS if c in ix]
                 for row in r:
                     total += 1
                     g = lambda i: row[i] if i is not None and i < len(row) else ""
+                    mon[g(iad)[:7]] += 1
                     if ic is not None and g(ic) in TITLE_IV: t4 += 1; continue
                     if it is not None and g(it).zfill(2) not in COMPETITIVE: nc += 1; continue
                     keep = g(iu) in known
@@ -79,4 +86,5 @@ for z in sorted(SRC.glob("*.zip")):
                         out_row = [g(ix[c]) for c in cols]
                         if idesc is not None and len(out_row[idesc]) > DESC_MAX: out_row[idesc] = out_row[idesc][:DESC_MAX].rstrip() + "…"
                         w.writerow(out_row); kept += 1
+    months[z.stem] = dict(sorted(mon.items())); json.dump(months, open(MONTHS, "w"), indent=0)
     print(f"{z.name}: kept {kept:,} of {total:,} rows" + (f" (dropped {t4:,} Title IV, {nc:,} non-competitive)" if (t4 or nc) else "") + f" -> {dest.stat().st_size/1e6:.1f} MB")
